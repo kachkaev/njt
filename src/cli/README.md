@@ -153,4 +153,4 @@ Shortcuts to some of the `njt` destinations are built into `npm`:
 ⭥  
 🐸 `njt <package> i`
 
-With `njt`, you have access to more shortcuts in a variety of environments, which makes you more productive day to day.
+With `njt`, you have access to more shortcuts in multiple environments, which makes you more productive day to day.
