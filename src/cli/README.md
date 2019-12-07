@@ -1,24 +1,28 @@
 <center>
 
-# 🐸 `njt` 🐸
+<h1 align="center"> 🐸 njt 🐸</h1>
 
-**🐸npm jump to 🐸**  
-[njt.now.sh](https://njt.now.sh/)
+<p align="center">
+<b>🐸npm jump to 🐸</b><br/>
+<a href="https://njt.now.sh/">njt.now.sh</a>
+</p>
 
-🛠🛠🛠🛠🛠🛠🛠🛠🛠  
-⚠️⚠️⚠️ work in progress ⚠️⚠️⚠️  
-🛠🛠🛠🛠🛠🛠🛠🛠🛠
+🛠🛠🛠🛠🛠🛠🛠🛠🛠🛠  
+⚠️ work in progress ⚠️  
+🛠🛠🛠🛠🛠🛠🛠🛠🛠🛠
 
 </center>
 
 Are you often typing npm package names in your search engine to then manually navigate to an npm page, repository, homepage, changelog, versions and so on? 🕐🕑🕒🕓🕔
 
 [Save five seconds thousands of times](https://xkcd.com/1205/) by quickly jumping to the right URL in one go!
-Here is a magic spell for you to remember:
+Here is a magic spell to remember:
 
-🐸✨🐸✨🐸  
-`njt <package name> [destination]`  
+```
 🐸✨🐸✨🐸
+njt <package name> [destination]
+🐸✨🐸✨🐸
+```
 
 Examples:
 
@@ -44,7 +48,7 @@ _There’s more, see below!_
 There are several entry points into `njt`.
 Pick your favourite or use ’em all!
 
-### 🟢Command-line tool
+### 🟢 Command-line tool
 
 Install `njt` globally [from npm](https://www.npmjs.com/package/njt) by running this command in your terminal:
 
@@ -108,8 +112,6 @@ Feel free [to suggest](https://github.com/kachkaev/njt/issues/new) another entry
 
 ## Available destinations
 
-(https://www.npmjs.com/)
-
 - `c` → changelog
 - `h` → homepage (aliased as `w` for website or `d` for docs)
 - `i` → repository issues (aliased as `b` for bugs)
@@ -135,7 +137,7 @@ The command line version of the tool takes you to `https://njt.now.sh/jump?q=YOU
 
 Shortcuts to some destination are built into `npm`:
 
-📦 [`npm docs <package>` (or `npm home <package>`)](https://docs.npmjs.com/cli/docs)  
+📦 [`npm docs <package>` or `npm home <package>`](https://docs.npmjs.com/cli/docs)  
 ⭥  
 🐸 `njt <package> h`
 
@@ -149,6 +151,6 @@ Shortcuts to some destination are built into `npm`:
 
 📦 [`npm bugs <package>` or `npm issues <package>`](https://docs.npmjs.com/cli/bugs)  
 ⭥  
-🐸 `njt <package> issues`
+🐸 `njt <package> i`
 
-With `njt`, you have access to more shortcuts and can also use them in your browser.
+With `njt`, you have access to more shortcuts in a variety of environments, not limited to the command line.
