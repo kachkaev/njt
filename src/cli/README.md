@@ -11,7 +11,7 @@
 🛠🛠🛠🛠🛠🛠🛠🛠🛠🛠
 </p>
 
-Are you often typing npm package names in your search engine to then manually navigate to an npm page, repository, homepage, changelog, versions and so on? 🕐🕑🕒🕓🕔
+Are you often typing npm package names in your search engine to then manually navigate to their description on npm, repository, homepage, changelog, versions and so on? 🕐🕑🕒🕓🕔
 
 [Save five seconds thousands of times](https://xkcd.com/1205/) by quickly jumping to the right URL in one go!
 Here is a magic spell to remember:
@@ -43,7 +43,7 @@ _There’s more, see below!_
 
 ## Getting `njt`
 
-There are several entry points into `njt`.
+There are several environments in which you can access `njt`.
 Pick your favourite or use ’em all!
 
 ### 🟢 Command-line tool
@@ -55,8 +55,8 @@ npm install --global njt
 ```
 
 You are all set.
-Try typing `njt <package> [destination]` in your terminal.
-For example, these two commands will take you to Lodash **r**epository and **h**omepage, respectively:
+Now try executing `njt <package> [destination]` with some real arguments.
+For example, these two commands will take you to the Lodash **r**epository and **h**omepage, respectively:
 
 ```bash
 njt lodash r
@@ -82,12 +82,13 @@ You can use `njt` right from the address bar in Firefox.
 1.  You’ll see a small form; type `njt` into the _Keyword_ field
 1.  Hit _Save_
 
-From now on, typing `njt <package> [destination]` in the address bar will take you directly to a page you want (for example, `njt react h` will take you to the [React.js homepage](https://reactjs.org/)).
+From now on, typing `njt <package> [destination]` in the address bar will take you directly to a page you want.
+For example, `njt react h` will take you to the [React.js homepage](https://reactjs.org/).
 
 To uninstall, open Firefox bookmarks from the main menu, search for `njt` and remove the bookmark.
 
-**Pro tip 💡** You can use `n` instead of `njt` as a _search keyword_ to save two extra characters each time.
-The command to type in Firefox will be `n <package> [destination]` 🚀
+**Pro tip 💡** You can use `n` instead of `njt` as a search keyword to save yourself from typing two extra characters each time.
+The command to type in Firefox address bar will then be `n <package> [destination]` 🚀
 
 ### 🟢 DuckDuckGo bang
 
@@ -96,17 +97,18 @@ The command to type in Firefox will be `n <package> [destination]` 🚀
 <s>If you use [duckduckgo.com](https://duckduckgo.com/) as your primary search engine, type `!njt <package> [destination]` in its search field (note the leading exclamation mark).
 This trick is possible thanks to DuckDuckGo’s awesome [bang feature](https://duckduckgo.com/bang).</s>
 
-### 🟢 Online search field at the `njt`’s mini-webiste
+### 🟢 Online search field on the `njt`’s mini-website
 
 Open [njt.now.sh](https://njt.now.sh), type your query, press enter.
-This method is a bit slower than the other ones because you have to open the landing page first, however, it works everywhere and does not require setup.
+This method is a bit slower than the other ones because you have to open the page with the input field first.
+On the plus side, it works everywhere and does not require any setup.
 
 Thanks to [now.sh](https://now.sh) for hosting [njt.now.sh](https://njt.now.sh) 💚
 
 ### 🟢 More ways?
 
 Are you a shortcut guru?
-Feel free [to suggest](https://github.com/kachkaev/njt/issues/new) another entry point into `njt` to save more of the people’s time!
+Feel free [to suggest](https://github.com/kachkaev/njt/issues/new) another entry point into `njt` to save more of the people’s time around the world!
 
 ## Available destinations
 
@@ -126,14 +128,14 @@ Omitting the destination takes you to the package page on [npmjs.com](https://ww
 
 For requests like `njt [package]`, `njt [package] n` or `njt [package] y`, the tool just navigates you to URLs like `https://www.npmjs.com/package/[package]` or `https://yarn.pm/[package]`.
 
-Other cases require looking into `package.json` of the latest published version.
-This file contains links to the repository, the homepage and other fields, which `njt` uses to construct the destination URL.
+Other cases involve a quick inspection of `package.json` in the latest published version.
+This file contains the location of the repository, the homepage and some other fields, which `njt` uses to construct the destination URL.
 
 The command line version of the tool takes you to `https://njt.now.sh/jump?q=YOUR_QUERY`, from which you are redirected to the destination.
 
 ## Prior art
 
-Shortcuts to some destination are built into `npm`:
+Shortcuts to some of the `njt` destinations are built into `npm`:
 
 📦 [`npm docs <package>` or `npm home <package>`](https://docs.npmjs.com/cli/docs)  
 ⭥  
@@ -151,4 +153,4 @@ Shortcuts to some destination are built into `npm`:
 ⭥  
 🐸 `njt <package> i`
 
-With `njt`, you have access to more shortcuts in a variety of environments, not limited to the command line.
+With `njt`, you have access to more shortcuts in a variety of environments, enhancing your overall developer experience.
