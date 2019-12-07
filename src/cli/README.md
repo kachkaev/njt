@@ -3,12 +3,12 @@
 <h1 align="center"> 🐸 njt 🐸</h1>
 
 <p align="center">
-<b>🐸npm jump to 🐸</b><br/>
+<b>🐸 npm jump to 🐸</b><br/>
 <a href="https://njt.now.sh/">njt.now.sh</a>
 </p>
 
 🛠🛠🛠🛠🛠🛠🛠🛠🛠🛠  
-⚠️ work in progress ⚠️  
+⚠️⚠️ **work in progress** ⚠️⚠️  
 🛠🛠🛠🛠🛠🛠🛠🛠🛠🛠
 
 </center>
