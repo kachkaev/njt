@@ -8,6 +8,14 @@
   },
   "homepage": "https://njt.now.sh",
   "bugs": "https://github.com/kachkaev/njt/issues",
+  "keywords": [
+    "frog",
+    "jump",
+    "meta",
+    "npm",
+    "productivity",
+    "shortcut"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/kachkaev/njt.git",
