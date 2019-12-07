@@ -1,5 +1,3 @@
-<center>
-
 <h1 align="center"> 🐸 njt 🐸</h1>
 
 <p align="center">
@@ -7,11 +5,11 @@
 <a href="https://njt.now.sh/">njt.now.sh</a>
 </p>
 
-🛠🛠🛠🛠🛠🛠🛠🛠🛠🛠  
-⚠️⚠️ **work in progress** ⚠️⚠️  
+<p align="center">
+🛠🛠🛠🛠🛠🛠🛠🛠🛠🛠<br/>
+⚠️⚠️ <b>work in progress</b> ⚠️⚠️<br/>
 🛠🛠🛠🛠🛠🛠🛠🛠🛠🛠
-
-</center>
+</p>
 
 Are you often typing npm package names in your search engine to then manually navigate to an npm page, repository, homepage, changelog, versions and so on? 🕐🕑🕒🕓🕔
 
