@@ -66,11 +66,11 @@ njt lodash h
 A list of supported destinations will be shown if you launch `njt` without arguments.
 
 To uninstall, run `npm remove --global njt`.
-To upgrade, run `npm install --global njt` again.
+To reinstall or upgrade, run `npm install --global njt` again.
 
-**Pro tip 💡** To customise which browser you want to open, globally set an environment variable called `NJT_BROWSER` (or just `BROWSER`) with the app name of your choice.
+**Pro tip 💡** To customise which browser you want to open, set an environment variable called `NJT_BROWSER` (or just `BROWSER`) with the app name of your choice.
 The value [may vary](https://www.npmjs.com/package/open#app) based on your OS.
-Note that setting `BROWSER` insted of `NJT_BROWSER` may affect other tools, which may or may not be desired.
+Note that setting `BROWSER` insted of `NJT_BROWSER` can affect other tools, which may or may not be desired.
 
 ### 🟢 Search bookmark in Firefox
 
@@ -88,7 +88,7 @@ For example, `njt react h` will take you to the [React.js homepage](https://reac
 To uninstall, open Firefox bookmarks from the main menu, search for `njt` and remove the bookmark.
 
 **Pro tip 💡** You can use `n` instead of `njt` as a search keyword to save yourself from typing two extra characters each time.
-The command to type in Firefox address bar will then be `n <package> [destination]` 🚀
+The command to type in Firefox address bar will become `n <package> [destination]` 🚀
 
 ### 🟢 DuckDuckGo bang
 
@@ -100,7 +100,7 @@ This trick is possible thanks to DuckDuckGo’s awesome [bang feature](https://d
 ### 🟢 Online search field on the `njt`’s mini-website
 
 Open [njt.now.sh](https://njt.now.sh), type your query, press enter.
-This method is a bit slower than the other ones because you have to open the page with the input field first.
+This method is a bit slower than the other ones because it involves opening a page with the input field first.
 On the plus side, it works everywhere and does not require any setup.
 
 Thanks to [now.sh](https://now.sh) for hosting [njt.now.sh](https://njt.now.sh) 💚
@@ -108,7 +108,7 @@ Thanks to [now.sh](https://now.sh) for hosting [njt.now.sh](https://njt.now.sh) 
 ### 🟢 More ways?
 
 Are you a shortcut guru?
-Feel free [to suggest](https://github.com/kachkaev/njt/issues/new) another entry point into `njt` to save more of the people’s time around the world!
+Feel free [to suggest](https://github.com/kachkaev/njt/issues/new) another entry point to `njt` and save people’s time around the world!
 
 ## Available destinations
 
@@ -117,7 +117,7 @@ Feel free [to suggest](https://github.com/kachkaev/njt/issues/new) another entry
 - `i` → repository issues (aliased as `b` for bugs)
 - `n` → package page on [npmjs.com](https://www.npmjs.com/)
 - `p` → repository pull requests
-- `r` → repository root
+- `r` → repository root (list of files and readme)
 - `t` → repository tags (also called releases)
 - `v` → list of all packages versions with their publish dates on [npmjs.com](https://www.npmjs.com/)
 - `y` → package page on [yarnpkg.com](https://yarnpkg.com/) (mirror registry for [npmjs.com](https://www.npmjs.com/))
@@ -126,7 +126,7 @@ Omitting the destination takes you to the package page on [npmjs.com](https://ww
 
 ## How does `njt` work?
 
-For requests like `njt [package]`, `njt [package] n` or `njt [package] y`, the tool just navigates you to URLs like `https://www.npmjs.com/package/[package]` or `https://yarn.pm/[package]`.
+For requests like `njt [package]`, `njt [package] n` or `njt [package] y`, all the tool does is navigating you to URLs like `https://www.npmjs.com/package/[package]` or `https://yarn.pm/[package]`.
 
 Other cases involve a quick inspection of `package.json` in the latest published version.
 This file contains the location of the repository, the homepage and some other fields, which `njt` uses to construct the destination URL.
@@ -153,4 +153,4 @@ Shortcuts to some of the `njt` destinations are built into `npm`:
 ⭥  
 🐸 `njt <package> i`
 
-With `njt`, you have access to more shortcuts in a variety of environments, enhancing your overall developer experience.
+With `njt`, you have access to more shortcuts in a variety of environments, which makes you more productive day to day.
