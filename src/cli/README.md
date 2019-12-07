@@ -135,9 +135,9 @@ The command line version of the tool takes you to `https://njt.now.sh/jump?q=YOU
 
 ## Prior art
 
-Shortcuts to some of the `njt` destinations are built into `npm`:
+Shortcuts to some of the `njt` destinations are built into `npm` cli:
 
-📦 [`npm docs <package>` or `npm home <package>`](https://docs.npmjs.com/cli/docs)  
+📦 [`npm home <package>` or `npm docs <package>`](https://docs.npmjs.com/cli/docs)  
 ⭥  
 🐸 `njt <package> h`
 
@@ -149,7 +149,7 @@ Shortcuts to some of the `njt` destinations are built into `npm`:
 
 ---
 
-📦 [`npm bugs <package>` or `npm issues <package>`](https://docs.npmjs.com/cli/bugs)  
+📦 [`npm issues <package>` or `npm bugs <package>`](https://docs.npmjs.com/cli/bugs)  
 ⭥  
 🐸 `njt <package> i`
 
