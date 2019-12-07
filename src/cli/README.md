@@ -25,19 +25,19 @@ njt <package name> [destination]
 Examples:
 
 `njt prettier` (no specified destination)  
-🐸→ https://www.npmjs.com/package/prettier
+🐸 → https://www.npmjs.com/package/prettier
 
 `njt prettier h` (homepage)  
-🐸→ https://prettier.io
+🐸 → https://prettier.io
 
 `njt prettier r` (repository)  
-🐸→ https://github.com/prettier/prettier
+🐸 → https://github.com/prettier/prettier
 
 `njt prettier c` (changelog)  
-🐸→ https://github.com/prettier/prettier/blob/master/CHANGELOG.md
+🐸 → https://github.com/prettier/prettier/blob/master/CHANGELOG.md
 
 `njt prettier y` (yarn)  
-🐸→ https://yarn.pm/prettier
+🐸 → https://yarn.pm/prettier
 
 _There’s more, see below!_
 
