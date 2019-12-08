@@ -11,3 +11,8 @@ export interface UnresolvedDestination {
 export type ResolvedDestination =
   | SuccessfullyResolvedDestination
   | UnresolvedDestination;
+
+export interface DestinationConfig {
+  keywords: string[];
+  generateUrl: (packageName: string) => Promise<string> | string;
+}

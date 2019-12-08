@@ -129,7 +129,7 @@ Omitting the destination takes you to the package page on [npmjs.com](https://ww
 
 ## How does `njt` work?
 
-For requests like `njt [package]`, `njt [package] n` or `njt [package] y`, all the tool does is navigating you to URLs like `https://www.npmjs.com/package/[package]` or `https://yarn.pm/[package]`.
+For requests like `njt [package]`, `njt [package] n` or `njt [package] y`, all the tool does is navigating you to URLs like `https://www.npmjs.com/package/[package]` or `https://yarnpkg.com/package/package]`.
 
 Other cases involve a quick inspection of `package.json` in the latest published version.
 This file contains the location of the repository, the homepage and some other fields, which `njt` uses to construct the destination URL.
