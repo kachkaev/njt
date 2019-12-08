@@ -1,0 +1,36 @@
+{
+  "name": "njt",
+  "version": "0.1.0",
+  "description": "npm jump to (package navigation shortcuts you dreamt of)",
+  "keywords": [
+    "frog",
+    "jump",
+    "meta",
+    "npm",
+    "productivity",
+    "shortcut"
+  ],
+  "homepage": "https://njt.now.sh",
+  "bugs": "https://github.com/kachkaev/njt/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kachkaev/njt.git",
+    "directory": "src/cli"
+  },
+  "license": "BSD-3-Clause",
+  "author": {
+    "name": "Alexander Kachkaev",
+    "email": "alexander@kachkaev.ru"
+  },
+  "bin": {
+    "njt": "cli.js"
+  },
+  "scripts": {
+    "prepublishOnly": "ncp ../README.md README.md"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "commander": "^4.0.1",
+    "open": "^7.0.0"
+  }
+}

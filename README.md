@@ -118,9 +118,12 @@ Feel free [to suggest](https://github.com/kachkaev/njt/issues/new) another entry
 - `n` → package page on [npmjs.com](https://www.npmjs.com/)
 - `p` → repository pull requests
 - `r` → repository root (list of files and readme)
+- `s` → source (most commonly the same repository root, but can take you to a subdirectory in case of a monorepo)
 - `t` → repository tags (also called releases)
-- `v` → list of all packages versions with their publish dates on [npmjs.com](https://www.npmjs.com/)
+- `v` → list of all package versions with their publish dates on [npmjs.com](https://www.npmjs.com/)
 - `y` → package page on [yarnpkg.com](https://yarnpkg.com/) (mirror registry for [npmjs.com](https://www.npmjs.com/))
+
+<!-- When updating, remember to reflect changes in src/cli/cli.js -->
 
 Omitting the destination takes you to the package page on [npmjs.com](https://www.npmjs.com/) as if you used `n`.
 

@@ -1,13 +1,22 @@
 {
   "private": true,
+  "license": "BSD-3-Clause",
+  "workspaces": [
+    "cli"
+  ],
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
+    "dev": "next dev",
     "start": "next start"
   },
   "dependencies": {
     "next": "9.1.4",
     "react": "16.12.0",
     "react-dom": "16.12.0"
+  },
+  "devDependencies": {
+    "ncp": "^2.0.0",
+    "prettier": "^1.19.1",
+    "prettier-plugin-packagejson": "^2.0.5"
   }
 }
