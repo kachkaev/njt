@@ -1,9 +1,9 @@
 import React from "react";
 
-const Home = () => (
+const IndexPage = () => (
   <div>
     <div className="hero">
-      <h1 className="title">njt</h1>
+      <h1 className="title">🐸 njt 🐸</h1>
       <p className="description">npm 🐸 jump 🐸 to</p>
 
       <div className="wip">
@@ -65,4 +65,4 @@ const Home = () => (
   </div>
 );
 
-export default Home;
+export default IndexPage;

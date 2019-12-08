@@ -12,9 +12,11 @@
   "dependencies": {
     "next": "9.1.4",
     "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react-dom": "16.12.0",
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
+    "@types/styled-components": "^4.4.0",
     "ncp": "^2.0.0",
     "prettier": "^1.19.1",
     "prettier-plugin-packagejson": "^2.0.5"
