@@ -1,6 +1,8 @@
 import React from "react";
 import Router from "next/router";
 import { NextPage } from "next";
+import { resolveDestination } from "../helpers";
+import { UnresolvedDestination } from "../types";
 
 const JumpPage: NextPage<{ unresolvedDestination?: UnresolvedDestination }> = ({
   unresolvedDestination,

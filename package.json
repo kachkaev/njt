@@ -16,9 +16,11 @@
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
+    "@types/node": "^12.12.14",
     "@types/styled-components": "^4.4.0",
     "ncp": "^2.0.0",
     "prettier": "^1.19.1",
-    "prettier-plugin-packagejson": "^2.0.5"
+    "prettier-plugin-packagejson": "^2.0.5",
+    "typescript": "^3.7.3"
   }
 }

@@ -1,4 +1,6 @@
-const resolveDestination = async (
+import { ResolvedDestination } from "./types";
+
+export const resolveDestination = async (
   packageName,
   destination,
 ): Promise<ResolvedDestination> => {

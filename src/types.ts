@@ -1,13 +1,13 @@
-interface SuccessfullyResolvedDestination {
+export interface SuccessfullyResolvedDestination {
   outcome: "success";
   url: string;
 }
 
-interface UnresolvedDestination {
+export interface UnresolvedDestination {
   outcome: "error";
   error: string;
 }
 
-type ResolvedDestination =
+export type ResolvedDestination =
   | SuccessfullyResolvedDestination
   | UnresolvedDestination;
