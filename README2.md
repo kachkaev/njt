@@ -13,8 +13,8 @@
 
 Are you often typing npm package names in your search engine to then manually navigate to their description on npm, repository, homepage, changelog, versions and so on? 🕐🕑🕒🕓🕔
 
-[Save five seconds thousands of times](https://xkcd.com/1205/) by quickly jumping to the right URL in one go!
-Here is a magic spell to remember:
+[Save five seconds thousands of times](https://xkcd.com/1205/) by quickly jumping to the right URL!
+Here is a magic spell for you to remember:
 
 ```
 🐸✨🐸✨🐸
