@@ -18,7 +18,7 @@ Here is a magic spell for you to remember:
 
 ```
 🐸✨🐸✨🐸
-njt <package name> [destination]
+njt <package> [destination]
 🐸✨🐸✨🐸
 ```
 
