@@ -1,9 +1,155 @@
-import { ResolvedDestination, DestinationConfig } from "./types";
+import { ResolvedDestination, DestinationConfig, JsonObject } from "./types";
+import LRU from "lru-cache";
+import fetch from "./fetch";
+import { parse as parseUrl } from "url";
+import hostedGitInfo from "hosted-git-info";
+
+const packageMetadataCache = new LRU<string, JsonObject | Error>({
+  max: 10000,
+  maxAge: 1000 * 60,
+});
+
+const getPackageMetadata = async (packageName: string): Promise<JsonObject> => {
+  if (!packageMetadataCache.has(packageName)) {
+    packageMetadataCache[packageName] = await (
+      await fetch(`https://registry.npmjs.com/${packageName}`)
+    ).json();
+    try {
+    } catch (e) {
+      packageMetadataCache[packageName] = e;
+    }
+  }
+  const result = packageMetadataCache[packageName];
+  if (result instanceof Error) {
+    throw result;
+  }
+  return result;
+};
+
+// Inspired by https://github.com/npm/cli/blob/0a0fdff3edca1ea2f0a2d87a0568751f369fd0c4/lib/repo.js#L37-L50
+const handleUnknownHostedUrl = (url: string): string | undefined => {
+  try {
+    const idx = url.indexOf("@");
+    if (idx !== -1) {
+      url = url.slice(idx + 1).replace(/:([^\d]+)/, "/$1");
+    }
+    const parsedUrl = parseUrl(url);
+    const protocol = parsedUrl.protocol === "https:" ? "https:" : "http:";
+    return (
+      protocol +
+      "//" +
+      (parsedUrl.host || "") +
+      parsedUrl.path.replace(/\.git$/, "")
+    );
+  } catch (e) {}
+};
+
+const getRepoUrl = async (packageName: string): Promise<string> => {
+  // Reference implementation: https://github.com/npm/cli/blob/latest/lib/repo.js
+  const packageMetadata = await getPackageMetadata(packageName);
+  const rawUrl = packageMetadata.repository["url"];
+  const info = hostedGitInfo.fromUrl(rawUrl);
+  return info ? info.browse() : handleUnknownHostedUrl(rawUrl);
+};
 
 const destinationConfigs: DestinationConfig[] = [
   {
+    keywords: ["c", "changelog"],
+    generateUrl: async (packageName) => {
+      const repoUrl = await getRepoUrl(packageName);
+      if (repoUrl) {
+        return `${repoUrl}/blob/master/CHANGELOG.md`;
+      }
+    },
+  },
+  {
+    keywords: ["h", "home", "homepage", "d", "docs"],
+    generateUrl: async (packageName) => {
+      // Reference implementation: https://github.com/npm/cli/blob/latest/lib/docs.js
+      const packageMetadata = await getPackageMetadata(packageName);
+
+      return `${packageMetadata.homepage}`;
+    },
+  },
+  {
+    keywords: ["i", "issues", "b", "bugs"],
+    generateUrl: async (packageName) => {
+      // Reference implementation: https://github.com/npm/cli/blob/latest/lib/bugs.js
+      const packageMetadata = await getPackageMetadata(packageName);
+      var directUrl =
+        packageMetadata.bugs &&
+        (typeof packageMetadata.bugs === "string"
+          ? packageMetadata.bugs
+          : packageMetadata.bugs["url"]);
+      if (directUrl) {
+        return directUrl;
+      }
+      const repoUrl = await getRepoUrl(packageName);
+      if (repoUrl) {
+        return `${repoUrl}/issues`;
+      }
+      return repoUrl;
+    },
+  },
+  {
     keywords: ["n", "npm", ""],
     generateUrl: (packageName) => `https://npmjs.com/package/${packageName}`,
+  },
+  {
+    keywords: [
+      "p",
+      "pulls",
+      "prs",
+      "pullrequests",
+      "m",
+      "mergerequests",
+      "mrs",
+    ],
+    generateUrl: async (packageName) => {
+      const repoUrl = await getRepoUrl(packageName);
+      if (repoUrl && repoUrl.includes("://github.com")) {
+        return `${repoUrl}/pulls`;
+      } else if (repoUrl && repoUrl.includes("://gitlab.com")) {
+        return `${repoUrl}/merge_requests`;
+      }
+      return repoUrl;
+    },
+  },
+  {
+    keywords: ["r", "releases"],
+    generateUrl: async (packageName) => {
+      const repoUrl = await getRepoUrl(packageName);
+      if (repoUrl && repoUrl.includes("://github.com")) {
+        return `${repoUrl}/releases`;
+      } else if (repoUrl && repoUrl.includes("://gitlab.com")) {
+        return `${repoUrl}/-/tags`;
+      }
+      return repoUrl;
+    },
+  },
+  {
+    keywords: ["s", "source"],
+    generateUrl: async (packageName) => {
+      const repoUrl = await getRepoUrl(packageName);
+      const packageMetadata = await getPackageMetadata(packageName);
+      const sourceDirectory = packageMetadata.repository["directory"];
+      if (repoUrl && sourceDirectory) {
+        return `${repoUrl}/tree/master/${sourceDirectory}`;
+      }
+      return repoUrl;
+    },
+  },
+  {
+    keywords: ["t", "tags"],
+    generateUrl: async (packageName) => {
+      const repoUrl = await getRepoUrl(packageName);
+      if (repoUrl && repoUrl.includes("://github.com")) {
+        return `${repoUrl}/tags`;
+      } else if (repoUrl && repoUrl.includes("://gitlab.com")) {
+        return `${repoUrl}/-/tags`;
+      }
+      return repoUrl;
+    },
   },
   {
     keywords: ["v", "version", "versions"],
@@ -36,11 +182,15 @@ export const resolveDestination = async (
   destinationKeyword = "",
 ): Promise<ResolvedDestination> => {
   try {
+    const url = await destinationConfigByKeyword[
+      destinationKeyword
+    ].generateUrl(packageName);
+    if (!url) {
+      throw new Error("Unexpected empty URL");
+    }
     return {
       outcome: "success",
-      url: await destinationConfigByKeyword[destinationKeyword].generateUrl(
-        packageName,
-      ),
+      url,
     };
   } catch {
     return {

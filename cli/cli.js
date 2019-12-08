@@ -1,37 +1,37 @@
 #!/usr/bin/env node
 
 const chalk = require("chalk");
-const path = require("path");
 const program = require("commander");
-const { generateUrl, openUrl } = require("./helpers");
+const { getPackageVersion, generateUrl, openUrl } = require("./helpers");
 
 const green = chalk.green;
 const code = chalk.dim;
 
 program
-  .version(require(path.resolve(__dirname, "./package.json")).version)
+  .version(getPackageVersion())
   .name("njt")
   .usage("<package> [destination]")
   .description(
     // prettier-ignore
     `🐸 ✨ 🐸 ✨ 🐸
-npm jump to: package navigation shortcuts you dreamt of
+npm jump to: package navigation shortcuts you dreamed about
 
 https://njt.now.sh
 
 
 Destinations
 ------------
+
 ${green('c')} → changelog
 ${green('h')} → homepage (aliased as ${green('w')} for website or ${green('d')} for docs)
-${green('i')} → repository issues (aliased as ${green('b')} for bugs)
-${green('n')} → package page on https://www.npmjs.com
-${green('p')} → repository pull requests
-${green('r')} → repository root (list of files and readme)
-${green('s')} → source (most commonly the same repository root, but can take you to a subdirectory in case of a monorepo)
-${green('t')} → repository tags (also called releases)
-${green('v')} → list of all package versions with their publish dates on https://www.npmjs.com
-${green('y')} → package page on https://yarnpkg.com (mirror registry for https://www.npmjs.com)
+${green('i')} → issues (aliased as ${green('b')} for bugs)
+${green('n')} → package info on [npmjs.com](https://www.npmjs.com/)
+${green('p')} → pull requests (aliased as ${green('m')} for merge requests)
+${green('r')} → list of github releases
+${green('s')} → source (most commonly repository root, but can take you to a subdirectory in case of a monorepo)
+${green('t')} → list of git tags
+${green('v')} → list of package versions with their publish dates on [npmjs.com](https://www.npmjs.com/)
+${green('y')} → package page on [yarnpkg.com](https://yarnpkg.com/) (mirror registry for [npmjs.com](https://www.npmjs.com/))
 ${/* When updating, remember to reflect changes in README.md */''}
 
 
@@ -43,7 +43,7 @@ ${code('njt prettier')} (no specified destination)
 ${code('njt prettier h')} (homepage)
 🐸  → https://prettier.io
 
-${code('njt prettier r')} (repository)
+${code('njt prettier s')} (source)
 🐸  → https://github.com/prettier/prettier
 
 ${code('njt prettier c')} (changelog)

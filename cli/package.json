@@ -1,7 +1,7 @@
 {
   "name": "njt",
-  "version": "0.1.0",
-  "description": "npm jump to (package navigation shortcuts you dreamt of)",
+  "version": "0.2.0",
+  "description": "npm jump to (package navigation shortcuts you dreamed about)",
   "keywords": [
     "frog",
     "jump",
@@ -26,7 +26,7 @@
     "njt": "cli.js"
   },
   "scripts": {
-    "prepublishOnly": "ncp ../README.md README.md"
+    "prepublishOnly": "yarn ncp ../README.md README.md"
   },
   "dependencies": {
     "chalk": "^3.0.0",

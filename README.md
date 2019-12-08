@@ -11,7 +11,7 @@
 🛠🛠🛠🛠🛠🛠🛠🛠🛠🛠
 </p>
 
-Are you often typing npm package names in your search engine to then manually navigate to their repository, homepage, changelog, versions and so on? 🕐🕑🕒🕓🕔
+Are you often typing npm package names in your search engine to then manually navigate to their source, homepage, changelog, versions and so on? 🕐🕑🕒🕓🕔
 
 [Save five seconds thousands of times](https://xkcd.com/1205/) by quickly jumping to the right URL!
 Here is a magic spell for you to remember:
@@ -30,7 +30,7 @@ Examples:
 `njt prettier h` (homepage)  
 🐸 → https://prettier.io
 
-`njt prettier r` (repository)  
+`njt prettier s` (source)  
 🐸 → https://github.com/prettier/prettier
 
 `njt prettier c` (changelog)  
@@ -56,10 +56,10 @@ npm install --global njt
 
 You are all set.
 Now try executing `njt <package> [destination]` with some real arguments.
-For example, these two commands will take you to the Lodash **r**epository and **h**omepage, respectively:
+For example, these two commands will take you to the Lodash **s**ource and **h**omepage, respectively:
 
 ```bash
-njt lodash r
+njt lodash s
 njt lodash h
 ```
 
@@ -114,13 +114,13 @@ Feel free [to suggest](https://github.com/kachkaev/njt/issues/new) another entry
 
 - `c` → changelog
 - `h` → homepage (aliased as `w` for website or `d` for docs)
-- `i` → repository issues (aliased as `b` for bugs)
-- `n` → package page on [npmjs.com](https://www.npmjs.com/)
-- `p` → repository pull requests
-- `r` → repository root (list of files and readme)
-- `s` → source (most commonly the same repository root, but can take you to a subdirectory in case of a monorepo)
-- `t` → repository tags (also called releases)
-- `v` → list of all package versions with their publish dates on [npmjs.com](https://www.npmjs.com/)
+- `i` → issues (aliased as `b` for bugs)
+- `n` → package info on [npmjs.com](https://www.npmjs.com/)
+- `p` → pull requests (aliased as `m` for merge requests)
+- `r` → list of github releases
+- `s` → source (most commonly repository root, but can take you to a subdirectory in case of a monorepo)
+- `t` → list of git tags
+- `v` → list of package versions with their publish dates on [npmjs.com](https://www.npmjs.com/)
 - `y` → package page on [yarnpkg.com](https://yarnpkg.com/) (mirror registry for [npmjs.com](https://www.npmjs.com/))
 
 <!-- When updating, remember to reflect changes in src/cli/cli.js -->
@@ -142,18 +142,18 @@ Shortcuts to some of the `njt` destinations are built into `npm` cli:
 
 📦 [`npm home <package>` or `npm docs <package>`](https://docs.npmjs.com/cli/docs)  
 ⭥  
-🐸 `njt <package> h`
-
----
-
-📦 [`npm repo <package>`](https://docs.npmjs.com/cli/repo)  
-⭥  
-🐸 `njt <package> r`
+🐸 `njt <package> h` (homepage)
 
 ---
 
 📦 [`npm issues <package>` or `npm bugs <package>`](https://docs.npmjs.com/cli/bugs)  
 ⭥  
-🐸 `njt <package> i`
+🐸 `njt <package> i` (issues)
+
+---
+
+📦 [`npm repo <package>`](https://docs.npmjs.com/cli/repo)  
+⭥  
+🐸 `njt <package> s` (source)
 
 With `njt`, you have access to more shortcuts in multiple environments, which makes you more productive day to day.

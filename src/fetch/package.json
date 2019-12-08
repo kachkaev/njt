@@ -1,0 +1,5 @@
+{
+  "description": "inspired by https://github.com/zeit/next.js/tree/canary/examples/with-zeit-fetch",
+  "main": "./server.js",
+  "browser": "./browser.js"
+}

@@ -20,11 +20,11 @@ const JumpPage: NextPage<{ unresolvedDestination?: UnresolvedDestination }> = ({
 
 JumpPage.getInitialProps = async ({ query, res }) => {
   let destinationUrl: string;
-  if (!query.q) {
+  if (!query.to) {
     destinationUrl = "/";
   } else {
-    const q = `${query.q}`;
-    const [packageName, destination] = q
+    const to = `${query.to}`;
+    const [packageName, destination] = to
       .split(" ")
       .filter((chunk) => chunk.length);
     const resolvedDestination = await resolveDestination(
