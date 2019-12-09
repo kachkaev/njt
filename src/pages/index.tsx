@@ -1,11 +1,13 @@
 import React, { useRef, useEffect } from "react";
 import styled, { createGlobalStyle } from "styled-components";
+import Markdown from "markdown-to-jsx";
 
 const GlobalStyle = createGlobalStyle`
 body {  
   color: #24292e;
   font-family: "-apple-system", BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
   margin: 0;
+  line-height: 1.4em;
 }
 
 a {
@@ -15,11 +17,18 @@ a {
     text-decoration: underline;
   }
 }
+
+code {
+  font-size: 1.2em;
+  background: rgba(27,31,35,.05);
+  padding: .1em .2em;
+  border-radius: 3px;
+}
 `;
 
 const Container = styled.div`
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0 30px 50px;
   position: relative;
   max-width: 35em;
 `;
@@ -27,8 +36,8 @@ const Container = styled.div`
 const Title = styled.h1`
   margin: 0;
   padding-top: 80px;
-  line-height: 1.15;
   font-size: 48px;
+  line-height: 1.4em;
   text-align: center;
 `;
 const Description = styled.div`
@@ -56,7 +65,7 @@ const InputForm = styled.form`
   display: inline-block;
   white-space: nowrap;
   font-size: 2em;
-  margin: 20px auto;
+  margin: 20px auto 60px;
   width: 100%;
   max-width: 100%;
   font-family: monospace;
@@ -90,7 +99,7 @@ const Input = styled.input`
   background: white;
   display: inline-block;
   padding: 0.2em 4em 0.2em 3em;
-  background: #eee;
+  background: rgba(27, 31, 35, 0.05);
   color: #24292e;
   line-height: inherit;
   font-family: monospace;
@@ -155,6 +164,38 @@ const IndexPage = () => {
           <InputSuffix>🐸 →</InputSuffix>
         </InputForm>
       </InputSection>
+
+      <Markdown>{`
+### Available destinations
+
+\`c\` → changelog  
+\`h\` → homepage (aliased as \`w\` for website or \`d\` for docs)  
+\`i\` → issues (aliased as \`b\` for bugs)  
+\`n\` → package info on [npmjs.com](https://www.npmjs.com/)  
+\`p\` → pull requests (aliased as \`m\` for merge requests)  
+\`r\` → list of github releases  
+\`s\` → source (most commonly repository root, but can take you to a subdirectory in case of a monorepo)  
+\`t\` → list of git tags  
+\`v\` → list of package versions with their publish dates on [npmjs.com](https://www.npmjs.com/)  
+\`y\` → package page on [yarnpkg.com](https://yarnpkg.com/) (mirror registry for [npmjs.com](https://www.npmjs.com/))  
+
+### Examples
+
+\`njt prettier\` (no specified destination)  
+🐸 → https://www.npmjs.com/package/prettier
+
+\`njt prettier h\` (homepage)  
+🐸 → https://prettier.io
+
+\`njt prettier s\` (source)  
+🐸 → https://github.com/prettier/prettier
+
+\`njt prettier c\` (changelog)  
+🐸 → https://github.com/prettier/prettier/blob/master/CHANGELOG.md
+
+\`njt prettier y\` (yarn)  
+🐸 → https://yarn.pm/prettier
+  `}</Markdown>
     </Container>
   );
 };
