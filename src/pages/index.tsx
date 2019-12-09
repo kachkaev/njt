@@ -1,6 +1,36 @@
 import React, { useRef, useEffect } from "react";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
+const GlobalStyle = createGlobalStyle`
+body {  
+  color: #24292e;
+  font-family: "-apple-system", BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
+  margin: 0;
+}
+
+a {
+  color: #0366d6;
+  text-decoration: none;
+  :hover {
+    text-decoration: underline;
+  }
+}
+`;
+
+const Container = styled.div`
+  margin: 0 auto;
+  padding: 0 30px;
+  position: relative;
+  max-width: 35em;
+`;
+
+const Title = styled.h1`
+  margin: 0;
+  padding-top: 80px;
+  line-height: 1.15;
+  font-size: 48px;
+  text-align: center;
+`;
 const Description = styled.div`
   font-weight: bold;
   text-align: center;
@@ -13,20 +43,8 @@ const ExternalLinks = styled.div`
 
 const ExternalLink = styled.a`
   display: inline-block;
-  padding: 5px 8px;
-  border-radius: 5px;
-  margin: 0 5px;
-  color: #666;
   text-decoration: none;
-  border: #ccc;
-  background: #eee;
-
-  :hover {
-    background: #e5e5e5;
-  }
-  :active {
-    color: #333;
-  }
+  margin: 0 8px;
 `;
 
 const InputSection = styled.div`
@@ -37,21 +55,33 @@ const InputSection = styled.div`
 const InputForm = styled.form`
   display: inline-block;
   white-space: nowrap;
-  border: 1px solid #ccc;
   font-size: 2em;
-  border-radius: 5px;
   margin: 20px auto;
+  width: 100%;
+  max-width: 100%;
   font-family: monospace;
   position: relative;
-  overflow: hidden;
-  line-height: 2em;
+  line-height: 1.5em;
+
+  @media (max-width: 600px) {
+    font-size: 1.8em;
+  }
+  @media (max-width: 550px) {
+    font-size: 1.5em;
+  }
+  @media (max-width: 480px) {
+    font-size: 1.3em;
+  }
+  @media (max-width: 420px) {
+    font-size: 1em;
+  }
 `;
 
 const InputPrefix = styled.span`
   padding: 0 0 0 0.7em;
   display: inline-block;
   position: absolute;
-  top: 0;
+  top: 0.2em;
   left: 0;
   pointer-events: none;
 `;
@@ -59,15 +89,27 @@ const Input = styled.input`
   font-size: inherit;
   background: white;
   display: inline-block;
-  padding: 0em 4em 0em 3em;
+  padding: 0.2em 4em 0.2em 3em;
   background: #eee;
+  color: #24292e;
   line-height: inherit;
   font-family: monospace;
   border: 0px solid white;
-  width: 15em;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 
   ::placeholder {
     color: #aaa;
+  }
+
+  :focus {
+    outline: none !important;
+    border: 1px solid #42a73f;
+    box-shadow: 0 0 10px #7cd679;
   }
 `;
 const InputSuffix = styled.button`
@@ -78,7 +120,7 @@ const InputSuffix = styled.button`
   padding-right: 0.4em;
 
   position: absolute;
-  top: 0;
+  top: 0.2em;
   right: 0;
 `;
 
@@ -88,73 +130,32 @@ const IndexPage = () => {
     inputRef.current.focus();
   }, []);
   return (
-    <div>
-      <div className="hero">
-        <h1 className="title">🐸 njt 🐸</h1>
-        <Description>🐸 npm jump to  🐸</Description>
+    <Container>
+      <GlobalStyle />
+      <Title>🐸 njt 🐸</Title>
+      <Description>🐸 npm jump to  🐸</Description>
 
-        <ExternalLinks>
-          <ExternalLink href="https://github.com/kachkaev/njt">
-            github
-          </ExternalLink>
-          <ExternalLink href="https://www.npmjs.com/package/njt">
-            npm
-          </ExternalLink>
-        </ExternalLinks>
+      <ExternalLinks>
+        <ExternalLink href="https://github.com/kachkaev/njt">
+          github
+        </ExternalLink>
+        <ExternalLink href="https://www.npmjs.com/package/njt">
+          npm
+        </ExternalLink>
+      </ExternalLinks>
 
-        <InputSection>
-          <InputForm action="/jump">
-            <InputPrefix>njt</InputPrefix>
-            <Input
-              ref={inputRef}
-              name="to"
-              placeholder="<package> [destination]"
-            />
-            <InputSuffix>🐸 →</InputSuffix>
-          </InputForm>
-        </InputSection>
-
-        <style jsx>{`
-          :global(body) {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-              Helvetica, sans-serif;
-          }
-          ul {
-            display: flex;
-            justify-content: space-between;
-          }
-          nav > ul {
-            padding: 4px 16px;
-          }
-          li {
-            display: flex;
-            padding: 6px 8px;
-          }
-          a {
-            color: #067df7;
-            text-decoration: none;
-            font-size: 13px;
-          }
-
-          .hero {
-            width: 100%;
-            color: #333;
-          }
-          .title {
-            margin: 0;
-            width: 100%;
-            padding-top: 80px;
-            line-height: 1.15;
-            font-size: 48px;
-          }
-          .title,
-          .description {
-            text-align: center;
-          }
-        `}</style>
-      </div>
-    </div>
+      <InputSection>
+        <InputForm action="/jump">
+          <InputPrefix>njt</InputPrefix>
+          <Input
+            ref={inputRef}
+            name="to"
+            placeholder="<package> [destination]"
+          />
+          <InputSuffix>🐸 →</InputSuffix>
+        </InputForm>
+      </InputSection>
+    </Container>
   );
 };
 
