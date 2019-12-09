@@ -19,21 +19,22 @@ npm jump to: package navigation shortcuts you dreamed about
 https://njt.now.sh
 
 
-Destinations
+Available destinations
 ------------
 
+${/* When updating, remember to reflect changes in README.md and src/pages/index.tsx */''}
 ${green('c')} → changelog
 ${green('h')} → homepage (aliased as ${green('w')} for website or ${green('d')} for docs)
 ${green('i')} → issues (aliased as ${green('b')} for bugs)
-${green('n')} → package info on [npmjs.com](https://www.npmjs.com/)
+${green('n')} → package info on https://www.npmjs.com/
 ${green('p')} → pull requests (aliased as ${green('m')} for merge requests)
 ${green('r')} → list of github releases
 ${green('s')} → source (most commonly repository root, but can take you to a subdirectory in case of a monorepo)
 ${green('t')} → list of git tags
-${green('v')} → list of package versions with their publish dates on [npmjs.com](https://www.npmjs.com/)
-${green('y')} → package page on [yarnpkg.com](https://yarnpkg.com/) (mirror registry for [npmjs.com](https://www.npmjs.com/))
-${/* When updating, remember to reflect changes in README.md */''}
+${green('v')} → list of package versions with their publish dates on https://www.npmjs.com/
+${green('y')} → package page on https://yarnpkg.com/ (mirror registry for https://www.npmjs.com/)
 
+Omitting the destination takes you to the package page on https://www.npmjs.com/ as if you used ${green('n')}.
 
 Examples
 --------
@@ -50,7 +51,7 @@ ${code('njt prettier c')} (changelog)
 🐸  → https://github.com/prettier/prettier/blob/master/CHANGELOG.md
 
 ${code('njt prettier y')} (yarn)
-🐸  → https://yarn.pm/prettier
+🐸  → https://yarnpkg.com/package/prettier
 `,
   )
   .parse(process.argv);

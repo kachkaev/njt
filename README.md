@@ -31,7 +31,7 @@ Examples:
 🐸 → https://github.com/prettier/prettier/blob/master/CHANGELOG.md
 
 `njt prettier y` (yarn)  
-🐸 → https://yarn.pm/prettier
+🐸 → https://yarnpkg.com/package/prettier
 
 _There’s more, see below!_
 
@@ -106,6 +106,8 @@ Feel free [to suggest](https://github.com/kachkaev/njt/issues/new) another entry
 
 ## Available destinations
 
+<!-- When updating, remember to reflect changes in cli/cli.js and src/pages/index.tsx -->
+
 - `c` → changelog
 - `h` → homepage (aliased as `w` for website or `d` for docs)
 - `i` → issues (aliased as `b` for bugs)
@@ -116,8 +118,6 @@ Feel free [to suggest](https://github.com/kachkaev/njt/issues/new) another entry
 - `t` → list of git tags
 - `v` → list of package versions with their publish dates on [npmjs.com](https://www.npmjs.com/)
 - `y` → package page on [yarnpkg.com](https://yarnpkg.com/) (mirror registry for [npmjs.com](https://www.npmjs.com/))
-
-<!-- When updating, remember to reflect changes in src/cli/cli.js -->
 
 Omitting the destination takes you to the package page on [npmjs.com](https://www.npmjs.com/) as if you used `n`.
 

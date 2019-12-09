@@ -24,6 +24,10 @@ code {
   padding: .1em .2em;
   border-radius: 3px;
 }
+
+h3 {
+  margin-top: 2em;
+}
 `;
 
 const Container = styled.div`
@@ -65,7 +69,7 @@ const InputForm = styled.form`
   display: inline-block;
   white-space: nowrap;
   font-size: 2em;
-  margin: 20px auto 60px;
+  margin: 20px auto;
   width: 100%;
   max-width: 100%;
   font-family: monospace;
@@ -168,6 +172,9 @@ const IndexPage = () => {
       <Markdown>{`
 ### Available destinations
 
+${
+  /* When updating, remember to reflect changes in README.md and cli/cli.js */ ""
+}
 \`c\` → changelog  
 \`h\` → homepage (aliased as \`w\` for website or \`d\` for docs)  
 \`i\` → issues (aliased as \`b\` for bugs)  
@@ -178,6 +185,8 @@ const IndexPage = () => {
 \`t\` → list of git tags  
 \`v\` → list of package versions with their publish dates on [npmjs.com](https://www.npmjs.com/)  
 \`y\` → package page on [yarnpkg.com](https://yarnpkg.com/) (mirror registry for [npmjs.com](https://www.npmjs.com/))  
+
+Omitting the destination takes you to the package page on [npmjs.com](https://www.npmjs.com/) as if you used \`n\`.
 
 ### Examples
 
@@ -194,7 +203,7 @@ const IndexPage = () => {
 🐸 → https://github.com/prettier/prettier/blob/master/CHANGELOG.md
 
 \`njt prettier y\` (yarn)  
-🐸 → https://yarn.pm/prettier
+🐸 → https://yarnpkg.com/package/prettier
   `}</Markdown>
     </Container>
   );
