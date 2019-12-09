@@ -1,14 +1,8 @@
-<h1 align="center"> 🐸 njt 🐸</h1>
+<h2 align="center"> 🐸 njt 🐸</h2>
 
 <p align="center">
 <b>🐸 npm jump to 🐸</b><br/>
 <a href="https://njt.now.sh/">njt.now.sh</a>
-</p>
-
-<p align="center">
-🛠🛠🛠🛠🛠🛠🛠🛠🛠🛠<br/>
-⚠️⚠️ <b>work in progress</b> ⚠️⚠️<br/>
-🛠🛠🛠🛠🛠🛠🛠🛠🛠🛠
 </p>
 
 Are you often typing npm package names in your search engine to then manually navigate to their source, homepage, changelog, versions and so on? 🕐🕑🕒🕓🕔
@@ -134,7 +128,7 @@ For requests like `njt [package]`, `njt [package] n` or `njt [package] y`, all t
 Other cases involve a quick inspection of `package.json` in the latest published version.
 This file contains the location of the repository, the homepage and some other fields, which `njt` uses to construct the destination URL.
 
-The command line version of the tool takes you to `https://njt.now.sh/jump?q=YOUR_QUERY`, from which you are redirected to the destination.
+The command line version of the tool takes you to `https://njt.now.sh/jump?to=YOUR_QUERY`, from which you are redirected to the destination.
 
 ## Prior art
 
