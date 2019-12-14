@@ -143,13 +143,22 @@ const IndexPage = () => {
   useEffect(() => {
     inputRef.current.focus();
   }, []);
+  const title = "njt (npm jump to)";
+  const description = "package navigation shortcuts you dreamed about";
   return (
     <Container>
       <Head>
-        <title>njt (npm jump to)</title>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta
-          name="description"
-          content="package navigation shortcuts you dreamed about"
+          property="og:image"
+          content={`${process.env.siteUrl}/og-image.png`}
+        />
+        <meta
+          property="vk:image"
+          content={`${process.env.siteUrl}/og-image.png`}
         />
       </Head>
       <GlobalStyle />
