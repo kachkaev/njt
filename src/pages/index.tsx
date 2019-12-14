@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import Markdown from "markdown-to-jsx";
 import Head from "next/head";
+import GlobalStyle from "../components/GlobalStyle";
 
 const Container = styled.div`
   margin: 0 auto;
@@ -137,6 +138,7 @@ const IndexPage = () => {
   const description = "package navigation shortcuts you dreamed about";
   return (
     <Container>
+      <GlobalStyle />
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
