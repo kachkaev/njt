@@ -3,7 +3,11 @@ import styled from "styled-components";
 import ExternalLink from "./ExternalLink";
 import ClickableCode from "./ClickableCode";
 
-const Row = styled.span`
+const Remark = styled.span`
+  white-space: nowrap;
+`
+
+const LinkRow = styled.span`
   display: block;
   white-space: nowrap;
   overflow: hidden;
@@ -23,13 +27,13 @@ const Example: React.FunctionComponent<{
 
   return (
     <p>
-      <Row>
-        <ClickableCode onClick={handleCodeClick}>njt {to}</ClickableCode> (
-        {remark})
-      </Row>
-      <Row>
+      <span>
+        <ClickableCode onClick={handleCodeClick}>njt {to}</ClickableCode> <Remark>(
+        {remark})</Remark>
+      </span>
+      <LinkRow>
         🐸 → <ExternalLink href={url} />
-      </Row>
+      </LinkRow>
     </p>
   );
 };

@@ -33,7 +33,7 @@ const Error: NextPage<{ statusCode?: number }> = ({ statusCode }) => {
       <Message>{message}</Message>
 
       <Link href="/">
-        <a>🐸→ home page</a>
+        <a>🐸 → home page</a>
       </Link>
     </Container>
   );

@@ -9,7 +9,7 @@ const Wrapper = styled.div`
 const Signature: React.FunctionComponent<{ children?: never }> = () => {
   return (
     <Wrapper>
-      crafted by{" "}
+      Crafted by{" "}
       <ExternalLink href="https://en.kachkaev.ru">
         Alexander Kachkaev
       </ExternalLink>{" "}
