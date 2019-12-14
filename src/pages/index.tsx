@@ -91,7 +91,7 @@ const InputForm = styled.form`
   }
 `;
 
-const InputPrefix = styled.span`
+const InputPrefix = styled.label`
   padding: 0 0 0 0.7em;
   display: inline-block;
   position: absolute;
@@ -167,9 +167,10 @@ const IndexPage = () => {
 
       <InputSection>
         <InputForm action="/jump">
-          <InputPrefix>njt</InputPrefix>
+          <InputPrefix htmlFor="to">njt</InputPrefix>
           <Input
             ref={inputRef}
+            id="to"
             name="to"
             placeholder="<package> [destination]"
           />
