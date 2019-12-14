@@ -67,7 +67,7 @@ const getRepoUrl = async (
 
 const destinationConfigs: DestinationConfig[] = [
   {
-    keywords: ["c", "changelog"],
+    keywords: ["c"],
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
       if (repoUrl) {
@@ -76,7 +76,7 @@ const destinationConfigs: DestinationConfig[] = [
     },
   },
   {
-    keywords: ["h", "home", "homepage", "d", "docs"],
+    keywords: ["h", "w", "d"],
     generateUrl: async (packageName) => {
       // Reference implementation: https://github.com/npm/cli/blob/latest/lib/docs.js
       const packageMetadata = await getPackageMetadata(packageName);
@@ -87,7 +87,7 @@ const destinationConfigs: DestinationConfig[] = [
     },
   },
   {
-    keywords: ["i", "issues", "b", "bugs"],
+    keywords: ["i", "b"],
     generateUrl: async (packageName) => {
       // Reference implementation: https://github.com/npm/cli/blob/latest/lib/bugs.js
       const packageMetadata = await getPackageMetadata(packageName);
@@ -108,19 +108,11 @@ const destinationConfigs: DestinationConfig[] = [
     },
   },
   {
-    keywords: ["n", "npm", ""],
+    keywords: ["n", ""],
     generateUrl: (packageName) => `https://npmjs.com/package/${packageName}`,
   },
   {
-    keywords: [
-      "p",
-      "pulls",
-      "prs",
-      "pullrequests",
-      "m",
-      "mergerequests",
-      "mrs",
-    ],
+    keywords: ["p", "m"],
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
       if (repoUrl && repoUrl.includes("://github.com")) {
@@ -132,7 +124,7 @@ const destinationConfigs: DestinationConfig[] = [
     },
   },
   {
-    keywords: ["r", "releases"],
+    keywords: ["r"],
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
       if (repoUrl && repoUrl.includes("://github.com")) {
@@ -144,7 +136,7 @@ const destinationConfigs: DestinationConfig[] = [
     },
   },
   {
-    keywords: ["s", "source"],
+    keywords: ["s"],
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName, {
         skipDirectoryTrimming: true,
@@ -158,7 +150,7 @@ const destinationConfigs: DestinationConfig[] = [
     },
   },
   {
-    keywords: ["t", "tags"],
+    keywords: ["t"],
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
       if (repoUrl && repoUrl.includes("://github.com")) {
@@ -170,12 +162,12 @@ const destinationConfigs: DestinationConfig[] = [
     },
   },
   {
-    keywords: ["v", "version", "versions"],
+    keywords: ["v"],
     generateUrl: (packageName) =>
       `https://npmjs.com/package/${packageName}?activeTab=versions`,
   },
   {
-    keywords: ["y", "yarn"],
+    keywords: ["y"],
     generateUrl: (packageName) => `https://yarnpkg.com/package/${packageName}`,
   },
 ];
