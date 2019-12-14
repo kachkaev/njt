@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useRef, useEffect, useCallback } from "react";
+import { useRef, useEffect, useCallback, useState } from "react";
 
 const Form = styled.form`
   display: block;
@@ -37,7 +37,7 @@ const Form = styled.form`
   }
 `;
 
-const FormPrefix = styled.label`
+const Label = styled.label`
   padding: 0.3em 0 0 0.7em;
   font-family: monospace;
   display: inline-block;
@@ -46,7 +46,7 @@ const FormPrefix = styled.label`
   left: 0;
   pointer-events: none;
 `;
-const FormInput = styled.input`
+const Input = styled.input`
   display: inline-block;
   padding: 0.3em 4em 0.3em 3em;
   background: rgba(27, 31, 35, 0.05);
@@ -73,7 +73,7 @@ const FormInput = styled.input`
   }
 `;
 
-const FormSubmit = styled.button`
+const SubmitButton = styled.button`
   border: none;
   background: transparent;
   line-height: inherit;
@@ -96,20 +96,14 @@ const InputForm: React.FunctionComponent<{
   text?: string;
   onTextChange?: (value: string) => void;
 }> = ({ text, onTextChange }) => {
-  const inputRef = useRef<HTMLInputElement>();
-
+  const toInputRef = useRef<HTMLInputElement>();
   const focusAndSelectAll = useCallback(() => {
-    const input = inputRef.current;
+    const input = toInputRef.current;
     if (input) {
       input.setSelectionRange(0, input.value.length);
       input.focus();
     }
-  }, [inputRef]);
-
-  useEffect(() => {
-    focusAndSelectAll();
-  }, [focusAndSelectAll]);
-
+  }, [toInputRef]);
   const handleInputChange = useCallback(
     ({ currentTarget: { value } }) => {
       onTextChange?.(value);
@@ -117,14 +111,26 @@ const InputForm: React.FunctionComponent<{
     [onTextChange],
   );
 
-  const from = "web";
+  useEffect(() => {
+    focusAndSelectAll();
+  }, [focusAndSelectAll]);
+
+  const [from, setFrom] = useState("noscript");
+  const fromInputRef = useRef<HTMLInputElement>();
+  useEffect(() => {
+    setFrom("bookmark");
+  }, []);
+  const handleFormSubmit = () => {
+    fromInputRef.current.value = "web";
+    return true;
+  };
 
   return (
-    <Form action="/jump">
-      <input type="hidden" name="from" value={from} />
-      <FormPrefix htmlFor="to">njt</FormPrefix>
-      <FormInput
-        ref={inputRef}
+    <Form action="/jump" onSubmitCapture={handleFormSubmit}>
+      <input ref={fromInputRef} type="hidden" name="from" value={from} />
+      <Label htmlFor="to">njt</Label>
+      <Input
+        ref={toInputRef}
         id="to"
         name="to"
         placeholder="<package> [destination]"
@@ -132,7 +138,7 @@ const InputForm: React.FunctionComponent<{
         onFocus={focusAndSelectAll}
         onChange={handleInputChange}
       />
-      <FormSubmit tabIndex={-1}>🐸 →</FormSubmit>
+      <SubmitButton tabIndex={-1}>🐸 →</SubmitButton>
     </Form>
   );
 };

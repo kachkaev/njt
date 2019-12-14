@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Markdown from "markdown-to-jsx";
 import Head from "next/head";
@@ -90,7 +90,6 @@ const IndexPage = () => {
       </TopSection>
 
       <InputForm text={inputText} onTextChange={setInputText} />
-      {inputText}
 
       <Markdown>{`
 ### Available destinations
