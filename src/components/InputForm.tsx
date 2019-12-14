@@ -63,6 +63,7 @@ const Input = styled.input`
   border: 1px solid #ccc;
   border-radius: 5px;
   -webkit-appearance: none;
+  transition: all 0.2s ease-in-out;
 
   ::placeholder {
     color: #aaa;

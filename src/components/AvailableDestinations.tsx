@@ -5,11 +5,13 @@ import ClickableCode from "./ClickableCode";
 
 const Ul = styled.ul`
   padding-left: 0;
+  overflow: hidden;
 `;
 const Item = styled.li<{ highlighted?: boolean }>`
   list-style: none;
   white-space: nowrap;
-  overflow: hidden;
+  transition: color 0.2s ease-in-out;
+
   ${(p) => (p.highlighted ? "color: #42a73f" : "")};
 `;
 const Keyword = styled(ClickableCode)<{ onClick: Function; children: string }>`
