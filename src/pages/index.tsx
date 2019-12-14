@@ -61,8 +61,18 @@ const IndexPage = () => {
         top: 0,
         behavior: "smooth",
       });
-      setInputText("");
+      setInputText(" ");
       setTimeout(() => setInputText(text), 0);
+    },
+    [setInputText],
+  );
+
+  const handleSelectedDestinationChange = useCallback(
+    (destination) => {
+      setInputText((currentInputText) => {
+        const currentPackage = currentInputText.trim().split(" ", 1)[0];
+        return `${currentPackage || "prettier"} ${destination}`;
+      });
     },
     [setInputText],
   );
@@ -110,7 +120,7 @@ const IndexPage = () => {
       <H2>Available destinations</H2>
       <AvailableDestinations
         selectedDestination={inputText.trim().split(" ", 2)[1]}
-        onSelectedDestinationChange={undefined}
+        onSelectedDestinationChange={handleSelectedDestinationChange}
       />
 
       <H2>Examples</H2>

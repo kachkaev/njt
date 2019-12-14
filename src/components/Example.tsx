@@ -1,16 +1,7 @@
 import React, { memo } from "react";
 import styled from "styled-components";
 import ExternalLink from "./ExternalLink";
-
-const ClickableCode = styled.code`
-  .js & {
-    cursor: pointer;
-    border-bottom: 1px dotted #24292e66;
-    :active {
-      background: #e3e3e3;
-    }
-  }
-`;
+import ClickableCode from "./ClickableCode";
 
 const Row = styled.span`
   display: block;
