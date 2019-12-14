@@ -11,9 +11,20 @@ const Container = styled.div`
   max-width: 35em;
 `;
 
+const TopOfPage = styled.div`
+  padding: 80px 0 40px;
+
+  @media (max-width: 700px) {
+    padding: 40px 0 20px;
+  }
+
+  @media (max-width: 550px) {
+    padding: 10px 0 0px;
+  }
+`;
+
 const Title = styled.h1`
   margin: 0;
-  padding-top: 80px;
   font-size: 48px;
   line-height: 1.4em;
   text-align: center;
@@ -24,7 +35,7 @@ const Description = styled.div`
 `;
 
 const ExternalLinks = styled.div`
-  margin: 10px auto 40px;
+  margin: 10px auto 0;
   text-align: center;
 `;
 
@@ -160,17 +171,19 @@ const IndexPage = () => {
           content={`${process.env.siteUrl}/og-image.png`}
         />
       </Head>
-      <Title>🐸 njt 🐸</Title>
-      <Description>🐸 npm jump to  🐸</Description>
 
-      <ExternalLinks>
-        <ExternalLink href="https://github.com/kachkaev/njt">
-          github
-        </ExternalLink>
-        <ExternalLink href="https://www.npmjs.com/package/njt">
-          npm
-        </ExternalLink>
-      </ExternalLinks>
+      <TopOfPage>
+        <Title>🐸 njt 🐸</Title>
+        <Description>🐸 npm jump to  🐸</Description>
+        <ExternalLinks>
+          <ExternalLink href="https://github.com/kachkaev/njt">
+            github
+          </ExternalLink>
+          <ExternalLink href="https://www.npmjs.com/package/njt">
+            npm
+          </ExternalLink>
+        </ExternalLinks>
+      </TopOfPage>
 
       <InputSection>
         <InputForm action="/jump">
