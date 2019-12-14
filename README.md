@@ -86,7 +86,7 @@ The command to type in Firefox address bar will become `n <package> [destination
 
 ### 🟢 DuckDuckGo bang
 
-> I'll submit the bang to DuckDuckGo as soon as the MVP is ready
+> DuckDuckGo bang is awaiting approval
 
 <s>If you use [duckduckgo.com](https://duckduckgo.com/) as your primary search engine, type `!njt <package> [destination]` in its search field (note the leading exclamation mark).
 This trick is possible thanks to DuckDuckGo’s awesome [bang feature](https://duckduckgo.com/bang).</s>
