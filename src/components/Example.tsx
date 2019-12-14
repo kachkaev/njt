@@ -5,7 +5,7 @@ import ClickableCode from "./ClickableCode";
 
 const Remark = styled.span`
   white-space: nowrap;
-`
+`;
 
 const LinkRow = styled.span`
   display: block;
@@ -28,8 +28,8 @@ const Example: React.FunctionComponent<{
   return (
     <p>
       <span>
-        <ClickableCode onClick={handleCodeClick}>njt {to}</ClickableCode> <Remark>(
-        {remark})</Remark>
+        <ClickableCode onClick={handleCodeClick}>njt {to}</ClickableCode>{" "}
+        <Remark>({remark})</Remark>
       </span>
       <LinkRow>
         🐸 → <ExternalLink href={url} />

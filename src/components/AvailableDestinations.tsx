@@ -56,6 +56,10 @@ const AvailableDestinations: React.FunctionComponent<{
         info: "changelog",
       },
       {
+        keywords: ["g"],
+        info: <>github (gitlab, etc.) repository root</>,
+      },
+      {
         keywords: ["h", "w", "d"],
         info: (
           <>
@@ -100,8 +104,8 @@ const AvailableDestinations: React.FunctionComponent<{
         keywords: ["s"],
         info: (
           <>
-            source (most commonly repository root, but can take you to
-            a&nbsp;subdirectory in case of a&nbsp;monorepo)
+            source (often same as repository root, but can be
+            its&nbsp;subdirectory in case of a&nbsp;monorepo)
           </>
         ),
       },
@@ -110,10 +114,19 @@ const AvailableDestinations: React.FunctionComponent<{
         info: "list of git tags",
       },
       {
+        keywords: ["u"],
+        info: (
+          <>
+            package contents preview on{" "}
+            <ExternalLink href="https://unpkg.com" />
+          </>
+        ),
+      },
+      {
         keywords: ["v"],
         info: (
           <>
-            list of package versions with their publish dates on{" "}
+            list of package versions with dates on{" "}
             <ExternalLink href="https://www.npmjs.com" />
           </>
         ),

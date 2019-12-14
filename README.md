@@ -2,7 +2,7 @@
 
 <p align="center">
 <b>🐸 npm jump to 🐸</b><br/>
-<a href="https://njt.now.sh/">njt.now.sh</a>
+<a href="https://njt.now.sh">njt.now.sh</a>
 </p>
 
 Are you typing npm package names in your search engine to then manually navigate to their source, homepage, changelog, versions and so on? 🕐🕑🕒🕓🕔
@@ -77,7 +77,7 @@ You can use `njt` right from the address bar in Firefox.
 1.  Hit _Save_
 
 From now on, typing `njt <package> [destination]` in the address bar will take you directly to a page you want.
-For example, `njt react h` will take you to the [React.js homepage](https://reactjs.org/).
+For example, `njt react h` will take you to the [React.js homepage](https://reactjs.org).
 
 To uninstall, open Firefox bookmarks from the main menu, search for `njt` and remove the bookmark.
 
@@ -88,7 +88,7 @@ The command to type in Firefox address bar will become `n <package> [destination
 
 > DuckDuckGo bang is awaiting approval
 
-<s>If you use [duckduckgo.com](https://duckduckgo.com/) as your primary search engine, type `!njt <package> [destination]` in its search field (note the leading exclamation mark).
+<s>If you use [duckduckgo.com](https://duckduckgo.com) as your primary search engine, type `!njt <package> [destination]` in its search field (note the leading exclamation mark).
 This trick is possible thanks to DuckDuckGo’s awesome [bang feature](https://duckduckgo.com/bang).</s>
 
 ### 🟢 Online search field on the `njt`’s mini-website
@@ -109,17 +109,19 @@ Feel free [to suggest](https://github.com/kachkaev/njt/issues/new) another entry
 <!-- When updating, remember to reflect changes in cli/cli.js and src/components/AvailableDestinations.tsx -->
 
 - `c` → changelog
+- `g` → github (gitlab, etc.) repository root
 - `h` → homepage (aliased as `w` for website or `d` for docs)
 - `i` → issues (aliased as `b` for bugs)
-- `n` → package info on [npmjs.com](https://www.npmjs.com/)
+- `n` → package info on [npmjs.com](https://www.npmjs.com)
 - `p` → pull requests (aliased as `m` for merge requests)
 - `r` → list of github releases
-- `s` → source (most commonly repository root, but can take you to a subdirectory in case of a monorepo)
+- `s` → source (often same as repository root, but can be its subdirectory in case of a monorepo)
 - `t` → list of git tags
-- `v` → list of package versions with their publish dates on [npmjs.com](https://www.npmjs.com/)
-- `y` → package page on [yarnpkg.com](https://yarnpkg.com/) (mirror registry for [npmjs.com](https://www.npmjs.com/))
+- `u` → package contents preview on [yarnpkg.com](https://yarnpkg.com) (mirror registry for [npmjs.com](https://www.npmjs.com))
+- `v` → list of package versions with dates on [npmjs.com](https://www.npmjs.com)
+- `y` → package page on [yarnpkg.com](https://yarnpkg.com)
 
-Omitting the destination takes you to the package page on [npmjs.com](https://www.npmjs.com/) as if you used `n`.
+Omitting the destination or entering an non-existing one takes you to the package page on [npmjs.com](https://www.npmjs.com) as if you used `n`.
 
 ## How does `njt` work?
 

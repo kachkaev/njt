@@ -76,6 +76,15 @@ const destinationConfigs: DestinationConfig[] = [
     },
   },
   {
+    keywords: ["g"],
+    generateUrl: async (packageName) => {
+      return await getRepoUrl(packageName, {
+        skipDirectoryTrimming: true,
+      });
+    },
+  },
+
+  {
     keywords: ["h", "w", "d"],
     generateUrl: async (packageName) => {
       // Reference implementation: https://github.com/npm/cli/blob/latest/lib/docs.js
@@ -165,6 +174,10 @@ const destinationConfigs: DestinationConfig[] = [
     keywords: ["v"],
     generateUrl: (packageName) =>
       `https://npmjs.com/package/${packageName}?activeTab=versions`,
+  },
+  {
+    keywords: ["u"],
+    generateUrl: (packageName) => `https://unpkg.com/browse/${packageName}/`,
   },
   {
     keywords: ["y"],
