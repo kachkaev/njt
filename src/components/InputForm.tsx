@@ -78,6 +78,7 @@ const SubmitButton = styled.button`
   background: transparent;
   line-height: inherit;
   padding: 0.25em 0.4em 0.3em 0;
+  cursor: pointer;
 
   position: absolute;
   top: 1px;
