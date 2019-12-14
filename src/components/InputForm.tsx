@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { useRef, useEffect, useCallback, useState } from "react";
 
+const verticalFormPadding = 20;
+
 const Form = styled.form`
   display: block;
   white-space: nowrap;
   font-size: 2em;
-  margin: 20px auto;
+  padding: ${verticalFormPadding}px 0 0;
   width: 100%;
   max-width: 100%;
   position: relative;
@@ -42,7 +44,7 @@ const Label = styled.label`
   font-family: monospace;
   display: inline-block;
   position: absolute;
-  top: 1px;
+  top: ${verticalFormPadding + 1}px;
   left: 0;
   pointer-events: none;
 `;
@@ -81,7 +83,7 @@ const SubmitButton = styled.button`
   cursor: pointer;
 
   position: absolute;
-  top: 1px;
+  top: ${verticalFormPadding + 1}px;
   right: 0;
 
   :active {
@@ -97,15 +99,22 @@ const InputForm: React.FunctionComponent<{
   text?: string;
   onTextChange?: (value: string) => void;
 }> = ({ text, onTextChange }) => {
+  const formRef = useRef<HTMLFormElement>();
+
   const previousToValue = useRef<string>(undefined);
   const toInputRef = useRef<HTMLInputElement>();
   const focusAndSelectAll = useCallback(() => {
     const input = toInputRef.current;
     if (input) {
-      input.setSelectionRange(0, input.value.length);
       input.focus({ preventScroll: true });
+      input.setSelectionRange(0, input.value.length);
     }
-  }, [toInputRef]);
+    formRef.current.scrollIntoView({
+      block: "nearest",
+      inline: "nearest",
+      behavior: "smooth",
+    });
+  }, [toInputRef, formRef]);
   const handleInputChange = useCallback(
     ({ currentTarget: { value } }) => {
       previousToValue.current = value;
@@ -132,7 +141,7 @@ const InputForm: React.FunctionComponent<{
   };
 
   return (
-    <Form action="/jump" onSubmitCapture={handleFormSubmit}>
+    <Form ref={formRef} action="/jump" onSubmitCapture={handleFormSubmit}>
       <input ref={fromInputRef} type="hidden" name="from" value={from} />
       <Label htmlFor="to">njt</Label>
       <Input

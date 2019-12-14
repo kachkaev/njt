@@ -58,10 +58,6 @@ const IndexPage = () => {
 
   const handleExampleClick = useCallback(
     (text) => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
       setInputText(" ");
       setTimeout(() => setInputText(text), 0);
     },
