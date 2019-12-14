@@ -44,12 +44,25 @@ const handleUnknownHostedUrl = (url: string): string | undefined => {
   } catch (e) {}
 };
 
-const getRepoUrl = async (packageName: string): Promise<string> => {
+const getRepoUrl = async (
+  packageName: string,
+  { skipDirectoryTrimming }: { skipDirectoryTrimming?: boolean } = {},
+): Promise<string> => {
   // Reference implementation: https://github.com/npm/cli/blob/latest/lib/repo.js
   const packageMetadata = await getPackageMetadata(packageName);
   const rawUrl = packageMetadata.repository["url"];
   const info = hostedGitInfo.fromUrl(rawUrl);
-  return info ? info.browse() : handleUnknownHostedUrl(rawUrl);
+  let result = info ? info.browse() : handleUnknownHostedUrl(rawUrl);
+
+  // Some packages (e.g. babel and babel-cli) mistakenly specify repository URL with directory. It needs to be trimmed
+  if (!skipDirectoryTrimming) {
+    console.log("result 1", result);
+    result = result.replace(
+      /^https:\/\/github\.com\/([^\/]+)\/([^\/]+)(.*)/i,
+      "https://github.com/$1/$2",
+    );
+  }
+  return result;
 };
 
 const destinationConfigs: DestinationConfig[] = [
@@ -68,7 +81,9 @@ const destinationConfigs: DestinationConfig[] = [
       // Reference implementation: https://github.com/npm/cli/blob/latest/lib/docs.js
       const packageMetadata = await getPackageMetadata(packageName);
 
-      return `${packageMetadata.homepage}`;
+      return typeof packageMetadata?.homepage === "string"
+        ? packageMetadata.homepage
+        : undefined;
     },
   },
   {
@@ -85,6 +100,7 @@ const destinationConfigs: DestinationConfig[] = [
         return directUrl;
       }
       const repoUrl = await getRepoUrl(packageName);
+
       if (repoUrl) {
         return `${repoUrl}/issues`;
       }
@@ -130,7 +146,9 @@ const destinationConfigs: DestinationConfig[] = [
   {
     keywords: ["s", "source"],
     generateUrl: async (packageName) => {
-      const repoUrl = await getRepoUrl(packageName);
+      const repoUrl = await getRepoUrl(packageName, {
+        skipDirectoryTrimming: true,
+      });
       const packageMetadata = await getPackageMetadata(packageName);
       const sourceDirectory = packageMetadata.repository["directory"];
       if (repoUrl && sourceDirectory) {
