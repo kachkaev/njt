@@ -5,10 +5,10 @@
 <a href="https://njt.now.sh/">njt.now.sh</a>
 </p>
 
-Are you often typing npm package names in your search engine to then manually navigate to their source, homepage, changelog, versions and so on? 🕐🕑🕒🕓🕔
+Are you typing npm package names in your search engine to then manually navigate to their source, homepage, changelog, versions and so on? 🕐🕑🕒🕓🕔
 
 [Save five seconds thousands of times](https://xkcd.com/1205/) by quickly jumping to the right URL!
-Here is a magic spell for you to remember:
+Here is a magic spell to remember:
 
 ```
 🐸✨🐸✨🐸
@@ -123,7 +123,7 @@ Omitting the destination takes you to the package page on [npmjs.com](https://ww
 
 ## How does `njt` work?
 
-For requests like `njt [package]`, `njt [package] n` or `njt [package] y`, all the tool does is navigating you to URLs like `https://www.npmjs.com/package/[package]` or `https://yarnpkg.com/package/package]`.
+For requests like `njt [package]`, `njt [package] n` or `njt [package] y`, all the tool does is navigating you to URLs like `https://www.npmjs.com/package/[package]` or `https://yarnpkg.com/package/[package]`.
 
 Other cases involve a quick inspection of `package.json` in the latest published version.
 This file contains the location of the repository, the homepage and some other fields, which `njt` uses to construct the destination URL.
