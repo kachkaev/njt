@@ -109,7 +109,7 @@ const IndexPage = () => {
 
       <H2>Available destinations</H2>
       <AvailableDestinations
-        selectedDestination={""}
+        selectedDestination={inputText.trim().split(" ", 2)[1]}
         onSelectedDestinationChange={undefined}
       />
 

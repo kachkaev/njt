@@ -5,12 +5,19 @@ import ExternalLink from "./ExternalLink";
 const Ul = styled.ul`
   padding-left: 0;
 `;
-const Item = styled.li<{ noMainKeyword?: boolean }>`
+const Item = styled.li<{ highlighted?: boolean }>`
   list-style: none;
   white-space: nowrap;
-  ${(p) => (p.noMainKeyword ? "margin-top: 1em" : "")};
+  ${(p) => (p.highlighted ? "color: #42a73f" : "")};
 `;
-const Keyword = styled.code``;
+const Keyword = styled.code`
+  color: #24292e;
+`;
+const Arrow = styled.span`
+  :after {
+    content: "→";
+  }
+`;
 const Info = styled.span`
   display: inline-block;
   white-space: normal;
@@ -18,7 +25,7 @@ const Info = styled.span`
 `;
 
 interface KeywordInfo {
-  keywords?: string[];
+  keywords: string[];
   info: React.ReactNode;
 }
 
@@ -91,36 +98,32 @@ const keywordInfos: KeywordInfo[] = [
       </>
     ),
   },
-  {
-    info: (
-      <>
-        Omitting the destination or entering an non-existing one takes you to
-        the package page on <ExternalLink href="https://www.npmjs.com" /> as if
-        you used <Keyword>n</Keyword>.
-      </>
-    ),
-  },
 ];
 
 const AvailableDestinations: React.FunctionComponent<{
   selectedDestination?: string;
   onSelectedDestinationChange: (selectedDestination: string) => void;
-}> = () => {
+}> = ({ selectedDestination, onSelectedDestinationChange }) => {
   return (
-    <Ul>
-      {keywordInfos.map(({ keywords, info }, index) => {
-        const mainKeyword = keywords?.[0];
-        return mainKeyword ? (
-          <Item key={index}>
-            <Keyword>{mainKeyword}</Keyword> → <Info>{info}</Info>
+    <>
+      <Ul>
+        {keywordInfos.map(({ keywords, info }, index) => (
+          <Item
+            key={index}
+            highlighted={
+              selectedDestination && keywords.includes(selectedDestination)
+            }
+          >
+            <Keyword>{keywords[0]}</Keyword> <Arrow /> <Info>{info}</Info>
           </Item>
-        ) : (
-          <Item key={index} noMainKeyword={true}>
-            <Info>{info}</Info>
-          </Item>
-        );
-      })}
-    </Ul>
+        ))}
+      </Ul>
+      <p>
+        Omitting the destination or entering an non-existing one takes you to
+        the package page on <ExternalLink href="https://www.npmjs.com" /> as if
+        you used <Keyword>n</Keyword>.
+      </p>
+    </>
   );
 };
 
