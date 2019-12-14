@@ -102,7 +102,7 @@ const InputForm: React.FunctionComponent<{
     const input = toInputRef.current;
     if (input) {
       input.setSelectionRange(0, input.value.length);
-      input.focus();
+      input.focus({ preventScroll: true });
     }
   }, [toInputRef]);
   const handleInputChange = useCallback(
@@ -121,6 +121,7 @@ const InputForm: React.FunctionComponent<{
 
   const [from, setFrom] = useState("noscript");
   const fromInputRef = useRef<HTMLInputElement>();
+
   useEffect(() => {
     setFrom("bookmark");
   }, []);

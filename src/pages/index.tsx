@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 import Markdown from "markdown-to-jsx";
 import Head from "next/head";
@@ -51,6 +51,18 @@ const IndexPage = () => {
   const title = "njt (npm jump to)";
   const description = "package navigation shortcuts you dreamed about";
   const [inputText, setInputText] = useState("");
+
+  const handleExampleClick = useCallback(
+    (text) => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      setInputText("");
+      setTimeout(() => setInputText(text), 0);
+    },
+    [setInputText],
+  );
 
   return (
     <Container>
@@ -118,31 +130,31 @@ Omitting the destination takes you to the package page on [npmjs.com](https://ww
         to="prettier"
         remark="no specified destination"
         url="https://www.npmjs.com/package/prettier"
-        onToClick={setInputText}
+        onToClick={handleExampleClick}
       />
       <Example
         to="prettier h"
         remark="homepage"
         url="https://prettier.io"
-        onToClick={setInputText}
+        onToClick={handleExampleClick}
       />
       <Example
         to="prettier s"
         remark="source"
         url="https://github.com/prettier/prettier"
-        onToClick={setInputText}
+        onToClick={handleExampleClick}
       />
       <Example
         to="prettier c"
         remark="changelog"
         url="https://github.com/prettier/prettier/blob/master/CHANGELOG.md"
-        onToClick={setInputText}
+        onToClick={handleExampleClick}
       />
       <Example
         to="prettier y"
         remark="yarn"
         url="https://yarnpkg.com/package/prettier"
-        onToClick={setInputText}
+        onToClick={handleExampleClick}
       />
     </Container>
   );

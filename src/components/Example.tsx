@@ -27,6 +27,7 @@ const Example: React.FunctionComponent<{
   const handleCodeClick = () => {
     onToClick?.(to);
   };
+
   return (
     <p>
       <Row>
