@@ -22,7 +22,7 @@ https://njt.now.sh
 Available destinations
 ------------
 
-${/* When updating, remember to reflect changes in README.md and src/pages/index.tsx */''}
+${/* When updating, remember to reflect changes in README.md and src/components/AvailableDestinations.tsx */''}
 ${green('c')} → changelog
 ${green('h')} → homepage (aliased as ${green('w')} for website or ${green('d')} for docs)
 ${green('i')} → issues (aliased as ${green('b')} for bugs)

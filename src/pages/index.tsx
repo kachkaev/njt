@@ -1,11 +1,11 @@
 import React, { useState, useCallback } from "react";
 import styled from "styled-components";
-import Markdown from "markdown-to-jsx";
 import Head from "next/head";
 import GlobalStyle from "../components/GlobalStyle";
 import InputForm from "../components/InputForm";
 import Example from "../components/Example";
 import ExternalLink from "../components/ExternalLink";
+import AvailableDestinations from "../components/AvailableDestinations";
 
 const Container = styled.div`
   margin: 0 auto;
@@ -43,6 +43,11 @@ const ExternalLinks = styled.div`
   & > * {
     margin: 0 8px;
   }
+`;
+
+const H2 = styled.h2`
+  margin-top: 3em;
+  font-size: 1em;
 `;
 
 const IndexPage = () => {
@@ -102,28 +107,13 @@ const IndexPage = () => {
 
       <InputForm text={inputText} onTextChange={setInputText} />
 
-      <Markdown>{`
-### Available destinations
+      <H2>Available destinations</H2>
+      <AvailableDestinations
+        selectedDestination={""}
+        onSelectedDestinationChange={undefined}
+      />
 
-${
-  /* When updating, remember to reflect changes in README.md and cli/cli.js */ ""
-}
-\`c\` → changelog  
-\`h\` → homepage (aliased as \`w\` for website or \`d\` for docs)  
-\`i\` → issues (aliased as \`b\` for bugs)  
-\`n\` → package info on [npmjs.com](https://www.npmjs.com/)  
-\`p\` → pull requests (aliased as \`m\` for merge requests)  
-\`r\` → list of github releases  
-\`s\` → source (most commonly repository root, but can take you to a subdirectory in case of a monorepo)  
-\`t\` → list of git tags  
-\`v\` → list of package versions with their publish dates on [npmjs.com](https://www.npmjs.com/)  
-\`y\` → package page on [yarnpkg.com](https://yarnpkg.com/) (mirror registry for [npmjs.com](https://www.npmjs.com/))  
-
-Omitting the destination takes you to the package page on [npmjs.com](https://www.npmjs.com/) as if you used \`n\`.
-
-  `}</Markdown>
-
-      <h3>Examples</h3>
+      <H2>Examples</H2>
       <Example
         to="prettier"
         remark="no specified destination"

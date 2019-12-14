@@ -33,7 +33,8 @@ const Example: React.FunctionComponent<{
   return (
     <p>
       <Row>
-        <ClickableCode onClick={handleCodeClick}>{to}</ClickableCode> ({remark})
+        <ClickableCode onClick={handleCodeClick}>njt {to}</ClickableCode> (
+        {remark})
       </Row>
       <Row>
         🐸 → <ExternalLink href={url} />

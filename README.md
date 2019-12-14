@@ -106,7 +106,7 @@ Feel free [to suggest](https://github.com/kachkaev/njt/issues/new) another entry
 
 ## Available destinations
 
-<!-- When updating, remember to reflect changes in cli/cli.js and src/pages/index.tsx -->
+<!-- When updating, remember to reflect changes in cli/cli.js and src/components/AvailableDestinations.tsx -->
 
 - `c` → changelog
 - `h` → homepage (aliased as `w` for website or `d` for docs)

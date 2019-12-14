@@ -23,10 +23,6 @@ const base = css`
     padding: 0.1em 0.2em;
     border-radius: 3px;
   }
-
-  h3 {
-    margin-top: 2em;
-  }
 `;
 
 const GlobalStyle = createGlobalStyle`
