@@ -110,12 +110,7 @@ const InputForm: React.FunctionComponent<{
       input.focus({ preventScroll: true });
       input.setSelectionRange(0, input.value.length);
     }
-    formRef.current.scrollIntoView({
-      block: "nearest",
-      inline: "nearest",
-      behavior: "smooth",
-    });
-  }, [toInputRef, formRef]);
+  }, [toInputRef]);
   const handleInputChange = useCallback(
     ({ currentTarget: { value } }) => {
       previousToValue.current = value;
@@ -128,7 +123,15 @@ const InputForm: React.FunctionComponent<{
     if (previousToValue.current !== text) {
       focusAndSelectAll();
     }
-  }, [focusAndSelectAll, text, previousToValue]);
+    if (typeof previousToValue.current === 'string') {
+      formRef.current.scrollIntoView({
+        block: "nearest",
+        inline: "nearest",
+        behavior: "smooth",
+      });  
+    }
+    previousToValue.current = text
+  }, [focusAndSelectAll, text, previousToValue, formRef]);
 
   const [from, setFrom] = useState("noscript");
   const fromInputRef = useRef<HTMLInputElement>();
