@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+import GlobalStyle from "../components/GlobalStyle";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -56,6 +57,7 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#ffffff" />
         </Head>
         <body>
+          <GlobalStyle />
           <Main />
           <NextScript />
         </body>

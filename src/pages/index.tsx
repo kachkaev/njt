@@ -1,39 +1,11 @@
 import React, { useRef, useEffect } from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 import Markdown from "markdown-to-jsx";
 import Head from "next/head";
 
-const GlobalStyle = createGlobalStyle`
-body {  
-  color: #24292e;
-  font-family: "-apple-system", BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
-  margin: 0;
-  line-height: 1.4em;
-}
-
-a {
-  color: #0366d6;
-  text-decoration: none;
-  :hover {
-    text-decoration: underline;
-  }
-}
-
-code {
-  font-size: 1.2em;
-  background: rgba(27,31,35,.05);
-  padding: .1em .2em;
-  border-radius: 3px;
-}
-
-h3 {
-  margin-top: 2em;
-}
-`;
-
 const Container = styled.div`
   margin: 0 auto;
-  padding: 0 30px 50px;
+  padding: 0 20px 50px;
   position: relative;
   max-width: 35em;
 `;
@@ -73,37 +45,47 @@ const InputForm = styled.form`
   margin: 20px auto;
   width: 100%;
   max-width: 100%;
-  font-family: monospace;
   position: relative;
-  line-height: 1.5em;
+  line-height: 1em;
 
   @media (max-width: 600px) {
     font-size: 1.8em;
   }
   @media (max-width: 550px) {
+    font-size: 1.6em;
+  }
+  @media (max-width: 510px) {
     font-size: 1.5em;
   }
-  @media (max-width: 480px) {
-    font-size: 1.3em;
+  @media (max-width: 450px) {
+    font-size: 1.4em;
   }
   @media (max-width: 420px) {
+    font-size: 1.3em;
+  }
+  @media (max-width: 400px) {
+    font-size: 1.25em;
+  }
+  @media (max-width: 370px) {
+    font-size: 1.1em;
+  }
+  @media (max-width: 350px) {
     font-size: 1em;
   }
 `;
 
 const InputPrefix = styled.label`
-  padding: 0 0 0 0.7em;
+  padding: 0.3em 0 0 0.7em;
+  font-family: monospace;
   display: inline-block;
   position: absolute;
-  top: 0.2em;
+  top: 1px;
   left: 0;
   pointer-events: none;
 `;
 const Input = styled.input`
-  font-size: inherit;
-  background: white;
   display: inline-block;
-  padding: 0.2em 4em 0.2em 3em;
+  padding: 0.3em 4em 0.3em 3em;
   background: rgba(27, 31, 35, 0.05);
   color: #24292e;
   line-height: inherit;
@@ -115,6 +97,7 @@ const Input = styled.input`
   margin: 0;
   border: 1px solid #ccc;
   border-radius: 5px;
+  -webkit-appearance: none;
 
   ::placeholder {
     color: #aaa;
@@ -128,14 +111,21 @@ const Input = styled.input`
 `;
 const InputSuffix = styled.button`
   border: none;
-  font-size: inherit;
   background: transparent;
   line-height: inherit;
-  padding-right: 0.4em;
+  padding: 0.2em 0.4em 0.3em 0;
 
   position: absolute;
-  top: 0.2em;
+  top: 1px;
   right: 0;
+
+  :active {
+    top: 3px;
+  }
+
+  :focus {
+    outline: none !important;
+  }
 `;
 
 const IndexPage = () => {
@@ -168,7 +158,6 @@ const IndexPage = () => {
           content={`${process.env.siteUrl}/og-image.png`}
         />
       </Head>
-      <GlobalStyle />
       <Title>🐸 njt 🐸</Title>
       <Description>🐸 npm jump to  🐸</Description>
 
@@ -190,7 +179,7 @@ const IndexPage = () => {
             name="to"
             placeholder="<package> [destination]"
           />
-          <InputSuffix>🐸 →</InputSuffix>
+          <InputSuffix tabIndex={-1}>🐸 →</InputSuffix>
         </InputForm>
       </InputSection>
 
