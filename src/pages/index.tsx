@@ -6,6 +6,7 @@ import InputForm from "../components/InputForm";
 import Example from "../components/Example";
 import ExternalLink from "../components/ExternalLink";
 import AvailableDestinations from "../components/AvailableDestinations";
+import Signature from "../components/Signature";
 
 const Container = styled.div`
   margin: 0 auto;
@@ -151,6 +152,7 @@ const IndexPage = () => {
         url="https://yarnpkg.com/package/prettier"
         onToClick={handleExampleClick}
       />
+      <Signature />
     </Container>
   );
 };
