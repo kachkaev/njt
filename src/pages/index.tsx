@@ -4,6 +4,7 @@ import Markdown from "markdown-to-jsx";
 import Head from "next/head";
 import GlobalStyle from "../components/GlobalStyle";
 import InputForm from "../components/InputForm";
+import Example from "../components/Example";
 
 const Container = styled.div`
   margin: 0 auto;
@@ -110,23 +111,39 @@ ${
 
 Omitting the destination takes you to the package page on [npmjs.com](https://www.npmjs.com/) as if you used \`n\`.
 
-### Examples
-
-\`njt prettier\` (no specified destination)  
-🐸 → https://www.npmjs.com/package/prettier
-
-\`njt prettier h\` (homepage)  
-🐸 → https://prettier.io
-
-\`njt prettier s\` (source)  
-🐸 → https://github.com/prettier/prettier
-
-\`njt prettier c\` (changelog)  
-🐸 → https://github.com/prettier/prettier/blob/master/CHANGELOG.md
-
-\`njt prettier y\` (yarn)  
-🐸 → https://yarnpkg.com/package/prettier
   `}</Markdown>
+
+      <h2>Examples</h2>
+      <Example
+        to="prettier"
+        remark="no specified destination"
+        url="https://www.npmjs.com/package/prettier"
+        onToClick={setInputText}
+      />
+      <Example
+        to="prettier h"
+        remark="homepage"
+        url="https://prettier.io"
+        onToClick={setInputText}
+      />
+      <Example
+        to="prettier s"
+        remark="source"
+        url="https://github.com/prettier/prettier"
+        onToClick={setInputText}
+      />
+      <Example
+        to="prettier c"
+        remark="changelog"
+        url="https://github.com/prettier/prettier/blob/master/CHANGELOG.md"
+        onToClick={setInputText}
+      />
+      <Example
+        to="prettier y"
+        remark="yarn"
+        url="https://yarnpkg.com/package/prettier"
+        onToClick={setInputText}
+      />
     </Container>
   );
 };

@@ -96,6 +96,7 @@ const InputForm: React.FunctionComponent<{
   text?: string;
   onTextChange?: (value: string) => void;
 }> = ({ text, onTextChange }) => {
+  const previousToValue = useRef<string>(undefined);
   const toInputRef = useRef<HTMLInputElement>();
   const focusAndSelectAll = useCallback(() => {
     const input = toInputRef.current;
@@ -106,14 +107,17 @@ const InputForm: React.FunctionComponent<{
   }, [toInputRef]);
   const handleInputChange = useCallback(
     ({ currentTarget: { value } }) => {
+      previousToValue.current = value;
       onTextChange?.(value);
     },
     [onTextChange],
   );
 
   useEffect(() => {
-    focusAndSelectAll();
-  }, [focusAndSelectAll]);
+    if (previousToValue.current !== text) {
+      focusAndSelectAll();
+    }
+  }, [focusAndSelectAll, text, previousToValue]);
 
   const [from, setFrom] = useState("noscript");
   const fromInputRef = useRef<HTMLInputElement>();

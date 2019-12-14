@@ -55,7 +55,7 @@ export default class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#42a73f" />
           <meta name="theme-color" content="#ffffff" />
         </Head>
-        <body>
+        <body className="no-js">
           <Main />
           <NextScript />
         </body>
