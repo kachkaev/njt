@@ -14,7 +14,9 @@ const Signature: React.FunctionComponent<{ children?: never }> = () => {
         Alexander Kachkaev
       </ExternalLink>{" "}
       using <ExternalLink href="https://nextjs.org">Next.js</ExternalLink>,
-      hosted&nbsp;at&nbsp;<ExternalLink href="https://now.sh" />&nbsp;💚
+      hosted&nbsp;at&nbsp;
+      <ExternalLink href="https://now.sh" />
+      &nbsp;💚
     </Wrapper>
   );
 };

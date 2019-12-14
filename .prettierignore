@@ -1,3 +1,17 @@
+## extensions
+*.*
+Dockerfile
+LICENSE
+!*.css
+!*.graphql
+!*.js
+!*.json
+!*.md
+!*.ts
+!*.tsx
+!*.yml
+
+## same as in .gitignore
 # dependencies
 node_modules
 .pnp

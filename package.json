@@ -7,6 +7,11 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "fix": "yarn fix:prettier",
+    "fix:prettier": "prettier --write \"**/*\"",
+    "lint": "yarn lint:prettier && yarn lint:tsc",
+    "lint:prettier": "prettier --check \"**/*\"",
+    "lint:tsc": "tsc --project .",
     "start": "next start"
   },
   "dependencies": {

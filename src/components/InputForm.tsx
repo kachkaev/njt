@@ -88,7 +88,7 @@ const SubmitButton = styled.button`
   right: 0;
 
   :active {
-    top: ${verticalFormPadding + 2}px;;
+    top: ${verticalFormPadding + 2}px;
   }
 
   :focus {
@@ -123,14 +123,14 @@ const InputForm: React.FunctionComponent<{
     if (previousToValue.current !== text) {
       focusAndSelectAll();
     }
-    if (typeof previousToValue.current === 'string') {
+    if (typeof previousToValue.current === "string") {
       formRef.current.scrollIntoView({
         block: "nearest",
         inline: "nearest",
         behavior: "smooth",
-      });  
+      });
     }
-    previousToValue.current = text
+    previousToValue.current = text;
   }, [focusAndSelectAll, text, previousToValue, formRef]);
 
   const [from, setFrom] = useState("noscript");
