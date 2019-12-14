@@ -1,8 +1,9 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 import Markdown from "markdown-to-jsx";
 import Head from "next/head";
 import GlobalStyle from "../components/GlobalStyle";
+import InputForm from "../components/InputForm";
 
 const Container = styled.div`
   margin: 0 auto;
@@ -11,7 +12,7 @@ const Container = styled.div`
   max-width: 35em;
 `;
 
-const TopOfPage = styled.div`
+const TopSection = styled.div`
   padding: 80px 0 40px;
 
   @media (max-width: 700px) {
@@ -45,108 +46,11 @@ const ExternalLink = styled.a`
   margin: 0 8px;
 `;
 
-const InputSection = styled.div`
-  display: block;
-  text-align: center;
-`;
-
-const InputForm = styled.form`
-  display: inline-block;
-  white-space: nowrap;
-  font-size: 2em;
-  margin: 20px auto;
-  width: 100%;
-  max-width: 100%;
-  position: relative;
-  line-height: 1em;
-
-  @media (max-width: 600px) {
-    font-size: 1.8em;
-  }
-  @media (max-width: 550px) {
-    font-size: 1.6em;
-  }
-  @media (max-width: 510px) {
-    font-size: 1.5em;
-  }
-  @media (max-width: 450px) {
-    font-size: 1.4em;
-  }
-  @media (max-width: 420px) {
-    font-size: 1.3em;
-  }
-  @media (max-width: 400px) {
-    font-size: 1.25em;
-  }
-  @media (max-width: 370px) {
-    font-size: 1.1em;
-  }
-  @media (max-width: 350px) {
-    font-size: 1em;
-  }
-`;
-
-const InputPrefix = styled.label`
-  padding: 0.3em 0 0 0.7em;
-  font-family: monospace;
-  display: inline-block;
-  position: absolute;
-  top: 1px;
-  left: 0;
-  pointer-events: none;
-`;
-const Input = styled.input`
-  display: inline-block;
-  padding: 0.3em 4em 0.3em 3em;
-  background: rgba(27, 31, 35, 0.05);
-  color: #24292e;
-  line-height: inherit;
-  font-family: monospace;
-  border: 0px solid white;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  margin: 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  -webkit-appearance: none;
-
-  ::placeholder {
-    color: #aaa;
-  }
-
-  :focus {
-    outline: none !important;
-    border: 1px solid #42a73f;
-    box-shadow: 0 0 10px #7cd679;
-  }
-`;
-const InputSuffix = styled.button`
-  border: none;
-  background: transparent;
-  line-height: inherit;
-  padding: 0.2em 0.4em 0.3em 0;
-
-  position: absolute;
-  top: 1px;
-  right: 0;
-
-  :active {
-    top: 3px;
-  }
-
-  :focus {
-    outline: none !important;
-  }
-`;
-
 const IndexPage = () => {
-  const inputRef = useRef<HTMLInputElement>();
-  useEffect(() => {
-    inputRef.current.focus();
-  }, []);
   const title = "njt (npm jump to)";
   const description = "package navigation shortcuts you dreamed about";
+  const [inputText, setInputText] = useState("");
+
   return (
     <Container>
       <GlobalStyle />
@@ -172,7 +76,7 @@ const IndexPage = () => {
         />
       </Head>
 
-      <TopOfPage>
+      <TopSection>
         <Title>🐸 njt 🐸</Title>
         <Description>🐸 npm jump to  🐸</Description>
         <ExternalLinks>
@@ -183,20 +87,10 @@ const IndexPage = () => {
             npm
           </ExternalLink>
         </ExternalLinks>
-      </TopOfPage>
+      </TopSection>
 
-      <InputSection>
-        <InputForm action="/jump">
-          <InputPrefix htmlFor="to">njt</InputPrefix>
-          <Input
-            ref={inputRef}
-            id="to"
-            name="to"
-            placeholder="<package> [destination]"
-          />
-          <InputSuffix tabIndex={-1}>🐸 →</InputSuffix>
-        </InputForm>
-      </InputSection>
+      <InputForm text={inputText} onTextChange={setInputText} />
+      {inputText}
 
       <Markdown>{`
 ### Available destinations
