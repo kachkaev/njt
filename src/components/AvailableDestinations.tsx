@@ -9,13 +9,17 @@ const Ul = styled.ul`
 const Item = styled.li<{ highlighted?: boolean }>`
   list-style: none;
   white-space: nowrap;
+  overflow: hidden;
   ${(p) => (p.highlighted ? "color: #42a73f" : "")};
 `;
 const Keyword = styled(ClickableCode)<{ onClick: Function; children: string }>`
+  display: inline-block;
   color: #24292e;
 `;
 const Arrow = styled.span`
+  display: inline-block;
   :after {
+    display: inline-block;
     content: "→";
   }
 `;
@@ -23,6 +27,7 @@ const Info = styled.span`
   display: inline-block;
   white-space: normal;
   vertical-align: top;
+  margin-right: 2.5em;
 `;
 
 interface KeywordInfo {
@@ -53,8 +58,8 @@ const AvailableDestinations: React.FunctionComponent<{
         info: (
           <>
             homepage (aliased as{" "}
-            <Keyword onClick={handleKeywordClick}>w</Keyword> for website or{" "}
-            <Keyword onClick={handleKeywordClick}>d</Keyword> for docs)
+            <Keyword onClick={handleKeywordClick}>w</Keyword> for&nbsp;website
+            or <Keyword onClick={handleKeywordClick}>d</Keyword> for&nbsp;docs)
           </>
         ),
       },
@@ -80,7 +85,7 @@ const AvailableDestinations: React.FunctionComponent<{
         info: (
           <>
             pull requests (aliased as{" "}
-            <Keyword onClick={handleKeywordClick}>m</Keyword> for merge
+            <Keyword onClick={handleKeywordClick}>m</Keyword> for&nbsp;merge
             requests)
           </>
         ),
@@ -91,8 +96,12 @@ const AvailableDestinations: React.FunctionComponent<{
       },
       {
         keywords: ["s"],
-        info:
-          "source (most commonly repository root, but can take you to a subdirectory in case of a monorepo)",
+        info: (
+          <>
+            source (most commonly repository root, but can take you to
+            a&nbsp;subdirectory in case of a&nbsp;monorepo)
+          </>
+        ),
       },
       {
         keywords: ["t"],
@@ -137,7 +146,7 @@ const AvailableDestinations: React.FunctionComponent<{
       <p>
         Omitting the destination or entering an non-existing one takes you to
         the package page on <ExternalLink href="https://www.npmjs.com" /> as if
-        you used <Keyword onClick={handleKeywordClick}>n</Keyword>.
+        you used&nbsp;<Keyword onClick={handleKeywordClick}>n</Keyword>.
       </p>
     </>
   );

@@ -12,6 +12,7 @@ const Container = styled.div`
   padding: 0 20px 50px;
   position: relative;
   max-width: 35em;
+  min-width: 270px;
 `;
 
 const TopSection = styled.div`
