@@ -88,7 +88,7 @@ const SubmitButton = styled.button`
   right: 0;
 
   :active {
-    top: 3px;
+    top: ${verticalFormPadding + 2}px;;
   }
 
   :focus {
