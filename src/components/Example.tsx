@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import styled from "styled-components";
+import ExternalLink from "./ExternalLink";
 
 const ClickableCode = styled.code`
   .js & {
@@ -19,11 +20,12 @@ const Row = styled.span`
 `;
 
 const Example: React.FunctionComponent<{
-  to: string;
+  children?: never;
   onToClick?: (text: string) => void;
   remark: string;
+  to: string;
   url: string;
-}> = ({ to, onToClick, remark, url }) => {
+}> = ({ onToClick, remark, to, url }) => {
   const handleCodeClick = () => {
     onToClick?.(to);
   };
@@ -34,7 +36,7 @@ const Example: React.FunctionComponent<{
         <ClickableCode onClick={handleCodeClick}>{to}</ClickableCode> ({remark})
       </Row>
       <Row>
-        🐸 → <a href={url}>{url.replace(/^https?:\/\//, "")}</a>
+        🐸 → <ExternalLink href={url} />
       </Row>
     </p>
   );

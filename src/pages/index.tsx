@@ -5,6 +5,7 @@ import Head from "next/head";
 import GlobalStyle from "../components/GlobalStyle";
 import InputForm from "../components/InputForm";
 import Example from "../components/Example";
+import ExternalLink from "../components/ExternalLink";
 
 const Container = styled.div`
   margin: 0 auto;
@@ -39,12 +40,9 @@ const Description = styled.div`
 const ExternalLinks = styled.div`
   margin: 10px auto 0;
   text-align: center;
-`;
-
-const ExternalLink = styled.a`
-  display: inline-block;
-  text-decoration: none;
-  margin: 0 8px;
+  & > * {
+    margin: 0 8px;
+  }
 `;
 
 const IndexPage = () => {
@@ -125,7 +123,7 @@ Omitting the destination takes you to the package page on [npmjs.com](https://ww
 
   `}</Markdown>
 
-      <h2>Examples</h2>
+      <h3>Examples</h3>
       <Example
         to="prettier"
         remark="no specified destination"
