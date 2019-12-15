@@ -48,8 +48,8 @@ ${code('njt prettier h')} (homepage)
 ${code('njt prettier s')} (source)
 🐸  → https://github.com/prettier/prettier
 
-${code('njt prettier c')} (changelog)
-🐸  → https://github.com/prettier/prettier/blob/master/CHANGELOG.md
+${code('njt prettier r')} (releases)
+🐸  → https://github.com/prettier/prettier/releases
 
 ${code('njt prettier y')} (yarn)
 🐸  → https://yarnpkg.com/package/prettier

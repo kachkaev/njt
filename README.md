@@ -46,8 +46,8 @@ Omitting the destination or entering an non-existing one takes you to the packag
 `njt prettier s` (source)  
 🐸 → https://github.com/prettier/prettier
 
-`njt prettier c` (changelog)  
-🐸 → https://github.com/prettier/prettier/blob/master/CHANGELOG.md
+`njt prettier r` (releases)  
+🐸 → https://github.com/prettier/prettier/releases
 
 `njt prettier y` (yarn)  
 🐸 → https://yarnpkg.com/package/prettier
