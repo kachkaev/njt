@@ -83,6 +83,29 @@ To reinstall or upgrade, run `npm install --global njt` again.
 The value [may vary](https://www.npmjs.com/package/open#app) based on your OS.
 Note that setting `BROWSER` instead of `NJT_BROWSER` can affect other tools, which may or may not be desired.
 
+### 🟢 Custom search engine in Chrome
+
+1.  Open Chrome settings, e.g. by navigating to `chrome://settings`
+1.  Navigate to _Manage search engines_ section (e.g. by typing its name in the _Search settings_ field)
+1.  Click _Add_ next to _Other search engines_
+1.  Fill in the _Add search engine_ form:
+
+    | Field                         | Value                                       |
+    | ----------------------------- | ------------------------------------------- |
+    | Search engine                 | `njt (npm jump to)`                         |
+    | Keyword                       | `njt`                                       |
+    | Url with %s in place of query | `https://njt.now.sh/jump?from=chrome&to=%s` |
+
+1.  Press _Add_
+
+From now on, typing `njt <package> [destination]` in the address bar will take you directly to a page you want.
+For example, `njt react h` will take you to the [React.js homepage](https://reactjs.org).
+
+To uninstall, open _Manage search engines_ section in Chrome settings, click on three dots next to _Other search engines → njt_ and hit _Remove from list_.
+
+**Pro tip 💡** You can use `n` instead of `njt` as a keyword to avoid typing two extra characters each time.
+The command to type in Chrome address bar will become `n <package> [destination]` 🚀
+
 ### 🟢 Search bookmark in Firefox
 
 You can use `njt` right from the address bar in Firefox.
@@ -91,7 +114,7 @@ You can use `njt` right from the address bar in Firefox.
 1.  Right-click on the search input field
 1.  In the context menu, select _Add Keyword for this Search..._
 1.  You’ll see a small form; type `njt` into the _Keyword_ field
-1.  Hit _Save_
+1.  Press _Save_
 
 From now on, typing `njt <package> [destination]` in the address bar will take you directly to a page you want.
 For example, `njt react h` will take you to the [React.js homepage](https://reactjs.org).
@@ -111,8 +134,8 @@ This trick is possible thanks to DuckDuckGo’s awesome [bang feature](https://d
 ### 🟢 Online search field on the `njt`’s mini-website
 
 Open [njt.now.sh](https://njt.now.sh), type your query, press enter.
-This method is a bit slower than the other ones because it involves opening a page first.
-On the plus side, it works everywhere and does not require any setup.
+This method is a bit slower than the other ones because it involves opening a web page with an input form.
+On the plus side, it works everywhere and does not require setup.
 
 Thanks to [now.sh](https://now.sh) for hosting [njt.now.sh](https://njt.now.sh) 💚
 
@@ -148,6 +171,6 @@ Shortcuts to some of the `njt` destinations are built into `npm` cli:
 
 📦 [`npm repo <package>`](https://docs.npmjs.com/cli/repo)  
 ⭥  
-🐸 `njt <package> g` (github, gitlab etc. repo)
+🐸 `njt <package> g` (github, gitlab, etc. repo)
 
 With `njt`, you have access to more shortcuts in multiple environments, which makes you more productive day to day.
