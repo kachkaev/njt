@@ -3,7 +3,7 @@ import styled from "styled-components";
 import InputForm from "../components/InputForm";
 import Example from "../components/Example";
 import AvailableDestinations from "../components/AvailableDestinations";
-import Signature from "../components/Signature";
+import ExternalLink from "../components/ExternalLink";
 import PageMetadata from "../components/PageMetadata";
 
 const H2 = styled.h2`
@@ -134,7 +134,25 @@ const IndexPage = () => {
         );
       })}
 
-      <Signature />
+      <H2>More!</H2>
+      <p>
+        <code>njt</code> gives you an even bigger productivity boost when you
+        integrate it into your browser use from the command line. See{" "}
+        <ExternalLink href="https://github.com/kachkaev/njt#getting-njt">
+          GitHub&nbsp;repo’s&nbsp;README
+        </ExternalLink>{" "}
+        for&nbsp;instructions.
+      </p>
+      <p>
+        Crafted by{" "}
+        <ExternalLink href="https://en.kachkaev.ru">
+          Alexander Kachkaev
+        </ExternalLink>{" "}
+        using <ExternalLink href="https://nextjs.org">Next.js</ExternalLink>,
+        hosted&nbsp;by&nbsp;
+        <ExternalLink href="https://now.sh" />
+        &nbsp;💚
+      </p>
     </>
   );
 };

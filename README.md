@@ -141,12 +141,12 @@ Thanks to [now.sh](https://now.sh) for hosting [njt.now.sh](https://njt.now.sh) 
 
 ### 🟢 More ways?
 
-Are you a shortcut guru?
-Feel free [to suggest](https://github.com/kachkaev/njt/issues/new) another entry point to `njt` and save people’s time around the world!
+Are you a search shortcut guru?
+Feel free [to suggest](https://github.com/kachkaev/njt/issues/new?title=New+entry+point+suggestion) another entry point to `njt` and save people’s time around the world!
 
 ## How does `njt` work?
 
-For requests like `njt [package]` or `njt [package] y`, all the tool does is navigating you to URLs like `https://www.npmjs.com/package/[package]` or `https://yarnpkg.com/package/[package]`.
+For requests like `njt <package>` or `njt <package> y`, all the tool does is navigating you to URLs like `https://www.npmjs.com/package/<package>` or `https://yarnpkg.com/package/<package>`.
 
 Most other cases involve a look into `package.json` for the latest published version.
 This file contains the location of the repository, the homepage and some other fields, which `njt` uses to construct the destination URL.
