@@ -137,7 +137,7 @@ const IndexPage = () => {
       <H2>More!</H2>
       <p>
         <code>njt</code> gives you an even bigger productivity boost when you
-        integrate it into your browser use from the command line. See{" "}
+        integrate it into your browser or use from the terminal. See{" "}
         <ExternalLink href="https://github.com/kachkaev/njt#getting-njt">
           GitHub&nbsp;repo’s&nbsp;README
         </ExternalLink>{" "}
