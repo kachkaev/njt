@@ -136,12 +136,12 @@ const IndexPage = () => {
 
       <H2>More!</H2>
       <p>
-        <code>njt</code> gives you an even bigger productivity boost when you
-        integrate it into your browser or use from the terminal. See{" "}
-        <ExternalLink href="https://github.com/kachkaev/njt#getting-njt">
+        <code>njt</code> gives you an even bigger productivity boost when
+        integrated into browser or&nbsp;terminal. See instructions in{" "}
+        <ExternalLink href="https://github.com/kachkaev/njt/blob/master/README.md#getting-njt">
           GitHub&nbsp;repo’s&nbsp;README
-        </ExternalLink>{" "}
-        for&nbsp;instructions.
+        </ExternalLink>
+        .
       </p>
       <p>
         Crafted by{" "}
