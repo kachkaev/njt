@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "chalk": "^3.0.0",
-    "commander": "^4.0.1",
+    "commander": "^4.1.0",
     "open": "^7.0.0"
   }
 }
