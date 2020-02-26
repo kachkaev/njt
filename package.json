@@ -31,7 +31,7 @@
     "@types/lru-cache": "^5.1.0",
     "@types/node": "^13.7.6",
     "@types/node-fetch": "^2.5.5",
-    "@types/styled-components": "^5.0.1",
+    "@types/styled-components": "4.1.19",
     "ncp": "^2.0.0",
     "prettier": "^1.19.1",
     "prettier-plugin-packagejson": "^2.0.10",
