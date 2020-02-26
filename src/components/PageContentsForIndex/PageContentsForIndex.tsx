@@ -33,6 +33,8 @@ const remarkByDestination = {
   y: "yarn",
 };
 
+type DestinationKey = keyof typeof remarkByDestination;
+
 const exampleUrlByPackageAndDestination = {
   prettier: {
     "": "https://www.npmjs.com/package/prettier",
@@ -64,9 +66,11 @@ const exampleUrlByPackageAndDestination = {
   },
 };
 
+type ExampleKey = keyof typeof exampleUrlByPackageAndDestination;
+
 const PageContentsForIndex: React.FunctionComponent = () => {
   const [examplePackage, setExamplePackage] = useState(
-    () => Object.keys(exampleUrlByPackageAndDestination)[0],
+    () => Object.keys(exampleUrlByPackageAndDestination)[0] as ExampleKey,
   );
   const handleExamplePackageClick = useCallback(
     (e) => {
@@ -118,17 +122,21 @@ const PageContentsForIndex: React.FunctionComponent = () => {
           ),
         )}
       </ExamplePackages>
-      {Object.entries(remarkByDestination).map(([destination, remark]) => {
-        return (
-          <Example
-            key={destination}
-            to={`${examplePackage} ${destination}`.trim()}
-            remark={remark}
-            url={exampleUrlByPackageAndDestination[examplePackage][destination]}
-            onToClick={handleExampleClick}
-          />
-        );
-      })}
+      {(Object.entries(remarkByDestination) as [DestinationKey, string][]).map(
+        ([destination, remark]) => {
+          return (
+            <Example
+              key={destination}
+              to={`${examplePackage} ${destination}`.trim()}
+              remark={remark}
+              url={
+                exampleUrlByPackageAndDestination[examplePackage][destination]
+              }
+              onToClick={handleExampleClick}
+            />
+          );
+        },
+      )}
 
       <H2>More!</H2>
       <p>

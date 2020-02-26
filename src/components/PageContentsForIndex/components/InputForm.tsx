@@ -100,10 +100,11 @@ const InputForm: React.FunctionComponent<{
   text?: string;
   onTextChange?: (value: string) => void;
 }> = ({ text, onTextChange }) => {
-  const formRef = useRef<HTMLFormElement>();
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const previousToValue = useRef<string>(undefined);
-  const toInputRef = useRef<HTMLInputElement>();
+  const previousToValue = useRef<string>();
+  const toInputRef = useRef<HTMLInputElement>(null);
+
   const focusAndSelectAll = useCallback(() => {
     const input = toInputRef.current;
     if (input) {
@@ -111,6 +112,7 @@ const InputForm: React.FunctionComponent<{
       input.setSelectionRange(0, input.value.length);
     }
   }, [toInputRef]);
+
   const handleInputChange = useCallback(
     ({ currentTarget: { value } }) => {
       previousToValue.current = value;
@@ -123,7 +125,7 @@ const InputForm: React.FunctionComponent<{
     if (previousToValue.current !== text) {
       focusAndSelectAll();
     }
-    if (typeof previousToValue.current === "string") {
+    if (typeof previousToValue.current === "string" && formRef.current) {
       formRef.current.scrollIntoView({
         block: "nearest",
         inline: "nearest",
@@ -134,13 +136,15 @@ const InputForm: React.FunctionComponent<{
   }, [focusAndSelectAll, text, previousToValue, formRef]);
 
   const [from, setFrom] = useState("noscript");
-  const fromInputRef = useRef<HTMLInputElement>();
+  const fromInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     setFrom("bookmark");
   }, []);
   const handleFormSubmit = () => {
-    fromInputRef.current.value = "web";
+    if (fromInputRef.current) {
+      fromInputRef.current.value = "web";
+    }
     return true;
   };
 

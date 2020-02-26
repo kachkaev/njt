@@ -5,7 +5,7 @@ const ExternalLink: React.FunctionComponent<React.HTMLProps<
 >> = ({ children, href, ...rest }) => {
   return (
     <a href={href} {...rest}>
-      {children ?? href.replace(/^https?:\/\//i, "").replace(/^www\./i, "")}
+      {children ?? href?.replace(/^https?:\/\//i, "").replace(/^www\./i, "")}
     </a>
   );
 };

@@ -150,7 +150,9 @@ const AvailableDestinations: React.FunctionComponent<{
           <Item
             key={index}
             highlighted={
-              selectedDestination && keywords.includes(selectedDestination)
+              selectedDestination
+                ? keywords.includes(selectedDestination)
+                : false
             }
           >
             <Keyword onClick={handleKeywordClick}>{keywords[0]}</Keyword>{" "}

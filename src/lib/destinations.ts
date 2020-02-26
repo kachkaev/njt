@@ -11,15 +11,16 @@ const packageMetadataCache = new LRU<string, JsonObject | Error>({
 
 const getPackageMetadata = async (packageName: string): Promise<JsonObject> => {
   if (!packageMetadataCache.has(packageName)) {
-    packageMetadataCache[packageName] = await (
-      await fetch(`https://registry.npmjs.com/${packageName}`)
-    ).json();
-    try {
-    } catch (e) {
-      packageMetadataCache[packageName] = e;
-    }
+    packageMetadataCache.set(
+      packageName,
+      await (await fetch(`https://registry.npmjs.com/${packageName}`)).json(),
+    );
+    // try {
+    // } catch (e) {
+    //   packageMetadataCache.set(packageName, e);
+    // }
   }
-  const result = packageMetadataCache[packageName];
+  const result = packageMetadataCache.get(packageName)!;
   if (result instanceof Error) {
     throw result;
   }
@@ -39,7 +40,7 @@ const handleUnknownHostedUrl = (url: string): string | undefined => {
       protocol +
       "//" +
       (parsedUrl.host || "") +
-      parsedUrl.path.replace(/\.git$/, "")
+      (parsedUrl.path || "").replace(/\.git$/, "")
     );
   } catch (e) {}
 };
@@ -50,13 +51,12 @@ const getRepoUrl = async (
 ): Promise<string> => {
   // Reference implementation: https://github.com/npm/cli/blob/latest/lib/repo.js
   const packageMetadata = await getPackageMetadata(packageName);
-  const rawUrl = packageMetadata.repository["url"];
+  const rawUrl: string = `${(packageMetadata.repository as JsonObject)?.url}`;
   const info = hostedGitInfo.fromUrl(rawUrl);
-  let result = info ? info.browse() : handleUnknownHostedUrl(rawUrl);
+  let result = `${info ? info.browse() : handleUnknownHostedUrl(rawUrl)}`;
 
   // Some packages (e.g. babel and babel-cli) mistakenly specify repository URL with directory. It needs to be trimmed
   if (!skipDirectoryTrimming) {
-    console.log("result 1", result);
     result = result.replace(
       /^https:\/\/github\.com\/([^\/]+)\/([^\/]+)(.*)/i,
       "https://github.com/$1/$2",
@@ -104,7 +104,7 @@ const destinationConfigs: DestinationConfig[] = [
         packageMetadata.bugs &&
         (typeof packageMetadata.bugs === "string"
           ? packageMetadata.bugs
-          : packageMetadata.bugs["url"]);
+          : `${(packageMetadata.bugs as JsonObject).url}`);
       if (directUrl) {
         return directUrl;
       }
@@ -151,7 +151,8 @@ const destinationConfigs: DestinationConfig[] = [
         skipDirectoryTrimming: true,
       });
       const packageMetadata = await getPackageMetadata(packageName);
-      const sourceDirectory = packageMetadata.repository["directory"];
+      const sourceDirectory = (packageMetadata.repository as JsonObject)
+        .directory;
       if (repoUrl && sourceDirectory) {
         return `${repoUrl}/tree/master/${sourceDirectory}`;
       }
@@ -198,7 +199,7 @@ const destinationConfigByKeyword: Record<
     result[keyword] = destinationConfig;
   });
   return result;
-}, {});
+}, {} as { [key: string]: DestinationConfig });
 
 export const resolveDestination = async (
   packageName: string,
@@ -218,7 +219,7 @@ export const resolveDestination = async (
   } catch {
     return {
       outcome: "success",
-      url: await destinationConfigByKeyword[""].generateUrl(packageName),
+      url: `${await destinationConfigByKeyword[""].generateUrl(packageName)}`,
     };
   }
 };

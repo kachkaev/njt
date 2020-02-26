@@ -21,12 +21,12 @@ const Message = styled.div`
 `;
 
 const PageContentsForError: React.FunctionComponent<{
-  statusCode?: number;
+  statusCode: number;
   message: string;
 }> = ({ statusCode, message }) => {
   return (
     <Container>
-      <StatusCode>{statusCode || "×××"}</StatusCode>
+      <StatusCode>{statusCode}</StatusCode>
       <Message>{message}</Message>
 
       <Link href="/">
