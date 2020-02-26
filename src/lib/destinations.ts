@@ -1,4 +1,4 @@
-import { ResolvedDestination, DestinationConfig, JsonObject } from "./types";
+import { ResolvedDestination, DestinationConfig, JsonObject } from "../types";
 import LRU from "lru-cache";
 import fetch from "./fetch";
 import { parse as parseUrl } from "url";
