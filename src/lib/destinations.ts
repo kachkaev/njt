@@ -48,12 +48,15 @@ const handleUnknownHostedUrl = (url: string): string | undefined => {
 const getRepoUrl = async (
   packageName: string,
   { skipDirectoryTrimming }: { skipDirectoryTrimming?: boolean } = {},
-): Promise<string> => {
+): Promise<string | undefined> => {
   // Reference implementation: https://github.com/npm/cli/blob/latest/lib/repo.js
   const packageMetadata = await getPackageMetadata(packageName);
-  const rawUrl: string = `${(packageMetadata.repository as JsonObject)?.url}`;
-  const info = hostedGitInfo.fromUrl(rawUrl);
-  let result = `${info ? info.browse() : handleUnknownHostedUrl(rawUrl)}`;
+  const rawUrl = (packageMetadata.repository as JsonObject)?.url;
+  if (!rawUrl) {
+    return undefined;
+  }
+  const info = hostedGitInfo.fromUrl(`${rawUrl}`);
+  let result = `${info ? info.browse() : handleUnknownHostedUrl(`${rawUrl}`)}`;
 
   // Some packages (e.g. babel and babel-cli) mistakenly specify repository URL with directory. It needs to be trimmed
   if (!skipDirectoryTrimming) {
