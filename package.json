@@ -8,21 +8,21 @@
     "build": "next build",
     "dev": "next dev",
     "fix": "yarn fix:prettier; yarn fix:yarn-deduplicate",
-    "fix:prettier": "prettier --write \"**/*\"",
-    "fix:yarn-deduplicate": "yarn-deduplicate --strategy=fewer",
+    "fix:prettier": "prettier --write .",
+    "fix:yarn-deduplicate": "yarn install && yarn-deduplicate --strategy=fewer && yarn install",
     "lint": "yarn lint:prettier && yarn lint:tsc && yarn fix:yarn-deduplicate",
-    "lint:prettier": "prettier --check \"**/*\"",
+    "lint:prettier": "prettier --check .",
     "lint:tsc": "tsc --project .",
     "lint:yarn-deduplicate": "yarn-deduplicate --fail --list --strategy=fewer",
     "start": "next start"
   },
   "dependencies": {
-    "@zeit/fetch": "^5.2.0",
-    "hosted-git-info": "^3.0.3",
+    "@zeit/fetch": "^6.0.0",
+    "hosted-git-info": "^3.0.4",
     "lru-cache": "^5.1.1",
-    "next": "^9.2.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "next": "^9.3.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "styled-components": "^5.0.1",
     "styled-normalize": "^8.0.7",
     "unfetch": "^4.1.0",
@@ -31,13 +31,13 @@
   "devDependencies": {
     "@types/hosted-git-info": "^3.0.0",
     "@types/lru-cache": "^5.1.0",
-    "@types/node": "^13.7.6",
+    "@types/node": "^13.9.5",
     "@types/node-fetch": "^2.5.5",
     "@types/styled-components": "4.1.19",
     "ncp": "^2.0.0",
-    "prettier": "^1.19.1",
-    "prettier-plugin-packagejson": "^2.0.10",
-    "typescript": "^3.8.2",
-    "yarn-deduplicate": "^1.1.1"
+    "prettier": "^2.0.2",
+    "prettier-plugin-packagejson": "^2.1.2",
+    "typescript": "^3.8.3",
+    "yarn-deduplicate": "^2.0.0"
   }
 }
