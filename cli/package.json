@@ -28,8 +28,8 @@
     "prepublishOnly": "yarn ncp ../README.md README.md"
   },
   "dependencies": {
-    "chalk": "^3.0.0",
-    "commander": "^4.1.0",
-    "open": "^7.0.0"
+    "chalk": "^4.0.0",
+    "commander": "^5.1.0",
+    "open": "^7.0.3"
   }
 }
