@@ -48,6 +48,7 @@ const Label = styled.label`
   left: 0;
   pointer-events: none;
 `;
+
 const Input = styled.input`
   display: inline-block;
   padding: 0.3em 4em 0.3em 3em;
@@ -55,7 +56,6 @@ const Input = styled.input`
   color: #24292e;
   line-height: inherit;
   font-family: monospace;
-  border: 0px solid white;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -63,7 +63,7 @@ const Input = styled.input`
   border: 1px solid #ccc;
   border-radius: 5px;
   -webkit-appearance: none;
-  transition: all 0.2s ease-in-out;
+  /* transition: all 0.2s ease-in-out; */
 
   ::placeholder {
     color: #aaa;
