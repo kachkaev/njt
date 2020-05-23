@@ -7,17 +7,19 @@ const Ul = styled.ul`
   padding-left: 0;
   overflow: hidden;
 `;
+
 const Item = styled.li<{ highlighted?: boolean }>`
   list-style: none;
+  /* transition: color 0.2s ease-in-out; */
   white-space: nowrap;
-  transition: color 0.2s ease-in-out;
 
   ${(p) => (p.highlighted ? "color: #42a73f" : "")};
 `;
+
 const Keyword = styled(ClickableCode)<{ onClick: Function; children: string }>`
   display: inline-block;
-  color: #24292e;
 `;
+
 const Arrow = styled.span`
   display: inline-block;
   :after {
@@ -25,6 +27,7 @@ const Arrow = styled.span`
     content: "→";
   }
 `;
+
 const Info = styled.span`
   display: inline-block;
   white-space: normal;

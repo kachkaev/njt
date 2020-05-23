@@ -8,20 +8,35 @@ const base = css`
       Helvetica, sans-serif;
     margin: 0;
     line-height: 1.4em;
+
+    &.dark-mode {
+      background: #24292e;
+      color: #fff;
+    }
   }
 
   a {
     color: #0366d6;
     text-decoration: none;
+
+    .dark-mode & {
+      color: #59a7ff;
+    }
+
     :hover {
       text-decoration: underline;
     }
   }
 
   code {
-    background: rgba(27, 31, 35, 0.05);
     padding: 0.1em 0.2em;
     border-radius: 3px;
+    color: inherit;
+
+    background: rgba(27, 31, 35, 0.05);
+    .dark-mode & {
+      background: rgba(127, 127, 127, 0.3);
+    }
   }
 `;
 

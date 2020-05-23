@@ -19,6 +19,7 @@
   "dependencies": {
     "hosted-git-info": "^3.0.4",
     "lru-cache": "^5.1.1",
+    "mem": "^6.1.0",
     "next": "^9.4.2",
     "node-fetch": "^2.6.0",
     "react": "^16.13.1",
@@ -26,8 +27,10 @@
     "react-is": "^16.13.1",
     "styled-components": "^5.1.0",
     "styled-normalize": "^8.0.7",
+    "terser": "^4.7.0",
     "unfetch": "^4.1.0",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
     "@types/hosted-git-info": "^3.0.0",

@@ -52,21 +52,25 @@ const Label = styled.label`
 const Input = styled.input`
   display: inline-block;
   padding: 0.3em 4em 0.3em 3em;
-  background: rgba(27, 31, 35, 0.05);
-  color: #24292e;
+  color: inherit;
   line-height: inherit;
   font-family: monospace;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
   margin: 0;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(127, 127, 127, 0.5);
   border-radius: 5px;
   -webkit-appearance: none;
   /* transition: all 0.2s ease-in-out; */
 
+  background: rgba(27, 31, 35, 0.05);
+  .dark-mode & {
+    background: rgba(127, 127, 127, 0.3);
+  }
+
   ::placeholder {
-    color: #aaa;
+    color: rgba(127, 127, 127, 0.7);
   }
 
   :focus {
@@ -82,6 +86,7 @@ const SubmitButton = styled.button`
   line-height: inherit;
   padding: 0.25em 0.4em 0.3em 0;
   cursor: pointer;
+  color: inherit;
 
   position: absolute;
   top: ${verticalFormPadding + 1}px;

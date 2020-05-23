@@ -1,22 +1,23 @@
-import App from "next/app";
+import { AppProps } from "next/app";
 import PageLayout from "../ui/PageLayout";
+import useDarkMode from "use-dark-mode";
+import { useEffect } from "react";
 
-class MyApp extends App {
-  componentDidMount() {
-    document.body.className = (document.body.className || "").replace(
+const App: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
+  useEffect(() => {
+    document.body.className = (document.body.className ?? "").replace(
       "no-js",
       "js",
     );
-  }
-  render() {
-    const { Component, pageProps } = this.props;
+  }, []);
 
-    return (
-      <PageLayout>
-        <Component {...pageProps} />
-      </PageLayout>
-    );
-  }
-}
+  useDarkMode();
 
-export default MyApp;
+  return (
+    <PageLayout>
+      <Component {...pageProps} />
+    </PageLayout>
+  );
+};
+
+export default App;
