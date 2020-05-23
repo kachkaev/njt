@@ -1,8 +1,8 @@
 import React from "react";
 import { NextPage } from "next";
 
-import PageMetadata from "../components/PageMetadata";
-import PageContentsForError from "../components/PageContentsForError";
+import PageMetadata from "../ui/PageMetadata";
+import PageContentsForError from "../ui/PageContentsForError";
 
 const ErrorPage: NextPage<{ statusCode: number }> = ({ statusCode }) => {
   const message = "unknown error";

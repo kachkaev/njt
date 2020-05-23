@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { resolveDestination } from "../../lib/destinations";
+import { resolveDestination } from "../../shared/destinations";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   let destinationUrl: string = "/";

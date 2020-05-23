@@ -1,5 +1,5 @@
 import App from "next/app";
-import PageLayout from "../components/PageLayout";
+import PageLayout from "../ui/PageLayout";
 
 class MyApp extends App {
   componentDidMount() {

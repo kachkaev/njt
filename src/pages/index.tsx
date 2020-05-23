@@ -1,6 +1,6 @@
 import React from "react";
-import PageMetadata from "../components/PageMetadata";
-import PageContentsForIndex from "../components/PageContentsForIndex";
+import PageMetadata from "../ui/PageMetadata";
+import PageContentsForIndex from "../ui/PageContentsForIndex";
 
 const IndexPage = () => {
   return (

@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
-import InputForm from "./components/InputForm";
-import Example from "./components/Example";
-import AvailableDestinations from "./components/AvailableDestinations";
-import ExternalLink from "../ExternalLink";
+import InputForm from "./InputForm";
+import Example from "./Example";
+import AvailableDestinations from "./AvailableDestinations";
+import ExternalLink from "../shared/ExternalLink";
 
 const H2 = styled.h2`
   margin-top: 3em;

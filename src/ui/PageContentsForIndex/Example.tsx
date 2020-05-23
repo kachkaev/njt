@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import styled from "styled-components";
-import ExternalLink from "../../ExternalLink";
+import ExternalLink from "../shared/ExternalLink";
 import ClickableCode from "./ClickableCode";
 
 const Remark = styled.span`
