@@ -3,7 +3,11 @@ module.exports = {
     siteUrl: process.env.SITE_URL || "https://njt.now.sh",
   },
   experimental: {
-    pages404: true,
-    reactRefresh: true,
+    rewrites: () => [
+      {
+        source: "/jump",
+        destination: "/api/jump",
+      },
+    ],
   },
 };
