@@ -17,10 +17,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "@zeit/fetch": "^6.0.0",
     "hosted-git-info": "^3.0.4",
     "lru-cache": "^5.1.1",
-    "next": "^9.4.1",
+    "next": "^9.4.2",
     "node-fetch": "^2.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -33,13 +32,13 @@
   "devDependencies": {
     "@types/hosted-git-info": "^3.0.0",
     "@types/lru-cache": "^5.1.0",
-    "@types/node": "^14.0.1",
+    "@types/node": "^14.0.5",
     "@types/node-fetch": "^2.5.7",
     "@types/styled-components": "^5.1.0",
     "ncp": "^2.0.0",
     "prettier": "^2.0.5",
     "prettier-plugin-packagejson": "^2.2.3",
-    "typescript": "^3.9.2",
+    "typescript": "^3.9.3",
     "yarn-deduplicate": "^2.0.0"
   }
 }
