@@ -70,5 +70,8 @@
     "prettier": "^2.0.5",
     "typescript": "^3.9.3",
     "yarn-deduplicate": "^2.0.0"
+  },
+  "run-if-changed": {
+    "yarn.lock": "yarn install --prefer-offline --pure-lockfile"
   }
 }
