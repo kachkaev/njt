@@ -1,5 +1,6 @@
-import React, { memo, useMemo, useCallback } from "react";
+import React, { memo, useCallback, useMemo } from "react";
 import styled from "styled-components";
+
 import ExternalLink from "../shared/ExternalLink";
 import ClickableCode from "./ClickableCode";
 

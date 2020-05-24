@@ -1,7 +1,8 @@
-import { ResolvedDestination, DestinationConfig, JsonObject } from "../types";
+import hostedGitInfo from "hosted-git-info";
 import LRU from "lru-cache";
 import { parse as parseUrl } from "url";
-import hostedGitInfo from "hosted-git-info";
+
+import { DestinationConfig, JsonObject, ResolvedDestination } from "../types";
 
 const packageMetadataCache = new LRU<string, JsonObject | Error>({
   max: 10000,
@@ -19,9 +20,11 @@ const getPackageMetadata = async (packageName: string): Promise<JsonObject> => {
     //   packageMetadataCache.set(packageName, e);
     // }
   }
-  const result = packageMetadataCache.get(packageName)!;
+  const result = packageMetadataCache.get(packageName);
   if (result instanceof Error) {
     throw result;
+  } else if (!result) {
+    throw new Error(`Unexpected empty cache for ${packageName}`);
   }
   return result;
 };
@@ -102,7 +105,7 @@ const destinationConfigs: DestinationConfig[] = [
     generateUrl: async (packageName) => {
       // Reference implementation: https://github.com/npm/cli/blob/latest/lib/bugs.js
       const packageMetadata = await getPackageMetadata(packageName);
-      var directUrl =
+      const directUrl =
         packageMetadata.bugs &&
         (typeof packageMetadata.bugs === "string"
           ? packageMetadata.bugs

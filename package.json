@@ -7,14 +7,34 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "fix": "yarn fix:prettier; yarn fix:yarn-deduplicate",
-    "fix:prettier": "prettier --write .",
+    "fix": "yarn fix:eslint; yarn fix:markdownlint; yarn fix:prettier; yarn fix:yarn-deduplicate",
+    "fix:eslint": "eslint --fix \"**/*\"",
+    "fix:markdownlint": "markdownlint --fix \"**/*\"",
+    "fix:prettier": "prettier --write \"**/*\"",
     "fix:yarn-deduplicate": "yarn install && yarn-deduplicate --strategy=fewer && yarn install",
-    "lint": "yarn lint:prettier && yarn lint:tsc && yarn fix:yarn-deduplicate",
-    "lint:prettier": "prettier --check .",
+    "lint": "yarn lint:eslint && yarn lint:markdownlint && yarn lint:prettier && yarn lint:tsc && yarn lint:yarn-deduplicate",
+    "lint:eslint": "eslint \"**/*\" --report-unused-disable-directives",
+    "lint:markdownlint": "markdownlint \"**/*\"",
+    "lint:prettier": "prettier --check \"**/*\"",
     "lint:tsc": "tsc --project .",
     "lint:yarn-deduplicate": "yarn-deduplicate --fail --list --strategy=fewer",
     "start": "next start"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-commit": "run-if-changed",
+      "post-checkout": "run-if-changed",
+      "post-merge": "run-if-changed",
+      "post-rewrite": "run-if-changed"
+    }
+  },
+  "lint-staged": {
+    "**/*": [
+      "eslint --fix",
+      "markdownlint --fix",
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "hosted-git-info": "^3.0.4",
@@ -33,14 +53,21 @@
     "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
+    "@hkdobrev/run-if-changed": "^0.3.1",
+    "@kachkaev/eslint-config-react": "^0.1.1",
+    "@kachkaev/markdownlint-config": "^0.1.0",
+    "@kachkaev/prettier-config": "^1.0.0",
     "@types/hosted-git-info": "^3.0.0",
     "@types/lru-cache": "^5.1.0",
     "@types/node": "^14.0.5",
     "@types/node-fetch": "^2.5.7",
     "@types/styled-components": "^5.1.0",
+    "eslint": "^6.8.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.6",
+    "markdownlint-cli": "^0.23.1",
     "ncp": "^2.0.0",
     "prettier": "^2.0.5",
-    "prettier-plugin-packagejson": "^2.2.3",
     "typescript": "^3.9.3",
     "yarn-deduplicate": "^2.0.0"
   }

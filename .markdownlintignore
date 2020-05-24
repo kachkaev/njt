@@ -1,14 +1,7 @@
 ## extensions
 *.*
 LICENSE
-!*.js
-!*.json
 !*.md
-!*.ts
-!*.tsx
-!*.yml
-
-!/.github/
 
 ## same as in .gitignore
 # dependencies

@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+/* eslint-disable no-console */
+
 const chalk = require("chalk");
 const program = require("commander");
 const { getPackageVersion, generateUrl, openUrl } = require("./helpers");

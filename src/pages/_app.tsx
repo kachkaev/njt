@@ -1,7 +1,8 @@
 import { AppProps } from "next/app";
-import PageLayout from "../ui/PageLayout";
+import React, { useEffect } from "react";
 import useDarkMode from "use-dark-mode";
-import { useEffect } from "react";
+
+import PageLayout from "../ui/PageLayout";
 
 const App: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
   useEffect(() => {

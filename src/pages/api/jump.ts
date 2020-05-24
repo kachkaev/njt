@@ -1,8 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
+
 import { resolveDestination } from "../../shared/destinations";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  let destinationUrl: string = "/";
+  let destinationUrl = "/";
 
   const to = `${req.query.to}`;
   if (to) {

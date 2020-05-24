@@ -10,7 +10,7 @@ Are you typing npm package names in your search engine to then manually navigate
 [Save five seconds thousands of times](https://xkcd.com/1205/) by quickly jumping to the right URL!
 Here is a magic spell to remember:
 
-```
+```txt
 🐸✨🐸✨🐸
 njt <package> [destination]
 🐸✨🐸✨🐸
@@ -38,19 +38,19 @@ Omitting the destination or entering an non-existing one takes you to the packag
 ## Examples
 
 `njt prettier` (no specified destination)  
-🐸 → https://www.npmjs.com/package/prettier
+🐸 → <https://www.npmjs.com/package/prettier>
 
 `njt prettier h` (homepage)  
-🐸 → https://prettier.io
+🐸 → <https://prettier.io>
 
 `njt prettier s` (source)  
-🐸 → https://github.com/prettier/prettier
+🐸 → <https://github.com/prettier/prettier>
 
 `njt prettier r` (releases)  
-🐸 → https://github.com/prettier/prettier/releases
+🐸 → <https://github.com/prettier/prettier/releases>
 
 `njt prettier y` (yarn)  
-🐸 → https://yarnpkg.com/package/prettier
+🐸 → <https://yarnpkg.com/package/prettier>
 
 ## Getting `njt`
 
@@ -139,12 +139,12 @@ On the plus side, it works everywhere and does not require setup.
 
 Thanks to [now.sh](https://now.sh) for hosting [njt.now.sh](https://njt.now.sh) 💚
 
-### 🟢 More ways?
+### 🟢 More ways
 
 Are you a search shortcut guru?
 Feel free [to suggest](https://github.com/kachkaev/njt/issues/new?title=New+entry+point+suggestion) another entry point to `njt` and save people’s time around the world!
 
-## How does `njt` work?
+## How does `njt` work
 
 For requests like `njt <package>` or `njt <package> y`, all the tool does is navigating you to URLs like `https://www.npmjs.com/package/<package>` or `https://yarnpkg.com/package/<package>`.
 

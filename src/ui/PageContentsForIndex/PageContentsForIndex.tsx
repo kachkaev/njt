@@ -1,9 +1,10 @@
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
-import InputForm from "./InputForm";
-import Example from "./Example";
-import AvailableDestinations from "./AvailableDestinations";
+
 import ExternalLink from "../shared/ExternalLink";
+import AvailableDestinations from "./AvailableDestinations";
+import Example from "./Example";
+import InputForm from "./InputForm";
 
 const H2 = styled.h2`
   margin-top: 3em;
@@ -122,21 +123,19 @@ const PageContentsForIndex: React.FunctionComponent = () => {
           ),
         )}
       </ExamplePackages>
-      {(Object.entries(remarkByDestination) as [DestinationKey, string][]).map(
-        ([destination, remark]) => {
-          return (
-            <Example
-              key={destination}
-              to={`${examplePackage} ${destination}`.trim()}
-              remark={remark}
-              url={
-                exampleUrlByPackageAndDestination[examplePackage][destination]
-              }
-              onToClick={handleExampleClick}
-            />
-          );
-        },
-      )}
+      {(Object.entries(remarkByDestination) as Array<
+        [DestinationKey, string]
+      >).map(([destination, remark]) => {
+        return (
+          <Example
+            key={destination}
+            to={`${examplePackage} ${destination}`.trim()}
+            remark={remark}
+            url={exampleUrlByPackageAndDestination[examplePackage][destination]}
+            onToClick={handleExampleClick}
+          />
+        );
+      })}
 
       <H2>More!</H2>
       <p>

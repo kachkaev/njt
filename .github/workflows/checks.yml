@@ -1,0 +1,40 @@
+name: Checks
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  lint:
+    name: Linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Lint with eslint
+        run: yarn lint:eslint
+
+      - name: Lint with markdownlint
+        run: yarn lint:markdownlint
+
+      - name: Lint with prettier
+        run: yarn lint:prettier
+
+      - name: Lint with tsc
+        run: yarn lint:tsc
+
+      - name: Lint with yarn-deduplicate
+        run: yarn lint:yarn-deduplicate
