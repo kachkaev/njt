@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   text-align: center;
+  padding-top: 1.5em;
 `;
 const StatusCode = styled.h2`
   font-size: 8em;
