@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useMemo } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import ExternalLink from "../shared/ExternalLink";
@@ -45,7 +45,7 @@ const AvailableDestinations: React.FunctionComponent<{
   selectedDestination?: string;
   onSelectedDestinationChange: (selectedDestination: string) => void;
 }> = ({ selectedDestination, onSelectedDestinationChange }) => {
-  const handleKeywordClick = useCallback(
+  const handleKeywordClick = React.useCallback(
     ({ currentTarget }) => {
       onSelectedDestinationChange?.(currentTarget.innerText);
     },
@@ -53,7 +53,7 @@ const AvailableDestinations: React.FunctionComponent<{
   );
 
   // When updating, remember to reflect changes in README.md and cli/cli.js
-  const keywordInfos: KeywordInfo[] = useMemo(
+  const keywordInfos: KeywordInfo[] = React.useMemo(
     () => [
       {
         keywords: ["c"],
@@ -167,10 +167,10 @@ const AvailableDestinations: React.FunctionComponent<{
       <p>
         Omitting the destination or entering an non-existing one takes you to
         the package page on <ExternalLink href="https://www.npmjs.com" /> as if
-        you used&nbsp;<Keyword onClick={handleKeywordClick}>n</Keyword>.
+        you React.used&nbsp;<Keyword onClick={handleKeywordClick}>n</Keyword>.
       </p>
     </>
   );
 };
 
-export default memo(AvailableDestinations);
+export default React.memo(AvailableDestinations);

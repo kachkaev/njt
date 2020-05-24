@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const verticalFormPadding = 20;
@@ -105,12 +105,12 @@ const InputForm: React.FunctionComponent<{
   text?: string;
   onTextChange?: (value: string) => void;
 }> = ({ text, onTextChange }) => {
-  const formRef = useRef<HTMLFormElement>(null);
+  const formRef = React.useRef<HTMLFormElement>(null);
 
-  const previousToValue = useRef<string>();
-  const toInputRef = useRef<HTMLInputElement>(null);
+  const previousToValue = React.useRef<string>();
+  const toInputRef = React.useRef<HTMLInputElement>(null);
 
-  const focusAndSelectAll = useCallback(() => {
+  const focusAndSelectAll = React.useCallback(() => {
     const input = toInputRef.current;
     if (input) {
       input.focus({ preventScroll: true });
@@ -118,7 +118,7 @@ const InputForm: React.FunctionComponent<{
     }
   }, [toInputRef]);
 
-  const handleInputChange = useCallback(
+  const handleInputChange = React.useCallback(
     ({ currentTarget: { value } }) => {
       previousToValue.current = value;
       onTextChange?.(value);
@@ -126,7 +126,7 @@ const InputForm: React.FunctionComponent<{
     [onTextChange],
   );
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (previousToValue.current !== text) {
       focusAndSelectAll();
     }
@@ -140,10 +140,10 @@ const InputForm: React.FunctionComponent<{
     previousToValue.current = text;
   }, [focusAndSelectAll, text, previousToValue, formRef]);
 
-  const [from, setFrom] = useState("noscript");
-  const fromInputRef = useRef<HTMLInputElement>(null);
+  const [from, setFrom] = React.useState("noscript");
+  const fromInputRef = React.useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setFrom("bookmark");
   }, []);
   const handleFormSubmit = () => {

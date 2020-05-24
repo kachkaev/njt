@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import ExternalLink from "../shared/ExternalLink";
@@ -70,19 +70,19 @@ const exampleUrlByPackageAndDestination = {
 type ExampleKey = keyof typeof exampleUrlByPackageAndDestination;
 
 const PageContentsForIndex: React.FunctionComponent = () => {
-  const [examplePackage, setExamplePackage] = useState(
+  const [examplePackage, setExamplePackage] = React.useState(
     () => Object.keys(exampleUrlByPackageAndDestination)[0] as ExampleKey,
   );
-  const handleExamplePackageClick = useCallback(
+  const handleExamplePackageClick = React.useCallback(
     (e) => {
       setExamplePackage(e.currentTarget.innerText);
     },
     [setExamplePackage],
   );
 
-  const [inputText, setInputText] = useState("");
+  const [inputText, setInputText] = React.useState("");
 
-  const handleExampleClick = useCallback(
+  const handleExampleClick = React.useCallback(
     (text) => {
       setInputText(" ");
       setTimeout(() => setInputText(text), 0);
@@ -90,7 +90,7 @@ const PageContentsForIndex: React.FunctionComponent = () => {
     [setInputText],
   );
 
-  const handleSelectedDestinationChange = useCallback(
+  const handleSelectedDestinationChange = React.useCallback(
     (destination) => {
       setInputText((currentInputText) => {
         const currentPackage = currentInputText.trim().split(" ", 1)[0];

@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import ExternalLink from "../shared/ExternalLink";
@@ -39,4 +39,4 @@ const Example: React.FunctionComponent<{
   );
 };
 
-export default memo(Example);
+export default React.memo(Example);
