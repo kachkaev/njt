@@ -167,7 +167,7 @@ const AvailableDestinations: React.FunctionComponent<{
       <p>
         Omitting the destination or entering an non-existing one takes you to
         the package page on <ExternalLink href="https://www.npmjs.com" /> as if
-        you React.used&nbsp;<Keyword onClick={handleKeywordClick}>n</Keyword>.
+        you used&nbsp;<Keyword onClick={handleKeywordClick}>n</Keyword>.
       </p>
     </>
   );
