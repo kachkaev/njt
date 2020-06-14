@@ -131,6 +131,23 @@ The command to type in Firefox address bar will become `n <package> [destination
 <s>If you use [duckduckgo.com](https://duckduckgo.com) as your primary search engine, type `!njt <package> [destination]` in its search field (note the leading exclamation mark).
 This trick is possible thanks to DuckDuckGo’s awesome [bang feature](https://duckduckgo.com/bang).</s>
 
+### 🟢 Alfred web search
+
+Want to hop directly from [Alfred launcher](https://www.alfredapp.com/)?
+
+1. Open Preferences -> Features -> Web Search
+2. Click "Add Custom Search"
+3. Fill in the blanks like so:
+  * Search URL: `https://njt.now.sh/jump?to={query}`
+  * Title: `Search NJT for '{query}'`
+  * Keyword: `njt`
+  * Drag the icon from: https://njt.now.sh/favicon-32x32.png
+4. Save.
+
+Or [click this alfred link](alfred://customsearch/Search%20NJT%20for%20%27%7Bquery%7D%27/njt/utf8/nospace/https%3A%2F%2Fnjt.now.sh%2Fjump%3Fto%3D%7Bquery%7D), and skip all that noise.
+
+**Pro tip:** Create variants with your favorite NJT suffixes to jump to your favorite locations in fewer characters. E.G. keyword `ng` -> `{query} g`.
+
 ### 🟢 Online search field on the `njt`’s mini-website
 
 Open [njt.now.sh](https://njt.now.sh), type your query, press enter.
