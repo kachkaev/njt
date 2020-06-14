@@ -135,14 +135,14 @@ This trick is possible thanks to DuckDuckGo’s awesome [bang feature](https://d
 
 Want to hop directly from [Alfred launcher](https://www.alfredapp.com/)?
 
-1. Open Preferences -> Features -> Web Search
-2. Click "Add Custom Search"
-3. Fill in the blanks like so:
-  * Search URL: `https://njt.now.sh/jump?to={query}`
-  * Title: `Search NJT for '{query}'`
-  * Keyword: `njt`
-  * Drag the icon from: https://njt.now.sh/favicon-32x32.png
-4. Save.
+1.  Open Preferences -> Features -> Web Search
+1.  Click "Add Custom Search"
+1.  Fill in the blanks like so:
+    - Search URL: `https://njt.now.sh/jump?to={query}`
+    - Title: `Search NJT for '{query}'`
+    - Keyword: `njt`
+    - Drag the icon from: <https://njt.now.sh/favicon-32x32.png>
+1.  Save.
 
 Or [click this alfred link](alfred://customsearch/Search%20NJT%20for%20%27%7Bquery%7D%27/njt/utf8/nospace/https%3A%2F%2Fnjt.now.sh%2Fjump%3Fto%3D%7Bquery%7D), and skip all that noise.
 
