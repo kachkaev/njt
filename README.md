@@ -135,7 +135,7 @@ Want to hop directly from [Alfred launcher](https://www.alfredapp.com/)?
     | Field      | Value                                            |
     | ---------- | ------------------------------------------------ |
     | Search URL | `https://njt.now.sh/jump?from=alfred&to={query}` |
-    | Title      | `Search NJT for '{query}'`                       |
+    | Title      | `Search njt for '{query}'`                       |
     | Keyword    | `njt`                                            |
     | Icon       | drag from <https://njt.now.sh/favicon-32x32.png> |
 
@@ -144,10 +144,13 @@ Want to hop directly from [Alfred launcher](https://www.alfredapp.com/)?
 Alternatively, copy and open this special Alfred link to get all the above steps done for you:
 
 ```txt
-alfred://customsearch/Search%20NJT%20for%20%27%7Bquery%7D%27/njt/utf8/nospace/https%3A%2F%2Fnjt.now.sh%2Fjump%3Ffrom%3Dalfred%26to%3D%7Bquery%7D
+alfred://customsearch/Search%20njt%20for%20%27%7Bquery%7D%27/njt/utf8/nospace/https%3A%2F%2Fnjt.now.sh%2Fjump%3Ffrom%3Dalfred%26to%3D%7Bquery%7D
 ```
 
-**Pro tip:** Create variants with your favorite NJT suffixes to jump to your favorite locations in even fewer characters.
+**Pro tip 💡** You can use `n` instead of `njt` as a search keyword to avoid typing two extra characters each time.
+The command to type in Alfred address bar will become `n <package> [destination]` 🚀
+
+You can also create variants with your favorite `njt` suffixes to jump to your favorite locations in even fewer characters.
 For example, keyword `ng` can be a shortcut to `njt {query} g`.
 
 ### 🟢 DuckDuckGo bang
