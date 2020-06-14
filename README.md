@@ -141,8 +141,8 @@ Want to hop directly from [Alfred launcher](https://www.alfredapp.com/)?
 
 1.  Press _Save_
 
-Alternatively, click this special Alfred link to get all the above steps done for you:
-<alfred://customsearch/Search%20NJT%20for%20%27%7Bquery%7D%27/njt/utf8/nospace/https%3A%2F%2Fnjt.now.sh%2Fjump%3Ffrom%3Dalfred%26to%3D%7Bquery%7D>
+Alternatively, click this special app link to get all the above steps done for you:
+[add NJT to Alfred](alfred://customsearch/Search%20NJT%20for%20%27%7Bquery%7D%27/njt/utf8/nospace/https%3A%2F%2Fnjt.now.sh%2Fjump%3Ffrom%3Dalfred%26to%3D%7Bquery%7D).
 
 **Pro tip:** Create variants with your favorite NJT suffixes to jump to your favorite locations in even fewer characters.
 For example, keyword `ng` can be a shortcut to `njt {query} g`.
