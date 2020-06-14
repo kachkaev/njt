@@ -124,29 +124,35 @@ To uninstall, open Firefox bookmarks from the main menu, search for `njt` and re
 **Pro tip 💡** You can use `n` instead of `njt` as a search keyword to avoid typing two extra characters each time.
 The command to type in Firefox address bar will become `n <package> [destination]` 🚀
 
+### 🟢 Alfred web search
+
+Want to hop directly from [Alfred launcher](https://www.alfredapp.com/)?
+
+1.  Open _Preferences_ → _Features_ → _Web Search_
+1.  Click _Add Custom Search_
+1.  Fill in the form:
+
+    | Field      | Value                                            |
+    | ---------- | ------------------------------------------------ |
+    | Search URL | `https://njt.now.sh/jump?from=alfred&to={query}` |
+    | Title      | `Search NJT for '{query}'`                       |
+    | Keyword    | `njt`                                            |
+    | Icon       | drag from <https://njt.now.sh/favicon-32x32.png> |
+
+1.  Press _Save_
+
+Alternatively, click this special Alfred link to get all the above steps done for you:
+<alfred://customsearch/Search%20NJT%20for%20%27%7Bquery%7D%27/njt/utf8/nospace/https%3A%2F%2Fnjt.now.sh%2Fjump%3Ffrom%3Dalfred%26to%3D%7Bquery%7D>
+
+**Pro tip:** Create variants with your favorite NJT suffixes to jump to your favorite locations in even fewer characters.
+For example, keyword `ng` can be a shortcut to `njt {query} g`.
+
 ### 🟢 DuckDuckGo bang
 
 > DuckDuckGo bang is awaiting approval
 
 <s>If you use [duckduckgo.com](https://duckduckgo.com) as your primary search engine, type `!njt <package> [destination]` in its search field (note the leading exclamation mark).
 This trick is possible thanks to DuckDuckGo’s awesome [bang feature](https://duckduckgo.com/bang).</s>
-
-### 🟢 Alfred web search
-
-Want to hop directly from [Alfred launcher](https://www.alfredapp.com/)?
-
-1.  Open Preferences -> Features -> Web Search
-1.  Click "Add Custom Search"
-1.  Fill in the blanks like so:
-    - Search URL: `https://njt.now.sh/jump?to={query}`
-    - Title: `Search NJT for '{query}'`
-    - Keyword: `njt`
-    - Drag the icon from: <https://njt.now.sh/favicon-32x32.png>
-1.  Save.
-
-Or [click this alfred link](alfred://customsearch/Search%20NJT%20for%20%27%7Bquery%7D%27/njt/utf8/nospace/https%3A%2F%2Fnjt.now.sh%2Fjump%3Fto%3D%7Bquery%7D), and skip all that noise.
-
-**Pro tip:** Create variants with your favorite NJT suffixes to jump to your favorite locations in fewer characters. E.G. keyword `ng` -> `{query} g`.
 
 ### 🟢 Online search field on the `njt`’s mini-website
 
