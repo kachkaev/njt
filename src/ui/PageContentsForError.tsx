@@ -20,7 +20,7 @@ const Message = styled.div`
   opacity: 0.3;
 `;
 
-const PageContentsForError: React.FunctionComponent<{
+export const PageContentsForError: React.FunctionComponent<{
   statusCode: number;
   message: string;
 }> = ({ statusCode, message }) => {
@@ -35,5 +35,3 @@ const PageContentsForError: React.FunctionComponent<{
     </Container>
   );
 };
-
-export default PageContentsForError;

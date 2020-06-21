@@ -101,7 +101,7 @@ const SubmitButton = styled.button`
   }
 `;
 
-const InputForm: React.FunctionComponent<{
+export const InputForm: React.FunctionComponent<{
   text?: string;
   onTextChange?: (value: string) => void;
 }> = ({ text, onTextChange }) => {
@@ -170,5 +170,3 @@ const InputForm: React.FunctionComponent<{
     </Form>
   );
 };
-
-export default InputForm;

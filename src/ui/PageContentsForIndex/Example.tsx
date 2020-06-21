@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import ExternalLink from "../shared/ExternalLink";
-import ClickableCode from "./ClickableCode";
+import { ExternalLink } from "../shared/ExternalLink";
+import { ClickableCode } from "./ClickableCode";
 
 const Remark = styled.span`
   white-space: nowrap;
@@ -39,4 +39,5 @@ const Example: React.FunctionComponent<{
   );
 };
 
-export default React.memo(Example);
+const WrappedExample = React.memo(Example);
+export { WrappedExample as Example };

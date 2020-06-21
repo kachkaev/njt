@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import ExternalLink from "../shared/ExternalLink";
-import AvailableDestinations from "./AvailableDestinations";
-import Example from "./Example";
-import InputForm from "./InputForm";
+import { ExternalLink } from "../shared/ExternalLink";
+import { AvailableDestinations } from "./AvailableDestinations";
+import { Example } from "./Example";
+import { InputForm } from "./InputForm";
 
 const H2 = styled.h2`
   margin-top: 3em;
@@ -69,7 +69,7 @@ const exampleUrlByPackageAndDestination = {
 
 type ExampleKey = keyof typeof exampleUrlByPackageAndDestination;
 
-const PageContentsForIndex: React.FunctionComponent = () => {
+export const PageContentsForIndex: React.FunctionComponent = () => {
   const [examplePackage, setExamplePackage] = React.useState(
     () => Object.keys(exampleUrlByPackageAndDestination)[0] as ExampleKey,
   );
@@ -159,5 +159,3 @@ const PageContentsForIndex: React.FunctionComponent = () => {
     </>
   );
 };
-
-export default PageContentsForIndex;

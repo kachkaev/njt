@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 
-const PageMetadata: React.FunctionComponent<{
+export const PageMetadata: React.FunctionComponent<{
   title?: string;
   description?: string;
 }> = ({
@@ -32,5 +32,3 @@ const PageMetadata: React.FunctionComponent<{
     </Head>
   );
 };
-
-export default PageMetadata;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ClickableCode = styled.code`
+export const ClickableCode = styled.code`
   border-bottom: 1px dotted transparent;
   color: inherit;
   .js & {
@@ -20,5 +20,3 @@ const ClickableCode = styled.code`
     }
   }
 `;
-
-export default ClickableCode;

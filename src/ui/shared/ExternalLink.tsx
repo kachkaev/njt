@@ -1,6 +1,6 @@
 import React from "react";
 
-const ExternalLink: React.FunctionComponent<React.HTMLProps<
+export const ExternalLink: React.FunctionComponent<React.HTMLProps<
   HTMLAnchorElement
 >> = ({ children, href, ...rest }) => {
   return (
@@ -9,4 +9,3 @@ const ExternalLink: React.FunctionComponent<React.HTMLProps<
     </a>
   );
 };
-export default ExternalLink;

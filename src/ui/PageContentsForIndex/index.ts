@@ -1,1 +1,1 @@
-export { default } from "./PageContentsForIndex";
+export * from "./PageContentsForIndex";

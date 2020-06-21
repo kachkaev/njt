@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import ExternalLink from "../shared/ExternalLink";
-import ClickableCode from "./ClickableCode";
+import { ExternalLink } from "../shared/ExternalLink";
+import { ClickableCode } from "./ClickableCode";
 
 const Ul = styled.ul`
   padding-left: 0;
@@ -173,4 +173,5 @@ const AvailableDestinations: React.FunctionComponent<{
   );
 };
 
-export default React.memo(AvailableDestinations);
+const WrappedAvailableDestinations = React.memo(AvailableDestinations);
+export { WrappedAvailableDestinations as AvailableDestinations };
