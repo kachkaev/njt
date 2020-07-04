@@ -56,6 +56,11 @@ ${code('njt prettier r')} (releases)
 
 ${code('njt prettier y')} (yarn)
 🐸  → https://yarnpkg.com/package/prettier
+
+
+Pro tip
+-------
+When you specify . instead of a package name, njt takes the name from the nearest package.json file.
 `,
   )
   .parse(process.argv);
@@ -65,5 +70,40 @@ if (program.rawArgs.length < 3) {
   process.exit(1);
 }
 
-const query = program.args.join(" ");
-openUrl(generateUrl(query), process.env.NJT_BROWSER || process.env.BROWSER);
+const args = [...program.args];
+if (args[0] === ".") {
+  const finder = require("find-package-json");
+  const f = finder();
+  const packageJsonSearchResult = f.next();
+  if (!packageJsonSearchResult.value) {
+    console.log(`
+${chalk.red(
+  "You specified package name as . but package.json was not found in the current folder or in parent folders.",
+)}
+Change directly or replace . with a package name.
+
+🐸 https://njt.now.sh
+    `);
+    process.exit(1);
+  }
+  console.log(`
+Resolved "." as ${packageJsonSearchResult.filename}`);
+  const packageName = packageJsonSearchResult.value.name;
+  if (!packageName) {
+    console.log(`
+${chalk.red(
+  'You specified package name as . but "name" field was not found in the resolved package.json file.',
+)}
+Change directly or replace . with a package name.
+
+🐸 https://njt.now.sh
+    `);
+    process.exit(1);
+  }
+  args[0] = packageName;
+}
+
+openUrl(
+  generateUrl(args.join(" ")),
+  process.env.NJT_BROWSER || process.env.BROWSER,
+);

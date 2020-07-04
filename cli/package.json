@@ -30,6 +30,7 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "commander": "^5.1.0",
+    "find-package-json": "^1.2.0",
     "open": "^7.0.4"
   }
 }
