@@ -1,6 +1,6 @@
 {
   "name": "njt",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "npm jump to: a quick navigation tool for npm packages",
   "keywords": [
     "frog",
