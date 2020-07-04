@@ -6,7 +6,7 @@ export const PageMetadata: React.FunctionComponent<{
   description?: string;
 }> = ({
   title = "njt (npm jump to)",
-  description = "package navigation shortcuts you dreamed about",
+  description = "a quick navigation tool for npm packages",
 }) => {
   return (
     <Head>

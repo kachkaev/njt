@@ -16,7 +16,7 @@ program
   .description(
     // prettier-ignore
     `🐸 ✨ 🐸 ✨ 🐸
-npm jump to: package navigation shortcuts you dreamed about
+npm jump to: a quick navigation tool for npm packages
 
 https://njt.now.sh
 
