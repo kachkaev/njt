@@ -20,13 +20,14 @@ npm jump to: package navigation shortcuts you dreamed about
 
 https://njt.now.sh
 
-${ /* When updating, remember to reflect changes in README.md and src/components/AvailableDestinations.tsx */''}
+${ /* When updating, remember to reflect changes in README.md and src/ui/PageContentsForIndex/AvailableDestinations.tsx */''}
 Available destinations
 ----------------------
+${green('b')} → package cost estimation on https://bundlephobia.com
 ${green('c')} → changelog
 ${green('g')} → github (gitlab, etc.) repository root
 ${green('h')} → homepage (aliased as ${green('w')} for website or ${green('d')} for docs)
-${green('i')} → issues (aliased as ${green('b')} for bugs)
+${green('i')} → issues
 ${green('n')} → package info on https://www.npmjs.com
 ${green('p')} → pull requests (aliased as ${green('m')} for merge requests)
 ${green('r')} → list of github releases
@@ -34,7 +35,7 @@ ${green('s')} → source (often same as repository root, but can be its subdirec
 ${green('t')} → list of git tags
 ${green('u')} → package contents preview on https://unpkg.com
 ${green('v')} → list of package versions with dates on https://www.npmjs.com
-${green('y')} → package page on https://yarnpkg.com
+${green('y')} → package page on https://yarnpkg.com (mirror registry for https://www.npmjs.com)
 
 Omitting the destination or entering an non-existing one takes you to the package page on https://www.npmjs.com as if you used ${green('n')}.
 

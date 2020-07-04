@@ -56,6 +56,15 @@ const AvailableDestinations: React.FunctionComponent<{
   const keywordInfos: KeywordInfo[] = React.useMemo(
     () => [
       {
+        keywords: ["b"],
+        info: (
+          <>
+            package cost estimation on{" "}
+            <ExternalLink href="https://bundlephobia.com" />
+          </>
+        ),
+      },
+      {
         keywords: ["c"],
         info: "changelog",
       },
@@ -74,13 +83,8 @@ const AvailableDestinations: React.FunctionComponent<{
         ),
       },
       {
-        keywords: ["i", "b"],
-        info: (
-          <>
-            issues (aliased as <Keyword onClick={handleKeywordClick}>b</Keyword>{" "}
-            bugs)
-          </>
-        ),
+        keywords: ["i"],
+        info: <>issues</>,
       },
       {
         keywords: ["n"],
@@ -109,7 +113,7 @@ const AvailableDestinations: React.FunctionComponent<{
         info: (
           <>
             source (often same as repository root, but can be
-            its&nbsp;subdirectory in case of a&nbsp;monorepo)
+            its&nbsp;subdirectory in&nbsp;case of a&nbsp;monorepo)
           </>
         ),
       },
@@ -139,7 +143,8 @@ const AvailableDestinations: React.FunctionComponent<{
         keywords: ["y"],
         info: (
           <>
-            package page on <ExternalLink href="https://yarnpkg.com" />
+            package page on <ExternalLink href="https://yarnpkg.com" /> (mirror
+            registry for <ExternalLink href="https://www.npmjs.com" />)
           </>
         ),
       },

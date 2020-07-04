@@ -18,20 +18,21 @@ njt <package> [destination]
 
 ## Available destinations
 
-<!-- When updating, remember to reflect changes in cli/cli.js and src/components/AvailableDestinations.tsx -->
+<!-- When updating, remember to reflect changes in cli/cli.js and src/ui/PageContentsForIndex/AvailableDestinations.tsx -->
 
+- `b` → package cost estimation on [bundlephobia.com](https://bundlephobia.com)
 - `c` → changelog
 - `g` → github (gitlab, etc.) repository root
 - `h` → homepage (aliased as `w` for website or `d` for docs)
-- `i` → issues (aliased as `b` for bugs)
+- `i` → issues
 - `n` → package info on [npmjs.com](https://www.npmjs.com)
 - `p` → pull requests (aliased as `m` for merge requests)
 - `r` → list of github releases
 - `s` → source (often same as repository root, but can be its subdirectory in case of a monorepo)
 - `t` → list of git tags
-- `u` → package contents preview on [yarnpkg.com](https://yarnpkg.com) (mirror registry for [npmjs.com](https://www.npmjs.com))
+- `u` → package contents preview on [unpkg.com](https://unpkg.com)
 - `v` → list of package versions with dates on [npmjs.com](https://www.npmjs.com)
-- `y` → package page on [yarnpkg.com](https://yarnpkg.com)
+- `y` → package page on [yarnpkg.com](https://yarnpkg.com) (mirror registry for [npmjs.com](https://www.npmjs.com))
 
 Omitting the destination or entering an non-existing one takes you to the package page on [npmjs.com](https://www.npmjs.com) as if you used `n`.
 

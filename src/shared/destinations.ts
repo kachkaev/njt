@@ -72,6 +72,11 @@ const getRepoUrl = async (
 
 const destinationConfigs: DestinationConfig[] = [
   {
+    keywords: ["b"],
+    generateUrl: (packageName) =>
+      `https://bundlephobia.com/result?p=${packageName}`,
+  },
+  {
     keywords: ["c"],
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
@@ -101,7 +106,7 @@ const destinationConfigs: DestinationConfig[] = [
     },
   },
   {
-    keywords: ["i", "b"],
+    keywords: ["i"],
     generateUrl: async (packageName) => {
       // Reference implementation: https://github.com/npm/cli/blob/latest/lib/bugs.js
       const packageMetadata = await getPackageMetadata(packageName);
