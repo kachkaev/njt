@@ -156,6 +156,22 @@ The command to type in Alfred address bar will become `n <package> [destination]
 You can also create variants with your favorite `njt` suffixes to jump to your favorite locations in even fewer characters.
 For example, keyword `ng` can be a shortcut to `njt {query} g`.
 
+### 🟢 VSCode
+
+If you use Visual Studio Code, you can add njt to the command palette via [LaunchX](https://marketplace.visualstudio.com/items?itemName=neibla.launchx) extension.
+
+1.  [Install the extension](vscode:extension/neibla.launchx)
+
+1.  Open the command palette
+
+1.  Type `njt` and press Enter
+
+    ![njt in vsocde command palette](assets/vscode-lanuchx.png)
+
+1.  Type your search and press Enter again
+
+**Pro tip 💡** Use `ctrl+alt+n` to bypass the command palette.
+
 ### 🟢 DuckDuckGo bang
 
 > DuckDuckGo bang is awaiting approval
@@ -165,13 +181,13 @@ This trick is possible thanks to DuckDuckGo’s awesome [bang feature](https://d
 
 ### 🟢 Online search field on the `njt`’s mini-website
 
-Open [njt.now.sh](https://njt.now.sh), type your query, press enter.
+Open [njt.now.sh](https://njt.now.sh), type your query, press Enter.
 This method is a bit slower than the other ones because it involves opening a web page with an input form.
 On the plus side, it works everywhere and does not require setup.
 
 Thanks to [now.sh](https://now.sh) for hosting [njt.now.sh](https://njt.now.sh) 💚
 
-### 🟢 More ways
+### ❓More ways
 
 Are you a search shortcut guru?
 Feel free [to suggest](https://github.com/kachkaev/njt/issues/new?title=New+entry+point+suggestion) another entry point to `njt` and save people’s time around the world!
