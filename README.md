@@ -166,7 +166,7 @@ If you use Visual Studio Code, you can add njt to the command palette via [Launc
 
 1.  Type `njt` and press Enter
 
-    ![njt in vsocde command palette](assets/vscode-lanuchx.png)
+    ![njt in VSCode command palette](assets/vscode-launchx.png)
 
 1.  Type your search and press Enter again
 
