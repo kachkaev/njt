@@ -87,7 +87,7 @@ Change directly or replace . with a package name.
     process.exit(1);
   }
   console.log(`
-Resolved "." as ${packageJsonSearchResult.filename}`);
+Resolved . as ${packageJsonSearchResult.filename}`);
   const packageName = packageJsonSearchResult.value.name;
   if (!packageName) {
     console.log(`
