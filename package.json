@@ -37,8 +37,8 @@
     ]
   },
   "dependencies": {
-    "hosted-git-info": "^3.0.4",
-    "lru-cache": "^5.1.1",
+    "hosted-git-info": "^3.0.5",
+    "lru-cache": "^6.0.0",
     "mem": "^6.1.0",
     "next": "^9.4.4",
     "node-fetch": "^2.6.0",
@@ -59,17 +59,17 @@
     "@kachkaev/prettier-config": "^1.0.0",
     "@types/hosted-git-info": "^3.0.0",
     "@types/lru-cache": "^5.1.0",
-    "@types/node": "^14.0.13",
+    "@types/node": "^14.0.23",
     "@types/node-fetch": "^2.5.7",
-    "@types/styled-components": "^5.1.0",
-    "eslint": "^6.8.0",
+    "@types/styled-components": "^5.1.1",
+    "eslint": "^7.4.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
-    "markdownlint-cli": "^0.23.1",
+    "markdownlint-cli": "^0.23.2",
     "ncp": "^2.0.0",
     "prettier": "^2.0.5",
-    "typescript": "^3.9.5",
-    "yarn-deduplicate": "^2.0.0"
+    "typescript": "^3.9.7",
+    "yarn-deduplicate": "^2.1.1"
   },
   "run-if-changed": {
     "yarn.lock": "yarn install --prefer-offline --pure-lockfile"
