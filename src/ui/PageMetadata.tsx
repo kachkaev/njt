@@ -1,6 +1,13 @@
 import Head from "next/head";
 import React from "react";
 
+const getBaseUrl = () => {
+  const hostname =
+    process.env.VERCEL_URL ?? process.env.HOSTNAME ?? "njt.now.sh";
+  const protocol = hostname.split(":")[0] === "localhost" ? "http" : "https";
+  return `${protocol}://${hostname}`;
+};
+
 export const PageMetadata: React.FunctionComponent<{
   title?: string;
   description?: string;
@@ -8,6 +15,8 @@ export const PageMetadata: React.FunctionComponent<{
   title = "njt (npm jump to)",
   description = "a quick navigation tool for npm packages",
 }) => {
+  const baseUrl = getBaseUrl();
+
   return (
     <Head>
       <title>{title}</title>
@@ -17,18 +26,9 @@ export const PageMetadata: React.FunctionComponent<{
       <meta property="twitter:card" content="summary" />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
-      <meta
-        property="og:image"
-        content={`${process.env.siteUrl}/og-image.png`}
-      />
-      <meta
-        property="twitter:image"
-        content={`${process.env.siteUrl}/og-image.png`}
-      />
-      <meta
-        property="vk:image"
-        content={`${process.env.siteUrl}/og-image.png`}
-      />
+      <meta property="og:image" content={`${baseUrl}/og-image.png`} />
+      <meta property="twitter:image" content={`${baseUrl}/og-image.png`} />
+      <meta property="vk:image" content={`${baseUrl}/og-image.png`} />
     </Head>
   );
 };
