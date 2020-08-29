@@ -1,4 +1,4 @@
-import mem from "mem";
+import { InlineJs } from "@kachkaev/react-inline-js";
 import Document, {
   DocumentContext,
   Head,
@@ -8,25 +8,6 @@ import Document, {
 } from "next/document";
 import React from "react";
 import { ServerStyleSheet } from "styled-components";
-import Terser from "terser";
-
-const minify = mem(Terser.minify);
-
-const InlineJs: React.FunctionComponent<{ code: string; children?: never }> = ({
-  code,
-}) => {
-  const minifyOutput = minify(code);
-
-  if (minifyOutput.error) {
-    throw minifyOutput.error;
-  }
-
-  if (!minifyOutput.code) {
-    throw new Error("Minified code is empty");
-  }
-
-  return <script dangerouslySetInnerHTML={{ __html: minifyOutput.code }} />;
-};
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
