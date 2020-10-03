@@ -46,7 +46,7 @@
     "react-dom": "^17.0.0-rc.2",
     "styled-components": "^5.2.0",
     "styled-normalize": "^8.0.7",
-    "unfetch": "^4.1.0",
+    "unfetch": "^4.2.0",
     "url": "^0.11.0",
     "use-dark-mode": "^2.3.1"
   },
