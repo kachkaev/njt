@@ -21,9 +21,7 @@
     "name": "Alexander Kachkaev",
     "email": "alexander@kachkaev.ru"
   },
-  "bin": {
-    "njt": "cli.js"
-  },
+  "bin": "cli.js",
   "scripts": {
     "prepublishOnly": "yarn ncp ../README.md README.md"
   },
