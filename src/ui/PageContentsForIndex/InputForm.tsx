@@ -150,6 +150,7 @@ export const InputForm: React.FunctionComponent<{
     if (fromInputRef.current) {
       fromInputRef.current.value = "web";
     }
+
     return true;
   };
 

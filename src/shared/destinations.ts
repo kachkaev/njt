@@ -26,6 +26,7 @@ const getPackageMetadata = async (packageName: string): Promise<JsonObject> => {
   } else if (!result) {
     throw new Error(`Unexpected empty cache for ${packageName}`);
   }
+
   return result;
 };
 
@@ -38,12 +39,10 @@ const handleUnknownHostedUrl = (url: string): string | undefined => {
     }
     const parsedUrl = parseUrl(url);
     const protocol = parsedUrl.protocol === "https:" ? "https:" : "http:";
-    return (
-      protocol +
-      "//" +
-      (parsedUrl.host || "") +
-      (parsedUrl.path || "").replace(/\.git$/, "")
-    );
+
+    return `${protocol}//${parsedUrl.host || ""}${(
+      parsedUrl.path || ""
+    ).replace(/\.git$/, "")}`;
   } catch (e) {}
 };
 
@@ -67,6 +66,7 @@ const getRepoUrl = async (
       "https://github.com/$1/$2",
     );
   }
+
   return result;
 };
 
@@ -123,6 +123,7 @@ const destinationConfigs: DestinationConfig[] = [
       if (repoUrl) {
         return `${repoUrl}/issues`;
       }
+
       return repoUrl;
     },
   },
@@ -139,6 +140,7 @@ const destinationConfigs: DestinationConfig[] = [
       } else if (repoUrl && repoUrl.includes("://gitlab.com")) {
         return `${repoUrl}/merge_requests`;
       }
+
       return repoUrl;
     },
   },
@@ -151,6 +153,7 @@ const destinationConfigs: DestinationConfig[] = [
       } else if (repoUrl && repoUrl.includes("://gitlab.com")) {
         return `${repoUrl}/-/tags`;
       }
+
       return repoUrl;
     },
   },
@@ -166,6 +169,7 @@ const destinationConfigs: DestinationConfig[] = [
       if (repoUrl && sourceDirectory) {
         return `${repoUrl}/tree/master/${sourceDirectory}`;
       }
+
       return repoUrl;
     },
   },
@@ -178,6 +182,7 @@ const destinationConfigs: DestinationConfig[] = [
       } else if (repoUrl && repoUrl.includes("://gitlab.com")) {
         return `${repoUrl}/-/tags`;
       }
+
       return repoUrl;
     },
   },
@@ -208,6 +213,7 @@ const destinationConfigByKeyword: Record<
     }
     result[keyword] = destinationConfig;
   });
+
   return result;
 }, {} as { [key: string]: DestinationConfig });
 
@@ -222,6 +228,7 @@ export const resolveDestination = async (
     if (!url) {
       throw new Error("Unexpected empty URL");
     }
+
     return {
       outcome: "success",
       url,

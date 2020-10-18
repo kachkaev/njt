@@ -5,6 +5,7 @@ const getBaseUrl = () => {
   const hostname =
     process.env.VERCEL_URL ?? process.env.HOSTNAME ?? "njt.now.sh";
   const protocol = hostname.split(":")[0] === "localhost" ? "http" : "https";
+
   return `${protocol}://${hostname}`;
 };
 
