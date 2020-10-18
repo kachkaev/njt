@@ -94,11 +94,13 @@ export const PageContentsForIndex: React.FunctionComponent = () => {
     (destination) => {
       setInputText((currentInputText) => {
         const currentPackage = currentInputText.trim().split(" ", 1)[0];
+
         return `${currentPackage || examplePackage} ${destination}`;
       });
     },
     [setInputText, examplePackage],
   );
+
   return (
     <>
       <InputForm text={inputText} onTextChange={setInputText} />
