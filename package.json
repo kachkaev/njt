@@ -75,6 +75,6 @@
     "typescript": "^3.9.7"
   },
   "run-if-changed": {
-    "yarn.lock": "yarn install --prefer-offline --pure-lockfile"
+    "yarn.lock": "yarn install"
   }
 }
