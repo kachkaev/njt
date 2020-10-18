@@ -43,7 +43,9 @@ const handleUnknownHostedUrl = (url: string): string | undefined => {
     return `${protocol}//${parsedUrl.host || ""}${(
       parsedUrl.path || ""
     ).replace(/\.git$/, "")}`;
-  } catch (e) {}
+  } catch {
+    return undefined;
+  }
 };
 
 const getRepoUrl = async (
@@ -62,7 +64,7 @@ const getRepoUrl = async (
   // Some packages (e.g. babel and babel-cli) mistakenly specify repository URL with directory. It needs to be trimmed
   if (!skipDirectoryTrimming) {
     result = result.replace(
-      /^https:\/\/github\.com\/([^\/]+)\/([^\/]+)(.*)/i,
+      /^https:\/\/github\.com\/([^/]+)\/([^/]+)(.*)/i,
       "https://github.com/$1/$2",
     );
   }

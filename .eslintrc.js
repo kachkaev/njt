@@ -10,5 +10,11 @@ module.exports = {
         "import/no-default-export": "off",
       },
     },
+    {
+      files: ["cli/**"],
+      rules: {
+        "@typescript-eslint/no-var-requires": "off",
+      },
+    },
   ],
 };

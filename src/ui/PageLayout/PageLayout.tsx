@@ -49,7 +49,7 @@ export const PageLayout: React.FunctionComponent = ({ children }) => {
       <GlobalStyle />
       <TopSection>
         <Title>🐸 njt 🐸</Title>
-        <Description>🐸 npm jump to  🐸</Description>
+        <Description>🐸 npm jump to&nbsp; 🐸</Description>
         <ExternalLinks>
           <ExternalLink href="https://github.com/kachkaev/njt">
             github

@@ -17,7 +17,10 @@ const Item = styled.li<{ highlighted?: boolean }>`
   ${(p) => (p.highlighted ? "color: #42a73f" : "")};
 `;
 
-const Keyword = styled(ClickableCode)<{ onClick: Function; children: string }>`
+const Keyword = styled(ClickableCode)<{
+  onClick: React.MouseEventHandler;
+  children: string;
+}>`
   display: inline-block;
 `;
 
