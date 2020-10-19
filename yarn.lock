@@ -1796,15 +1796,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kachkaev/prettier-config@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@kachkaev/prettier-config@npm:1.0.0"
+"@kachkaev/prettier-config@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@kachkaev/prettier-config@npm:1.2.0"
   dependencies:
-    prettier-plugin-packagejson: ^2.2.3
-    prettier-plugin-sh: ^0.4.0
+    prettier-plugin-packagejson: ^2.2.6
+    prettier-plugin-sh: ^0.6.0
   peerDependencies:
     prettier: ^2.0.5
-  checksum: ccdea362f06a1ae3ffaa50ff43c61c54fdcf241311804f3592608ebf023e58f6dae7d7e66a9df8c450962c872b2341125e08bcdf6b3b9cb7fe4679307b92172d
+  checksum: 394e716bb6bb2579c55e3405cb80b1674279e13722571781e17f3631e44fe766050d0b9d2a3816e82ea6bfab429261e9939123cdca286bb22aa733f9c447c7a5
   languageName: node
   linkType: hard
 
@@ -8940,7 +8940,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prettier-plugin-packagejson@npm:^2.2.3, prettier-plugin-packagejson@npm:^2.2.6":
+"prettier-plugin-packagejson@npm:^2.2.6":
   version: 2.2.6
   resolution: "prettier-plugin-packagejson@npm:2.2.6"
   dependencies:
@@ -8948,17 +8948,6 @@ fsevents@^1.2.7:
   peerDependencies:
     prettier: ">= 1.16.0"
   checksum: 2b9ed7ce0934ebad5c63af7736152743884975cfa91c4b64e345f6e184b10e9e620eb032b31f3b5cd4f570d8b161511e904a81b1c258f48e07f54703323fa3dc
-  languageName: node
-  linkType: hard
-
-"prettier-plugin-sh@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "prettier-plugin-sh@npm:0.4.0"
-  dependencies:
-    mvdan-sh: ^0.5.0
-  peerDependencies:
-    prettier: ^2.0.4
-  checksum: dd47690937d345bba8d515054d8e135d1da99378993362927d7d116179c43e94d76f2906e42768d872c599863f8cd6ca2337f263e6d9a4d82557224e9c027273
   languageName: node
   linkType: hard
 
@@ -9646,7 +9635,7 @@ fsevents@^1.2.7:
     "@hkdobrev/run-if-changed": ^0.3.1
     "@kachkaev/eslint-config-react": ^0.2.0
     "@kachkaev/markdownlint-config": ^0.2.0
-    "@kachkaev/prettier-config": ^1.0.0
+    "@kachkaev/prettier-config": ^1.2.0
     "@kachkaev/react-inline-js": ^0.2.0
     "@types/hosted-git-info": ^3.0.1
     "@types/lru-cache": ^5.1.0
@@ -9677,8 +9666,6 @@ fsevents@^1.2.7:
     node-fetch: ^2.6.1
     npm-run-all: ^4.1.5
     prettier: ^2.1.2
-    prettier-plugin-packagejson: ^2.2.6
-    prettier-plugin-sh: ^0.6.0
     react: ^17.0.0-rc.3
     react-dom: ^17.0.0-rc.3
     styled-components: ^5.2.0
@@ -9687,6 +9674,9 @@ fsevents@^1.2.7:
     unfetch: ^4.2.0
     url: ^0.11.0
     use-dark-mode: ^2.3.1
+  dependenciesMeta:
+    "@kachkaev/prettier-config@1.0.0":
+      unplugged: true
   languageName: unknown
   linkType: soft
 
