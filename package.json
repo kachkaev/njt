@@ -65,7 +65,7 @@
     "@types/styled-components": "^5.1.4",
     "eslint": "^7.11.0",
     "husky": "^4.3.0",
-    "jest": "^26.5.3",
+    "jest": "^26.6.1",
     "lint-staged": "^10.4.2",
     "markdownlint-cli": "^0.24.0",
     "ncp": "^2.0.0",
