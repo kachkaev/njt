@@ -1302,10 +1302,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@kachkaev/eslint-config-base@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@kachkaev/eslint-config-base/-/eslint-config-base-0.2.1.tgz#283615d45b4d74b1355d3c682b68704bae3d0bec"
-  integrity sha512-FvY/mHADUlV8PEKQhw9U7MKzt9W+w3w4FUUhz4E0wNOshUyz7VBRvr98BonytZGJew25xduyURs8XEQVGboWlw==
+"@kachkaev/eslint-config-base@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@kachkaev/eslint-config-base/-/eslint-config-base-0.2.2.tgz#1013086507dd031471620476d3ca14a5149ed317"
+  integrity sha512-BBXIZ4AYj5sAvwb0cNFv55ut7G/pZvzwtLAI60uA7f02zhFC0cHqJVTx1uw65OoYRfbHAobd8FRQ2nz96DzWKA==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.4.1"
     "@typescript-eslint/parser" "^4.4.1"
@@ -1315,12 +1315,12 @@
     eslint-plugin-json "^2.1.2"
     eslint-plugin-simple-import-sort "^5.0.3"
 
-"@kachkaev/eslint-config-react@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@kachkaev/eslint-config-react/-/eslint-config-react-0.2.1.tgz#1fb50636088ba35fbb28028e75bc6e0fdba43a50"
-  integrity sha512-NDky0jCFsp9oE11ktnW3YjmNejI2cSXtiGKg3AlZiyNtuXGsSRg9i5tmajsO8hixSCSK3/2dkR+A97GQj3ZOUw==
+"@kachkaev/eslint-config-react@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@kachkaev/eslint-config-react/-/eslint-config-react-0.2.2.tgz#df375161456b1df14a4d410d1c9f2442d2e47a6d"
+  integrity sha512-61LVkomiJDmdZvkbO9L27lJVbg0Tsw2JGOTC5mfqpplOsqFAEyXt5++g1kry91N9IaL3lybXwI4eVr0Cl8IRaQ==
   dependencies:
-    "@kachkaev/eslint-config-base" "^0.2.1"
+    "@kachkaev/eslint-config-base" "^0.2.2"
     eslint-plugin-react "^7.21.4"
     eslint-plugin-react-hooks "^4.1.2"
     eslint-plugin-testing-library "^3.9.2"
