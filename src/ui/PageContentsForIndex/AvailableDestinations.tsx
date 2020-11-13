@@ -72,6 +72,14 @@ const AvailableDestinations: React.FunctionComponent<{
         info: "changelog",
       },
       {
+        keywords: ["f"],
+        info: (
+          <>
+            find on <ExternalLink href="https://www.npmjs.com" />
+          </>
+        ),
+      },
+      {
         keywords: ["g"],
         info: <>github (gitlab, etc.) repository root</>,
       },

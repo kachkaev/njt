@@ -18,7 +18,8 @@
     "lint:prettier": "prettier --check \"**/*\"",
     "lint:tsc": "tsc --project .",
     "lint:yarn-deduplicate": "yarn-deduplicate --fail --list --strategy=fewer",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest"
   },
   "husky": {
     "hooks": {
@@ -59,6 +60,7 @@
     "@kachkaev/markdownlint-config": "^0.2.0",
     "@kachkaev/prettier-config": "^1.2.0",
     "@types/hosted-git-info": "^3.0.1",
+    "@types/jest": "^26.0.15",
     "@types/lru-cache": "^5.1.0",
     "@types/node": "^14.14.6",
     "@types/node-fetch": "^2.5.7",

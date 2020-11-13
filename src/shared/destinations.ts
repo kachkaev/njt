@@ -88,6 +88,11 @@ const destinationConfigs: DestinationConfig[] = [
     },
   },
   {
+    keywords: ["f"],
+    generateUrl: async (search) =>
+      `https://www.npmjs.com/search?q=${encodeURIComponent(search)}`,
+  },
+  {
     keywords: ["g"],
     generateUrl: async (packageName) => {
       return await getRepoUrl(packageName, {
@@ -220,13 +225,13 @@ const destinationConfigByKeyword: Record<
 }, {} as { [key: string]: DestinationConfig });
 
 export const resolveDestination = async (
-  packageName: string,
+  packageOrSearch: string,
   destinationKeyword = "",
 ): Promise<ResolvedDestination> => {
   try {
     const url = await destinationConfigByKeyword[
       destinationKeyword
-    ].generateUrl(packageName);
+    ].generateUrl(packageOrSearch);
     if (!url) {
       throw new Error("Unexpected empty URL");
     }
@@ -238,7 +243,9 @@ export const resolveDestination = async (
   } catch {
     return {
       outcome: "success",
-      url: `${await destinationConfigByKeyword[""].generateUrl(packageName)}`,
+      url: `${await destinationConfigByKeyword[""].generateUrl(
+        packageOrSearch,
+      )}`,
     };
   }
 };

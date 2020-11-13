@@ -25,6 +25,7 @@ Available destinations
 ----------------------
 ${green('b')} → package cost estimation on https://bundlephobia.com
 ${green('c')} → changelog
+${green('f')} → find on https://www.npmjs.com
 ${green('g')} → github (gitlab, etc.) repository root
 ${green('h')} → homepage (aliased as ${green('w')} for website or ${green('d')} for docs)
 ${green('i')} → issues

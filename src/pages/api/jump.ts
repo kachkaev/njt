@@ -1,17 +1,16 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
 import { resolveDestination } from "../../shared/destinations";
+import { parseQuery } from "../../shared/parse-query";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   let destinationUrl = "/";
 
   const to = `${req.query.to}`;
   if (to) {
-    const [packageName, destination] = to
-      .split(" ")
-      .filter((chunk) => chunk.length);
+    const [packageOrSearch, destination] = parseQuery(to);
     const resolvedDestination = await resolveDestination(
-      packageName,
+      packageOrSearch,
       destination,
     );
 
