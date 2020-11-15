@@ -82,9 +82,36 @@ const destinationConfigs: DestinationConfig[] = [
     keywords: ["c"],
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
-      if (repoUrl) {
-        return `${repoUrl}/blob/master/CHANGELOG.md`;
+
+      if (!repoUrl) {
+        return undefined;
       }
+
+      const gitHubMatch = repoUrl.match(
+        /^https:\/\/github\.com\/([^/]+)\/([^/]+)(.*)/i,
+      );
+
+      // Covers GitHub repos
+      if (gitHubMatch) {
+        const [, owner, repo] = gitHubMatch;
+        const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents`;
+
+        let contents = [];
+        try {
+          contents = await (await fetch(apiUrl)).json();
+        } catch (e) {
+          // noop
+        }
+
+        for (const item of contents) {
+          if (/^changelog/i.test(item.name)) {
+            return item.html_url;
+          }
+        }
+      }
+
+      // Fallback even if was not found above
+      return `${repoUrl}/blob/HEAD/CHANGELOG.md`;
     },
   },
   {
