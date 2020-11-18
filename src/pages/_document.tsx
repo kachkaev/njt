@@ -61,6 +61,12 @@ export default class MyDocument extends Document {
           />
           <link rel="manifest" href="/site.webmanifest" />
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#42a73f" />
+          <link
+            rel="search"
+            type="application/opensearchdescription+xml"
+            href="/opensearch.xml"
+            title="njt"
+          />
           <meta name="msapplication-TileColor" content="#42a73f" />
           <meta name="theme-color" content="#ffffff" />
         </Head>
