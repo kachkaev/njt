@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React from "react";
+import * as React from "react";
 
 const getBaseUrl = () => {
   const hostname =

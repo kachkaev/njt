@@ -1,5 +1,5 @@
 import { AppProps } from "next/app";
-import React from "react";
+import * as React from "react";
 import useDarkMode from "use-dark-mode";
 
 import { PageLayout } from "../ui/PageLayout";

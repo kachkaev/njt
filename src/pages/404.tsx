@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import React from "react";
+import * as React from "react";
 
 import { PageContentsForError } from "../ui/PageContentsForError";
 import { PageMetadata } from "../ui/PageMetadata";
