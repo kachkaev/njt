@@ -55,7 +55,7 @@
   },
   "devDependencies": {
     "@hkdobrev/run-if-changed": "^0.3.1",
-    "@kachkaev/eslint-config-react": "^0.2.2",
+    "@kachkaev/eslint-config-react": "^0.2.3",
     "@kachkaev/markdownlint-config": "^0.2.0",
     "@kachkaev/prettier-config": "^1.2.0",
     "@types/hosted-git-info": "^3.0.1",
