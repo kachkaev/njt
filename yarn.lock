@@ -7034,9 +7034,6 @@ fsevents@~2.1.2:
     unfetch: ^4.2.0
     url: ^0.11.0
     use-dark-mode: ^2.3.1
-  dependenciesMeta:
-    "@kachkaev/prettier-config@1.0.0":
-      unplugged: true
   languageName: unknown
   linkType: soft
 
