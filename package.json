@@ -60,7 +60,7 @@
     "@kachkaev/prettier-config": "^1.2.0",
     "@types/hosted-git-info": "^3.0.1",
     "@types/lru-cache": "^5.1.0",
-    "@types/node": "^14.14.20",
+    "@types/node": "^14.14.21",
     "@types/node-fetch": "^2.5.7",
     "@types/styled-components": "^5.1.7",
     "eslint": "^7.17.0",
