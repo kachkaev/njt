@@ -228,6 +228,13 @@ const destinationConfigs: DestinationConfig[] = [
     keywords: ["y"],
     generateUrl: (packageName) => `https://yarnpkg.com/package/${packageName}`,
   },
+  {
+    keywords: ["1s"],
+    generateUrl: async (packageName) => {
+      const repoUrl = await getRepoUrl(packageName);
+      return repoUrl.replace("github.com", "github1s.com");
+    },
+  },
 ];
 
 const destinationConfigByKeyword: Record<
