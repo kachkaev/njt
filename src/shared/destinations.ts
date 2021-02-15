@@ -232,6 +232,11 @@ const destinationConfigs: DestinationConfig[] = [
     keywords: ["1s"],
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
+
+      if (!repoUrl) {
+        return undefined;
+      }
+
       return repoUrl.replace("github.com", "github1s.com");
     },
   },
