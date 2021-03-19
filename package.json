@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@kachkaev/react-inline-js": "^0.2.0",
-    "hosted-git-info": "^3.0.8",
+    "hosted-git-info": "^4.0.1",
     "lru-cache": "^6.0.0",
     "next": "^10.0.9",
     "node-fetch": "^2.6.1",
