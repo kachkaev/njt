@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "chalk": "^4.1.0",
-    "commander": "^6.2.1",
+    "commander": "^7.1.0",
     "find-package-json": "^1.2.0",
     "open": "^8.0.3"
   }
