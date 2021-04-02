@@ -18,16 +18,8 @@
     "lint:prettier": "prettier --check \"**/*\"",
     "lint:tsc": "tsc --project .",
     "lint:yarn-deduplicate": "yarn-deduplicate --fail --list --strategy=fewer",
+    "prepare": "husky install",
     "start": "next start"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "post-commit": "run-if-changed",
-      "post-checkout": "run-if-changed",
-      "post-merge": "run-if-changed",
-      "post-rewrite": "run-if-changed"
-    }
   },
   "lint-staged": {
     "**/*": [
@@ -41,7 +33,7 @@
   },
   "dependencies": {
     "@kachkaev/react-inline-js": "^0.2.0",
-    "hosted-git-info": "^3.0.8",
+    "hosted-git-info": "^4.0.2",
     "lru-cache": "^6.0.0",
     "next": "^10.1.2",
     "node-fetch": "^2.6.1",
@@ -64,7 +56,7 @@
     "@types/node-fetch": "^2.5.8",
     "@types/styled-components": "^5.1.9",
     "eslint": "^7.23.0",
-    "husky": "^4.3.8",
+    "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
     "markdownlint-cli": "^0.27.1",
     "ncp": "^2.0.0",
