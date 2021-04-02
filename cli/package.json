@@ -31,6 +31,6 @@
     "chalk": "^4.1.0",
     "commander": "^6.2.1",
     "find-package-json": "^1.2.0",
-    "open": "^8.0.3"
+    "open": "^8.0.4"
   }
 }
