@@ -2,7 +2,7 @@
 
 <p align="center">
 <b>🐸 npm jump to 🐸</b><br/>
-<a href="https://njt.now.sh">njt.now.sh</a>
+<a href="https://njt.vercel.app">njt.vercel.app</a>
 </p>
 
 Are you typing npm package names in your search engine to then manually navigate to their source, homepage, changelog, versions and so on? 🕐🕑🕒🕓🕔
@@ -93,11 +93,11 @@ Note that setting `BROWSER` instead of `NJT_BROWSER` can affect other tools, whi
 1.  Click _Add_ next to _Other search engines_
 1.  Fill in the _Add search engine_ form:
 
-    | Field                         | Value                                       |
-    | ----------------------------- | ------------------------------------------- |
-    | Search engine                 | `njt (npm jump to)`                         |
-    | Keyword                       | `njt`                                       |
-    | Url with %s in place of query | `https://njt.now.sh/jump?from=chrome&to=%s` |
+    | Field                         | Value                                           |
+    | ----------------------------- | ----------------------------------------------- |
+    | Search engine                 | `njt (npm jump to)`                             |
+    | Keyword                       | `njt`                                           |
+    | Url with %s in place of query | `https://njt.vercel.app/jump?from=chrome&to=%s` |
 
 1.  Press _Add_
 
@@ -113,7 +113,7 @@ The command to type in Chrome address bar will become `n <package> [destination]
 
 You can use `njt` right from the address bar in Firefox.
 
-1.  Open [njt.now.sh](https://njt.now.sh)
+1.  Open [njt.vercel.app](https://njt.vercel.app)
 1.  Right-click on the search input field
 1.  In the context menu, select _Add Keyword for this Search..._
 1.  You’ll see a small form; type `njt` into the _Keyword_ field
@@ -135,19 +135,19 @@ Want to hop directly from [Alfred launcher](https://www.alfredapp.com/)?
 1.  Click _Add Custom Search_
 1.  Fill in the form:
 
-    | Field      | Value                                            |
-    | ---------- | ------------------------------------------------ |
-    | Search URL | `https://njt.now.sh/jump?from=alfred&to={query}` |
-    | Title      | `Search njt for '{query}'`                       |
-    | Keyword    | `njt`                                            |
-    | Icon       | drag from <https://njt.now.sh/favicon-32x32.png> |
+    | Field      | Value                                                |
+    | ---------- | ---------------------------------------------------- |
+    | Search URL | `https://njt.vercel.app/jump?from=alfred&to={query}` |
+    | Title      | `Search njt for '{query}'`                           |
+    | Keyword    | `njt`                                                |
+    | Icon       | drag from <https://njt.vercel.app/favicon-32x32.png> |
 
 1.  Press _Save_
 
 Alternatively, copy and open this special Alfred link to get all the above steps done for you:
 
 ```txt
-alfred://customsearch/Search%20njt%20for%20%27%7Bquery%7D%27/njt/utf8/nospace/https%3A%2F%2Fnjt.now.sh%2Fjump%3Ffrom%3Dalfred%26to%3D%7Bquery%7D
+alfred://customsearch/Search%20njt%20for%20%27%7Bquery%7D%27/njt/utf8/nospace/https%3A%2F%2Fnjt.vercel.app%2Fjump%3Ffrom%3Dalfred%26to%3D%7Bquery%7D
 ```
 
 **Pro tip 💡** You can use `n` instead of `njt` as a search keyword to avoid typing two extra characters each time.
@@ -181,11 +181,11 @@ This trick is possible thanks to DuckDuckGo’s awesome [bang feature](https://d
 
 ### 🟢 Online search field on the `njt`’s mini-website
 
-Open [njt.now.sh](https://njt.now.sh), type your query, press Enter.
+Open [njt.vercel.app](https://njt.vercel.app), type your query, press Enter.
 This method is a bit slower than the other ones because it involves opening a web page with an input form.
 On the plus side, it works everywhere and does not require setup.
 
-Thanks to [now.sh](https://now.sh) for hosting [njt.now.sh](https://njt.now.sh) 💚
+Thanks to [Vercel](https://vercel.com) for hosting [njt.vercel.app](https://njt.vercel.app) 💚
 
 ### ❓More ways
 
@@ -199,7 +199,7 @@ For requests like `njt <package>` or `njt <package> y`, all the tool does is nav
 Most other cases involve a look into `package.json` for the latest published version.
 This file contains the location of the repository, the homepage and some other fields, which `njt` uses to construct the destination URL.
 
-The command line version of the tool takes you to `https://njt.now.sh/jump?from=cli@VERSION&to=YOUR_QUERY`, from which you are redirected to the destination.
+The command line version of the tool takes you to `https://njt.vercel.app/jump?from=cli@VERSION&to=YOUR_QUERY`, from which you are redirected to the destination.
 
 ## Prior art
 

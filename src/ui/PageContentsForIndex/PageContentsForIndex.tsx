@@ -155,7 +155,7 @@ export const PageContentsForIndex: React.FunctionComponent = () => {
         </ExternalLink>{" "}
         using <ExternalLink href="https://nextjs.org">Next.js</ExternalLink>,
         hosted&nbsp;by&nbsp;
-        <ExternalLink href="https://now.sh" />
+        <ExternalLink href="https://vercel.com">Vercel</ExternalLink>
         &nbsp;💚
       </p>
     </>
