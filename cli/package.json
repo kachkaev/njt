@@ -6,9 +6,15 @@
     "frog",
     "jump",
     "meta",
+    "njt",
     "npm",
+    "npmjs",
     "productivity",
-    "shortcut"
+    "search",
+    "search-engine",
+    "shortcuts",
+    "vercel",
+    "vercel-deployment"
   ],
   "homepage": "https://njt.vercel.app",
   "bugs": "https://github.com/kachkaev/njt/issues",
@@ -29,7 +35,7 @@
   },
   "dependencies": {
     "chalk": "^4.1.0",
-    "commander": "^6.2.1",
+    "commander": "^7.2.0",
     "find-package-json": "^1.2.0",
     "open": "^8.0.5"
   }
