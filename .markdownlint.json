@@ -1,5 +1,5 @@
 {
-  "extends": "./node_modules/@kachkaev/markdownlint-config/index.json",
+  "extends": "@kachkaev/markdownlint-config",
   "first-line-heading": false,
   "no-inline-html": false
 }
