@@ -3,11 +3,11 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "saturday"
 
   - package-ecosystem: "npm"
     directory: "/cli"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "saturday"

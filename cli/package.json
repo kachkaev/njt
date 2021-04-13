@@ -1,16 +1,22 @@
 {
   "name": "njt",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "npm jump to: a quick navigation tool for npm packages",
   "keywords": [
     "frog",
     "jump",
     "meta",
+    "njt",
     "npm",
+    "npmjs",
     "productivity",
-    "shortcut"
+    "search",
+    "search-engine",
+    "shortcuts",
+    "vercel",
+    "vercel-deployment"
   ],
-  "homepage": "https://njt.now.sh",
+  "homepage": "https://njt.vercel.app",
   "bugs": "https://github.com/kachkaev/njt/issues",
   "repository": {
     "type": "git",
@@ -27,8 +33,8 @@
   },
   "dependencies": {
     "chalk": "^4.1.0",
-    "commander": "^6.2.1",
+    "commander": "^7.2.0",
     "find-package-json": "^1.2.0",
-    "open": "^7.3.1"
+    "open": "^8.0.5"
   }
 }

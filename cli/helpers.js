@@ -5,7 +5,7 @@ const getPackageVersion = () =>
   require(path.resolve(__dirname, "./package.json")).version;
 
 const generateUrl = (query) => {
-  return `https://njt.now.sh/jump?from=cli%40${getPackageVersion()}&to=${encodeURIComponent(
+  return `https://njt.vercel.app/jump?from=cli%40${getPackageVersion()}&to=${encodeURIComponent(
     query,
   )}`;
 };

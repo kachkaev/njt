@@ -18,7 +18,7 @@ program
     `🐸 ✨ 🐸 ✨ 🐸
 npm jump to: a quick navigation tool for npm packages
 
-https://njt.now.sh
+https://njt.vercel.app
 
 ${ /* When updating, remember to reflect changes in README.md and src/ui/PageContentsForIndex/AvailableDestinations.tsx */''}
 Available destinations
@@ -82,7 +82,7 @@ ${chalk.red(
 )}
 Change directly or replace . with a package name.
 
-🐸 https://njt.now.sh
+🐸 https://njt.vercel.app
     `);
     process.exit(1);
   }
@@ -96,7 +96,7 @@ ${chalk.red(
 )}
 Change directly or replace . with a package name.
 
-🐸 https://njt.now.sh
+🐸 https://njt.vercel.app
     `);
     process.exit(1);
   }
