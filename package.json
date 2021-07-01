@@ -55,7 +55,7 @@
     "@types/node": "^14.17.1",
     "@types/node-fetch": "^2.5.10",
     "@types/styled-components": "^5.1.9",
-    "eslint": "^7.27.0",
+    "eslint": "^7.29.0",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
     "markdownlint-cli": "^0.27.1",
