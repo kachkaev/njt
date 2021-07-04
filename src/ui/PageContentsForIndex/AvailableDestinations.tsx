@@ -151,6 +151,15 @@ const AvailableDestinations: React.FunctionComponent<{
           </>
         ),
       },
+      {
+        keywords: ["1s"],
+        info: (
+          <>
+            One second to read GitHub code with VS Code with{" "}
+            <ExternalLink href="https://github1s.com" />
+          </>
+        ),
+      },
     ],
     [handleKeywordClick],
   );
