@@ -72,6 +72,10 @@ const AvailableDestinations: React.FunctionComponent<{
         info: "changelog",
       },
       {
+        keywords: ["."],
+        info: <>browse GitHub / GitLab code</>,
+      },
+      {
         keywords: ["g"],
         info: <>github (gitlab, etc.) repository root</>,
       },

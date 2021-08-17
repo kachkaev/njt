@@ -72,6 +72,9 @@ const getRepoUrl = async (
   return result;
 };
 
+const isGitHub = (url: string) => url.includes("://github.com");
+const isGitLab = (url: string) => url.includes("://gitlab.com");
+
 const destinationConfigs: DestinationConfig[] = [
   {
     keywords: ["b"],
@@ -112,6 +115,22 @@ const destinationConfigs: DestinationConfig[] = [
 
       // Fallback even if was not found above
       return `${repoUrl}/blob/HEAD/CHANGELOG.md`;
+    },
+  },
+  {
+    keywords: ["."],
+    generateUrl: async (packageName) => {
+      const repoUrl = await getRepoUrl(packageName);
+
+      if (repoUrl && isGitHub(repoUrl)) {
+        return repoUrl.replace("://github.com", "://github.dev");
+      }
+
+      if (repoUrl && isGitLab(repoUrl)) {
+        return repoUrl.replace("://gitlab.com", "://gitlab.com/-/ide/project");
+      }
+
+      return repoUrl;
     },
   },
   {
@@ -164,9 +183,9 @@ const destinationConfigs: DestinationConfig[] = [
     keywords: ["p", "m"],
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
-      if (repoUrl && repoUrl.includes("://github.com")) {
+      if (repoUrl && isGitHub(repoUrl)) {
         return `${repoUrl}/pulls`;
-      } else if (repoUrl && repoUrl.includes("://gitlab.com")) {
+      } else if (repoUrl && isGitLab(repoUrl)) {
         return `${repoUrl}/merge_requests`;
       }
 
@@ -177,9 +196,9 @@ const destinationConfigs: DestinationConfig[] = [
     keywords: ["r"],
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
-      if (repoUrl && repoUrl.includes("://github.com")) {
+      if (repoUrl && isGitHub(repoUrl)) {
         return `${repoUrl}/releases`;
-      } else if (repoUrl && repoUrl.includes("://gitlab.com")) {
+      } else if (repoUrl && isGitLab(repoUrl)) {
         return `${repoUrl}/-/tags`;
       }
 
@@ -206,9 +225,9 @@ const destinationConfigs: DestinationConfig[] = [
     keywords: ["t"],
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
-      if (repoUrl && repoUrl.includes("://github.com")) {
+      if (repoUrl && isGitHub(repoUrl)) {
         return `${repoUrl}/tags`;
-      } else if (repoUrl && repoUrl.includes("://gitlab.com")) {
+      } else if (repoUrl && isGitLab(repoUrl)) {
         return `${repoUrl}/-/tags`;
       }
 

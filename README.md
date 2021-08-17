@@ -22,6 +22,7 @@ njt <package> [destination]
 
 - `b` → package cost estimation on [bundlephobia.com](https://bundlephobia.com)
 - `c` → changelog
+- `.` → browse GitHub / GitLab code
 - `g` → github (gitlab, etc.) repository root
 - `h` → homepage (aliased as `w` for website or `d` for docs)
 - `i` → issues
