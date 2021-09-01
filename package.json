@@ -54,7 +54,7 @@
     "@types/lru-cache": "^5.1.1",
     "@types/node": "^16.4.13",
     "@types/node-fetch": "^2.5.12",
-    "@types/styled-components": "^5.1.12",
+    "@types/styled-components": "^5.1.13",
     "eslint": "^7.32.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.1.2",
