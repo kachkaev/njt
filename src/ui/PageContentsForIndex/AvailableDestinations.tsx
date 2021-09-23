@@ -151,6 +151,10 @@ const AvailableDestinations: React.FunctionComponent<{
           </>
         ),
       },
+      {
+        keywords: ["."],
+        info: <>browse GitHub / GitLab code</>,
+      },
     ],
     [handleKeywordClick],
   );
