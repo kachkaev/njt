@@ -72,6 +72,9 @@ const getRepoUrl = async (
   return result;
 };
 
+const isGitHub = (url: string) => url.includes("://github.com");
+const isGitLab = (url: string) => url.includes("://gitlab.com");
+
 const destinationConfigs: DestinationConfig[] = [
   {
     keywords: ["b"],
@@ -122,7 +125,6 @@ const destinationConfigs: DestinationConfig[] = [
       });
     },
   },
-
   {
     keywords: ["h", "w", "d"],
     generateUrl: async (packageName) => {
@@ -164,9 +166,9 @@ const destinationConfigs: DestinationConfig[] = [
     keywords: ["p", "m"],
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
-      if (repoUrl && repoUrl.includes("://github.com")) {
+      if (repoUrl && isGitHub(repoUrl)) {
         return `${repoUrl}/pulls`;
-      } else if (repoUrl && repoUrl.includes("://gitlab.com")) {
+      } else if (repoUrl && isGitLab(repoUrl)) {
         return `${repoUrl}/merge_requests`;
       }
 
@@ -177,9 +179,9 @@ const destinationConfigs: DestinationConfig[] = [
     keywords: ["r"],
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
-      if (repoUrl && repoUrl.includes("://github.com")) {
+      if (repoUrl && isGitHub(repoUrl)) {
         return `${repoUrl}/releases`;
-      } else if (repoUrl && repoUrl.includes("://gitlab.com")) {
+      } else if (repoUrl && isGitLab(repoUrl)) {
         return `${repoUrl}/-/tags`;
       }
 
@@ -206,9 +208,9 @@ const destinationConfigs: DestinationConfig[] = [
     keywords: ["t"],
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
-      if (repoUrl && repoUrl.includes("://github.com")) {
+      if (repoUrl && isGitHub(repoUrl)) {
         return `${repoUrl}/tags`;
-      } else if (repoUrl && repoUrl.includes("://gitlab.com")) {
+      } else if (repoUrl && isGitLab(repoUrl)) {
         return `${repoUrl}/-/tags`;
       }
 
@@ -228,23 +230,37 @@ const destinationConfigs: DestinationConfig[] = [
     keywords: ["y"],
     generateUrl: (packageName) => `https://yarnpkg.com/package/${packageName}`,
   },
+  {
+    keywords: ["."],
+    generateUrl: async (packageName) => {
+      const repoUrl = await getRepoUrl(packageName);
+
+      if (repoUrl && isGitHub(repoUrl)) {
+        return repoUrl.replace("://github.com", "://github.dev");
+      }
+
+      if (repoUrl && isGitLab(repoUrl)) {
+        return repoUrl.replace("://gitlab.com", "://gitlab.com/-/ide/project");
+      }
+
+      return repoUrl;
+    },
+  },
 ];
 
-const destinationConfigByKeyword: Record<
-  string,
-  DestinationConfig
-> = destinationConfigs.reduce((result, destinationConfig) => {
-  destinationConfig.keywords.forEach((keyword) => {
-    if (result[keyword]) {
-      throw new Error(
-        `Keyword ${keyword} is used in more than one destination`,
-      );
-    }
-    result[keyword] = destinationConfig;
-  });
+const destinationConfigByKeyword: Record<string, DestinationConfig> =
+  destinationConfigs.reduce((result, destinationConfig) => {
+    destinationConfig.keywords.forEach((keyword) => {
+      if (result[keyword]) {
+        throw new Error(
+          `Keyword ${keyword} is used in more than one destination`,
+        );
+      }
+      result[keyword] = destinationConfig;
+    });
 
-  return result;
-}, {} as { [key: string]: DestinationConfig });
+    return result;
+  }, {} as { [key: string]: DestinationConfig });
 
 export const resolveDestination = async (
   packageName: string,

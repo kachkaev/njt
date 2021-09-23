@@ -47,7 +47,7 @@ const exampleUrlByPackageAndDestination = {
   react: {
     "": "https://www.npmjs.com/package/react",
     h: "https://reactjs.org",
-    s: "https://github.com/facebook/react/tree/master/packages/react",
+    s: "https://github.com/facebook/react/tree/main/packages/react",
     r: "https://github.com/facebook/react/releases",
     y: "https://yarnpkg.com/package/react",
   },
@@ -125,9 +125,9 @@ export const PageContentsForIndex: React.FunctionComponent = () => {
           ),
         )}
       </ExamplePackages>
-      {(Object.entries(remarkByDestination) as Array<
-        [DestinationKey, string]
-      >).map(([destination, remark]) => {
+      {(
+        Object.entries(remarkByDestination) as Array<[DestinationKey, string]>
+      ).map(([destination, remark]) => {
         return (
           <Example
             key={destination}
@@ -143,7 +143,7 @@ export const PageContentsForIndex: React.FunctionComponent = () => {
       <p>
         <code>njt</code> gives you an even bigger productivity boost when
         integrated into browser or&nbsp;terminal. See instructions in{" "}
-        <ExternalLink href="https://github.com/kachkaev/njt/blob/master/README.md#getting-njt">
+        <ExternalLink href="https://github.com/kachkaev/njt/blob/main/README.md#getting-njt">
           GitHub&nbsp;repo’s&nbsp;README
         </ExternalLink>
         .
