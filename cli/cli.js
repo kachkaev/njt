@@ -25,7 +25,6 @@ Available destinations
 ----------------------
 ${green('b')} → package cost estimation on https://bundlephobia.com
 ${green('c')} → changelog
-${green('.')} → browse GitHub / GitLab code
 ${green('g')} → github (gitlab, etc.) repository root
 ${green('h')} → homepage (aliased as ${green('w')} for website or ${green('d')} for docs)
 ${green('i')} → issues
@@ -37,6 +36,7 @@ ${green('t')} → list of git tags
 ${green('u')} → package contents preview on https://unpkg.com
 ${green('v')} → list of package versions with dates on https://www.npmjs.com
 ${green('y')} → package page on https://yarnpkg.com (mirror registry for https://www.npmjs.com)
+${green('.')} → browse GitHub / GitLab code
 
 Omitting the destination or entering an non-existing one takes you to the package page on https://www.npmjs.com as if you used ${green('n')}.
 

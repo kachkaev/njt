@@ -72,10 +72,6 @@ const AvailableDestinations: React.FunctionComponent<{
         info: "changelog",
       },
       {
-        keywords: ["."],
-        info: <>browse GitHub / GitLab code</>,
-      },
-      {
         keywords: ["g"],
         info: <>github (gitlab, etc.) repository root</>,
       },
@@ -154,6 +150,10 @@ const AvailableDestinations: React.FunctionComponent<{
             registry for <ExternalLink href="https://www.npmjs.com" />)
           </>
         ),
+      },
+      {
+        keywords: ["."],
+        info: <>browse GitHub / GitLab code</>,
       },
     ],
     [handleKeywordClick],

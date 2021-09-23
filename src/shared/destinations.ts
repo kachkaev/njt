@@ -118,22 +118,6 @@ const destinationConfigs: DestinationConfig[] = [
     },
   },
   {
-    keywords: ["."],
-    generateUrl: async (packageName) => {
-      const repoUrl = await getRepoUrl(packageName);
-
-      if (repoUrl && isGitHub(repoUrl)) {
-        return repoUrl.replace("://github.com", "://github.dev");
-      }
-
-      if (repoUrl && isGitLab(repoUrl)) {
-        return repoUrl.replace("://gitlab.com", "://gitlab.com/-/ide/project");
-      }
-
-      return repoUrl;
-    },
-  },
-  {
     keywords: ["g"],
     generateUrl: async (packageName) => {
       return await getRepoUrl(packageName, {
@@ -141,7 +125,6 @@ const destinationConfigs: DestinationConfig[] = [
       });
     },
   },
-
   {
     keywords: ["h", "w", "d"],
     generateUrl: async (packageName) => {
@@ -246,6 +229,22 @@ const destinationConfigs: DestinationConfig[] = [
   {
     keywords: ["y"],
     generateUrl: (packageName) => `https://yarnpkg.com/package/${packageName}`,
+  },
+  {
+    keywords: ["."],
+    generateUrl: async (packageName) => {
+      const repoUrl = await getRepoUrl(packageName);
+
+      if (repoUrl && isGitHub(repoUrl)) {
+        return repoUrl.replace("://github.com", "://github.dev");
+      }
+
+      if (repoUrl && isGitLab(repoUrl)) {
+        return repoUrl.replace("://gitlab.com", "://gitlab.com/-/ide/project");
+      }
+
+      return repoUrl;
+    },
   },
 ];
 

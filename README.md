@@ -22,7 +22,6 @@ njt <package> [destination]
 
 - `b` → package cost estimation on [bundlephobia.com](https://bundlephobia.com)
 - `c` → changelog
-- `.` → browse GitHub / GitLab code
 - `g` → github (gitlab, etc.) repository root
 - `h` → homepage (aliased as `w` for website or `d` for docs)
 - `i` → issues
@@ -34,6 +33,7 @@ njt <package> [destination]
 - `u` → package contents preview on [unpkg.com](https://unpkg.com)
 - `v` → list of package versions with dates on [npmjs.com](https://www.npmjs.com)
 - `y` → package page on [yarnpkg.com](https://yarnpkg.com) (mirror registry for [npmjs.com](https://www.npmjs.com))
+- `.` → browse GitHub / GitLab code
 
 Omitting the destination or entering an non-existing one takes you to the package page on [npmjs.com](https://www.npmjs.com) as if you used `n`.
 
