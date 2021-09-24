@@ -125,9 +125,9 @@ export const PageContentsForIndex: React.FunctionComponent = () => {
           ),
         )}
       </ExamplePackages>
-      {(
-        Object.entries(remarkByDestination) as Array<[DestinationKey, string]>
-      ).map(([destination, remark]) => {
+      {(Object.entries(remarkByDestination) as Array<
+        [DestinationKey, string]
+      >).map(([destination, remark]) => {
         return (
           <Example
             key={destination}

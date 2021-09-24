@@ -248,19 +248,21 @@ const destinationConfigs: DestinationConfig[] = [
   },
 ];
 
-const destinationConfigByKeyword: Record<string, DestinationConfig> =
-  destinationConfigs.reduce((result, destinationConfig) => {
-    destinationConfig.keywords.forEach((keyword) => {
-      if (result[keyword]) {
-        throw new Error(
-          `Keyword ${keyword} is used in more than one destination`,
-        );
-      }
-      result[keyword] = destinationConfig;
-    });
+const destinationConfigByKeyword: Record<
+  string,
+  DestinationConfig
+> = destinationConfigs.reduce((result, destinationConfig) => {
+  destinationConfig.keywords.forEach((keyword) => {
+    if (result[keyword]) {
+      throw new Error(
+        `Keyword ${keyword} is used in more than one destination`,
+      );
+    }
+    result[keyword] = destinationConfig;
+  });
 
-    return result;
-  }, {} as { [key: string]: DestinationConfig });
+  return result;
+}, {} as { [key: string]: DestinationConfig });
 
 export const resolveDestination = async (
   packageName: string,
