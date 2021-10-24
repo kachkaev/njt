@@ -35,9 +35,9 @@
   },
   "dependencies": {
     "chalk": "^4.1.2",
-    "commander": "^8.2.0",
+    "commander": "^8.3.0",
     "find-package-json": "^1.2.0",
-    "open": "^8.2.1"
+    "open": "^8.4.0"
   },
   "engines": {
     "node": ">=12.17"
