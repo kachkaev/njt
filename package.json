@@ -48,7 +48,7 @@
     "@types/lru-cache": "^5.1.1",
     "@types/node": "^16.11.4",
     "@types/styled-components": "^5.1.15",
-    "eslint": "^7.32.0",
+    "eslint": "^8.1.0",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.4",
     "markdownlint-cli": "^0.29.0",
