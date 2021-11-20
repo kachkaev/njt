@@ -2,7 +2,6 @@
 *.*
 !*.md
 
-## same as in .gitignore
 # dependencies
 node_modules
 .pnp
@@ -14,9 +13,7 @@ node_modules
 # next.js
 /.next/
 /out/
-
-# production
-/build
+tsconfig.tsbuildinfo
 
 # misc
 .DS_Store

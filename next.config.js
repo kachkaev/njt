@@ -1,4 +1,7 @@
 module.exports = {
+  experimental: {
+    styledComponents: true,
+  },
   productionBrowserSourceMaps: true,
   rewrites: () => [
     {
