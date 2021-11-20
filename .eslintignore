@@ -1,6 +1,5 @@
 ## extensions
 *.*
-LICENSE
 !*.js
 !*.json
 !*.ts
