@@ -1,5 +1,13 @@
-## extensions
+#######################
+## Specific to Prettier
+#######################
+
+# Ignore all extensions (folders with . are allowed)
 *.*
+!.*/
+!*.*/
+
+# Allow certain extensions
 !*.js
 !*.json
 !*.md
@@ -7,13 +15,18 @@
 !*.tsx
 !*.yml
 
-!/.github/
+########################
+## Same as in .gitignore
+########################
 
-## same as in .gitignore
 # dependencies
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 node_modules
-.pnp
-.pnp.js
 
 # testing
 /coverage
@@ -34,3 +47,11 @@ yarn-error.log*
 
 # custom
 cli/README.md
+
+#########################
+## Shared between linters
+#########################
+
+.git/
+.husky/
+.yarn/
