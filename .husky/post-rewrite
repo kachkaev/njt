@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-yarn install --prefer-offline --pure-lockfile
+yarn install --immutable
