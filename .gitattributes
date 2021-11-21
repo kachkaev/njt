@@ -1,0 +1,4 @@
+* text=auto eol=lf
+
+/.husky/** linguist-generated=true
+/.yarn/** linguist-generated=true
