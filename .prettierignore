@@ -2,12 +2,11 @@
 ## Specific to Prettier
 #######################
 
-# Ignore all extensions (folders with . are allowed)
-*.*
-!.*/
-!*.*/
+# Ignore all files (but still allow sub-folder scanning)
+*
+!*/
 
-# Allow certain extensions
+# Allow certain file types
 !*.js
 !*.json
 !*.md
@@ -53,5 +52,4 @@ cli/README.md
 #########################
 
 .git/
-.husky/
 .yarn/
