@@ -1,15 +1,29 @@
-## extensions
-*.*
+#####################
+## Specific to ESLint
+#####################
+
+# Ignore all files (but still allow sub-folder scanning)
+*
+!*/
+
+# Allow certain file types
 !*.js
 !*.json
 !*.ts
 !*.tsx
 
-## same as in .gitignore
+########################
+## Same as in .gitignore
+########################
+
 # dependencies
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 node_modules
-.pnp
-.pnp.js
 
 # testing
 /coverage
@@ -30,3 +44,10 @@ yarn-error.log*
 
 # custom
 cli/README.md
+
+#########################
+## Shared between linters
+#########################
+
+.git/
+.yarn/
