@@ -54,7 +54,7 @@
     "@kachkaev/prettier-config": "^1.2.0",
     "@types/hosted-git-info": "^3.0.2",
     "@types/lru-cache": "^5.1.1",
-    "@types/node": "^16.11.9",
+    "@types/node": "^16.11.11",
     "@types/react": "^17.0.36",
     "@types/styled-components": "^5.1.15",
     "eslint": "^8.2.0",
