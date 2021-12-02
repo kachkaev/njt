@@ -1,12 +1,14 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
+    open-pull-requests-limit: 0 ## https://github.com/dependabot/dependabot-core/issues/1297
     directory: "/"
     schedule:
       interval: "monthly"
       day: "saturday"
 
   - package-ecosystem: "npm"
+    open-pull-requests-limit: 0 ## https://github.com/dependabot/dependabot-core/issues/1297
     directory: "/cli"
     schedule:
       interval: "monthly"
