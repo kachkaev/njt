@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["@kachkaev/eslint-config-react"],
+  extends: ["@kachkaev/eslint-config-react", "plugin:@next/next/recommended"],
   rules: {
     "import/no-default-export": "error",
   },

@@ -52,6 +52,7 @@
     "@kachkaev/eslint-config-react": "^0.2.3",
     "@kachkaev/markdownlint-config": "^0.2.0",
     "@kachkaev/prettier-config": "^1.2.0",
+    "@next/eslint-plugin-next": "^12.0.5-canary.13",
     "@types/hosted-git-info": "^3.0.2",
     "@types/lru-cache": "^5.1.1",
     "@types/node": "^16.11.11",
