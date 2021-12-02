@@ -250,7 +250,7 @@ const destinationConfigs: DestinationConfig[] = [
 
 const destinationConfigByKeyword: Record<
   string,
-  DestinationConfig
+  DestinationConfig //
 > = destinationConfigs.reduce((result, destinationConfig) => {
   destinationConfig.keywords.forEach((keyword) => {
     if (result[keyword]) {
