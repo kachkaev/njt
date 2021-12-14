@@ -11,7 +11,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       .split(" ")
       .filter((chunk) => chunk.length);
     const resolvedDestination = await resolveDestination(
-      packageName,
+      packageName ?? "",
       destination,
     );
 

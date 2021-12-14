@@ -171,7 +171,7 @@ const AvailableDestinations: React.FunctionComponent<{
                 : false
             }
           >
-            <Keyword onClick={handleKeywordClick}>{keywords[0]}</Keyword>{" "}
+            <Keyword onClick={handleKeywordClick}>{keywords[0] ?? ""}</Keyword>{" "}
             <Arrow /> <Info>{info}</Info>
           </Item>
         ))}

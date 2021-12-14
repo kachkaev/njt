@@ -271,7 +271,7 @@ export const resolveDestination = async (
   try {
     const url = await destinationConfigByKeyword[
       destinationKeyword
-    ].generateUrl(packageName);
+    ]?.generateUrl(packageName);
     if (!url) {
       throw new Error("Unexpected empty URL");
     }
@@ -283,7 +283,7 @@ export const resolveDestination = async (
   } catch {
     return {
       outcome: "success",
-      url: `${await destinationConfigByKeyword[""].generateUrl(packageName)}`,
+      url: `${await destinationConfigByKeyword[""]!.generateUrl(packageName)}`,
     };
   }
 };
