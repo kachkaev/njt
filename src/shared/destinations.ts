@@ -34,10 +34,9 @@ const getPackageMetadata = async (packageName: string): Promise<JsonObject> => {
 const handleUnknownHostedUrl = (url: string): string | undefined => {
   try {
     const idx = url.indexOf("@");
-    if (idx !== -1) {
-      url = url.slice(idx + 1).replace(/:([^\d]+)/, "/$1");
-    }
-    const parsedUrl = parseUrl(url);
+    const fixedUrl =
+      idx !== -1 ? url.slice(idx + 1).replace(/:([^\d]+)/, "/$1") : url;
+    const parsedUrl = parseUrl(fixedUrl);
     const protocol = parsedUrl.protocol === "https:" ? "https:" : "http:";
 
     return `${protocol}//${parsedUrl.host || ""}${(
@@ -102,7 +101,7 @@ const destinationConfigs: DestinationConfig[] = [
         let contents = [];
         try {
           contents = await (await fetch(apiUrl)).json();
-        } catch (e) {
+        } catch {
           // noop
         }
 
@@ -258,6 +257,7 @@ const destinationConfigByKeyword: Record<
         `Keyword ${keyword} is used in more than one destination`,
       );
     }
+    // eslint-disable-next-line no-param-reassign -- TODO: refactor without reduce
     result[keyword] = destinationConfig;
   });
 

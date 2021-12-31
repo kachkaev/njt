@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export const ExternalLink: React.FunctionComponent<
+export const ExternalLink: React.VoidFunctionComponent<
   React.HTMLProps<HTMLAnchorElement>
 > = ({ children, href, ...rest }) => {
   return (

@@ -1,8 +1,8 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiHandler } from "next";
 
 import { resolveDestination } from "../../shared/destinations";
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const handler: NextApiHandler = async (req, res) => {
   let destinationUrl = "/";
 
   const to = `${req.query.to}`;
@@ -26,3 +26,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   res.end();
 };
+
+export default handler;

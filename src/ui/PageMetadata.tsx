@@ -9,7 +9,7 @@ const getBaseUrl = () => {
   return `${protocol}://${hostname}`;
 };
 
-export const PageMetadata: React.FunctionComponent<{
+export const PageMetadata: React.VoidFunctionComponent<{
   title?: string;
   description?: string;
 }> = ({

@@ -15,7 +15,7 @@ const LinkRow = styled.span`
   text-overflow: ellipsis;
 `;
 
-const Example: React.FunctionComponent<{
+const Example: React.VoidFunctionComponent<{
   children?: never;
   onToClick?: (text: string) => void;
   remark: string;

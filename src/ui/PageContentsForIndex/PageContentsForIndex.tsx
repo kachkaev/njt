@@ -17,8 +17,8 @@ const ExamplePackage = styled.div<{ clickable: boolean }>`
   display: inline-block;
   margin-right: 0.5em;
   cursor: default;
-  ${(p) =>
-    p.clickable
+  ${(props) =>
+    props.clickable
       ? `
     border-bottom: 1px dotted #24292e66;
     cursor: pointer;
@@ -69,13 +69,13 @@ const exampleUrlByPackageAndDestination = {
 
 type ExampleKey = keyof typeof exampleUrlByPackageAndDestination;
 
-export const PageContentsForIndex: React.FunctionComponent = () => {
+export const PageContentsForIndex: React.VoidFunctionComponent = () => {
   const [examplePackage, setExamplePackage] = React.useState(
     () => Object.keys(exampleUrlByPackageAndDestination)[0] as ExampleKey,
   );
   const handleExamplePackageClick = React.useCallback(
-    (e) => {
-      setExamplePackage(e.currentTarget.innerText);
+    (event) => {
+      setExamplePackage(event.currentTarget.innerText);
     },
     [setExamplePackage],
   );

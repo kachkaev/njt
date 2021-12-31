@@ -14,7 +14,7 @@ const Item = styled.li<{ highlighted?: boolean }>`
   /* transition: color 0.2s ease-in-out; */
   white-space: nowrap;
 
-  ${(p) => (p.highlighted ? "color: #42a73f" : "")};
+  ${(props) => (props.highlighted ? "color: #42a73f" : "")};
 `;
 
 const Keyword = styled(ClickableCode)<{
@@ -44,7 +44,7 @@ interface KeywordInfo {
   info: React.ReactNode;
 }
 
-const AvailableDestinations: React.FunctionComponent<{
+const AvailableDestinations: React.VoidFunctionComponent<{
   selectedDestination?: string;
   onSelectedDestinationChange: (selectedDestination: string) => void;
 }> = ({ selectedDestination, onSelectedDestinationChange }) => {
