@@ -118,7 +118,9 @@ export const InputForm: React.VoidFunctionComponent<{
     }
   }, [toInputRef]);
 
-  const handleInputChange = React.useCallback(
+  const handleInputChange = React.useCallback<
+    React.ChangeEventHandler<HTMLInputElement>
+  >(
     ({ currentTarget: { value } }) => {
       previousToValue.current = value;
       onTextChange?.(value);

@@ -4,7 +4,7 @@
 
 const chalk = require("chalk");
 const program = require("commander");
-const { getPackageVersion, generateUrl, openUrl } = require("./helpers");
+const { getPackageVersion, generateUrl, openUrl } = require("./helpers.cjs");
 
 const green = chalk.green;
 const code = chalk.dim;

@@ -36,7 +36,10 @@ const remarkByDestination = {
 
 type DestinationKey = keyof typeof remarkByDestination;
 
-const exampleUrlByPackageAndDestination = {
+const exampleUrlByPackageAndDestination: Record<
+  string,
+  Record<DestinationKey, string>
+> = {
   prettier: {
     "": "https://www.npmjs.com/package/prettier",
     h: "https://prettier.io",
@@ -67,15 +70,13 @@ const exampleUrlByPackageAndDestination = {
   },
 };
 
-type ExampleKey = keyof typeof exampleUrlByPackageAndDestination;
-
 export const PageContentsForIndex: React.VoidFunctionComponent = () => {
   const [examplePackage, setExamplePackage] = React.useState(
-    () => Object.keys(exampleUrlByPackageAndDestination)[0] as ExampleKey,
+    () => Object.keys(exampleUrlByPackageAndDestination)[0]!,
   );
-  const handleExamplePackageClick = React.useCallback(
+  const handleExamplePackageClick = React.useCallback<React.MouseEventHandler>(
     (event) => {
-      setExamplePackage(event.currentTarget.innerText);
+      setExamplePackage(event.currentTarget.textContent!);
     },
     [setExamplePackage],
   );
@@ -83,15 +84,17 @@ export const PageContentsForIndex: React.VoidFunctionComponent = () => {
   const [inputText, setInputText] = React.useState("");
 
   const handleExampleClick = React.useCallback(
-    (text) => {
+    (text: string): void => {
       setInputText(" ");
-      setTimeout(() => setInputText(text), 0);
+      setTimeout(() => {
+        setInputText(text);
+      }, 0);
     },
     [setInputText],
   );
 
   const handleSelectedDestinationChange = React.useCallback(
-    (destination) => {
+    (destination: string): void => {
       setInputText((currentInputText) => {
         const currentPackage = currentInputText.trim().split(" ", 1)[0];
 
@@ -128,12 +131,19 @@ export const PageContentsForIndex: React.VoidFunctionComponent = () => {
       {(
         Object.entries(remarkByDestination) as Array<[DestinationKey, string]>
       ).map(([destination, remark]) => {
+        const destinationLookup =
+          exampleUrlByPackageAndDestination[examplePackage];
+
+        if (!destinationLookup) {
+          return;
+        }
+
         return (
           <Example
             key={destination}
             to={`${examplePackage} ${destination}`.trim()}
             remark={remark}
-            url={exampleUrlByPackageAndDestination[examplePackage][destination]}
+            url={destinationLookup[destination]}
             onToClick={handleExampleClick}
           />
         );

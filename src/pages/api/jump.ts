@@ -5,7 +5,8 @@ import { resolveDestination } from "../../shared/destinations";
 const handler: NextApiHandler = async (req, res) => {
   let destinationUrl = "/";
 
-  const to = `${req.query.to}`;
+  const to = typeof req.query.to === "string" ? req.query.to : "";
+
   if (to) {
     const [packageName, destination] = to
       .split(" ")

@@ -9,10 +9,7 @@ const App: React.VoidFunctionComponent<AppProps> = ({
   pageProps,
 }) => {
   React.useEffect(() => {
-    document.body.className = (document.body.className ?? "").replace(
-      "no-js",
-      "js",
-    );
+    document.body.className = document.body.className.replace("no-js", "js");
   }, []);
 
   useDarkMode();

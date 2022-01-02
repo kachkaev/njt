@@ -48,9 +48,9 @@ const AvailableDestinations: React.VoidFunctionComponent<{
   selectedDestination?: string;
   onSelectedDestinationChange: (selectedDestination: string) => void;
 }> = ({ selectedDestination, onSelectedDestinationChange }) => {
-  const handleKeywordClick = React.useCallback(
+  const handleKeywordClick = React.useCallback<React.MouseEventHandler>(
     ({ currentTarget }) => {
-      onSelectedDestinationChange?.(currentTarget.innerText);
+      onSelectedDestinationChange(currentTarget.textContent!);
     },
     [onSelectedDestinationChange],
   );
