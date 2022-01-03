@@ -29,7 +29,7 @@
     ]
   },
   "dependencies": {
-    "@kachkaev/react-inline-js": "^0.2.0",
+    "@kachkaev/react-inline-js": "^0.4.0",
     "hosted-git-info": "^4.0.2",
     "lru-cache": "^6.0.0",
     "next": "^12.0.7",

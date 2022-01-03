@@ -353,13 +353,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kachkaev/react-inline-js@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "@kachkaev/react-inline-js@npm:0.2.0"
+"@kachkaev/react-inline-js@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "@kachkaev/react-inline-js@npm:0.4.0"
   dependencies:
-    mem: ^8.0.0
+    mem: ^9.0.1
     terser: ^4.8.0
-  checksum: 7acdbf1785fcc01a0df878c7e119046f7eebcc66e005f7790db96b09dc04387cdac17218fb946fe07b619bbe4e1748298818c40cc3d4ef62645649c6b2c13bcf
+  peerDependencies:
+    react: ">=16.14.0"
+  checksum: 44d863d7459f25b368d64e087c4144508ba3d68595a0d664326518aec6c85d0e43d3694ed2f2cdccf28bc3c100392448305410a4aee3a93d4190857811291214
   languageName: node
   linkType: hard
 
@@ -3645,13 +3647,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mem@npm:^8.0.0":
-  version: 8.1.1
-  resolution: "mem@npm:8.1.1"
+"mem@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "mem@npm:9.0.1"
   dependencies:
     map-age-cleaner: ^0.1.3
-    mimic-fn: ^3.1.0
-  checksum: c41bc97f6f82b91899206058989e34bcb1543af40413c2ab59e5a8e97e4f8f2188d62e7bd95b2d575d5b0d823d5034a0f274a0676f6d11a0e0b973898b06c8b1
+    mimic-fn: ^4.0.0
+  checksum: 90ca89181170fda87f98e57a6d14b75dc66d1cee35fbe5d2f3ca89aac9f15341442468b03749191c92c3c552e9889ff29ded9da3b27302e8250520b65cc58f43
   languageName: node
   linkType: hard
 
@@ -3705,10 +3707,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mimic-fn@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "mimic-fn@npm:3.1.0"
-  checksum: f7b167f9115b8bbdf2c3ee55dce9149d14be9e54b237259c4bc1d8d0512ea60f25a1b323f814eb1fe8f5a541662804bcfcfff3202ca58df143edb986849d58db
+"mimic-fn@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "mimic-fn@npm:4.0.0"
+  checksum: 995dcece15ee29aa16e188de6633d43a3db4611bcf93620e7e62109ec41c79c0f34277165b8ce5e361205049766e371851264c21ac64ca35499acb5421c2ba56
   languageName: node
   linkType: hard
 
@@ -4955,7 +4957,7 @@ __metadata:
     "@kachkaev/eslint-config-react": ^0.4.2
     "@kachkaev/markdownlint-config": ^0.3.0
     "@kachkaev/prettier-config": ^1.3.1
-    "@kachkaev/react-inline-js": ^0.2.0
+    "@kachkaev/react-inline-js": ^0.4.0
     "@next/eslint-plugin-next": ^12.0.7
     "@types/hosted-git-info": ^3.0.2
     "@types/lru-cache": ^5.1.1
