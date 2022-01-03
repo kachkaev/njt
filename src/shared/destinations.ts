@@ -1,6 +1,5 @@
 import hostedGitInfo from "hosted-git-info";
 import LRU from "lru-cache";
-import { parse as parseUrl } from "node:url";
 
 import { DestinationConfig, JsonObject, ResolvedDestination } from "../types";
 
@@ -37,11 +36,11 @@ const handleUnknownHostedUrl = (url: string): string | undefined => {
     const idx = url.indexOf("@");
     const fixedUrl =
       idx !== -1 ? url.slice(idx + 1).replace(/:(\D+)/, "/$1") : url;
-    const parsedUrl = parseUrl(fixedUrl);
+    const parsedUrl = new URL(fixedUrl);
     const protocol = parsedUrl.protocol === "https:" ? "https:" : "http:";
 
     return `${protocol}//${parsedUrl.host || ""}${(
-      parsedUrl.path || ""
+      parsedUrl.pathname || ""
     ).replace(/\.git$/, "")}`;
   } catch {
     return undefined;
