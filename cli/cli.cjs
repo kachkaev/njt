@@ -4,7 +4,7 @@
 
 const chalk = require("chalk");
 const program = require("commander");
-const { getPackageVersion, generateUrl, openUrl } = require("./helpers");
+const { getPackageVersion, generateUrl, openUrl } = require("./helpers.cjs");
 
 const green = chalk.green;
 const code = chalk.dim;
@@ -74,8 +74,8 @@ if (program.rawArgs.length < 3) {
 const args = [...program.args];
 if (args[0] === ".") {
   const finder = require("find-package-json");
-  const f = finder();
-  const packageJsonSearchResult = f.next();
+  const finderInstance = finder();
+  const packageJsonSearchResult = finderInstance.next();
   if (!packageJsonSearchResult.value) {
     console.log(`
 ${chalk.red(

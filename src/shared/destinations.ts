@@ -1,19 +1,19 @@
 import hostedGitInfo from "hosted-git-info";
 import LRU from "lru-cache";
-import { parse as parseUrl } from "url";
 
 import { DestinationConfig, JsonObject, ResolvedDestination } from "../types";
 
 const packageMetadataCache = new LRU<string, JsonObject | Error>({
-  max: 10000,
+  max: 10_000,
   maxAge: 1000 * 60,
 });
 
 const getPackageMetadata = async (packageName: string): Promise<JsonObject> => {
   if (!packageMetadataCache.has(packageName)) {
+    const response = await fetch(`https://registry.npmjs.com/${packageName}`);
     packageMetadataCache.set(
       packageName,
-      await (await fetch(`https://registry.npmjs.com/${packageName}`)).json(),
+      (await response.json()) as JsonObject,
     );
     // try {
     // } catch (e) {
@@ -34,14 +34,13 @@ const getPackageMetadata = async (packageName: string): Promise<JsonObject> => {
 const handleUnknownHostedUrl = (url: string): string | undefined => {
   try {
     const idx = url.indexOf("@");
-    if (idx !== -1) {
-      url = url.slice(idx + 1).replace(/:([^\d]+)/, "/$1");
-    }
-    const parsedUrl = parseUrl(url);
+    const fixedUrl =
+      idx !== -1 ? url.slice(idx + 1).replace(/:(\D+)/, "/$1") : url;
+    const parsedUrl = new URL(fixedUrl);
     const protocol = parsedUrl.protocol === "https:" ? "https:" : "http:";
 
     return `${protocol}//${parsedUrl.host || ""}${(
-      parsedUrl.path || ""
+      parsedUrl.pathname || ""
     ).replace(/\.git$/, "")}`;
   } catch {
     return undefined;
@@ -54,15 +53,15 @@ const getRepoUrl = async (
 ): Promise<string | undefined> => {
   // Reference implementation: https://github.com/npm/cli/blob/latest/lib/repo.js
   const packageMetadata = await getPackageMetadata(packageName);
-  const rawUrl = (packageMetadata.repository as JsonObject)?.url;
-  if (!rawUrl) {
+  const rawUrl = (packageMetadata.repository as JsonObject).url;
+  if (typeof rawUrl !== "string") {
     return undefined;
   }
-  const info = hostedGitInfo.fromUrl(`${rawUrl}`);
-  let result = `${info ? info.browse() : handleUnknownHostedUrl(`${rawUrl}`)}`;
+  const info = hostedGitInfo.fromUrl(rawUrl);
+  let result = info ? info.browse() : handleUnknownHostedUrl(rawUrl);
 
   // Some packages (e.g. babel and babel-cli) mistakenly specify repository URL with directory. It needs to be trimmed
-  if (!skipDirectoryTrimming) {
+  if (!skipDirectoryTrimming && result) {
     result = result.replace(
       /^https:\/\/github\.com\/([^/]+)\/([^/]+)(.*)/i,
       "https://github.com/$1/$2",
@@ -87,7 +86,7 @@ const destinationConfigs: DestinationConfig[] = [
       const repoUrl = await getRepoUrl(packageName);
 
       if (!repoUrl) {
-        return undefined;
+        return;
       }
 
       const gitHubMatch = repoUrl.match(
@@ -97,17 +96,22 @@ const destinationConfigs: DestinationConfig[] = [
       // Covers GitHub repos
       if (gitHubMatch) {
         const [, owner, repo] = gitHubMatch;
-        const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents`;
+        const apiUrl = `https://api.github.com/repos/${owner!}/${repo!}/contents`;
 
-        let contents = [];
+        let contents: JsonObject[] = [];
         try {
-          contents = await (await fetch(apiUrl)).json();
-        } catch (e) {
+          const response = await fetch(apiUrl);
+          contents = (await response.json()) as JsonObject[];
+        } catch {
           // noop
         }
 
         for (const item of contents) {
-          if (/^changelog/i.test(item.name)) {
+          if (
+            typeof item.name === "string" &&
+            /^changelog/i.test(item.name) &&
+            typeof item.html_url === "string"
+          ) {
             return item.html_url;
           }
         }
@@ -131,7 +135,7 @@ const destinationConfigs: DestinationConfig[] = [
       // Reference implementation: https://github.com/npm/cli/blob/latest/lib/docs.js
       const packageMetadata = await getPackageMetadata(packageName);
 
-      return typeof packageMetadata?.homepage === "string"
+      return typeof packageMetadata.homepage === "string"
         ? packageMetadata.homepage
         : undefined;
     },
@@ -141,11 +145,16 @@ const destinationConfigs: DestinationConfig[] = [
     generateUrl: async (packageName) => {
       // Reference implementation: https://github.com/npm/cli/blob/latest/lib/bugs.js
       const packageMetadata = await getPackageMetadata(packageName);
+      const bugsField = packageMetadata.bugs;
       const directUrl =
-        packageMetadata.bugs &&
-        (typeof packageMetadata.bugs === "string"
-          ? packageMetadata.bugs
-          : `${(packageMetadata.bugs as JsonObject).url}`);
+        typeof bugsField === "string"
+          ? bugsField
+          : typeof bugsField === "object" &&
+            bugsField &&
+            "url" in bugsField &&
+            typeof bugsField.url === "string"
+          ? bugsField.url
+          : undefined;
       if (directUrl) {
         return directUrl;
       }
@@ -197,7 +206,7 @@ const destinationConfigs: DestinationConfig[] = [
       const packageMetadata = await getPackageMetadata(packageName);
       const sourceDirectory = (packageMetadata.repository as JsonObject)
         .directory;
-      if (repoUrl && sourceDirectory) {
+      if (repoUrl && typeof sourceDirectory === "string") {
         return `${repoUrl}/tree/master/${sourceDirectory}`;
       }
 
@@ -248,21 +257,18 @@ const destinationConfigs: DestinationConfig[] = [
   },
 ];
 
-const destinationConfigByKeyword: Record<
-  string,
-  DestinationConfig //
-> = destinationConfigs.reduce((result, destinationConfig) => {
-  destinationConfig.keywords.forEach((keyword) => {
-    if (result[keyword]) {
+const destinationConfigByKeyword: Record<string, DestinationConfig> = {};
+
+for (const destinationConfig of destinationConfigs) {
+  for (const keyword of destinationConfig.keywords) {
+    if (destinationConfigByKeyword[keyword]) {
       throw new Error(
         `Keyword ${keyword} is used in more than one destination`,
       );
     }
-    result[keyword] = destinationConfig;
-  });
-
-  return result;
-}, {} as { [key: string]: DestinationConfig });
+    destinationConfigByKeyword[keyword] = destinationConfig;
+  }
+}
 
 export const resolveDestination = async (
   packageName: string,
@@ -271,7 +277,7 @@ export const resolveDestination = async (
   try {
     const url = await destinationConfigByKeyword[
       destinationKeyword
-    ].generateUrl(packageName);
+    ]?.generateUrl(packageName);
     if (!url) {
       throw new Error("Unexpected empty URL");
     }
@@ -283,7 +289,7 @@ export const resolveDestination = async (
   } catch {
     return {
       outcome: "success",
-      url: `${await destinationConfigByKeyword[""].generateUrl(packageName)}`,
+      url: (await destinationConfigByKeyword[""]!.generateUrl(packageName))!,
     };
   }
 };

@@ -1,17 +1,18 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiHandler } from "next";
 
 import { resolveDestination } from "../../shared/destinations";
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const handler: NextApiHandler = async (req, res) => {
   let destinationUrl = "/";
 
-  const to = `${req.query.to}`;
+  const to = typeof req.query.to === "string" ? req.query.to : "";
+
   if (to) {
     const [packageName, destination] = to
       .split(" ")
       .filter((chunk) => chunk.length);
     const resolvedDestination = await resolveDestination(
-      packageName,
+      packageName ?? "",
       destination,
     );
 
@@ -26,3 +27,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   res.end();
 };
+
+export default handler;

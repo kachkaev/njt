@@ -14,7 +14,7 @@ const Item = styled.li<{ highlighted?: boolean }>`
   /* transition: color 0.2s ease-in-out; */
   white-space: nowrap;
 
-  ${(p) => (p.highlighted ? "color: #42a73f" : "")};
+  ${(props) => (props.highlighted ? "color: #42a73f" : "")};
 `;
 
 const Keyword = styled(ClickableCode)<{
@@ -44,13 +44,13 @@ interface KeywordInfo {
   info: React.ReactNode;
 }
 
-const AvailableDestinations: React.FunctionComponent<{
+const AvailableDestinations: React.VoidFunctionComponent<{
   selectedDestination?: string;
   onSelectedDestinationChange: (selectedDestination: string) => void;
 }> = ({ selectedDestination, onSelectedDestinationChange }) => {
-  const handleKeywordClick = React.useCallback(
+  const handleKeywordClick = React.useCallback<React.MouseEventHandler>(
     ({ currentTarget }) => {
-      onSelectedDestinationChange?.(currentTarget.innerText);
+      onSelectedDestinationChange(currentTarget.textContent!);
     },
     [onSelectedDestinationChange],
   );
@@ -171,7 +171,7 @@ const AvailableDestinations: React.FunctionComponent<{
                 : false
             }
           >
-            <Keyword onClick={handleKeywordClick}>{keywords[0]}</Keyword>{" "}
+            <Keyword onClick={handleKeywordClick}>{keywords[0] ?? ""}</Keyword>{" "}
             <Arrow /> <Info>{info}</Info>
           </Item>
         ))}

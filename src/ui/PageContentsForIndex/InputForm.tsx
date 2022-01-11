@@ -101,7 +101,7 @@ const SubmitButton = styled.button`
   }
 `;
 
-export const InputForm: React.FunctionComponent<{
+export const InputForm: React.VoidFunctionComponent<{
   text?: string;
   onTextChange?: (value: string) => void;
 }> = ({ text, onTextChange }) => {
@@ -118,7 +118,9 @@ export const InputForm: React.FunctionComponent<{
     }
   }, [toInputRef]);
 
-  const handleInputChange = React.useCallback(
+  const handleInputChange = React.useCallback<
+    React.ChangeEventHandler<HTMLInputElement>
+  >(
     ({ currentTarget: { value } }) => {
       previousToValue.current = value;
       onTextChange?.(value);

@@ -15,7 +15,7 @@ const ErrorPage: NextPage<{ statusCode: number }> = ({ statusCode }) => {
   );
 };
 
-ErrorPage.getInitialProps = async ({ res, err }) => {
+ErrorPage.getInitialProps = ({ res, err }) => {
   const statusCode = res ? res.statusCode : err?.statusCode || 500;
 
   return { statusCode };

@@ -1,4 +1,7 @@
-module.exports = {
+/**
+ * @type import("next").NextConfig
+ */
+const nextConfig = {
   experimental: {
     styledComponents: true,
     swcFileReading: false,
@@ -18,3 +21,5 @@ module.exports = {
     },
   ],
 };
+
+export default nextConfig;

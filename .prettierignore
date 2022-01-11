@@ -7,9 +7,11 @@
 !*/
 
 # Allow certain file types
+!*.cjs
 !*.js
 !*.json
 !*.md
+!*.mjs
 !*.ts
 !*.tsx
 !*.yml
