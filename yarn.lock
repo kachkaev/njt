@@ -3519,6 +3519,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
+    "@kachkaev/eslint-config-base": ^0.4.2
     "@kachkaev/eslint-config-react": ^0.4.3
     "@kachkaev/markdownlint-config": ^0.3.0
     "@kachkaev/prettier-config": ^1.3.1
