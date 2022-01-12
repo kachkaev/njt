@@ -267,9 +267,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kachkaev/eslint-config-react@npm:^0.4.3":
-  version: 0.4.3
-  resolution: "@kachkaev/eslint-config-react@npm:0.4.3"
+"@kachkaev/eslint-config-react@npm:^0.4.4":
+  version: 0.4.4
+  resolution: "@kachkaev/eslint-config-react@npm:0.4.4"
   dependencies:
     "@kachkaev/eslint-config-base": ^0.4.2
     eslint-plugin-react: ^7.28.0
@@ -277,7 +277,7 @@ __metadata:
     eslint-plugin-testing-library: ^5.0.1
   peerDependencies:
     eslint: ">=8.0.0"
-  checksum: 5df83fafda8816b0781027b7f68b816ccc1994ba2136cbe710b298de13490ebb3eb018dc784dacbc89c2179a8f2b87ebe0d7b1c33302d7a502026fc313026103
+  checksum: bdb1abb08db439a41f1d7732a47ecba5648cc40983035d4790e1d951fcf0cdeac6ac6cd68edcd58c60a3942e816e45c0cede4fdfe946fab3132b98180919cc13
   languageName: node
   linkType: hard
 
@@ -3519,8 +3519,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@kachkaev/eslint-config-base": ^0.4.2
-    "@kachkaev/eslint-config-react": ^0.4.3
+    "@kachkaev/eslint-config-react": ^0.4.4
     "@kachkaev/markdownlint-config": ^0.3.0
     "@kachkaev/prettier-config": ^1.3.1
     "@kachkaev/react-inline-js": ^0.4.0
