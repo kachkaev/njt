@@ -4,6 +4,7 @@
 const nextConfig = {
   experimental: {
     styledComponents: true,
+    swcFileReading: false,
   },
   productionBrowserSourceMaps: true,
 
