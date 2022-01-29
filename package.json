@@ -28,6 +28,9 @@
       "prettier --write"
     ]
   },
+  "resolutions": {
+    "markdown-it": "12.3.2"
+  },
   "dependencies": {
     "@kachkaev/react-inline-js": "^0.4.0",
     "hosted-git-info": "^4.1.0",
