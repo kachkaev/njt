@@ -15,10 +15,6 @@ const getPackageMetadata = async (packageName: string): Promise<JsonObject> => {
       packageName,
       (await response.json()) as JsonObject,
     );
-    // try {
-    // } catch (e) {
-    //   packageMetadataCache.set(packageName, e);
-    // }
   }
   const result = packageMetadataCache.get(packageName);
   if (result instanceof Error) {
