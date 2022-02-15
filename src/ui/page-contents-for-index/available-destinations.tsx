@@ -1,8 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import { ExternalLink } from "../shared/ExternalLink";
-import { ClickableCode } from "./ClickableCode";
+import { ExternalLink } from "../shared/external-link";
+import { ClickableCode } from "./clickable-code";
 
 const Ul = styled.ul`
   padding-left: 0;

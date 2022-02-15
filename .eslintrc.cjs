@@ -7,20 +7,4 @@ module.exports = {
     "plugin:@next/next/recommended",
   ],
   parserOptions: { tsconfigRootDir: __dirname },
-  overrides: [
-    {
-      files: ["src/{shared,ui}/**"],
-      rules: {
-        "unicorn/filename-case": [
-          "error",
-          {
-            cases: {
-              camelCase: true,
-              pascalCase: true,
-            },
-          },
-        ],
-      },
-    },
-  ],
 };

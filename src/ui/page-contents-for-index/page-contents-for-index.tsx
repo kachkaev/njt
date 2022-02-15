@@ -1,10 +1,10 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import { ExternalLink } from "../shared/ExternalLink";
-import { AvailableDestinations } from "./AvailableDestinations";
-import { Example } from "./Example";
-import { InputForm } from "./InputForm";
+import { ExternalLink } from "../shared/external-link";
+import { AvailableDestinations } from "./available-destinations";
+import { Example } from "./example";
+import { InputForm } from "./input-form";
 
 const H2 = styled.h2`
   margin-top: 3em;

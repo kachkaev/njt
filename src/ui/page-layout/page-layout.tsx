@@ -1,8 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import { ExternalLink } from "../shared/ExternalLink";
-import { GlobalStyle } from "./GlobalStyle";
+import { ExternalLink } from "../shared/external-link";
+import { GlobalStyle } from "./global-style";
 
 const Container = styled.div`
   margin: 0 auto;
