@@ -3,7 +3,7 @@
 /* eslint-disable no-console */
 
 import chalk from "chalk";
-import program from "commander";
+import { program } from "commander";
 
 import { generateUrl, getPackageVersion, openUrl } from "./main.js";
 
