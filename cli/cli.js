@@ -2,9 +2,10 @@
 
 /* eslint-disable no-console */
 
-const chalk = require("chalk");
-const program = require("commander");
-const { getPackageVersion, generateUrl, openUrl } = require("./helpers.cjs");
+import chalk from "chalk";
+import program from "commander";
+
+import { generateUrl, getPackageVersion, openUrl } from "./main.js";
 
 const green = chalk.green;
 const code = chalk.dim;
@@ -73,7 +74,7 @@ if (program.rawArgs.length < 3) {
 
 const args = [...program.args];
 if (args[0] === ".") {
-  const finder = require("find-package-json");
+  const finder = await import("find-package-json");
   const finderInstance = finder();
   const packageJsonSearchResult = finderInstance.next();
   if (!packageJsonSearchResult.value) {
