@@ -74,7 +74,7 @@ if (program.rawArgs.length < 3) {
 
 const args = [...program.args];
 if (args[0] === ".") {
-  const finder = await import("find-package-json");
+  const { default: finder } = await import("find-package-json");
   const finderInstance = finder();
   const packageJsonSearchResult = finderInstance.next();
   if (!packageJsonSearchResult.value) {
