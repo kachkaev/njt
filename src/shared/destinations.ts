@@ -5,7 +5,7 @@ import { DestinationConfig, JsonObject, ResolvedDestination } from "../types";
 
 const packageMetadataCache = new LRU<string, JsonObject | Error>({
   max: 10_000,
-  maxAge: 1000 * 60,
+  ttl: 1000 * 60,
 });
 
 const getPackageMetadata = async (packageName: string): Promise<JsonObject> => {
