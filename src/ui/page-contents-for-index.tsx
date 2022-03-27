@@ -27,6 +27,7 @@ const ExamplePackage = styled.div<{ clickable: boolean }>`
 `;
 
 const remarkByDestination = {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   "": "no specified destination",
   h: "homepage",
   s: "source",
@@ -41,6 +42,7 @@ const exampleUrlByPackageAndDestination: Record<
   Record<DestinationKey, string>
 > = {
   prettier: {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     "": "https://www.npmjs.com/package/prettier",
     h: "https://prettier.io",
     s: "https://github.com/prettier/prettier",
@@ -48,6 +50,7 @@ const exampleUrlByPackageAndDestination: Record<
     y: "https://yarnpkg.com/package/prettier",
   },
   react: {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     "": "https://www.npmjs.com/package/react",
     h: "https://reactjs.org",
     s: "https://github.com/facebook/react/tree/main/packages/react",
@@ -55,6 +58,7 @@ const exampleUrlByPackageAndDestination: Record<
     y: "https://yarnpkg.com/package/react",
   },
   lodash: {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     "": "https://www.npmjs.com/package/lodash",
     h: "https://lodash.com",
     s: "https://github.com/lodash/lodash",
@@ -62,6 +66,7 @@ const exampleUrlByPackageAndDestination: Record<
     y: "https://yarnpkg.com/package/lodash",
   },
   typescript: {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     "": "https://www.npmjs.com/package/typescript",
     h: "https://www.typescriptlang.org",
     s: "https://github.com/Microsoft/TypeScript",
