@@ -4,7 +4,7 @@ import * as React from "react";
 import { PageContentsForError } from "../ui/page-contents-for-error";
 import { PageMetadata } from "../ui/page-metadata";
 
-const ErrorPage: NextPage<{ statusCode: number }> = ({ statusCode }) => {
+const Page: NextPage<{ statusCode: number }> = ({ statusCode }) => {
   const message = "unknown error";
 
   return (
@@ -15,10 +15,10 @@ const ErrorPage: NextPage<{ statusCode: number }> = ({ statusCode }) => {
   );
 };
 
-ErrorPage.getInitialProps = ({ res, err }) => {
+Page.getInitialProps = ({ res, err }) => {
   const statusCode = res ? res.statusCode : err?.statusCode || 500;
 
   return { statusCode };
 };
 
-export default ErrorPage;
+export default Page;

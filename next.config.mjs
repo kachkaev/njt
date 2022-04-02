@@ -6,6 +6,7 @@ const nextConfig = {
     styledComponents: true,
   },
 
+  pageExtensions: ["page.tsx", "handler.ts"],
   productionBrowserSourceMaps: true,
   reactStrictMode: true,
   swcMinify: true,

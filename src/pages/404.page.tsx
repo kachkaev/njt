@@ -4,7 +4,7 @@ import * as React from "react";
 import { PageContentsForError } from "../ui/page-contents-for-error";
 import { PageMetadata } from "../ui/page-metadata";
 
-const NotFoundPage: NextPage = () => {
+const Page: NextPage = () => {
   const message = "page not found";
 
   return (
@@ -15,4 +15,4 @@ const NotFoundPage: NextPage = () => {
   );
 };
 
-export default NotFoundPage;
+export default Page;

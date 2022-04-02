@@ -3,7 +3,7 @@ import * as React from "react";
 import { PageContentsForIndex } from "../ui/page-contents-for-index";
 import { PageMetadata } from "../ui/page-metadata";
 
-const IndexPage = () => {
+const Page = () => {
   return (
     <>
       <PageMetadata />
@@ -12,4 +12,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default Page;
