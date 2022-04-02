@@ -1,10 +1,11 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import { AvailableDestinations } from "./page-contents-for-index/available-destinations";
-import { Example } from "./page-contents-for-index/example";
-import { InputForm } from "./page-contents-for-index/input-form";
+import { AvailableDestinations } from "./index.page/available-destinations";
+import { Example } from "./index.page/example";
+import { InputForm } from "./index.page/input-form";
 import { ExternalLink } from "./shared/external-link";
+import { PageMetadata } from "./shared/page-metadata";
 
 const H2 = styled.h2`
   margin-top: 3em;
@@ -75,7 +76,7 @@ const exampleUrlByPackageAndDestination: Record<
   },
 };
 
-export const PageContentsForIndex: React.VoidFunctionComponent = () => {
+const Page = () => {
   const [examplePackage, setExamplePackage] = React.useState(
     () => Object.keys(exampleUrlByPackageAndDestination)[0]!,
   );
@@ -111,6 +112,7 @@ export const PageContentsForIndex: React.VoidFunctionComponent = () => {
 
   return (
     <>
+      <PageMetadata />
       <InputForm text={inputText} onTextChange={setInputText} />
 
       <H2>Available destinations</H2>
@@ -176,3 +178,5 @@ export const PageContentsForIndex: React.VoidFunctionComponent = () => {
     </>
   );
 };
+
+export default Page;

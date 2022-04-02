@@ -1,8 +1,8 @@
 import { NextPage } from "next";
 import * as React from "react";
 
-import { PageContentsForError } from "../ui/page-contents-for-error";
-import { PageMetadata } from "../ui/page-metadata";
+import { ErrorPageBody } from "./shared/error-page-body";
+import { PageMetadata } from "./shared/page-metadata";
 
 const Page: NextPage = () => {
   const message = "page not found";
@@ -10,7 +10,7 @@ const Page: NextPage = () => {
   return (
     <>
       <PageMetadata title={message} description="" />
-      <PageContentsForError statusCode={404} message={message} />
+      <ErrorPageBody statusCode={404} message={message} />
     </>
   );
 };

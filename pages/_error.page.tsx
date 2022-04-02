@@ -1,8 +1,8 @@
 import { NextPage } from "next";
 import * as React from "react";
 
-import { PageContentsForError } from "../ui/page-contents-for-error";
-import { PageMetadata } from "../ui/page-metadata";
+import { ErrorPageBody } from "./shared/error-page-body";
+import { PageMetadata } from "./shared/page-metadata";
 
 const Page: NextPage<{ statusCode: number }> = ({ statusCode }) => {
   const message = "unknown error";
@@ -10,7 +10,7 @@ const Page: NextPage<{ statusCode: number }> = ({ statusCode }) => {
   return (
     <>
       <PageMetadata title={message} description="" />
-      <PageContentsForError statusCode={statusCode} message={message} />
+      <ErrorPageBody statusCode={statusCode} message={message} />
     </>
   );
 };
