@@ -1,10 +1,11 @@
 import * as React from "react";
 import styled from "styled-components";
 
-import { AvailableDestinations } from "./page-contents-for-index/available-destinations";
-import { Example } from "./page-contents-for-index/example";
-import { InputForm } from "./page-contents-for-index/input-form";
+import { AvailableDestinations } from "./index.page/available-destinations";
+import { Example } from "./index.page/example";
+import { InputForm } from "./index.page/input-form";
 import { ExternalLink } from "./shared/external-link";
+import { PageMetadata } from "./shared/page-metadata";
 
 const H2 = styled.h2`
   margin-top: 3em;
@@ -27,6 +28,7 @@ const ExamplePackage = styled.div<{ clickable: boolean }>`
 `;
 
 const remarkByDestination = {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   "": "no specified destination",
   h: "homepage",
   s: "source",
@@ -41,6 +43,7 @@ const exampleUrlByPackageAndDestination: Record<
   Record<DestinationKey, string>
 > = {
   prettier: {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     "": "https://www.npmjs.com/package/prettier",
     h: "https://prettier.io",
     s: "https://github.com/prettier/prettier",
@@ -48,6 +51,7 @@ const exampleUrlByPackageAndDestination: Record<
     y: "https://yarnpkg.com/package/prettier",
   },
   react: {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     "": "https://www.npmjs.com/package/react",
     h: "https://reactjs.org",
     s: "https://github.com/facebook/react/tree/main/packages/react",
@@ -55,6 +59,7 @@ const exampleUrlByPackageAndDestination: Record<
     y: "https://yarnpkg.com/package/react",
   },
   lodash: {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     "": "https://www.npmjs.com/package/lodash",
     h: "https://lodash.com",
     s: "https://github.com/lodash/lodash",
@@ -62,6 +67,7 @@ const exampleUrlByPackageAndDestination: Record<
     y: "https://yarnpkg.com/package/lodash",
   },
   typescript: {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     "": "https://www.npmjs.com/package/typescript",
     h: "https://www.typescriptlang.org",
     s: "https://github.com/Microsoft/TypeScript",
@@ -70,7 +76,7 @@ const exampleUrlByPackageAndDestination: Record<
   },
 };
 
-export const PageContentsForIndex: React.VoidFunctionComponent = () => {
+const Page = () => {
   const [examplePackage, setExamplePackage] = React.useState(
     () => Object.keys(exampleUrlByPackageAndDestination)[0]!,
   );
@@ -106,6 +112,7 @@ export const PageContentsForIndex: React.VoidFunctionComponent = () => {
 
   return (
     <>
+      <PageMetadata />
       <InputForm text={inputText} onTextChange={setInputText} />
 
       <H2>Available destinations</H2>
@@ -171,3 +178,5 @@ export const PageContentsForIndex: React.VoidFunctionComponent = () => {
     </>
   );
 };
+
+export default Page;

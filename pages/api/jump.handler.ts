@@ -1,6 +1,6 @@
 import { NextApiHandler } from "next";
 
-import { resolveDestination } from "../../shared/destinations";
+import { resolveDestination } from "../shared/destinations";
 
 const handler: NextApiHandler = async (req, res) => {
   let destinationUrl = "/";
