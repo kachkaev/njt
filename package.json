@@ -18,7 +18,7 @@
     "lint:prettier": "prettier --check \"**/*\"",
     "lint:tsc": "tsc --project .",
     "lint:yarn-dedupe": "yarn dedupe --check",
-    "prepare": "husky install",
+    "postinstall": "husky install",
     "start": "next start"
   },
   "lint-staged": {
