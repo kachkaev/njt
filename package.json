@@ -28,7 +28,11 @@
       "prettier --write"
     ]
   },
+  "resolutions": {
+    "use-persisted-state@npm:^0.3.0": "patch:use-persisted-state@npm%3A0.3.3#~/.yarn/patches/use-persisted-state-npm-0.3.3-c90a367c6d.patch"
+  },
   "dependencies": {
+    "@fisch0920/use-dark-mode": "^2.4.0",
     "@kachkaev/react-inline-js": "^0.4.0",
     "hosted-git-info": "^5.0.0",
     "lru-cache": "^7.8.1",
@@ -37,8 +41,7 @@
     "react-dom": "^18.0.0",
     "styled-components": "^5.3.5",
     "styled-normalize": "^8.0.7",
-    "url": "^0.11.0",
-    "use-dark-mode": "^2.3.1"
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "@kachkaev/eslint-config-react": "^0.4.5",
