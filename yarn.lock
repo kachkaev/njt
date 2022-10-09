@@ -1921,12 +1921,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:^7.0.4":
-  version: 7.0.4
-  resolution: "husky@npm:7.0.4"
+"husky@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "husky@npm:8.0.1"
   bin:
     husky: lib/bin.js
-  checksum: 1d6dd7e973e7fab4316f767f3f8d76591a9857b3ad4fea2b371834afe2122d6567965b6c5a027040b403363c328d35871113d7f64586d7149b4b417c90554237
+  checksum: 10a6a7d45981770a995ccb1122771842296e272acda5b7e53e9ad54230c14f3263933c2e76d6868c819e5a961769c48493f3de3697e480e5fc89e47102013942
   languageName: node
   linkType: hard
 
@@ -3361,7 +3361,7 @@ __metadata:
     "@types/styled-components": "npm:^5.1.25"
     eslint: "npm:^8.14.0"
     hosted-git-info: "npm:^5.0.0"
-    husky: "npm:^7.0.4"
+    husky: "npm:^8.0.1"
     lint-staged: "npm:^12.4.0"
     lru-cache: "npm:^7.8.1"
     markdownlint-cli: "npm:^0.31.1"

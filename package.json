@@ -50,7 +50,7 @@
     "@types/react": "^18.0.6",
     "@types/styled-components": "^5.1.25",
     "eslint": "^8.14.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.1",
     "lint-staged": "^12.4.0",
     "markdownlint-cli": "^0.31.1",
     "ncp": "^2.0.0",
