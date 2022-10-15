@@ -510,12 +510,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lru-cache@npm:^7.10.9":
-  version: 7.10.9
-  resolution: "@types/lru-cache@npm:7.10.9"
+"@types/lru-cache@npm:^7.10.10":
+  version: 7.10.10
+  resolution: "@types/lru-cache@npm:7.10.10"
   dependencies:
     lru-cache: "npm:*"
-  checksum: 4089235a0ae0b4afb10c78cb202042ed7f408cdf59022bcf2543cb470a434e086c8ae4df75cfd9432c8f62e852187c264c7539f1a1c02c124c0138f9301bc30d
+  checksum: d3626668863942629ba66b9af801e12c4ca833d685ca1647c3c5af08f39a7bb797d2bb21e88a9e7dde452153a94bdc28e1ce0b6dd09ff86376ff8e94a08c38f2
   languageName: node
   linkType: hard
 
@@ -3509,7 +3509,7 @@ __metadata:
     "@next/eslint-plugin-next": "npm:^12.3.1"
     "@rushstack/eslint-patch": "npm:^1.2.0"
     "@types/hosted-git-info": "npm:^3.0.2"
-    "@types/lru-cache": "npm:^7.10.9"
+    "@types/lru-cache": "npm:^7.10.10"
     "@types/node": "npm:^18.11.0"
     "@types/react": "npm:^18.0.21"
     "@types/styled-components": "npm:^5.1.26"
