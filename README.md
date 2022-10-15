@@ -193,14 +193,28 @@ Thanks to [Vercel](https://vercel.com) for hosting [njt.vercel.app](https://njt.
 Are you a search shortcut guru?
 Feel free [to suggest](https://github.com/kachkaev/njt/issues/new?title=New+entry+point+suggestion) another entry point to `njt` and save people’s time around the world!
 
-## How does `njt` work
+## How `njt` works
 
-For requests like `njt <package>` or `njt <package> y`, all the tool does is navigating you to URLs like `https://www.npmjs.com/package/<package>` or `https://yarnpkg.com/package/<package>`.
+### Query resolution
 
-Most other cases involve a look into `package.json` for the latest published version.
-This file contains the location of the repository, the homepage and some other fields, which `njt` uses to construct the destination URL.
+The logic of `njt` is centralized and located within the `njt.vercel.app/jump` endpoint ([source](pages/api/jump.handler.ts)).
 
-The command line version of the tool takes you to `https://njt.vercel.app/jump?from=cli@VERSION&to=YOUR_QUERY`, from which you are redirected to the destination.
+All `njt` interfaces submit user queries to `https://njt.vercel.app/jump?from=UI_ID&to=USER_QUERY`, from which you are redirected to the destination.
+
+For queries like `njt <package>` or `njt <package> y`, the redirects are straightforward: `https://www.npmjs.com/package/<package>` or `https://yarnpkg.com/package/<package>`.
+
+Most other cases involve a look into `package.json` for the latest version of the searched package.
+This file is fetched from [www.npmjs.com](https://www.npmjs.com).
+It contains the location of the repository, the homepage and some other fields which are used to construct the destination URL.
+
+### Privacy
+
+Official `njt` interfaces and the `njt.vercel.app/jump` endpoint do not store submitted queries.
+Since [njt.vercel.app](https://njt.vercel.app) is hosted by Vercel, some performance data is logged by the infrastructure (see [Vercel Analytics](https://vercel.com/analytics)).
+This does not involve user tracking.
+
+When `njt` navigates to `https://njt.vercel.app/jump?from=UI_ID&to=USER_QUERY`, parameter `from=UI_ID` is sent to the endpoint alongside the user query.
+The value is currently ignored but it may be used in the future for resolving queries or for analysing the popularity of `njt` interfaces.
 
 ## Prior art
 
