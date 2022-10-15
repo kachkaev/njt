@@ -874,13 +874,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^4.0.0, chalk@npm:^4.1.2":
+"chalk@npm:^4.0.0":
   version: 4.1.2
   resolution: "chalk@npm:4.1.2"
   dependencies:
     ansi-styles: "npm:^4.1.0"
     supports-color: "npm:^7.1.0"
   checksum: cb96ab47eb1b55525e72caac9eed1513bff28e686df7eee6b04379c80922df21c8283d9938af16a645826c94c9e19fb52ad63cbead6b5073d08ae5f8fa2661a2
+  languageName: node
+  linkType: hard
+
+"chalk@npm:^5.1.2":
+  version: 5.1.2
+  resolution: "chalk@npm:5.1.2"
+  checksum: 0bfd090fccb1c5918b19bea32a8f34c5e19db774758fa0ff28883aba790d614c0e4cea5061d6a48967c2b4cc91c51b77a3f9f9cee2f4fb5d258b5bf248193739
   languageName: node
   linkType: hard
 
@@ -979,6 +986,13 @@ __metadata:
   version: 8.3.0
   resolution: "commander@npm:8.3.0"
   checksum: 94dba589da4444bc07d60537438ce36bbf78b52b18bb720fb3727a3b589cb27b53171065742e6e442962e273976f034ca7475cc5517d92c7033fae2f6ed50e76
+  languageName: node
+  linkType: hard
+
+"commander@npm:^9.4.1":
+  version: 9.4.1
+  resolution: "commander@npm:9.4.1"
+  checksum: 7d4c1f3bd4ad451f43fce51b9c73dc2d61fca00a9249196aa2d3d66fc46f2460c917c73ea9221c278fb8d35f496384f5125806e69108581a8e8bc673752c94e6
   languageName: node
   linkType: hard
 
@@ -2695,9 +2709,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "njt@workspace:cli"
   dependencies:
-    chalk: "npm:^4.1.2"
-    commander: "npm:^8.3.0"
+    chalk: "npm:^5.1.2"
+    commander: "npm:^9.4.1"
     find-package-json: "npm:^1.2.0"
+    ncp: "npm:^2.0.0"
     open: "npm:^8.4.0"
   bin:
     njt: cli.js
@@ -3365,7 +3380,6 @@ __metadata:
     lint-staged: "npm:^12.4.0"
     lru-cache: "npm:^7.8.1"
     markdownlint-cli: "npm:^0.31.1"
-    ncp: "npm:^2.0.0"
     next: "npm:^12.1.5"
     npm-run-all: "npm:^4.1.5"
     prettier: "npm:^2.6.2"
