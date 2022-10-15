@@ -1,6 +1,7 @@
 {
   "private": true,
   "license": "BSD-3-Clause",
+  "type": "module",
   "workspaces": [
     "cli"
   ],
