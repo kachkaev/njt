@@ -1,6 +1,6 @@
 {
   "name": "njt",
-  "version": "1.0.0",
+  "version": "2.0.0-canary.0",
   "description": "npm jump to: a quick navigation tool for npm packages",
   "keywords": [
     "frog",
@@ -31,7 +31,7 @@
   "main": "main.js",
   "bin": "cli.js",
   "scripts": {
-    "prepublishOnly": "yarn ncp ../README.md README.md"
+    "prepack": "yarn ncp ../README.md README.md"
   },
   "dependencies": {
     "chalk": "^5.1.2",
