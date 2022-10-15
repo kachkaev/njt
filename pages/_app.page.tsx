@@ -1,4 +1,3 @@
-import useDarkMode from "@fisch0920/use-dark-mode";
 import { AppProps } from "next/app";
 import * as React from "react";
 
@@ -11,8 +10,6 @@ const App: React.VoidFunctionComponent<AppProps> = ({
   React.useEffect(() => {
     document.body.className = document.body.className.replace("no-js", "js");
   }, []);
-
-  useDarkMode();
 
   return (
     <PageLayout>

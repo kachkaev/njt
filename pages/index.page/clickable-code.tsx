@@ -12,11 +12,13 @@ export const ClickableCode = styled.code`
     }
   }
 
-  .js.dark-mode & {
-    border-bottom-color: rgba(127, 127, 127, 0.5);
+  @media (prefers-color-scheme: dark) {
+    .js & {
+      border-bottom-color: rgba(127, 127, 127, 0.5);
 
-    :active {
-      background: rgba(127, 127, 127, 0.5);
+      .js &:active {
+        background: rgba(127, 127, 127, 0.5);
+      }
     }
   }
 `;

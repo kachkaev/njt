@@ -65,7 +65,8 @@ const Input = styled.input`
   /* transition: all 0.2s ease-in-out; */
 
   background: rgba(27, 31, 35, 0.05);
-  .dark-mode & {
+
+  @media (prefers-color-scheme: dark) {
     background: rgba(127, 127, 127, 0.3);
   }
 
