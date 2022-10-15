@@ -8,21 +8,21 @@
     "build": "next build",
     "dev": "next dev",
     "fix": "npm-run-all --continue-on-error \"fix:*\"",
-    "fix:eslint": "eslint --fix \"**/*\"",
-    "fix:markdownlint": "markdownlint --dot --fix \"**/*\"",
-    "fix:prettier": "prettier --write \"**/*\"",
+    "fix:eslint": "eslint --fix .",
+    "fix:markdownlint": "markdownlint --dot --fix .",
+    "fix:prettier": "prettier --write .",
     "fix:yarn-dedupe": "yarn dedupe",
     "lint": "npm-run-all --continue-on-error \"lint:*\"",
-    "lint:eslint": "eslint \"**/*\" --report-unused-disable-directives",
-    "lint:markdownlint": "markdownlint --dot \"**/*\"",
-    "lint:prettier": "prettier --check \"**/*\"",
+    "lint:eslint": "eslint . --report-unused-disable-directives",
+    "lint:markdownlint": "markdownlint --dot .",
+    "lint:prettier": "prettier --check .",
     "lint:tsc": "tsc --project .",
     "lint:yarn-dedupe": "yarn dedupe --check",
     "postinstall": "husky install",
     "start": "next start"
   },
   "lint-staged": {
-    "**/*": [
+    "**": [
       "eslint --fix",
       "markdownlint --fix",
       "prettier --write"
