@@ -39,6 +39,9 @@
     "find-package-json": "^1.2.0",
     "open": "^8.4.0"
   },
+  "devDependencies": {
+    "ncp": "^2.0.0"
+  },
   "engines": {
     "node": "^14.18.0 || >=16.0.0"
   }
