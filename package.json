@@ -49,7 +49,7 @@
     "@types/node": "^18.11.0",
     "@types/react": "^18.0.21",
     "@types/styled-components": "^5.1.26",
-    "eslint": "^8.25.0",
+    "eslint": "^8.26.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "markdownlint-cli": "^0.32.2",
