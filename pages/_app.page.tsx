@@ -1,7 +1,7 @@
-import { AppProps } from "next/app";
+import { AppProps } from "next/app.js";
 import * as React from "react";
 
-import { PageLayout } from "./_app.page/page-layout";
+import { PageLayout } from "./_app.page/page-layout.jsx";
 
 const App: React.VoidFunctionComponent<AppProps> = ({
   Component,

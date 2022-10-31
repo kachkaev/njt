@@ -1,5 +1,6 @@
-require("@rushstack/eslint-patch/modern-module-resolution");
+require("@rushstack/eslint-patch/modern-module-resolution.js");
 
+/** @type {import("eslint").Linter.Config} */
 module.exports = {
   extends: [
     "@kachkaev/eslint-config-react",
@@ -7,4 +8,13 @@ module.exports = {
     "plugin:@next/next/recommended",
   ],
   parserOptions: { tsconfigRootDir: __dirname },
+  settings: {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    "import/resolver": {
+      typescript: {
+        alwaysTryTypes: true,
+        project: `${__dirname}/tsconfig.json`,
+      },
+    },
+  },
 };

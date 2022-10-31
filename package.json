@@ -50,6 +50,7 @@
     "@types/react": "^18.0.24",
     "@types/styled-components": "^5.1.26",
     "eslint": "^8.26.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "markdownlint-cli": "^0.32.2",
