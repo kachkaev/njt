@@ -1,7 +1,7 @@
 import * as React from "react";
 import _styled from "styled-components";
 
-import { AvailableDestinations } from "./index.page/available-destinations.js";
+import { AvailableDestinations } from "./index.page/available-destinations.jsx";
 import { Example } from "./index.page/example.jsx";
 import { InputForm } from "./index.page/input-form.jsx";
 import { ExternalLink } from "./shared/external-link.jsx";
