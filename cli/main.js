@@ -1,11 +1,12 @@
 import { readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
+
 import open from "open";
 
 export const getPackageVersion = () => {
   const filePath = new URL(import.meta.url).pathname;
   const packageJsonPath = resolve(dirname(filePath), "package.json");
-  const packageJson = JSON.parse(readFileSync(packageJsonPath, "utf-8"));
+  const packageJson = JSON.parse(readFileSync(packageJsonPath, "utf8"));
 
   return packageJson.version;
 };
