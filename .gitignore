@@ -1,4 +1,4 @@
-# dependencies
+## dependencies
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -7,22 +7,22 @@
 !.yarn/sdks
 !.yarn/versions
 
-# testing
+## testing
 /coverage
 
-# next.js
+## next.js
 /.next/
 /out/
 tsconfig.tsbuildinfo
 
-# misc
+## misc
 .DS_Store
 .env*
 
-# debug
+## debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# custom
+## custom
 cli/README.md
