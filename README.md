@@ -5,10 +5,9 @@
 <a href="https://njt.vercel.app">njt.vercel.app</a>
 </p>
 
-Are you typing npm package names in your search engine to then manually navigate to their source, homepage, changelog, versions and so on? 🕐🕑🕒🕓🕔
+Do you type package names in your search engine and then navigate to their source, homepage, changelog and so on? 🕐🕑🕒🕓🕔
 
-[Save five seconds thousands of times](https://xkcd.com/1205/) by quickly jumping to the right URL!
-Here is a magic spell to remember:
+[Save five seconds thousands of times](https://xkcd.com/1205/) by quickly jumping to the right URL:
 
 ```txt
 🐸✨🐸✨🐸
@@ -175,7 +174,7 @@ If you use Visual Studio Code, you can add njt to the command palette via [Launc
 
 ### 🟢 DuckDuckGo bang
 
-> DuckDuckGo bang is awaiting approval
+> DuckDuckGo bang is awaiting approval (please help if you know how to speed up the process).
 
 <s>If you use [duckduckgo.com](https://duckduckgo.com) as your primary search engine, type `!njt <package> [destination]` in its search field (note the leading exclamation mark).
 This trick is possible thanks to DuckDuckGo’s awesome [bang feature](https://duckduckgo.com/bang).</s>
