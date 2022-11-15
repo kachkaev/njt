@@ -266,9 +266,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kachkaev/eslint-config-base@npm:^0.5.0":
-  version: 0.5.0
-  resolution: "@kachkaev/eslint-config-base@npm:0.5.0"
+"@kachkaev/eslint-config-base@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "@kachkaev/eslint-config-base@npm:0.5.1"
   dependencies:
     "@typescript-eslint/eslint-plugin": "npm:^5.42.0"
     "@typescript-eslint/parser": "npm:^5.42.0"
@@ -280,21 +280,21 @@ __metadata:
     eslint-plugin-unicorn: "npm:^44.0.2"
   peerDependencies:
     eslint: ">=8.0.0"
-  checksum: 8e448a914a3d42a082c82faac533a69f335ff3749f950ae02c75a8a327354a6c7e5553fced67827a844eb4daf043a6c0609ef24d98d44b80f108471104def215
+  checksum: 326d4723d270ac1c1790b4b85c675712c44106dd990ae7508f1098986e393eb8792f93509fda7dedd83444cf6d0db6f9c4df509cbb3cedf12a81c44cf82a401b
   languageName: node
   linkType: hard
 
-"@kachkaev/eslint-config-react@npm:^0.5.0":
-  version: 0.5.0
-  resolution: "@kachkaev/eslint-config-react@npm:0.5.0"
+"@kachkaev/eslint-config-react@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "@kachkaev/eslint-config-react@npm:0.5.1"
   dependencies:
-    "@kachkaev/eslint-config-base": "npm:^0.5.0"
+    "@kachkaev/eslint-config-base": "npm:^0.5.1"
     eslint-plugin-react: "npm:^7.31.10"
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-testing-library: "npm:^5.9.1"
   peerDependencies:
     eslint: ">=8.0.0"
-  checksum: d0f373d6b04023282981da9d28944d8f3c61ddaf96ac9f2327bf7e67295c911fa6d372f08b6de29260e54cb50320b33a48ee0f94f5e66051013af709cf049055
+  checksum: 20c20ffbcc07a22a47498a525c3878307e6d8dce41b76a92fba2f40c8c68616f25a451ec9c32a5f55382e216867009214e79af3ccaf603370a836680a2dabc4c
   languageName: node
   linkType: hard
 
@@ -3544,7 +3544,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@kachkaev/eslint-config-react": "npm:^0.5.0"
+    "@kachkaev/eslint-config-react": "npm:^0.5.1"
     "@kachkaev/markdownlint-config": "npm:^0.5.0"
     "@kachkaev/prettier-config": "npm:^1.4.0"
     "@next/eslint-plugin-next": "npm:^13.0.2"
