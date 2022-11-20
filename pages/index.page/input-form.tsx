@@ -65,7 +65,8 @@ const Input = styled.input`
   /* transition: all 0.2s ease-in-out; */
 
   background: rgba(27, 31, 35, 0.05);
-  .dark-mode & {
+
+  @media (prefers-color-scheme: dark) {
     background: rgba(127, 127, 127, 0.3);
   }
 
@@ -101,7 +102,7 @@ const SubmitButton = styled.button`
   }
 `;
 
-export const InputForm: React.VoidFunctionComponent<{
+export const InputForm: React.FunctionComponent<{
   text?: string;
   onTextChange?: (value: string) => void;
 }> = ({ text, onTextChange }) => {

@@ -1,6 +1,6 @@
 {
   "name": "njt",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "npm jump to: a quick navigation tool for npm packages",
   "keywords": [
     "frog",
@@ -27,17 +27,22 @@
     "name": "Alexander Kachkaev",
     "email": "alexander@kachkaev.ru"
   },
+  "type": "module",
+  "main": "main.js",
   "bin": "cli.js",
   "scripts": {
-    "prepublishOnly": "yarn ncp ../README.md README.md"
+    "prepack": "yarn ncp ../README.md README.md"
   },
   "dependencies": {
-    "chalk": "^4.1.2",
-    "commander": "^8.3.0",
+    "chalk": "^5.1.2",
+    "commander": "^9.4.1",
     "find-package-json": "^1.2.0",
     "open": "^8.4.0"
   },
+  "devDependencies": {
+    "ncp": "^2.0.0"
+  },
   "engines": {
-    "node": ">=12.17"
+    "node": "^14.18.0 || >=16.0.0"
   }
 }

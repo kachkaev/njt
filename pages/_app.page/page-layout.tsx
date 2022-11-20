@@ -12,7 +12,7 @@ const base = css`
     margin: 0;
     line-height: 1.4em;
 
-    &.dark-mode {
+    @media (prefers-color-scheme: dark) {
       background: #24292e;
       color: #fff;
     }
@@ -22,7 +22,7 @@ const base = css`
     color: #0366d6;
     text-decoration: none;
 
-    .dark-mode & {
+    @media (prefers-color-scheme: dark) {
       color: #59a7ff;
     }
 
@@ -37,7 +37,8 @@ const base = css`
     color: inherit;
 
     background: rgba(27, 31, 35, 0.05);
-    .dark-mode & {
+
+    @media (prefers-color-scheme: dark) {
       background: rgba(127, 127, 127, 0.3);
     }
   }
@@ -87,7 +88,7 @@ const ExternalLinks = styled.div`
   }
 `;
 
-export const PageLayout: React.VoidFunctionComponent<{
+export const PageLayout: React.FunctionComponent<{
   children: React.ReactNode;
 }> = ({ children }) => {
   return (

@@ -20,7 +20,7 @@ const Message = styled.div`
   opacity: 0.3;
 `;
 
-export const ErrorPageBody: React.VoidFunctionComponent<{
+export const ErrorPageBody: React.FunctionComponent<{
   statusCode: number;
   message: string;
 }> = ({ statusCode, message }) => {
