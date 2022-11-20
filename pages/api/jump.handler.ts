@@ -8,11 +8,12 @@ const handler: NextApiHandler = async (req, res) => {
   const to = typeof req.query.to === "string" ? req.query.to : "";
 
   if (to) {
-    const [packageName, destination] = to
+    const [rawPackageName, destination] = to
       .split(" ")
       .filter((chunk) => chunk.length);
+
     const resolvedDestination = await resolveDestination(
-      packageName ?? "",
+      rawPackageName ?? "",
       destination,
     );
 
