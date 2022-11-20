@@ -302,9 +302,9 @@ export const resolveDestination = async (
     );
 
   try {
-    const url = await destinationConfigByKeyword[
-      rawDestination[0] ?? ""
-    ]?.generateUrl(packageName);
+    const url = await destinationConfigByKeyword[rawDestination]?.generateUrl(
+      packageName,
+    );
     if (!url) {
       throw new Error("Unexpected empty URL");
     }
