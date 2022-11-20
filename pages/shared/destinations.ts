@@ -292,6 +292,7 @@ export const resolveDestination = async (
   rawDestination = "",
 ): Promise<ResolvedDestination> => {
   const packageName = rawPackageName
+    .toLowerCase()
     .replace("https://www.npmjs.com/package/", "") // https://www.npmjs.com/package/@types/react-dom
     .replace(/\?activeTab=\w+$/, "") // https://www.npmjs.com/package/@types/react-dom?activeTab=versions
     .replace(/\/v\/[\w.-]+/, "") // https://www.npmjs.com/package/@types/react-dom/v/18.0.9
@@ -302,9 +303,9 @@ export const resolveDestination = async (
     );
 
   try {
-    const url = await destinationConfigByKeyword[rawDestination]?.generateUrl(
-      packageName,
-    );
+    const url = await destinationConfigByKeyword[
+      rawDestination[0]?.toLowerCase() ?? ""
+    ]?.generateUrl(packageName);
     if (!url) {
       throw new Error("Unexpected empty URL");
     }
