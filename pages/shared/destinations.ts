@@ -289,7 +289,7 @@ for (const destinationConfig of destinationConfigs) {
 
 export const resolveDestination = async (
   rawPackageName: string,
-  destinationKeyword = "",
+  rawDestination = "",
 ): Promise<ResolvedDestination> => {
   const packageName = rawPackageName
     .replace("https://www.npmjs.com/package/", "") // https://www.npmjs.com/package/@types/react-dom
@@ -303,7 +303,7 @@ export const resolveDestination = async (
 
   try {
     const url = await destinationConfigByKeyword[
-      destinationKeyword
+      rawDestination[0] ?? ""
     ]?.generateUrl(packageName);
     if (!url) {
       throw new Error("Unexpected empty URL");
