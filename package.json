@@ -30,8 +30,8 @@
     ]
   },
   "resolutions": {
-    "@typescript-eslint/eslint-plugin": "^5.43.1-alpha.22",
-    "@typescript-eslint/parser": "^5.43.1-alpha.22"
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0"
   },
   "dependencies": {
     "hosted-git-info": "^6.1.1",
