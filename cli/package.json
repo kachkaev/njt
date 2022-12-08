@@ -34,7 +34,7 @@
     "prepack": "yarn ncp ../README.md README.md"
   },
   "dependencies": {
-    "chalk": "^5.1.2",
+    "chalk": "^5.2.0",
     "commander": "^9.4.1",
     "find-package-json": "^1.2.0",
     "open": "^8.4.0"
