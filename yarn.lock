@@ -983,10 +983,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^5.1.2":
-  version: 5.1.2
-  resolution: "chalk@npm:5.1.2"
-  checksum: 0bfd090fccb1c5918b19bea32a8f34c5e19db774758fa0ff28883aba790d614c0e4cea5061d6a48967c2b4cc91c51b77a3f9f9cee2f4fb5d258b5bf248193739
+"chalk@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "chalk@npm:5.2.0"
+  checksum: c3c31253b9cb445ca917aab30767282a1c1951fb8d60e1e8389a3d6434eee296dae28a2b02871c89a866ed7e560438aaea4c5d290242e5fb50b5eda2b4ea4061
   languageName: node
   linkType: hard
 
@@ -2889,7 +2889,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "njt@workspace:cli"
   dependencies:
-    chalk: "npm:^5.1.2"
+    chalk: "npm:^5.2.0"
     commander: "npm:^9.4.1"
     find-package-json: "npm:^1.2.0"
     ncp: "npm:^2.0.0"
