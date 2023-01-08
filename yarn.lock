@@ -1088,7 +1088,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^9.4.1, commander@npm:~9.4.1":
+"commander@npm:^9.4.1, commander@npm:^9.5.0":
+  version: 9.5.0
+  resolution: "commander@npm:9.5.0"
+  checksum: 1d09146ccb60400550629bcded4b72eeb100728207ecb2538dd827b19571dc16d3b0ee5da762d9bdbbe680ed5cca6658cac5bfce262b1b73eabe5ef8c15cdd9d
+  languageName: node
+  linkType: hard
+
+"commander@npm:~9.4.1":
   version: 9.4.1
   resolution: "commander@npm:9.4.1"
   checksum: 7d4c1f3bd4ad451f43fce51b9c73dc2d61fca00a9249196aa2d3d66fc46f2460c917c73ea9221c278fb8d35f496384f5125806e69108581a8e8bc673752c94e6
@@ -2875,7 +2882,7 @@ __metadata:
   resolution: "njt@workspace:cli"
   dependencies:
     chalk: "npm:^5.2.0"
-    commander: "npm:^9.4.1"
+    commander: "npm:^9.5.0"
     find-package-json: "npm:^1.2.0"
     ncp: "npm:^2.0.0"
     open: "npm:^8.4.0"
