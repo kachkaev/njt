@@ -9,7 +9,6 @@ module.exports = {
   ],
   parserOptions: { tsconfigRootDir: __dirname },
   settings: {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     "import/resolver": {
       typescript: {
         alwaysTryTypes: true,
