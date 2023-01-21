@@ -1,7 +1,5 @@
-import _Head from "next/head.js";
+import Head from "next/head.js";
 import * as React from "react";
-
-const Head = _Head as unknown as typeof _Head.default;
 
 const getBaseUrl = () => {
   const hostname =

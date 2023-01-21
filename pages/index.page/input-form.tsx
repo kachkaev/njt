@@ -1,7 +1,5 @@
 import * as React from "react";
-import _styled from "styled-components";
-
-const styled = _styled as unknown as typeof _styled.default;
+import styled from "styled-components";
 
 const verticalFormPadding = 20;
 

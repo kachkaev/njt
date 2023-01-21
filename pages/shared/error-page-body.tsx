@@ -1,9 +1,6 @@
-import _Link from "next/link.js";
+import Link from "next/link.js";
 import * as React from "react";
-import _styled from "styled-components";
-
-const Link = _Link as unknown as typeof _Link.default;
-const styled = _styled as unknown as typeof _styled.default;
+import styled from "styled-components";
 
 const Container = styled.div`
   text-align: center;

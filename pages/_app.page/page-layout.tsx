@@ -1,10 +1,8 @@
 import * as React from "react";
-import _styled, { createGlobalStyle, css } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 import { normalize } from "styled-normalize";
 
 import { ExternalLink } from "../shared/external-link.jsx";
-
-const styled = _styled as unknown as typeof _styled.default;
 
 const base = css`
   body {

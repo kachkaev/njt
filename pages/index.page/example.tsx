@@ -1,10 +1,8 @@
 import * as React from "react";
-import _styled from "styled-components";
+import styled from "styled-components";
 
 import { ExternalLink } from "../shared/external-link.jsx";
 import { ClickableCode } from "./clickable-code.jsx";
-
-const styled = _styled as unknown as typeof _styled.default;
 
 const Remark = styled.span`
   white-space: nowrap;
