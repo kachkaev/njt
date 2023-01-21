@@ -46,7 +46,7 @@ interface KeywordInfo {
   info: React.ReactNode;
 }
 
-const AvailableDestinations: React.VoidFunctionComponent<{
+const AvailableDestinations: React.FunctionComponent<{
   selectedDestination?: string;
   onSelectedDestinationChange: (selectedDestination: string) => void;
 }> = ({ selectedDestination, onSelectedDestinationChange }) => {

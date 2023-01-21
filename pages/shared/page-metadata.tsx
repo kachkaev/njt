@@ -11,7 +11,7 @@ const getBaseUrl = () => {
   return `${protocol}://${hostname}`;
 };
 
-export const PageMetadata: React.VoidFunctionComponent<{
+export const PageMetadata: React.FunctionComponent<{
   title?: string;
   description?: string;
 }> = ({

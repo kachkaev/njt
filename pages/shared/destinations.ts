@@ -288,12 +288,23 @@ for (const destinationConfig of destinationConfigs) {
 }
 
 export const resolveDestination = async (
-  packageName: string,
-  destinationKeyword = "",
+  rawPackageName: string,
+  rawDestination = "",
 ): Promise<ResolvedDestination> => {
+  const packageName = rawPackageName
+    .toLowerCase()
+    .replace("https://www.npmjs.com/package/", "") // https://www.npmjs.com/package/@types/react-dom
+    .replace(/\?activeTab=\w+$/, "") // https://www.npmjs.com/package/@types/react-dom?activeTab=versions
+    .replace(/\/v\/[\w.-]+/, "") // https://www.npmjs.com/package/@types/react-dom/v/18.0.9
+    .replace("https://yarnpkg.com/package/", "") // https://yarnpkg.com/package/@types/react-dom
+    .replace(
+      /^https:\/\/unpkg.com\/browse\/(@?[\w.-]+(\/[\w.-]+)?)@([\w.-]+)\/$/, // https://unpkg.com/browse/@types/react-dom@18.0.9/
+      "$1",
+    );
+
   try {
     const url = await destinationConfigByKeyword[
-      destinationKeyword
+      rawDestination[0]?.toLowerCase() ?? ""
     ]?.generateUrl(packageName);
     if (!url) {
       throw new Error("Unexpected empty URL");
@@ -306,7 +317,7 @@ export const resolveDestination = async (
   } catch {
     return {
       outcome: "success",
-      url: (await destinationConfigByKeyword[""]!.generateUrl(packageName))!,
+      url: (await destinationConfigByKeyword[""]!.generateUrl(rawPackageName))!,
     };
   }
 };

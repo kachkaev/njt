@@ -1,0 +1,14 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+
+  "rangeStrategy": "bump",
+  "postUpdateOptions": ["yarnDedupeHighest"],
+
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true
+    }
+  ]
+}

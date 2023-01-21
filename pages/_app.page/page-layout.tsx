@@ -90,7 +90,7 @@ const ExternalLinks = styled.div`
   }
 `;
 
-export const PageLayout: React.VoidFunctionComponent<{
+export const PageLayout: React.FunctionComponent<{
   children: React.ReactNode;
 }> = ({ children }) => {
   return (
