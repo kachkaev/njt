@@ -1,4 +1,4 @@
-import Document, {
+import _Document, {
   DocumentContext,
   Head,
   Html,
@@ -7,6 +7,8 @@ import Document, {
 } from "next/document.js";
 import * as React from "react";
 import { ServerStyleSheet } from "styled-components";
+
+const Document = _Document as unknown as typeof _Document.default;
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {

@@ -1,11 +1,13 @@
 import * as React from "react";
-import styled from "styled-components";
+import _styled from "styled-components";
 
 import { AvailableDestinations } from "./index.page/available-destinations.jsx";
 import { Example } from "./index.page/example.jsx";
 import { InputForm } from "./index.page/input-form.jsx";
 import { ExternalLink } from "./shared/external-link.jsx";
 import { PageMetadata } from "./shared/page-metadata.jsx";
+
+const styled = _styled as unknown as typeof _styled.default;
 
 const H2 = styled.h2`
   margin-top: 3em;
