@@ -37,7 +37,7 @@
     "chalk": "^5.2.0",
     "commander": "^9.5.0",
     "find-package-json": "^1.2.0",
-    "open": "^8.4.0"
+    "open": "^8.4.1"
   },
   "devDependencies": {
     "ncp": "^2.0.0"
