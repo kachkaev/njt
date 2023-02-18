@@ -46,7 +46,7 @@
     "@next/eslint-plugin-next": "^13.1.6",
     "@rushstack/eslint-patch": "^1.2.0",
     "@types/hosted-git-info": "^3.0.2",
-    "@types/node": "^18.13.0",
+    "@types/node": "^18.14.0",
     "@types/react": "^18.0.28",
     "@types/styled-components": "^5.1.26",
     "eslint": "^8.34.0",
