@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "hosted-git-info": "^6.1.1",
-    "lru-cache": "^7.16.0",
+    "lru-cache": "^7.17.0",
     "next": "^13.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
