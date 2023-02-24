@@ -2888,7 +2888,7 @@ __metadata:
     commander: "npm:^9.5.0"
     find-package-json: "npm:^1.2.0"
     ncp: "npm:^2.0.0"
-    open: "npm:^8.4.1"
+    open: "npm:^8.4.2"
   bin:
     njt: cli.js
   languageName: unknown
@@ -3046,14 +3046,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"open@npm:^8.4.0, open@npm:^8.4.1":
-  version: 8.4.1
-  resolution: "open@npm:8.4.1"
+"open@npm:^8.4.0, open@npm:^8.4.2":
+  version: 8.4.2
+  resolution: "open@npm:8.4.2"
   dependencies:
     define-lazy-prop: "npm:^2.0.0"
     is-docker: "npm:^2.1.1"
     is-wsl: "npm:^2.2.0"
-  checksum: e96187240bd8c93ea5046ea5aef1574c35de4f26de36ecae07411974d716bb570caac55017287ca8c30af8224979495386c3a29458cc35208ff9120457cf5bec
+  checksum: 132803ca71c3bb0f66bd2db969efbb9a2511d05588c02f7141dd346e74ca817dc605a28ab1426bbeb8cb43c9deb9697bbbe26ad5a8488603677c70c4b84959bd
   languageName: node
   linkType: hard
 
