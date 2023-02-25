@@ -708,6 +708,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/analytics@npm:^0.1.10":
+  version: 0.1.10
+  resolution: "@vercel/analytics@npm:0.1.10"
+  peerDependencies:
+    react: ^16.8||^17||^18
+  checksum: f35967f82e2978d56c3e73e91dca6608fbdc15b1b74ba85105a4385d1607b75bc684d992a6c1a7b9baadf42894a73bf7798956bc579d3f5fb14192fad8490729
+  languageName: node
+  linkType: hard
+
 "acorn-jsx@npm:^5.3.2":
   version: 5.3.2
   resolution: "acorn-jsx@npm:5.3.2"
@@ -3561,6 +3570,7 @@ __metadata:
     "@types/node": "npm:^18.14.1"
     "@types/react": "npm:^18.0.28"
     "@types/styled-components": "npm:^5.1.26"
+    "@vercel/analytics": "npm:^0.1.10"
     eslint: "npm:^8.34.0"
     hosted-git-info: "npm:^6.1.1"
     husky: "npm:^8.0.3"

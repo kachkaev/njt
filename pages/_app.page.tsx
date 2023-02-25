@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-unresolved -- https://github.com/import-js/eslint-plugin-import/issues/1810
+import { Analytics } from "@vercel/analytics/react";
 import { AppProps } from "next/app";
 import * as React from "react";
 
@@ -10,6 +12,7 @@ const App: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <PageLayout>
+      <Analytics />
       <Component {...pageProps} />
     </PageLayout>
   );
