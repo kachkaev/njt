@@ -700,12 +700,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/analytics@npm:^0.1.10":
-  version: 0.1.10
-  resolution: "@vercel/analytics@npm:0.1.10"
+"@vercel/analytics@npm:^0.1.11":
+  version: 0.1.11
+  resolution: "@vercel/analytics@npm:0.1.11"
   peerDependencies:
     react: ^16.8||^17||^18
-  checksum: f35967f82e2978d56c3e73e91dca6608fbdc15b1b74ba85105a4385d1607b75bc684d992a6c1a7b9baadf42894a73bf7798956bc579d3f5fb14192fad8490729
+  checksum: 3b534052f617e4d8902de25763995ea9e2079a6f669887298be899ef0fce99adef8a695ae53afe7322030b47c56492a05ecf48d9809dcec3fb7f9c5b0e9e3e5a
   languageName: node
   linkType: hard
 
@@ -3633,7 +3633,7 @@ __metadata:
     "@types/node": "npm:^18.14.2"
     "@types/react": "npm:^18.0.28"
     "@types/styled-components": "npm:^5.1.26"
-    "@vercel/analytics": "npm:^0.1.10"
+    "@vercel/analytics": "npm:^0.1.11"
     eslint: "npm:^8.35.0"
     hosted-git-info: "npm:^6.1.1"
     husky: "npm:^8.0.3"
