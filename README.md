@@ -209,8 +209,7 @@ It contains the location of the repository, the homepage and some other fields w
 ### Privacy
 
 Official `njt` interfaces and the `njt.vercel.app/jump` endpoint do not store submitted queries.
-Since [njt.vercel.app](https://njt.vercel.app) is hosted by Vercel, some performance data is logged by the infrastructure (see [Vercel Analytics](https://vercel.com/analytics)).
-This does not involve user tracking.
+Since [njt.vercel.app](https://njt.vercel.app) is hosted by Vercel, performance and usage data is logged by the infrastructure (see [Vercel Analytics](https://vercel.com/analytics)).
 
 When `njt` navigates to `https://njt.vercel.app/jump?from=UI_ID&to=USER_QUERY`, parameter `from=UI_ID` is sent to the endpoint alongside the user query.
 The value is currently ignored but it may be used in the future for resolving queries or for analysing the popularity of `njt` interfaces.

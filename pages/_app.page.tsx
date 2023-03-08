@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { AppProps } from "next/app.js";
 import * as React from "react";
 
@@ -10,6 +11,7 @@ const App: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <PageLayout>
+      <Analytics />
       <Component {...pageProps} />
     </PageLayout>
   );
