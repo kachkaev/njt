@@ -540,10 +540,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.15.1":
-  version: 18.15.1
-  resolution: "@types/node@npm:18.15.1"
-  checksum: 8414c0426b6890325a4666672f66fecca6a10981824abd6a2eefebc6bb42686627a02a5957bbc1a8c9b863a90a4bc4e143a83e43203e962f56e4c0340bedb72e
+"@types/node@npm:^18.15.2":
+  version: 18.15.2
+  resolution: "@types/node@npm:18.15.2"
+  checksum: eecf4ab9f7c70dd469cf2aa9ecc09a02dafde05d54c1c459a40ea885fad7f0b28acb0f163f0d820f1da33043813e8fb255fd027032b4e7cdfc5010f54b60efb8
   languageName: node
   linkType: hard
 
@@ -3655,7 +3655,7 @@ __metadata:
     "@next/eslint-plugin-next": "npm:^13.2.4"
     "@rushstack/eslint-patch": "npm:^1.2.0"
     "@types/hosted-git-info": "npm:^3.0.2"
-    "@types/node": "npm:^18.15.1"
+    "@types/node": "npm:^18.15.2"
     "@types/react": "npm:^18.0.28"
     "@types/styled-components": "npm:^5.1.26"
     "@vercel/analytics": "npm:^0.1.11"
