@@ -3407,12 +3407,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.8.5":
-  version: 2.8.5
-  resolution: "prettier@npm:2.8.5"
+"prettier@npm:^2.8.6":
+  version: 2.8.6
+  resolution: "prettier@npm:2.8.6"
   bin:
     prettier: bin-prettier.js
-  checksum: 9282783aa9c43379618f5b9242742794644296bdd25d437556b7678f6e0eb2c0770daef8cba3c110e091c37aeafd35b2f8ea9ee77cc7fc927b1776f6c0000c32
+  checksum: 349cf6e60e9e816aedede90186fbd77a169d81ef55ae319e9528012ea610dde8f96d93188435153d2c92772ee9ff6869def1035e2beb7ece779da4f7ca8ee532
   languageName: node
   linkType: hard
 
@@ -3667,7 +3667,7 @@ __metadata:
     markdownlint-cli: "npm:^0.33.0"
     next: "npm:^13.2.4"
     npm-run-all: "npm:^4.1.5"
-    prettier: "npm:^2.8.5"
+    prettier: "npm:^2.8.6"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     styled-components: "npm:^5.3.9"
