@@ -563,10 +563,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.15.5":
-  version: 18.15.5
-  resolution: "@types/node@npm:18.15.5"
-  checksum: b046d8e4ebb94c1f811743d8be63b7e76fa03db9117ae1a7bc4589fddbb13b70c24fd5d2d4f674032b8a0ceb4db2e74725d241ccdf99f8ec61e357de2e2bbebb
+"@types/node@npm:^18.15.9":
+  version: 18.15.9
+  resolution: "@types/node@npm:18.15.9"
+  checksum: f26178f2e5c015225fdd08557e46b69907fa451a33334e6b2e6e2fb42e9ffd8b5bb1db1bf03f5538a254b2486922f14bae58ba1960db5e078a701c0b8756de90
   languageName: node
   linkType: hard
 
@@ -584,14 +584,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.0.28":
-  version: 18.0.28
-  resolution: "@types/react@npm:18.0.28"
+"@types/react@npm:*, @types/react@npm:^18.0.29":
+  version: 18.0.29
+  resolution: "@types/react@npm:18.0.29"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 5a43d1f81da064da91d0be3a676fbd2380d3bdff7491e0dae49e9ccdecf8fdf07e1bf7054d5fdd79266bf90a813384bd6898c678aca44e041a9e19df5fa690b3
+  checksum: 09c4972ec3bcfc94d67dabd034db85136292e22ff686834fe08ead61182c019f01d87b167df5307dfd82b12eaebcf597888ac50a1363b2388b6617c1ae363eab
   languageName: node
   linkType: hard
 
@@ -2854,10 +2854,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lru-cache@npm:^7.17.0, lru-cache@npm:^7.5.1":
-  version: 7.17.0
-  resolution: "lru-cache@npm:7.17.0"
-  checksum: ad1e489d35299ad8f5f4083d1a016b545e5c7df1476e7cf0eec49d8b4f9846a5bda81ff89a84cab08c232423ef864e16c72ba80b039a90f83c0f79caab285378
+"lru-cache@npm:^7.18.3, lru-cache@npm:^7.5.1":
+  version: 7.18.3
+  resolution: "lru-cache@npm:7.18.3"
+  checksum: 884c7cb51963cc45bc0d864c704d141c904c93db1bbc236be0eed759e35fc44b5e794a34b0666e193926e5a4320b66e787b1cf531f4f89ed8514a97156f07cb1
   languageName: node
   linkType: hard
 
@@ -3563,12 +3563,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.8.6":
-  version: 2.8.6
-  resolution: "prettier@npm:2.8.6"
+"prettier@npm:^2.8.7":
+  version: 2.8.7
+  resolution: "prettier@npm:2.8.7"
   bin:
     prettier: bin-prettier.js
-  checksum: 349cf6e60e9e816aedede90186fbd77a169d81ef55ae319e9528012ea610dde8f96d93188435153d2c92772ee9ff6869def1035e2beb7ece779da4f7ca8ee532
+  checksum: ec15b2e0a2a34a4987cca4ee72b2df56c7f4a4c62322d9a0f3c9efccb2cc0e3efdb791bb2764f2268e69e05946dc72108e5b5957d4bb2c1a41a11733b8b09153
   languageName: node
   linkType: hard
 
@@ -3811,8 +3811,8 @@ __metadata:
     "@next/eslint-plugin-next": "npm:^13.2.4"
     "@rushstack/eslint-patch": "npm:^1.2.0"
     "@types/hosted-git-info": "npm:^3.0.2"
-    "@types/node": "npm:^18.15.5"
-    "@types/react": "npm:^18.0.28"
+    "@types/node": "npm:^18.15.9"
+    "@types/react": "npm:^18.0.29"
     "@types/styled-components": "npm:^5.1.26"
     "@vercel/analytics": "npm:^0.1.11"
     eslint: "npm:^8.36.0"
@@ -3820,16 +3820,16 @@ __metadata:
     hosted-git-info: "npm:^6.1.1"
     husky: "npm:^8.0.3"
     lint-staged: "npm:^13.2.0"
-    lru-cache: "npm:^7.17.0"
+    lru-cache: "npm:^7.18.3"
     markdownlint-cli: "npm:^0.33.0"
     next: "npm:^13.2.4"
     npm-run-all: "npm:^4.1.5"
-    prettier: "npm:^2.8.6"
+    prettier: "npm:^2.8.7"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     styled-components: "npm:^5.3.9"
     styled-normalize: "npm:^8.0.7"
-    typescript: "npm:^4.9.5"
+    typescript: "npm:^5.0.2"
     url: "npm:^0.11.0"
   languageName: unknown
   linkType: soft
@@ -4447,23 +4447,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.9.5":
-  version: 4.9.5
-  resolution: "typescript@npm:4.9.5"
+"typescript@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "typescript@npm:5.0.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 550217a465c00b1d7ef0e0ddc3a6a0b2ae1fd7c1b9f53cde5a1cfe56aa457c7a43fa83792c1b98b2185d2156d0467c9ad6f6600515ad4f4fc2acee54c4bd320e
+  checksum: a305d149166e376acb51bcd1bab9f2ab55c5bd52d0b43f0e49b58ea5cf085cd7c0a3d38ea58f3991aa7b04c97907b6c17c8611334d7f0e54db3d31d7897d9661
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^4.9.5#optional!builtin<compat/typescript>":
-  version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=23ec76"
+"typescript@patch:typescript@npm%3A^5.0.2#optional!builtin<compat/typescript>":
+  version: 5.0.2
+  resolution: "typescript@patch:typescript@npm%3A5.0.2#optional!builtin<compat/typescript>::version=5.0.2&hash=85af82"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 09f82f25664c79d5cccc389502175093becf51d691b443c79294303681544a399fb42f8384b535ddeba48cadb64e7d14b42de40d8ade4418bb43174989dd8685
+  checksum: 152c6851fd46cd63988ae112ede3b64aab3b10f9a33f5c8c5bab41af3bc0ec59dd265349da67890c80f1eba156a5beb0fb78ece94b40b3031c1eea3cece1e233
   languageName: node
   linkType: hard
 
