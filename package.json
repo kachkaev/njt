@@ -48,7 +48,7 @@
     "@rushstack/eslint-patch": "^1.2.0",
     "@types/hosted-git-info": "^3.0.2",
     "@types/node": "^18.15.11",
-    "@types/react": "^18.0.35",
+    "@types/react": "^18.0.37",
     "@types/styled-components": "^5.1.26",
     "eslint": "^8.38.0",
     "husky": "^8.0.3",
