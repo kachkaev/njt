@@ -33,7 +33,7 @@
     "@vercel/analytics": "^0.1.11",
     "hosted-git-info": "^6.1.1",
     "lru-cache": "^7.18.3",
-    "next": "^13.2.4",
+    "next": "^13.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.9",
@@ -44,20 +44,20 @@
     "@kachkaev/eslint-config-react": "^0.5.1",
     "@kachkaev/markdownlint-config": "^0.5.0",
     "@kachkaev/prettier-config": "^1.4.0",
-    "@next/eslint-plugin-next": "^13.2.4",
+    "@next/eslint-plugin-next": "^13.3.0",
     "@rushstack/eslint-patch": "^1.2.0",
     "@types/hosted-git-info": "^3.0.2",
-    "@types/node": "^18.15.9",
-    "@types/react": "^18.0.29",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.35",
     "@types/styled-components": "^5.1.26",
-    "eslint": "^8.36.0",
+    "eslint": "^8.38.0",
     "eslint-import-resolver-typescript": "^3.5.3",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.0",
+    "lint-staged": "^13.2.1",
     "markdownlint-cli": "^0.33.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.7",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.4"
   },
-  "packageManager": "yarn@4.0.0-rc.40"
+  "packageManager": "yarn@4.0.0-rc.42"
 }
