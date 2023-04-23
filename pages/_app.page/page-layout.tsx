@@ -7,8 +7,13 @@ import { ExternalLink } from "../shared/external-link";
 const base = css`
   body {
     color: #24292e;
-    font-family: "-apple-system", BlinkMacSystemFont, Avenir Next, Avenir,
-      Helvetica, sans-serif;
+    font-family:
+      "-apple-system",
+      BlinkMacSystemFont,
+      Avenir Next,
+      Avenir,
+      Helvetica,
+      sans-serif;
     margin: 0;
     line-height: 1.4em;
 
