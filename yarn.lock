@@ -310,7 +310,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kachkaev/eslint-config-react@npm:^0.5.1":
+"@kachkaev/eslint-config-react@npm:0.5.1":
   version: 0.5.1
   resolution: "@kachkaev/eslint-config-react@npm:0.5.1"
   dependencies:
@@ -324,7 +324,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kachkaev/markdownlint-config@npm:^0.5.0":
+"@kachkaev/markdownlint-config@npm:0.5.0":
   version: 0.5.0
   resolution: "@kachkaev/markdownlint-config@npm:0.5.0"
   peerDependencies:
@@ -333,7 +333,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kachkaev/prettier-config@npm:^1.4.0":
+"@kachkaev/prettier-config@npm:1.4.0":
   version: 1.4.0
   resolution: "@kachkaev/prettier-config@npm:1.4.0"
   dependencies:
@@ -352,7 +352,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:^13.3.1":
+"@next/eslint-plugin-next@npm:13.3.1":
   version: 13.3.1
   resolution: "@next/eslint-plugin-next@npm:13.3.1"
   dependencies:
@@ -465,7 +465,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/eslint-patch@npm:^1.2.0":
+"@rushstack/eslint-patch@npm:1.2.0":
   version: 1.2.0
   resolution: "@rushstack/eslint-patch@npm:1.2.0"
   checksum: f91904a54e780bf2bb7644fb6d9bfcbf49ec92910c9aa3a3c7ba33f975e8c102a191d2bd18e49b41abdb13f5e5f6d54756299145e87ee073a93d111b9519ba1b
@@ -491,7 +491,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/hosted-git-info@npm:^3.0.2":
+"@types/hosted-git-info@npm:3.0.2":
   version: 3.0.2
   resolution: "@types/hosted-git-info@npm:3.0.2"
   checksum: 407725662ace1a1232608f7c5aad830928ee96f777bc7a800a5c339b40b5f0a14089971e8e914e76bc1316c8380cee5c1edbb5c75feff95c478b9b21c8669020
@@ -512,7 +512,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.16.0":
+"@types/node@npm:18.16.0":
   version: 18.16.0
   resolution: "@types/node@npm:18.16.0"
   checksum: e2a407946adcc00c72f05cad85e57b14e8ae615eedcf834daa39186bf7ff136c802519504c391cc8f3b6935726e6ada1ef1dd1546d5c88d0051185f6dc41dd07
@@ -533,7 +533,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.0.38":
+"@types/react@npm:*, @types/react@npm:18.0.38":
   version: 18.0.38
   resolution: "@types/react@npm:18.0.38"
   dependencies:
@@ -558,7 +558,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/styled-components@npm:^5.1.26":
+"@types/styled-components@npm:5.1.26":
   version: 5.1.26
   resolution: "@types/styled-components@npm:5.1.26"
   dependencies:
@@ -690,7 +690,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/analytics@npm:^1.0.0":
+"@vercel/analytics@npm:1.0.0":
   version: 1.0.0
   resolution: "@vercel/analytics@npm:1.0.0"
   peerDependencies:
@@ -1597,7 +1597,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.39.0":
+"eslint@npm:8.39.0":
   version: 8.39.0
   resolution: "eslint@npm:8.39.0"
   dependencies:
@@ -2122,19 +2122,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hosted-git-info@npm:^2.1.4":
-  version: 2.8.9
-  resolution: "hosted-git-info@npm:2.8.9"
-  checksum: c24da52f98be000bd8c69c1f62c3bd6982a1e1c225d1ba6ccf05048415ec8b1490a9cd8702333166973f8d4e019962e2e2193f3d38ecb0fa7cd9d35fdbfd997e
-  languageName: node
-  linkType: hard
-
-"hosted-git-info@npm:^6.1.1":
+"hosted-git-info@npm:6.1.1":
   version: 6.1.1
   resolution: "hosted-git-info@npm:6.1.1"
   dependencies:
     lru-cache: "npm:^7.5.1"
   checksum: bf0532d09895323968c41184d7068c25b0ccb95b1b7bc3ffb9f95c46163e86e003bedd5df711739b215d872825eaeead75a6d25f1b92f4403c0b6132d22e9311
+  languageName: node
+  linkType: hard
+
+"hosted-git-info@npm:^2.1.4":
+  version: 2.8.9
+  resolution: "hosted-git-info@npm:2.8.9"
+  checksum: c24da52f98be000bd8c69c1f62c3bd6982a1e1c225d1ba6ccf05048415ec8b1490a9cd8702333166973f8d4e019962e2e2193f3d38ecb0fa7cd9d35fdbfd997e
   languageName: node
   linkType: hard
 
@@ -2145,7 +2145,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:^8.0.3":
+"husky@npm:8.0.3":
   version: 8.0.3
   resolution: "husky@npm:8.0.3"
   bin:
@@ -2572,7 +2572,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^13.2.1":
+"lint-staged@npm:13.2.1":
   version: 13.2.1
   resolution: "lint-staged@npm:13.2.1"
   dependencies:
@@ -2683,19 +2683,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lru-cache@npm:7.18.3, lru-cache@npm:^7.5.1":
+  version: 7.18.3
+  resolution: "lru-cache@npm:7.18.3"
+  checksum: 884c7cb51963cc45bc0d864c704d141c904c93db1bbc236be0eed759e35fc44b5e794a34b0666e193926e5a4320b66e787b1cf531f4f89ed8514a97156f07cb1
+  languageName: node
+  linkType: hard
+
 "lru-cache@npm:^6.0.0":
   version: 6.0.0
   resolution: "lru-cache@npm:6.0.0"
   dependencies:
     yallist: "npm:^4.0.0"
   checksum: b2d72088dd27df27189607554990b0fd31d3fbd4037df909ef66f48a14122baf8ffce7f33edc17e6543ea7cd71fa561136518355dde2ad57676fa0b2ea53b85f
-  languageName: node
-  linkType: hard
-
-"lru-cache@npm:^7.18.3, lru-cache@npm:^7.5.1":
-  version: 7.18.3
-  resolution: "lru-cache@npm:7.18.3"
-  checksum: 884c7cb51963cc45bc0d864c704d141c904c93db1bbc236be0eed759e35fc44b5e794a34b0666e193926e5a4320b66e787b1cf531f4f89ed8514a97156f07cb1
   languageName: node
   linkType: hard
 
@@ -2714,7 +2714,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdownlint-cli@npm:^0.33.0":
+"markdownlint-cli@npm:0.33.0":
   version: 0.33.0
   resolution: "markdownlint-cli@npm:0.33.0"
   dependencies:
@@ -2879,7 +2879,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:^13.3.1":
+"next@npm:13.3.1":
   version: 13.3.1
   resolution: "next@npm:13.3.1"
   dependencies:
@@ -2979,7 +2979,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-run-all@npm:^4.1.5":
+"npm-run-all@npm:4.1.5":
   version: 4.1.5
   resolution: "npm-run-all@npm:4.1.5"
   dependencies:
@@ -3377,7 +3377,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.8.8":
+"prettier@npm:2.8.8":
   version: 2.8.8
   resolution: "prettier@npm:2.8.8"
   bin:
@@ -3425,7 +3425,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^18.2.0":
+"react-dom@npm:18.2.0":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
   dependencies:
@@ -3451,7 +3451,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.2.0":
+"react@npm:18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
   dependencies:
@@ -3619,31 +3619,31 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@kachkaev/eslint-config-react": "npm:^0.5.1"
-    "@kachkaev/markdownlint-config": "npm:^0.5.0"
-    "@kachkaev/prettier-config": "npm:^1.4.0"
-    "@next/eslint-plugin-next": "npm:^13.3.1"
-    "@rushstack/eslint-patch": "npm:^1.2.0"
-    "@types/hosted-git-info": "npm:^3.0.2"
-    "@types/node": "npm:^18.16.0"
-    "@types/react": "npm:^18.0.38"
-    "@types/styled-components": "npm:^5.1.26"
-    "@vercel/analytics": "npm:^1.0.0"
-    eslint: "npm:^8.39.0"
-    hosted-git-info: "npm:^6.1.1"
-    husky: "npm:^8.0.3"
-    lint-staged: "npm:^13.2.1"
-    lru-cache: "npm:^7.18.3"
-    markdownlint-cli: "npm:^0.33.0"
-    next: "npm:^13.3.1"
-    npm-run-all: "npm:^4.1.5"
-    prettier: "npm:^2.8.8"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    styled-components: "npm:^5.3.9"
-    styled-normalize: "npm:^8.0.7"
-    typescript: "npm:^5.0.4"
-    url: "npm:^0.11.0"
+    "@kachkaev/eslint-config-react": "npm:0.5.1"
+    "@kachkaev/markdownlint-config": "npm:0.5.0"
+    "@kachkaev/prettier-config": "npm:1.4.0"
+    "@next/eslint-plugin-next": "npm:13.3.1"
+    "@rushstack/eslint-patch": "npm:1.2.0"
+    "@types/hosted-git-info": "npm:3.0.2"
+    "@types/node": "npm:18.16.0"
+    "@types/react": "npm:18.0.38"
+    "@types/styled-components": "npm:5.1.26"
+    "@vercel/analytics": "npm:1.0.0"
+    eslint: "npm:8.39.0"
+    hosted-git-info: "npm:6.1.1"
+    husky: "npm:8.0.3"
+    lint-staged: "npm:13.2.1"
+    lru-cache: "npm:7.18.3"
+    markdownlint-cli: "npm:0.33.0"
+    next: "npm:13.3.1"
+    npm-run-all: "npm:4.1.5"
+    prettier: "npm:2.8.8"
+    react: "npm:18.2.0"
+    react-dom: "npm:18.2.0"
+    styled-components: "npm:5.3.9"
+    styled-normalize: "npm:8.0.7"
+    typescript: "npm:5.0.4"
+    url: "npm:0.11.0"
   languageName: unknown
   linkType: soft
 
@@ -4053,7 +4053,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^5.3.9":
+"styled-components@npm:5.3.9":
   version: 5.3.9
   resolution: "styled-components@npm:5.3.9"
   dependencies:
@@ -4091,7 +4091,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-normalize@npm:^8.0.7":
+"styled-normalize@npm:8.0.7":
   version: 8.0.7
   resolution: "styled-normalize@npm:8.0.7"
   peerDependencies:
@@ -4260,7 +4260,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.0.4":
+"typescript@npm:5.0.4":
   version: 5.0.4
   resolution: "typescript@npm:5.0.4"
   bin:
@@ -4270,7 +4270,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.0.4#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A5.0.4#optional!builtin<compat/typescript>":
   version: 5.0.4
   resolution: "typescript@patch:typescript@npm%3A5.0.4#optional!builtin<compat/typescript>::version=5.0.4&hash=b5f058"
   bin:
@@ -4308,7 +4308,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"url@npm:^0.11.0":
+"url@npm:0.11.0":
   version: 0.11.0
   resolution: "url@npm:0.11.0"
   dependencies:
