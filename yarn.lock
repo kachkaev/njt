@@ -2671,10 +2671,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lru-cache@npm:7.18.3, lru-cache@npm:^7.5.1":
-  version: 7.18.3
-  resolution: "lru-cache@npm:7.18.3"
-  checksum: 884c7cb51963cc45bc0d864c704d141c904c93db1bbc236be0eed759e35fc44b5e794a34b0666e193926e5a4320b66e787b1cf531f4f89ed8514a97156f07cb1
+"lru-cache@npm:9.1.1":
+  version: 9.1.1
+  resolution: "lru-cache@npm:9.1.1"
+  checksum: 38c35791c90181b6810cbcd03f3808f335d4d9602fa86591b729dea72d7fb67e91765f97f94fa8af5dbe9b04f8e0e41f62223fd7249163c37354442bb26c8a61
   languageName: node
   linkType: hard
 
@@ -2684,6 +2684,13 @@ __metadata:
   dependencies:
     yallist: "npm:^4.0.0"
   checksum: b2d72088dd27df27189607554990b0fd31d3fbd4037df909ef66f48a14122baf8ffce7f33edc17e6543ea7cd71fa561136518355dde2ad57676fa0b2ea53b85f
+  languageName: node
+  linkType: hard
+
+"lru-cache@npm:^7.5.1":
+  version: 7.18.3
+  resolution: "lru-cache@npm:7.18.3"
+  checksum: 884c7cb51963cc45bc0d864c704d141c904c93db1bbc236be0eed759e35fc44b5e794a34b0666e193926e5a4320b66e787b1cf531f4f89ed8514a97156f07cb1
   languageName: node
   linkType: hard
 
@@ -3620,7 +3627,7 @@ __metadata:
     hosted-git-info: "npm:6.1.1"
     husky: "npm:8.0.3"
     lint-staged: "npm:13.2.1"
-    lru-cache: "npm:7.18.3"
+    lru-cache: "npm:9.1.1"
     markdownlint-cli: "npm:0.33.0"
     next: "npm:13.3.1"
     npm-run-all: "npm:4.1.5"
@@ -3629,7 +3636,7 @@ __metadata:
     prettier-plugin-sh: "npm:0.12.8"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
-    styled-components: "npm:5.3.9"
+    styled-components: "npm:5.3.10"
     styled-normalize: "npm:8.0.7"
     typescript: "npm:5.0.4"
     url: "npm:0.11.0"
@@ -4042,9 +4049,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:5.3.9":
-  version: 5.3.9
-  resolution: "styled-components@npm:5.3.9"
+"styled-components@npm:5.3.10":
+  version: 5.3.10
+  resolution: "styled-components@npm:5.3.10"
   dependencies:
     "@babel/helper-module-imports": "npm:^7.0.0"
     "@babel/traverse": "npm:^7.4.5"
@@ -4060,7 +4067,7 @@ __metadata:
     react: ">= 16.8.0"
     react-dom: ">= 16.8.0"
     react-is: ">= 16.8.0"
-  checksum: 88606ca4b23dda7d11ec7fe646733daa51d2e179b3c596846f442384e9403a59122614365bbc825ea2f784c5a90f4ce97c2d4da4ff6f65ed3d6daaf7263f9bc3
+  checksum: 12860f07d80b280330c0dc7670cc974a9f438ce0572c9159763cca622a035dc350e5997449cb4c1dbb8ca0e4f54129eacae188db37d9b1599c6069eea4d1d104
   languageName: node
   linkType: hard
 

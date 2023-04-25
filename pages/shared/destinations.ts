@@ -1,5 +1,5 @@
 import hostedGitInfo from "hosted-git-info";
-import LRU from "lru-cache";
+import { LRUCache } from "lru-cache";
 
 import { JsonObject } from "./json-types";
 
@@ -24,7 +24,7 @@ export interface DestinationConfig {
   ) => Promise<string | undefined> | string | undefined;
 }
 
-const packageMetadataCache = new LRU<string, JsonObject | Error>({
+const packageMetadataCache = new LRUCache<string, JsonObject | Error>({
   max: 10_000,
   ttl: 1000 * 60,
 });
