@@ -528,14 +528,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.2.2":
-  version: 18.2.2
-  resolution: "@types/react@npm:18.2.2"
+"@types/react@npm:*, @types/react@npm:18.2.3":
+  version: 18.2.3
+  resolution: "@types/react@npm:18.2.3"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: f3e6b564295d48e49b5d7f3304960aee3ea45169a592f7d4ad6e554f12a76f3009cf6754ff09c88960cf9c52280e72c9e4b11e0f708a17c33dc321f71ae88cc2
+  checksum: 654c4dc8dcc22af41b0c412683749fb7db532e2ac12813888580bc6c350dc12abfb97c2f463c4a861be57496ab8ebea3f1f5c7239c38c104961eb61661e1b684
   languageName: node
   linkType: hard
 
@@ -3681,7 +3681,7 @@ __metadata:
     "@rushstack/eslint-patch": "npm:1.2.0"
     "@types/hosted-git-info": "npm:3.0.2"
     "@types/node": "npm:18.16.3"
-    "@types/react": "npm:18.2.2"
+    "@types/react": "npm:18.2.3"
     "@types/styled-components": "npm:5.1.26"
     "@vercel/analytics": "npm:1.0.0"
     eslint: "npm:8.39.0"
