@@ -46,7 +46,7 @@
     "@next/eslint-plugin-next": "13.3.2-canary.11",
     "@rushstack/eslint-patch": "1.2.0",
     "@types/hosted-git-info": "3.0.2",
-    "@types/node": "18.16.3",
+    "@types/node": "18.16.4",
     "@types/react": "18.2.5",
     "@types/styled-components": "5.1.26",
     "eslint": "8.39.0",
