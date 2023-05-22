@@ -460,10 +460,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/eslint-patch@npm:1.2.0":
-  version: 1.2.0
-  resolution: "@rushstack/eslint-patch@npm:1.2.0"
-  checksum: f91904a54e780bf2bb7644fb6d9bfcbf49ec92910c9aa3a3c7ba33f975e8c102a191d2bd18e49b41abdb13f5e5f6d54756299145e87ee073a93d111b9519ba1b
+"@rushstack/eslint-patch@npm:1.3.0":
+  version: 1.3.0
+  resolution: "@rushstack/eslint-patch@npm:1.3.0"
+  checksum: 36afe43593ad93f4f99e297fdae3f85fb5fbd6068424b7ca07d3e30334dbf735bdc10740116a60115d1d609f9a87c42f93676911dd615dbf753cb75ed016e9d1
   languageName: node
   linkType: hard
 
@@ -3678,7 +3678,7 @@ __metadata:
     "@kachkaev/eslint-config-react": "npm:0.5.1"
     "@kachkaev/markdownlint-config": "npm:0.5.0"
     "@next/eslint-plugin-next": "npm:13.3.2-canary.11"
-    "@rushstack/eslint-patch": "npm:1.2.0"
+    "@rushstack/eslint-patch": "npm:1.3.0"
     "@types/hosted-git-info": "npm:3.0.2"
     "@types/node": "npm:18.16.14"
     "@types/react": "npm:18.2.6"
