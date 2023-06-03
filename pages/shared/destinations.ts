@@ -70,7 +70,7 @@ const getRepoUrl = async (
 ): Promise<string | undefined> => {
   // Reference implementation: https://github.com/npm/cli/blob/latest/lib/repo.js
   const packageMetadata = await getPackageMetadata(packageName);
-  const rawUrl = (packageMetadata.repository as JsonObject).url;
+  const rawUrl = (packageMetadata["repository"] as JsonObject)["url"];
   if (typeof rawUrl !== "string") {
     return undefined;
   }
@@ -125,11 +125,11 @@ const destinationConfigs: DestinationConfig[] = [
 
         for (const item of contents) {
           if (
-            typeof item.name === "string" &&
-            /^changelog/i.test(item.name) &&
-            typeof item.html_url === "string"
+            typeof item["name"] === "string" &&
+            /^changelog/i.test(item["name"]) &&
+            typeof item["html_url"] === "string"
           ) {
-            return item.html_url;
+            return item["html_url"];
           }
         }
       }
@@ -152,8 +152,8 @@ const destinationConfigs: DestinationConfig[] = [
       // Reference implementation: https://github.com/npm/cli/blob/latest/lib/docs.js
       const packageMetadata = await getPackageMetadata(packageName);
 
-      return typeof packageMetadata.homepage === "string"
-        ? packageMetadata.homepage
+      return typeof packageMetadata["homepage"] === "string"
+        ? packageMetadata["homepage"]
         : undefined;
     },
   },
@@ -162,15 +162,15 @@ const destinationConfigs: DestinationConfig[] = [
     generateUrl: async (packageName) => {
       // Reference implementation: https://github.com/npm/cli/blob/latest/lib/bugs.js
       const packageMetadata = await getPackageMetadata(packageName);
-      const bugsField = packageMetadata.bugs;
+      const bugsField = packageMetadata["bugs"];
       const directUrl =
         typeof bugsField === "string"
           ? bugsField
           : typeof bugsField === "object" &&
             bugsField &&
             "url" in bugsField &&
-            typeof bugsField.url === "string"
-          ? bugsField.url
+            typeof bugsField["url"] === "string"
+          ? bugsField["url"]
           : undefined;
       if (directUrl) {
         return directUrl;
@@ -221,8 +221,9 @@ const destinationConfigs: DestinationConfig[] = [
         skipDirectoryTrimming: true,
       });
       const packageMetadata = await getPackageMetadata(packageName);
-      const sourceDirectory = (packageMetadata.repository as JsonObject)
-        .directory;
+      const sourceDirectory = (packageMetadata["repository"] as JsonObject)[
+        "directory"
+      ];
       if (repoUrl && typeof sourceDirectory === "string") {
         return `${repoUrl}/tree/master/${sourceDirectory}`;
       }

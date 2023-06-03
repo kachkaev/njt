@@ -4,8 +4,7 @@ import * as React from "react";
 const Head = _Head as unknown as typeof _Head.default;
 
 const getBaseUrl = () => {
-  const hostname =
-    process.env.VERCEL_URL ?? process.env.HOSTNAME ?? "njt.vercel.app";
+  const hostname = process.env["NEXT_PUBLIC_VERCEL_URL"] ?? "njt.vercel.app";
   const protocol = hostname.split(":")[0] === "localhost" ? "http" : "https";
 
   return `${protocol}://${hostname}`;
