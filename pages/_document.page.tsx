@@ -1,10 +1,5 @@
-import Document, {
-  DocumentContext,
-  Head,
-  Html,
-  Main,
-  NextScript,
-} from "next/document";
+import type { DocumentContext } from "next/document";
+import Document, { Head, Html, Main, NextScript } from "next/document";
 import * as React from "react";
 import { ServerStyleSheet } from "styled-components";
 
@@ -15,7 +10,7 @@ export default class MyDocument extends Document {
     const originalRenderPage = ctx.renderPage;
 
     try {
-      // eslint-disable-next-line no-param-reassign
+      // eslint-disable-next-line no-param-reassign -- required by styled-components
       ctx.renderPage = () =>
         originalRenderPage({
           enhanceApp: (App) => (props) =>
