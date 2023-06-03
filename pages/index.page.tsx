@@ -117,7 +117,7 @@ const Page = () => {
 
       <H2>Available destinations</H2>
       <AvailableDestinations
-        selectedDestination={inputText.trim().split(" ", 2)[1] ?? ""}
+        selectedDestination={inputText.trim().split(" ", 2)[1]}
         onSelectedDestinationChange={handleSelectedDestinationChange}
       />
 

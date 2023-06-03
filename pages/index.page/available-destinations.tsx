@@ -45,7 +45,7 @@ interface KeywordInfo {
 }
 
 const AvailableDestinations: React.FunctionComponent<{
-  selectedDestination?: string;
+  selectedDestination: string | undefined;
   onSelectedDestinationChange: (selectedDestination: string) => void;
 }> = ({ selectedDestination, onSelectedDestinationChange }) => {
   const handleKeywordClick = React.useCallback<React.MouseEventHandler>(
