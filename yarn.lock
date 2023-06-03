@@ -2707,10 +2707,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lru-cache@npm:9.1.1, lru-cache@npm:^9.0.0":
-  version: 9.1.1
-  resolution: "lru-cache@npm:9.1.1"
-  checksum: 38c35791c90181b6810cbcd03f3808f335d4d9602fa86591b729dea72d7fb67e91765f97f94fa8af5dbe9b04f8e0e41f62223fd7249163c37354442bb26c8a61
+"lru-cache@npm:9.1.2, lru-cache@npm:^9.0.0":
+  version: 9.1.2
+  resolution: "lru-cache@npm:9.1.2"
+  checksum: 95e6da12da11dd05404636c5d8c7f7a3e682bb7d2acb002738f9f6de941eca1e7229aa45a9b4a8375ab55f0ef7a1c34a3b002b066f85c4bc00634ee68e0f978e
   languageName: node
   linkType: hard
 
@@ -3686,7 +3686,7 @@ __metadata:
     hosted-git-info: "npm:6.1.1"
     husky: "npm:8.0.3"
     lint-staged: "npm:13.2.2"
-    lru-cache: "npm:9.1.1"
+    lru-cache: "npm:9.1.2"
     markdownlint-cli: "npm:0.34.0"
     next: "npm:13.4.4"
     npm-run-all: "npm:4.1.5"
