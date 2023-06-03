@@ -3,9 +3,8 @@ import * as React from "react";
 
 const getBaseUrl = () => {
   const hostname =
-    process.env["NEXT_PUBLIC_VERCEL_URL"] ??
-    process.env["NEXT_PUBLIC_HOSTNAME"] ??
-    "njt.vercel.app";
+    // @ts-expect-error -- cannot use [""] due to webpack requirement
+    process.env.NEXT_PUBLIC_VERCEL_URL ?? "njt.vercel.app";
   const protocol = hostname.split(":")[0] === "localhost" ? "http" : "https";
 
   return `${protocol}://${hostname}`;
