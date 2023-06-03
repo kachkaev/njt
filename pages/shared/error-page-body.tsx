@@ -29,9 +29,7 @@ export const ErrorPageBody: React.FunctionComponent<{
       <StatusCode>{statusCode}</StatusCode>
       <Message>{message}</Message>
 
-      <Link href="/">
-        <a>🐸 → home page</a>
-      </Link>
+      <Link href="/">🐸 → home page</Link>
     </Container>
   );
 };

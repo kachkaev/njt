@@ -510,6 +510,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tsconfig/esm@npm:1.0.3":
+  version: 1.0.3
+  resolution: "@tsconfig/esm@npm:1.0.3"
+  checksum: 0b4c43d96ef535808067680377e3019e6a16950f194c48da1fe96b62d0da64bddc72549c8a7dd02e747d9cc8d6cf97f768e8e4f9c6f43f66d043f73c53ee326c
+  languageName: node
+  linkType: hard
+
+"@tsconfig/next@npm:1.0.5":
+  version: 1.0.5
+  resolution: "@tsconfig/next@npm:1.0.5"
+  checksum: 327e02f030f47145273a2865b41334f9c12a9295152121bf10d4161a0a22ac0eba21c327b0f40a4a9c7a5939179bc66ce89a79c62012873d9ac777be4adffacd
+  languageName: node
+  linkType: hard
+
+"@tsconfig/strictest@npm:2.0.1":
+  version: 2.0.1
+  resolution: "@tsconfig/strictest@npm:2.0.1"
+  checksum: dbec55aa5a62f8b04e8487dcbf431c3e8acdc199797cbb5ce8dc9c4941a5f7bfa88e9bd72c55575367094dfe6ba414d99eacea7bf2b062ed3247ec612c30d71c
+  languageName: node
+  linkType: hard
+
 "@types/hoist-non-react-statics@npm:*":
   version: 3.3.1
   resolution: "@types/hoist-non-react-statics@npm:3.3.1"
@@ -3827,6 +3848,9 @@ __metadata:
     "@kachkaev/markdownlint-config": "npm:0.5.0"
     "@next/eslint-plugin-next": "npm:13.4.4"
     "@rushstack/eslint-patch": "npm:1.3.0"
+    "@tsconfig/esm": "npm:1.0.3"
+    "@tsconfig/next": "npm:1.0.5"
+    "@tsconfig/strictest": "npm:2.0.1"
     "@types/hosted-git-info": "npm:3.0.2"
     "@types/node": "npm:18.16.16"
     "@types/react": "npm:18.2.8"
