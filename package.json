@@ -14,7 +14,7 @@
     "fix:prettier": "prettier --write .",
     "fix:yarn-dedupe": "yarn dedupe",
     "lint": "npm-run-all --continue-on-error \"lint:*\"",
-    "lint:eslint": "eslint . --report-unused-disable-directives",
+    "lint:eslint": "eslint .",
     "lint:markdownlint": "markdownlint --dot .",
     "lint:prettier": "prettier --check .",
     "lint:tsc": "tsc --project .",

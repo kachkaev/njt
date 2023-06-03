@@ -1,7 +1,7 @@
 import hostedGitInfo from "hosted-git-info";
 import { LRUCache } from "lru-cache";
 
-import { JsonObject } from "./json-types";
+import type { JsonObject } from "./json-types";
 
 export interface SuccessfullyResolvedDestination {
   outcome: "success";
@@ -52,7 +52,7 @@ const handleUnknownHostedUrl = (url: string): string | undefined => {
   try {
     const idx = url.indexOf("@");
     const fixedUrl =
-      idx !== -1 ? url.slice(idx + 1).replace(/:(\D+)/, "/$1") : url;
+      idx === -1 ? url : url.slice(idx + 1).replace(/:(\D+)/, "/$1");
     const parsedUrl = new URL(fixedUrl);
     const protocol = parsedUrl.protocol === "https:" ? "https:" : "http:";
 
