@@ -4,7 +4,7 @@ import * as React from "react";
 import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+  static override async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
     // eslint-disable-next-line testing-library/render-result-naming-convention -- FIXME: investigate
     const originalRenderPage = ctx.renderPage;
@@ -33,7 +33,7 @@ export default class MyDocument extends Document {
     }
   }
 
-  render() {
+  override render() {
     return (
       <Html lang="en">
         <Head>
