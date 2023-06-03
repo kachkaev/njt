@@ -30,10 +30,10 @@ const nextConfig = {
       resolve: {
         ...config.resolve,
         extensionAlias: {
-          /* eslint-disable @typescript-eslint/naming-convention */
+          /* eslint-disable @typescript-eslint/naming-convention -- external API */
           ".js": [".js", ".ts"],
           ".jsx": [".jsx", ".tsx"],
-          /* eslint-enable @typescript-eslint/naming-convention */
+          /* eslint-enable @typescript-eslint/naming-convention -- external API */
         },
       },
     };

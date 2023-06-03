@@ -1,5 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
-import { AppProps } from "next/app.js";
+import type { AppProps } from "next/app.js";
 import * as React from "react";
 
 import { PageLayout } from "./_app.page/page-layout.jsx";

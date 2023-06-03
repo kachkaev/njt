@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-/* eslint-disable no-console */
-
 import chalk from "chalk";
 import { program } from "commander";
 
@@ -9,6 +7,9 @@ import { generateUrl, getPackageVersion, openUrl } from "./main.js";
 
 const green = chalk.green;
 const code = chalk.dim;
+
+// eslint-disable-next-line no-console -- Allowed in CLI
+const log = console.log;
 
 program
   .version(getPackageVersion())
@@ -68,7 +69,7 @@ When you specify . instead of a package name, njt takes the name from the neares
   .parse(process.argv);
 
 if (program.rawArgs.length < 3) {
-  console.log(program.help());
+  log(program.help());
   process.exit(1);
 }
 
@@ -78,7 +79,7 @@ if (args[0] === ".") {
   const finderInstance = finder();
   const packageJsonSearchResult = finderInstance.next();
   if (!packageJsonSearchResult.value) {
-    console.log(`
+    log(`
 ${chalk.red(
   "You specified package name as . but package.json was not found in the current folder or in parent folders.",
 )}
@@ -88,11 +89,11 @@ Change directly or replace . with a package name.
     `);
     process.exit(1);
   }
-  console.log(`
+  log(`
 Resolved . as ${packageJsonSearchResult.filename}`);
   const packageName = packageJsonSearchResult.value.name;
   if (!packageName) {
-    console.log(`
+    log(`
 ${chalk.red(
   'You specified package name as . but "name" field was not found in the resolved package.json file.',
 )}
