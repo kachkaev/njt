@@ -3695,7 +3695,7 @@ __metadata:
     prettier-plugin-sh: "npm:0.12.8"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
-    styled-components: "npm:5.3.10"
+    styled-components: "npm:5.3.11"
     styled-normalize: "npm:8.0.7"
     typescript: "npm:5.0.4"
     url: "npm:0.11.0"
@@ -4115,9 +4115,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:5.3.10":
-  version: 5.3.10
-  resolution: "styled-components@npm:5.3.10"
+"styled-components@npm:5.3.11":
+  version: 5.3.11
+  resolution: "styled-components@npm:5.3.11"
   dependencies:
     "@babel/helper-module-imports": "npm:^7.0.0"
     "@babel/traverse": "npm:^7.4.5"
@@ -4133,7 +4133,7 @@ __metadata:
     react: ">= 16.8.0"
     react-dom: ">= 16.8.0"
     react-is: ">= 16.8.0"
-  checksum: 12860f07d80b280330c0dc7670cc974a9f438ce0572c9159763cca622a035dc350e5997449cb4c1dbb8ca0e4f54129eacae188db37d9b1599c6069eea4d1d104
+  checksum: c973d2d090821a597cc6d758bc1f8829c3b9eb9beb6a907eedce0713c9d992bd29fcef6e2b0f4a0737b20f465ad6e9b435f566ea675b1715b7761eb4c969f04d
   languageName: node
   linkType: hard
 
