@@ -1185,13 +1185,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^9.5.0":
-  version: 9.5.0
-  resolution: "commander@npm:9.5.0"
-  checksum: 1d09146ccb60400550629bcded4b72eeb100728207ecb2538dd827b19571dc16d3b0ee5da762d9bdbbe680ed5cca6658cac5bfce262b1b73eabe5ef8c15cdd9d
-  languageName: node
-  linkType: hard
-
 "concat-map@npm:0.0.1":
   version: 0.0.1
   resolution: "concat-map@npm:0.0.1"
@@ -3149,7 +3142,7 @@ __metadata:
   resolution: "njt@workspace:cli"
   dependencies:
     chalk: "npm:^5.2.0"
-    commander: "npm:^9.5.0"
+    commander: "npm:^10.0.0"
     find-package-json: "npm:^1.2.0"
     ncp: "npm:^2.0.0"
     open: "npm:^8.4.2"
