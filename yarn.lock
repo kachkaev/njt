@@ -494,10 +494,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/eslint-patch@npm:1.3.1":
-  version: 1.3.1
-  resolution: "@rushstack/eslint-patch@npm:1.3.1"
-  checksum: 40d6135a0d51814ad0650b5ff2eb446654a09d3f69730b6ade1841592afb26e8f102cccaf37af18da40119f7c122acc4757849336fb02e481097c725b02296d1
+"@rushstack/eslint-patch@npm:1.3.2":
+  version: 1.3.2
+  resolution: "@rushstack/eslint-patch@npm:1.3.2"
+  checksum: e59a9babd4ba998de220275f4b6d69f6fe8928018c6944b687cb1f6b45f10414f7071ba1cb350993e8b1e5d3269336c7e5cb623b9035cb81727efd1309d7c232
   languageName: node
   linkType: hard
 
@@ -3855,7 +3855,7 @@ __metadata:
     "@kachkaev/eslint-config-react": "npm:0.6.0"
     "@kachkaev/markdownlint-config": "npm:0.5.0"
     "@next/eslint-plugin-next": "npm:13.4.5"
-    "@rushstack/eslint-patch": "npm:1.3.1"
+    "@rushstack/eslint-patch": "npm:1.3.2"
     "@tsconfig/esm": "npm:1.0.3"
     "@tsconfig/next": "npm:1.0.5"
     "@tsconfig/strictest": "npm:2.0.1"
