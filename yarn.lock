@@ -3898,7 +3898,7 @@ __metadata:
     react-dom: "npm:18.2.0"
     styled-components: "npm:5.3.11"
     styled-normalize: "npm:8.0.7"
-    typescript: "npm:5.1.5"
+    typescript: "npm:5.1.6"
     url: "npm:0.11.0"
   languageName: unknown
   linkType: soft
@@ -4547,23 +4547,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.1.5":
-  version: 5.1.5
-  resolution: "typescript@npm:5.1.5"
+"typescript@npm:5.1.6":
+  version: 5.1.6
+  resolution: "typescript@npm:5.1.6"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 31bf11371df97f479b05e1e2d2a1a84ec985a8dc4d87ae91ffed77f1123f3a5ebde96564c35964b9409fdc21adaf1ee8c57153eb9d417be6d6bae74c7052871b
+  checksum: f347cde665cf43dc4c1c7d9821c7d9bbec3c3914f4bdd82ee490e9fb9f6d99036ed8666463b6a192dd005eeef333c5087d5931bdd51ec853436ff9a670a7417e
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.1.5#optional!builtin<compat/typescript>":
-  version: 5.1.5
-  resolution: "typescript@patch:typescript@npm%3A5.1.5#optional!builtin<compat/typescript>::version=5.1.5&hash=5da071"
+"typescript@patch:typescript@npm%3A5.1.6#optional!builtin<compat/typescript>":
+  version: 5.1.6
+  resolution: "typescript@patch:typescript@npm%3A5.1.6#optional!builtin<compat/typescript>::version=5.1.6&hash=5da071"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 5ac7c068450b2dac8181bb4a1de09f2b129a98525ea3ca3bc0389a0d1a1cce81c90b25dc0a30c0e464562d2e64ceb6641684c187fcf06e657b428bf1888ee2b7
+  checksum: f5481fa3ba0eee8970f46708d13c05650a865ad093b586fc9573f425c64c57ca97e3308e110bb528deb3ccebe83f6fd7b5a8ac90018038da96326a9ccdf8e77c
   languageName: node
   linkType: hard
 
