@@ -528,10 +528,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/esm@npm:1.0.3":
-  version: 1.0.3
-  resolution: "@tsconfig/esm@npm:1.0.3"
-  checksum: 07216f491c2603fbd7a5c214f39a2efa183c810dabb77d282ae930bab62f99ff7dbb2ddd7372e5e56ce72e8fb55eb92e3ee5dd6a46c0a7f980c1b59c402fa60b
+"@tsconfig/esm@npm:1.0.4":
+  version: 1.0.4
+  resolution: "@tsconfig/esm@npm:1.0.4"
+  checksum: f2bd110c15ee694b730416dc24625c3ed99d6b6048b49e2794f6dad515ac1fcf0ddc99e19ccdcd6a84288367feae18190afd6c506daa07c9eb919a4a97397b97
   languageName: node
   linkType: hard
 
@@ -3875,7 +3875,7 @@ __metadata:
     "@kachkaev/markdownlint-config": "npm:0.5.0"
     "@next/eslint-plugin-next": "npm:13.4.7"
     "@rushstack/eslint-patch": "npm:1.3.2"
-    "@tsconfig/esm": "npm:1.0.3"
+    "@tsconfig/esm": "npm:1.0.4"
     "@tsconfig/next": "npm:1.0.5"
     "@tsconfig/strictest": "npm:2.0.1"
     "@types/hosted-git-info": "npm:3.0.2"
