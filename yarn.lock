@@ -535,10 +535,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/next@npm:1.0.5":
-  version: 1.0.5
-  resolution: "@tsconfig/next@npm:1.0.5"
-  checksum: cbbde84bf0c40bcc1cc39317c6483745f4ebb85a44c819c9e31b9d8304c856b09b7254fde572f079b710cbf951b621baa52ae71a62008385732db73ce5219524
+"@tsconfig/next@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@tsconfig/next@npm:2.0.0"
+  checksum: 1282dd6d0564060ad47f6db332f8fcdba61df90903323292eb09e746ac2300cb98315e41dece40fbfccc2a3d66c5eec0a2fe8b8adcddcaa1f0dd738a969a0a73
   languageName: node
   linkType: hard
 
@@ -3876,7 +3876,7 @@ __metadata:
     "@next/eslint-plugin-next": "npm:13.4.7"
     "@rushstack/eslint-patch": "npm:1.3.2"
     "@tsconfig/esm": "npm:1.0.4"
-    "@tsconfig/next": "npm:1.0.5"
+    "@tsconfig/next": "npm:2.0.0"
     "@tsconfig/strictest": "npm:2.0.1"
     "@types/hosted-git-info": "npm:3.0.2"
     "@types/node": "npm:18.16.18"
