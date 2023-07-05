@@ -3648,12 +3648,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:3.0.0-alpha.11":
-  version: 3.0.0-alpha.11
-  resolution: "prettier@npm:3.0.0-alpha.11"
+"prettier@npm:3.0.0":
+  version: 3.0.0
+  resolution: "prettier@npm:3.0.0"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 92fd5263d5648dfdbe163b81348c3d578b3a1b5336632e16829ef32955b4dfb7bb8351f4085e82d89dadf289ff7cb921655a7bcf39e4c365bdaf3e1499c77abc
+  checksum: 399292638280988ecd44db6532e908246b7c9468e6f5f571b3835a5206b7f1132cb674c12be430d921474901dc85398429dfd2dc31b282eef9affebd3ce72cef
   languageName: node
   linkType: hard
 
@@ -3914,7 +3914,7 @@ __metadata:
     markdownlint-cli: "npm:0.35.0"
     next: "npm:13.4.8"
     npm-run-all: "npm:4.1.5"
-    prettier: "npm:3.0.0-alpha.11"
+    prettier: "npm:3.0.0"
     prettier-plugin-packagejson: "npm:2.4.4"
     prettier-plugin-sh: "npm:0.12.8"
     react: "npm:18.2.0"
