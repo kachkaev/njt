@@ -3635,16 +3635,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-sh@npm:0.12.8":
-  version: 0.12.8
-  resolution: "prettier-plugin-sh@npm:0.12.8"
+"prettier-plugin-sh@npm:0.13.0":
+  version: 0.13.0
+  resolution: "prettier-plugin-sh@npm:0.13.0"
   dependencies:
     mvdan-sh: "npm:^0.10.1"
-    sh-syntax: "npm:^0.3.6"
-    synckit: "npm:^0.8.1"
+    sh-syntax: "npm:^0.4.1"
+    synckit: "npm:^0.8.5"
   peerDependencies:
-    prettier: ^2.0.0
-  checksum: a2585419cacccbd0520b6083dca66eb22c80d541375d74ff003f918150b776f03c1180de1136e4af1805697f3092947013ceaccf24a5d8a9f6f4a139d102f2f4
+    prettier: ^3.0.0
+  checksum: bc880e59626fa2900565e7047e85faa4f87d21ff0560e10478c4a40513604f1948da7417ae92c031fedb194f3e97f574e92ecf12760a1985a6bfacc664389e8b
   languageName: node
   linkType: hard
 
@@ -3916,7 +3916,7 @@ __metadata:
     npm-run-all: "npm:4.1.5"
     prettier: "npm:3.0.0"
     prettier-plugin-packagejson: "npm:2.4.4"
-    prettier-plugin-sh: "npm:0.12.8"
+    prettier-plugin-sh: "npm:0.13.0"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
     styled-components: "npm:5.3.11"
@@ -4025,12 +4025,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sh-syntax@npm:^0.3.6":
-  version: 0.3.7
-  resolution: "sh-syntax@npm:0.3.7"
+"sh-syntax@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "sh-syntax@npm:0.4.1"
   dependencies:
-    tslib: "npm:^2.4.0"
-  checksum: 9dff08cab5b8d13a3acd4ccc1e42805275f2debdac60d649ffe96e2dc55c494003999510f868a4c40763a4bbc198656027d4d9e36c2216ab08fddad1792ca11a
+    tslib: "npm:^2.6.0"
+  checksum: 52ab7923575dc8312df0fad30256dafc6682667f49f0a765666fb94a17fde9eb9712e8d739c4fcc130691c0a17a7da8904d1069894eef5145e5a7df8083b6a6b
   languageName: node
   linkType: hard
 
@@ -4439,7 +4439,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"synckit@npm:0.8.5, synckit@npm:^0.8.1":
+"synckit@npm:0.8.5, synckit@npm:^0.8.5":
   version: 0.8.5
   resolution: "synckit@npm:0.8.5"
   dependencies:
@@ -4505,7 +4505,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.1.0, tslib@npm:^2.4.0, tslib@npm:^2.5.0":
+"tslib@npm:^2.1.0, tslib@npm:^2.4.0, tslib@npm:^2.5.0, tslib@npm:^2.6.0":
   version: 2.6.0
   resolution: "tslib@npm:2.6.0"
   checksum: 52360693c62761f902e1946b350188be6505de297068b33421cb26bedd99591203a74cb2a49e1f43f0922d59b1fb3499fe5cfe61a61ca65a1743d5c92c69720a
