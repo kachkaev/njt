@@ -1,6 +1,6 @@
 {
   "name": "njt",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "npm jump to: a quick navigation tool for npm packages",
   "keywords": [
     "frog",
@@ -43,6 +43,6 @@
     "ncp": "^2.0.0"
   },
   "engines": {
-    "node": "^14.18.0 || >=16.0.0"
+    "node": ">=16"
   }
 }
