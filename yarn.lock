@@ -587,10 +587,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.16.19":
-  version: 18.16.19
-  resolution: "@types/node@npm:18.16.19"
-  checksum: 322aaf3c04dcbbae619c7e8d40ed70e4ae41894e88776267d87bf3719a71b9a21ecde903d9f67cec3a663cf608d2822056ab739b48dada75433db38fadac2514
+"@types/node@npm:18.16.20":
+  version: 18.16.20
+  resolution: "@types/node@npm:18.16.20"
+  checksum: 329f7d4291b364d7831d8e253ae35514f02815b49bb83fea11877f687899a4899dc3c42fd9222e9286bb3ac9775c6b0858aac27fcb39e389415afd64e541f238
   languageName: node
   linkType: hard
 
@@ -3895,7 +3895,7 @@ __metadata:
     "@tsconfig/next": "npm:2.0.0"
     "@tsconfig/strictest": "npm:2.0.1"
     "@types/hosted-git-info": "npm:3.0.2"
-    "@types/node": "npm:18.16.19"
+    "@types/node": "npm:18.16.20"
     "@types/react": "npm:18.2.15"
     "@types/styled-components": "npm:5.1.26"
     "@vercel/analytics": "npm:1.0.1"
