@@ -49,7 +49,7 @@
     "@tsconfig/next": "2.0.0",
     "@tsconfig/strictest": "2.0.1",
     "@types/hosted-git-info": "3.0.2",
-    "@types/node": "18.17.1",
+    "@types/node": "18.17.2",
     "@types/react": "18.2.18",
     "@types/styled-components": "5.1.26",
     "eslint": "8.46.0",
