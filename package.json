@@ -50,7 +50,7 @@
     "@tsconfig/strictest": "2.0.1",
     "@types/hosted-git-info": "3.0.2",
     "@types/node": "18.17.4",
-    "@types/react": "18.2.19",
+    "@types/react": "18.2.20",
     "@types/styled-components": "5.1.26",
     "eslint": "8.46.0",
     "husky": "8.0.3",
