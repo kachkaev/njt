@@ -608,14 +608,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.2.20":
-  version: 18.2.20
-  resolution: "@types/react@npm:18.2.20"
+"@types/react@npm:*, @types/react@npm:18.2.21":
+  version: 18.2.21
+  resolution: "@types/react@npm:18.2.21"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 42bab593f14b202a5ee98073ed579f147de9e4dd4dcdefcba19588cf06c0fff83f0a602db535e9ff0c0896a3aa25759841ebddb59a2c7c293cb6981ddee08fd0
+  checksum: 5b5aff55d38c358a50108dddb24e06d344e4d578cc177dd2e24a7c5d0fadb034298e5e652b174053b5e75f0d6b0d9f926976c1c9f5e84fe94bb91348c54f5313
   languageName: node
   linkType: hard
 
@@ -3835,7 +3835,7 @@ __metadata:
     "@tsconfig/strictest": "npm:2.0.1"
     "@types/hosted-git-info": "npm:3.0.2"
     "@types/node": "npm:18.17.8"
-    "@types/react": "npm:18.2.20"
+    "@types/react": "npm:18.2.21"
     "@types/styled-components": "npm:5.1.26"
     "@vercel/analytics": "npm:1.0.1"
     eslint: "npm:8.47.0"
