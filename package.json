@@ -52,7 +52,7 @@
     "@types/node": "18.17.11",
     "@types/react": "18.2.21",
     "@types/styled-components": "5.1.26",
-    "eslint": "8.47.0",
+    "eslint": "8.48.0",
     "husky": "8.0.3",
     "lint-staged": "14.0.1",
     "markdownlint-cli": "0.35.0",
