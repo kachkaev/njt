@@ -62,5 +62,5 @@
     "prettier-plugin-sh": "0.13.1",
     "typescript": "5.1.6"
   },
-  "packageManager": "yarn@4.0.0-rc.48"
+  "packageManager": "yarn@4.0.0-rc.50"
 }
