@@ -40,4 +40,4 @@ cli/README.md
 #########################
 
 .git/
-.pnpm-lock.yaml
+pnpm-lock.yaml
