@@ -6,7 +6,7 @@
     ":semanticCommitsDisabled"
   ],
 
-  "postUpdateOptions": ["yarnDedupeHighest"],
+  "postUpdateOptions": ["pnpmDedupe"],
 
   "packageRules": [
     {
