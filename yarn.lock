@@ -2229,12 +2229,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hosted-git-info@npm:6.1.1":
-  version: 6.1.1
-  resolution: "hosted-git-info@npm:6.1.1"
+"hosted-git-info@npm:7.0.0":
+  version: 7.0.0
+  resolution: "hosted-git-info@npm:7.0.0"
   dependencies:
-    lru-cache: "npm:^7.5.1"
-  checksum: ba7158f81ae29c1b5a1e452fa517082f928051da8797a00788a84ff82b434996d34f78a875bbb688aec162bda1d4cf71d2312f44da3c896058803f5efa6ce77f
+    lru-cache: "npm:^10.0.1"
+  checksum: a749fe74514cccfba43353ea65415d045ca8e999777a49256105dde25ad82591a6357bbba2cfaaa673c20824c97716b77c485bdb483e6c36a411764957883746
   languageName: node
   linkType: hard
 
@@ -2853,7 +2853,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lru-cache@npm:10.0.1, lru-cache@npm:^9.1.1 || ^10.0.0":
+"lru-cache@npm:10.0.1, lru-cache@npm:^10.0.1, lru-cache@npm:^9.1.1 || ^10.0.0":
   version: 10.0.1
   resolution: "lru-cache@npm:10.0.1"
   checksum: 982dabfb227b9a2daf56d712ae0e72e01115a28c0a2068cd71277bca04568f3417bbf741c6c7941abc5c620fd8059e34f15607f90ebccbfa0a17533322d27a8e
@@ -2866,13 +2866,6 @@ __metadata:
   dependencies:
     yallist: "npm:^4.0.0"
   checksum: cb53e582785c48187d7a188d3379c181b5ca2a9c78d2bce3e7dee36f32761d1c42983da3fe12b55cb74e1779fa94cdc2e5367c028a9b35317184ede0c07a30a9
-  languageName: node
-  linkType: hard
-
-"lru-cache@npm:^7.5.1":
-  version: 7.18.3
-  resolution: "lru-cache@npm:7.18.3"
-  checksum: b3a452b491433db885beed95041eb104c157ef7794b9c9b4d647be503be91769d11206bb573849a16b4cc0d03cbd15ffd22df7960997788b74c1d399ac7a4fed
   languageName: node
   linkType: hard
 
@@ -3829,7 +3822,7 @@ __metadata:
     "@types/styled-components": "npm:5.1.26"
     "@vercel/analytics": "npm:1.0.2"
     eslint: "npm:8.48.0"
-    hosted-git-info: "npm:6.1.1"
+    hosted-git-info: "npm:7.0.0"
     husky: "npm:8.0.3"
     lint-staged: "npm:14.0.1"
     lru-cache: "npm:10.0.1"
