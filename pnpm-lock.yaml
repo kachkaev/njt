@@ -45,9 +45,6 @@ importers:
       '@next/eslint-plugin-next':
         specifier: 13.4.19
         version: 13.4.19
-      '@tsconfig/esm':
-        specifier: 1.0.4
-        version: 1.0.4
       '@tsconfig/next':
         specifier: 2.0.0
         version: 2.0.0
@@ -651,11 +648,6 @@ packages:
     dependencies:
       tslib: 2.6.2
     dev: false
-
-  /@tsconfig/esm@1.0.4:
-    resolution: {integrity: sha512-bix9CWljCxyD06nGQRDYdmTw0wevvEDyrLKjbDocGV31JQYbfqqgMV1yFeJ9aDgorKQ9yDLrak8poiggsB5Liw==}
-    deprecated: Use the tsconfig base for your runtime instead of general 'esm', e.g. 'node18'
-    dev: true
 
   /@tsconfig/next@2.0.0:
     resolution: {integrity: sha512-ip/XpFLWuUrhDkbI8ixpWxPlmWvUhQCLS5rB7nibcZUavA1Ru34Q7a5CniBM7BdHw1YlAXu40HXUn66h/A4EBQ==}
