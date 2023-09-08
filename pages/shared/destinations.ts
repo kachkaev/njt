@@ -304,9 +304,10 @@ export const resolveDestination = async (
     );
 
   try {
-    const url = await destinationConfigByKeyword[
-      rawDestination[0]?.toLowerCase() ?? ""
-    ]?.generateUrl(packageName);
+    const url =
+      await destinationConfigByKeyword[
+        rawDestination[0]?.toLowerCase() ?? ""
+      ]?.generateUrl(packageName);
     if (!url) {
       throw new Error("Unexpected empty URL");
     }
