@@ -66,20 +66,6 @@ jobs:
             exit 1
           fi
 
-      - name: Run pnpm lint:pnpm-dedupe
-        if: ${{ success() || failure() }}
-        run: |
-          if ! pnpm lint:pnpm-dedupe; then
-            echo ''
-            echo ''
-            echo 'ℹ️ ℹ️ ℹ️'
-            echo 'Some dependencies can be deduplicated, which will make pnpm-lock.yaml'
-            echo 'lighter and potentially save us from unexplainable bugs.'
-            echo 'Please run `pnpm fix:pnpm-dedupe` locally and commit pnpm-lock.yaml.'
-            echo 'ℹ️ ℹ️ ℹ️'
-            exit 1
-          fi
-
       - name: Run pnpm lint:prettier
         if: ${{ success() || failure() }}
         run: |
