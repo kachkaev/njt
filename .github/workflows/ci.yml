@@ -16,74 +16,91 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+
       - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: "yarn"
+          cache: pnpm
 
       - name: Install dependencies
-        run: yarn install --immutable
+        run: pnpm install --frozen-lockfile
 
-      - name: Run yarn lint:eslint
+      - name: Run pnpm lint:eslint
         if: ${{ success() || failure() }}
         run: |
-          if ! yarn lint:eslint; then
+          if ! pnpm lint:eslint; then
             echo ''
             echo ''
             echo 'ℹ️ ℹ️ ℹ️'
-            echo 'Try running `yarn fix:eslint` locally to apply autofixes.'
+            echo 'Try running `pnpm fix:eslint` locally to apply autofixes.'
             echo 'ℹ️ ℹ️ ℹ️'
             exit 1
           fi
 
-      - name: Run yarn lint:markdownlint
+      - name: Run pnpm lint:markdownlint
         if: ${{ success() || failure() }}
         run: |
-          if ! yarn lint:markdownlint; then
+          if ! pnpm lint:markdownlint; then
             echo ''
             echo ''
             echo 'ℹ️ ℹ️ ℹ️'
-            echo 'Try running `yarn fix:markdownlint` locally to apply autofixes.'
+            echo 'Try running `pnpm fix:markdownlint` locally to apply autofixes.'
             echo 'ℹ️ ℹ️ ℹ️'
             exit 1
           fi
 
-      - name: Run yarn lint:prettier
+      - name: Run pnpm lint:pnpm-dedupe
         if: ${{ success() || failure() }}
         run: |
-          if ! yarn lint:prettier; then
+          if ! pnpm lint:pnpm-dedupe; then
             echo ''
             echo ''
             echo 'ℹ️ ℹ️ ℹ️'
-            echo 'Try running `yarn fix:prettier` locally to apply autofixes.'
+            echo 'Some dependencies can be deduplicated, which will make pnpm-lock.yaml'
+            echo 'lighter and potentially save us from unexplainable bugs.'
+            echo 'Please run `pnpm fix:pnpm-dedupe` locally and commit pnpm-lock.yaml.'
             echo 'ℹ️ ℹ️ ℹ️'
             exit 1
           fi
 
-      - name: Run yarn lint:tsc
+      - name: Run pnpm lint:pnpm-dedupe
         if: ${{ success() || failure() }}
         run: |
-          if ! yarn lint:tsc; then
+          if ! pnpm lint:pnpm-dedupe; then
+            echo ''
+            echo ''
+            echo 'ℹ️ ℹ️ ℹ️'
+            echo 'Some dependencies can be deduplicated, which will make pnpm-lock.yaml'
+            echo 'lighter and potentially save us from unexplainable bugs.'
+            echo 'Please run `pnpm fix:pnpm-dedupe` locally and commit pnpm-lock.yaml.'
+            echo 'ℹ️ ℹ️ ℹ️'
+            exit 1
+          fi
+
+      - name: Run pnpm lint:prettier
+        if: ${{ success() || failure() }}
+        run: |
+          if ! pnpm lint:prettier; then
+            echo ''
+            echo ''
+            echo 'ℹ️ ℹ️ ℹ️'
+            echo 'Try running `pnpm fix:prettier` locally to apply autofixes.'
+            echo 'ℹ️ ℹ️ ℹ️'
+            exit 1
+          fi
+
+      - name: Run pnpm lint:tsc
+        if: ${{ success() || failure() }}
+        run: |
+          if ! pnpm lint:tsc; then
             echo ''
             echo ''
             echo 'ℹ️ ℹ️ ℹ️'
             echo 'Please fix the above errors locally for the check to pass.'
             echo 'If you don’t see them, try merging target branch into yours.'
-            echo 'ℹ️ ℹ️ ℹ️'
-            exit 1
-          fi
-
-      - name: Run yarn lint:yarn-dedupe
-        if: ${{ success() || failure() }}
-        run: |
-          if ! yarn lint:yarn-dedupe; then
-            echo ''
-            echo ''
-            echo 'ℹ️ ℹ️ ℹ️'
-            echo 'Some dependencies can be deduplicated, which will make yarn.lock'
-            echo 'lighter and potentially save us from unexplainable bugs.'
-            echo 'Please run `yarn fix:yarn-dedupe` locally and commit yarn.lock.'
             echo 'ℹ️ ℹ️ ℹ️'
             exit 1
           fi
