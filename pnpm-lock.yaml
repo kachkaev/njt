@@ -52,8 +52,8 @@ importers:
         specifier: 2.0.2
         version: 2.0.2
       '@types/hosted-git-info':
-        specifier: 3.0.2
-        version: 3.0.2
+        specifier: 3.0.3
+        version: 3.0.3
       '@types/node':
         specifier: 18.17.17
         version: 18.17.17
@@ -664,8 +664,8 @@ packages:
       hoist-non-react-statics: 3.3.2
     dev: true
 
-  /@types/hosted-git-info@3.0.2:
-    resolution: {integrity: sha512-RURNTeEFUwF+ifnp7kK3WLLlTmBSlRynLNS9jeAsI6RHtSrupV0l0nO6kmpaz75EUJVexy348bR452SvmH98vQ==}
+  /@types/hosted-git-info@3.0.3:
+    resolution: {integrity: sha512-fR6ios9PhvU0Y1uHiSDC0pZiSVrmtASO6e+NXMa87L+iFWVXR7yoZVX088wgEDqBWt2CySPQOK+12/uLq6/UcA==}
     dev: true
 
   /@types/json-schema@7.0.12:
