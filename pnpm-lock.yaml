@@ -41,7 +41,7 @@ importers:
         version: 0.6.0(eslint@8.49.0)(typescript@5.2.2)
       '@kachkaev/markdownlint-config':
         specifier: 0.5.0
-        version: 0.5.0(markdownlint-cli@0.36.0)
+        version: 0.5.0(markdownlint-cli@0.37.0)
       '@next/eslint-plugin-next':
         specifier: 13.5.1
         version: 13.5.1
@@ -73,8 +73,8 @@ importers:
         specifier: 14.0.1
         version: 14.0.1
       markdownlint-cli:
-        specifier: 0.36.0
-        version: 0.36.0
+        specifier: 0.37.0
+        version: 0.37.0
       npm-run-all:
         specifier: 4.1.5
         version: 4.1.5
@@ -504,12 +504,12 @@ packages:
       - typescript
     dev: true
 
-  /@kachkaev/markdownlint-config@0.5.0(markdownlint-cli@0.36.0):
+  /@kachkaev/markdownlint-config@0.5.0(markdownlint-cli@0.37.0):
     resolution: {integrity: sha512-b1wPLTSQ2OtjEp9loN8g3qeEsN94JhIX+36sqWlxBsSv3PgZDObht8bmMnZcPYR7x5RAQudrEklh46S7vMTTkg==}
     peerDependencies:
       markdownlint-cli: '>=0.30.0'
     dependencies:
-      markdownlint-cli: 0.36.0
+      markdownlint-cli: 0.37.0
     dev: true
 
   /@next/env@13.5.1:
@@ -2597,8 +2597,8 @@ packages:
       uc.micro: 1.0.6
     dev: true
 
-  /markdownlint-cli@0.36.0:
-    resolution: {integrity: sha512-h4WdqOam3+QOVOcJSOQuG8KvvN8dlS0OiJhbPwYWBk7VMZR40UtSSMIOpSP5B4EHPHg3W3ILSQUvqg1HNpTCxA==}
+  /markdownlint-cli@0.37.0:
+    resolution: {integrity: sha512-hNKAc0bWBBuVhJbSWbUhRzavstiB4o1jh3JeSpwC4/dt6eJ54lRfYHRxVdzVp4qGWBKbeE6Pg490PFEfrKjqSg==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
@@ -2608,7 +2608,7 @@ packages:
       ignore: 5.2.4
       js-yaml: 4.1.0
       jsonc-parser: 3.2.0
-      markdownlint: 0.30.0
+      markdownlint: 0.31.1
       minimatch: 9.0.3
       run-con: 1.3.2
     dev: true
@@ -2618,8 +2618,8 @@ packages:
     engines: {node: '>=16'}
     dev: true
 
-  /markdownlint@0.30.0:
-    resolution: {integrity: sha512-nInuFvI/rEzanAOArW5490Ez4EYpB5ODqVM0mcDYCPx9DKJWCQqCgejjiCvbSeE7sjbDscVtZmwr665qpF5xGA==}
+  /markdownlint@0.31.1:
+    resolution: {integrity: sha512-CKMR2hgcIBrYlIUccDCOvi966PZ0kJExDrUi1R+oF9PvqQmCrTqjOsgIvf2403OmJ+CWomuzDoylr6KbuMyvHA==}
     engines: {node: '>=16'}
     dependencies:
       markdown-it: 13.0.1
