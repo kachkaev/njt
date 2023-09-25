@@ -46,7 +46,7 @@
     "@types/hosted-git-info": "3.0.3",
     "@types/node": "18.17.19",
     "@types/react": "18.2.22",
-    "@types/styled-components": "5.1.27",
+    "@types/styled-components": "5.1.28",
     "eslint": "8.50.0",
     "husky": "8.0.3",
     "lint-staged": "14.0.1",
