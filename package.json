@@ -44,7 +44,7 @@
     "@tsconfig/next": "2.0.0",
     "@tsconfig/strictest": "2.0.2",
     "@types/hosted-git-info": "3.0.3",
-    "@types/node": "18.18.1",
+    "@types/node": "18.18.2",
     "@types/react": "18.2.24",
     "@types/styled-components": "5.1.28",
     "eslint": "8.50.0",
