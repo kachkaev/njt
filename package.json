@@ -33,7 +33,7 @@
     "next": "13.5.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "styled-components": "5.3.11",
+    "styled-components": "6.1.0",
     "styled-normalize": "8.0.7",
     "url": "0.11.2"
   },
