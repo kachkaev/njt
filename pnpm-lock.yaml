@@ -60,9 +60,6 @@ importers:
       '@types/react':
         specifier: 18.2.28
         version: 18.2.28
-      '@types/styled-components':
-        specifier: 5.1.28
-        version: 5.1.28
       eslint:
         specifier: 8.51.0
         version: 8.51.0
@@ -427,13 +424,6 @@ packages:
     resolution: {integrity: sha512-jt4jIsWKvUvuY6adJnQJlb/UR7DdjC8CjHI/OaSQruj2yX9/K6+KOvDt/vD6udqos/FUk5Op66CvYT7TBLYO5Q==}
     dev: true
 
-  /@types/hoist-non-react-statics@3.3.2:
-    resolution: {integrity: sha512-YIQtIg4PKr7ZyqNPZObpxfHsHEmuB8dXCxd6qVcGuQVDK2bpsF7bYNnBJ4Nn7giuACZg+WewExgrtAJ3XnA4Xw==}
-    dependencies:
-      '@types/react': 18.2.28
-      hoist-non-react-statics: 3.3.2
-    dev: true
-
   /@types/hosted-git-info@3.0.3:
     resolution: {integrity: sha512-fR6ios9PhvU0Y1uHiSDC0pZiSVrmtASO6e+NXMa87L+iFWVXR7yoZVX088wgEDqBWt2CySPQOK+12/uLq6/UcA==}
     dev: true
@@ -472,14 +462,6 @@ packages:
 
   /@types/semver@7.5.2:
     resolution: {integrity: sha512-7aqorHYgdNO4DM36stTiGO3DvKoex9TQRwsJU6vMaFGyqpBA1MNZkz+PG3gaNUPpTAOYhT1WR7M1JyA3fbS9Cw==}
-    dev: true
-
-  /@types/styled-components@5.1.28:
-    resolution: {integrity: sha512-nu0VKNybkjvUqJAXWtRqKd7j3iRUl8GbYSTvZNuIBJcw/HUp1Y4QUXNLlj7gcnRV/t784JnHAlvRnSnE3nPbJA==}
-    dependencies:
-      '@types/hoist-non-react-statics': 3.3.2
-      '@types/react': 18.2.28
-      csstype: 3.1.2
     dev: true
 
   /@types/stylis@4.2.1:
@@ -1795,12 +1777,6 @@ packages:
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: 1.1.1
-
-  /hoist-non-react-statics@3.3.2:
-    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
-    dependencies:
-      react-is: 16.13.1
-    dev: true
 
   /hosted-git-info@2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
