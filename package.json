@@ -35,7 +35,7 @@
     "react-dom": "18.2.0",
     "styled-components": "6.1.0",
     "styled-normalize": "8.0.7",
-    "url": "0.11.2"
+    "url": "0.11.3"
   },
   "devDependencies": {
     "@kachkaev/eslint-config-react": "0.6.0",
