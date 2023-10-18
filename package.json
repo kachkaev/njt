@@ -43,7 +43,7 @@
     "@next/eslint-plugin-next": "13.5.4",
     "@tsconfig/next": "2.0.1",
     "@tsconfig/strictest": "2.0.2",
-    "@types/hosted-git-info": "3.0.3",
+    "@types/hosted-git-info": "3.0.4",
     "@types/node": "18.18.5",
     "@types/react": "18.2.28",
     "eslint": "8.51.0",
