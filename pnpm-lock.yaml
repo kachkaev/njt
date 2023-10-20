@@ -30,8 +30,8 @@ importers:
         specifier: 6.1.0
         version: 6.1.0(react-dom@18.2.0)(react@18.2.0)
       styled-normalize:
-        specifier: 8.0.7
-        version: 8.0.7(styled-components@6.1.0)
+        specifier: 8.1.0
+        version: 8.1.0(styled-components@6.1.0)
       url:
         specifier: 0.11.3
         version: 0.11.3
@@ -3305,10 +3305,10 @@ packages:
       react: 18.2.0
     dev: false
 
-  /styled-normalize@8.0.7(styled-components@6.1.0):
-    resolution: {integrity: sha512-qQV4O7B9g7ZUnStCwGde7Dc/mcFF/pz0Ha/LL7+j/r6uopf6kJCmmR7jCPQMCBrDkYiQ4xvw1hUoceVJkdaMuQ==}
+  /styled-normalize@8.1.0(styled-components@6.1.0):
+    resolution: {integrity: sha512-GzcJvU/mHI2FXjdnTysDpRZSG+5NPid/bNIR/QZ/vOwc8HuqvOlOMDVr457sTKN+M3Hd3s5fdv9tC1v0BhT1nA==}
     peerDependencies:
-      styled-components: ^4.0.0 || ^5.0.0
+      styled-components: ^4.0.0 || ^5.0.0 || ^6.0.0
     dependencies:
       styled-components: 6.1.0(react-dom@18.2.0)(react@18.2.0)
     dev: false
