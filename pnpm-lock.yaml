@@ -52,8 +52,8 @@ importers:
         specifier: 2.0.2
         version: 2.0.2
       '@types/hosted-git-info':
-        specifier: 3.0.4
-        version: 3.0.4
+        specifier: 3.0.5
+        version: 3.0.5
       '@types/node':
         specifier: 20.8.10
         version: 20.8.10
@@ -424,8 +424,8 @@ packages:
     resolution: {integrity: sha512-jt4jIsWKvUvuY6adJnQJlb/UR7DdjC8CjHI/OaSQruj2yX9/K6+KOvDt/vD6udqos/FUk5Op66CvYT7TBLYO5Q==}
     dev: true
 
-  /@types/hosted-git-info@3.0.4:
-    resolution: {integrity: sha512-o2FiQWNs3m8jlJ77dsRlfXA8NvRHB4+hA/4iSqkWwjDezQwq84O73X5D2QyXflty9PtzuQl8PAPcxanSqkv9fg==}
+  /@types/hosted-git-info@3.0.5:
+    resolution: {integrity: sha512-Dmngh7U003cOHPhKGyA7LWqrnvcTyILNgNPmNCxlx7j8MIi54iBliiT8XqVLIQ3GchoOjVAyBzNJVyuaJjqokg==}
     dev: true
 
   /@types/json-schema@7.0.14:
