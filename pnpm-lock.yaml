@@ -27,11 +27,11 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
       styled-components:
-        specifier: 6.1.0
-        version: 6.1.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: 6.1.1
+        version: 6.1.1(react-dom@18.2.0)(react@18.2.0)
       styled-normalize:
         specifier: 8.1.0
-        version: 8.1.0(styled-components@6.1.0)
+        version: 8.1.0(styled-components@6.1.1)
       url:
         specifier: 0.11.3
         version: 0.11.3
@@ -3289,8 +3289,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /styled-components@6.1.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-VWNfYYBuXzuLS/QYEeoPgMErP26WL+dX9//rEh80B2mmlS1yRxRxuL5eax4m6ybYEUoHWlTy2XOU32767mlMkg==}
+  /styled-components@6.1.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-cpZZP5RrKRIClBW5Eby4JM1wElLVP4NQrJbJ0h10TidTyJf4SIIwa3zLXOoPb4gJi8MsJ8mjq5mu2IrEhZIAcQ==}
     engines: {node: '>= 16'}
     peerDependencies:
       react: '>= 16.8.0'
@@ -3326,12 +3326,12 @@ packages:
       react: 18.2.0
     dev: false
 
-  /styled-normalize@8.1.0(styled-components@6.1.0):
+  /styled-normalize@8.1.0(styled-components@6.1.1):
     resolution: {integrity: sha512-GzcJvU/mHI2FXjdnTysDpRZSG+5NPid/bNIR/QZ/vOwc8HuqvOlOMDVr457sTKN+M3Hd3s5fdv9tC1v0BhT1nA==}
     peerDependencies:
       styled-components: ^4.0.0 || ^5.0.0 || ^6.0.0
     dependencies:
-      styled-components: 6.1.0(react-dom@18.2.0)(react@18.2.0)
+      styled-components: 6.1.1(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
   /stylis@4.3.0:
