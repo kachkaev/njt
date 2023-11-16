@@ -1,3 +1,5 @@
+require("@rushstack/eslint-patch/modern-module-resolution.js");
+
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   extends: [

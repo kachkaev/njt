@@ -45,6 +45,9 @@ importers:
       '@next/eslint-plugin-next':
         specifier: 14.0.2
         version: 14.0.2
+      '@rushstack/eslint-patch':
+        specifier: 1.5.1
+        version: 1.5.1
       '@tsconfig/next':
         specifier: 2.0.1
         version: 2.0.1
@@ -408,6 +411,10 @@ packages:
       open: 9.1.0
       picocolors: 1.0.0
       tslib: 2.6.2
+    dev: true
+
+  /@rushstack/eslint-patch@1.5.1:
+    resolution: {integrity: sha512-6i/8UoL0P5y4leBIGzvkZdS85RDMG9y1ihZzmTZQ5LdHUYmZ7pKFoj8X0236s3lusPs1Fa5HTQUpwI+UfTcmeA==}
     dev: true
 
   /@swc/helpers@0.5.2:

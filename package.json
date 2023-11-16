@@ -41,6 +41,7 @@
     "@kachkaev/eslint-config-react": "0.6.0",
     "@kachkaev/markdownlint-config": "0.5.0",
     "@next/eslint-plugin-next": "14.0.2",
+    "@rushstack/eslint-patch": "1.5.1",
     "@tsconfig/next": "2.0.1",
     "@tsconfig/strictest": "2.0.2",
     "@types/hosted-git-info": "3.0.5",
