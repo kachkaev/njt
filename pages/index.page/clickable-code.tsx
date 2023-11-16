@@ -1,4 +1,6 @@
-import styled from "styled-components";
+import _styled from "styled-components";
+
+const styled = _styled as unknown as typeof _styled.default;
 
 export const ClickableCode = styled.code`
   border-bottom: 1px dotted transparent;

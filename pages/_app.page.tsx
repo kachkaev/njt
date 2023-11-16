@@ -1,9 +1,8 @@
-// eslint-disable-next-line import/no-unresolved -- https://github.com/import-js/eslint-plugin-import/issues/1810
 import { Analytics } from "@vercel/analytics/react";
-import type { AppProps } from "next/app";
+import type { AppProps } from "next/app.js";
 import * as React from "react";
 
-import { PageLayout } from "./_app.page/page-layout";
+import { PageLayout } from "./_app.page/page-layout.jsx";
 
 const App: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
   React.useEffect(() => {
