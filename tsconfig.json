@@ -1,8 +1,7 @@
 {
   "extends": [
     "@tsconfig/next/tsconfig.json",
-    "@tsconfig/strictest/tsconfig.json",
-    "@tsconfig/esm/tsconfig.json"
+    "@tsconfig/strictest/tsconfig.json"
   ],
   "compilerOptions": {
     "moduleResolution": "nodenext"

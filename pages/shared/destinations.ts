@@ -167,11 +167,11 @@ const destinationConfigs: DestinationConfig[] = [
         typeof bugsField === "string"
           ? bugsField
           : typeof bugsField === "object" &&
-            bugsField &&
-            "url" in bugsField &&
-            typeof bugsField["url"] === "string"
-          ? bugsField["url"]
-          : undefined;
+              bugsField &&
+              "url" in bugsField &&
+              typeof bugsField["url"] === "string"
+            ? bugsField["url"]
+            : undefined;
       if (directUrl) {
         return directUrl;
       }
@@ -304,9 +304,10 @@ export const resolveDestination = async (
     );
 
   try {
-    const url = await destinationConfigByKeyword[
-      rawDestination[0]?.toLowerCase() ?? ""
-    ]?.generateUrl(packageName);
+    const url =
+      await destinationConfigByKeyword[
+        rawDestination[0]?.toLowerCase() ?? ""
+      ]?.generateUrl(packageName);
     if (!url) {
       throw new Error("Unexpected empty URL");
     }
