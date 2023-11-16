@@ -167,11 +167,11 @@ const destinationConfigs: DestinationConfig[] = [
         typeof bugsField === "string"
           ? bugsField
           : typeof bugsField === "object" &&
-            bugsField &&
-            "url" in bugsField &&
-            typeof bugsField["url"] === "string"
-          ? bugsField["url"]
-          : undefined;
+              bugsField &&
+              "url" in bugsField &&
+              typeof bugsField["url"] === "string"
+            ? bugsField["url"]
+            : undefined;
       if (directUrl) {
         return directUrl;
       }
