@@ -76,14 +76,14 @@ importers:
         specifier: 4.1.5
         version: 4.1.5
       prettier:
-        specifier: 3.2.1
-        version: 3.2.1
+        specifier: 3.2.2
+        version: 3.2.2
       prettier-plugin-packagejson:
         specifier: 2.4.9
-        version: 2.4.9(prettier@3.2.1)
+        version: 2.4.9(prettier@3.2.2)
       prettier-plugin-sh:
         specifier: 0.13.1
-        version: 0.13.1(prettier@3.2.1)
+        version: 0.13.1(prettier@3.2.2)
       typescript:
         specifier: 5.3.3
         version: 5.3.3
@@ -2731,7 +2731,7 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-packagejson@2.4.9(prettier@3.2.1):
+  /prettier-plugin-packagejson@2.4.9(prettier@3.2.2):
     resolution: {integrity: sha512-b3Q7agXVqxK3UpYEJr0xLD51SxriYXESWUCjmxOBUGqnPFZOg9jZGZ+Ptzq252I6OqzXN2rj1tJIFq6KOGLLJw==}
     peerDependencies:
       prettier: '>= 1.16.0'
@@ -2739,24 +2739,24 @@ packages:
       prettier:
         optional: true
     dependencies:
-      prettier: 3.2.1
+      prettier: 3.2.2
       sort-package-json: 2.6.0
       synckit: 0.9.0
     dev: true
 
-  /prettier-plugin-sh@0.13.1(prettier@3.2.1):
+  /prettier-plugin-sh@0.13.1(prettier@3.2.2):
     resolution: {integrity: sha512-ytMcl1qK4s4BOFGvsc9b0+k9dYECal7U29bL/ke08FEUsF/JLN0j6Peo0wUkFDG4y2UHLMhvpyd6Sd3zDXe/eg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       prettier: ^3.0.0
     dependencies:
       mvdan-sh: 0.10.1
-      prettier: 3.2.1
+      prettier: 3.2.2
       sh-syntax: 0.4.1
     dev: true
 
-  /prettier@3.2.1:
-    resolution: {integrity: sha512-qSUWshj1IobVbKc226Gw2pync27t0Kf0EdufZa9j7uBSJay1CC+B3K5lAAZoqgX3ASiKuWsk6OmzKRetXNObWg==}
+  /prettier@3.2.2:
+    resolution: {integrity: sha512-HTByuKZzw7utPiDO523Tt2pLtEyK7OibUD9suEJQrPUCYQqrHr74GGX6VidMrovbf/I50mPqr8j/II6oBAuc5A==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
