@@ -82,8 +82,8 @@ importers:
         specifier: 2.4.9
         version: 2.4.9(prettier@3.2.2)
       prettier-plugin-sh:
-        specifier: 0.13.1
-        version: 0.13.1(prettier@3.2.2)
+        specifier: 0.14.0
+        version: 0.14.0(prettier@3.2.2)
       typescript:
         specifier: 5.3.3
         version: 5.3.3
@@ -2744,11 +2744,11 @@ packages:
       synckit: 0.9.0
     dev: true
 
-  /prettier-plugin-sh@0.13.1(prettier@3.2.2):
-    resolution: {integrity: sha512-ytMcl1qK4s4BOFGvsc9b0+k9dYECal7U29bL/ke08FEUsF/JLN0j6Peo0wUkFDG4y2UHLMhvpyd6Sd3zDXe/eg==}
+  /prettier-plugin-sh@0.14.0(prettier@3.2.2):
+    resolution: {integrity: sha512-hfXulj5+zEl/ulrO5kMuuTPKmXvOg0bnLHY1hKFNN/N+/903iZbNp8NyZBTsgI8dtkSgFfAEIQq0IQTyP1ZVFQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
-      prettier: ^3.0.0
+      prettier: ^3.0.3
     dependencies:
       mvdan-sh: 0.10.1
       prettier: 3.2.2
