@@ -47,7 +47,7 @@
     "@types/node": "20.11.15",
     "@types/react": "18.2.51",
     "eslint": "8.56.0",
-    "husky": "9.0.9",
+    "husky": "9.0.10",
     "lint-staged": "15.2.1",
     "markdownlint-cli": "0.39.0",
     "npm-run-all2": "6.1.2",
