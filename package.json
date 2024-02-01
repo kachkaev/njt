@@ -45,7 +45,7 @@
     "@tsconfig/strictest": "2.0.2",
     "@types/hosted-git-info": "3.0.5",
     "@types/node": "20.11.15",
-    "@types/react": "18.2.49",
+    "@types/react": "18.2.51",
     "eslint": "8.56.0",
     "husky": "9.0.7",
     "lint-staged": "15.2.1",
