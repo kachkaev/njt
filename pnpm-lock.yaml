@@ -49,8 +49,8 @@ importers:
         specifier: 2.0.1
         version: 2.0.1
       '@tsconfig/strictest':
-        specifier: 2.0.2
-        version: 2.0.2
+        specifier: 2.0.3
+        version: 2.0.3
       '@types/hosted-git-info':
         specifier: 3.0.5
         version: 3.0.5
@@ -413,8 +413,8 @@ packages:
     resolution: {integrity: sha512-8Za+6fv85ipdoO1u/Xknyurab8T92LbS0/KzRB0/GHvPh3xl0L4yf5+VmSxXNwjF1uS/xLSqf+BPhfaqasCpZw==}
     dev: true
 
-  /@tsconfig/strictest@2.0.2:
-    resolution: {integrity: sha512-jt4jIsWKvUvuY6adJnQJlb/UR7DdjC8CjHI/OaSQruj2yX9/K6+KOvDt/vD6udqos/FUk5Op66CvYT7TBLYO5Q==}
+  /@tsconfig/strictest@2.0.3:
+    resolution: {integrity: sha512-MroLvRhMbqtXI5WBSwoomro6OQS4xnCoudUrMb20JO0vLKUs0bAaCEcvM/immEBSJjFAK1l6jW1oAO8q3Ancrg==}
     dev: true
 
   /@types/hosted-git-info@3.0.5:
