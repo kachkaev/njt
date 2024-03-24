@@ -46,8 +46,8 @@ importers:
         specifier: 14.0.2
         version: 14.0.2
       '@tsconfig/next':
-        specifier: 2.0.1
-        version: 2.0.1
+        specifier: 2.0.2
+        version: 2.0.2
       '@tsconfig/strictest':
         specifier: 2.0.3
         version: 2.0.3
@@ -409,8 +409,8 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@tsconfig/next@2.0.1:
-    resolution: {integrity: sha512-8Za+6fv85ipdoO1u/Xknyurab8T92LbS0/KzRB0/GHvPh3xl0L4yf5+VmSxXNwjF1uS/xLSqf+BPhfaqasCpZw==}
+  /@tsconfig/next@2.0.2:
+    resolution: {integrity: sha512-W84/xm8UevymR1tuxU1/qPM0di7FZahaSaJj92K7/y2hYB28Y/4dvaXm/hud3DPsG+b4BVNk4RCzCKA9/dPIbw==}
     dev: true
 
   /@tsconfig/strictest@2.0.3:
