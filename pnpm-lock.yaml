@@ -15,8 +15,8 @@ importers:
         specifier: 7.0.2
         version: 7.0.2
       lru-cache:
-        specifier: 10.0.2
-        version: 10.0.2
+        specifier: 10.2.2
+        version: 10.2.2
       next:
         specifier: 14.0.2
         version: 14.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1257,8 +1257,8 @@ packages:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
 
-  lru-cache@10.0.2:
-    resolution: {integrity: sha512-Yj9mA8fPiVgOUpByoTZO5pNrcl5Yk37FcSHsUINpAsaBIEZIuqcCclDZJCVxqQShDsmYX8QG63svJiTbOATZwg==}
+  lru-cache@10.2.2:
+    resolution: {integrity: sha512-9hp3Vp2/hFQUiIwKo8XCeFVnrg8Pk3TYNPIR7tJADKi5YfcF7vEaK7avFHTlSy3kOKYaJQaalfEo6YuXdceBOQ==}
     engines: {node: 14 || >=16.14}
 
   lru-cache@6.0.0:
@@ -3016,7 +3016,7 @@ snapshots:
 
   hosted-git-info@7.0.2:
     dependencies:
-      lru-cache: 10.0.2
+      lru-cache: 10.2.2
 
   human-signals@5.0.0: {}
 
@@ -3280,9 +3280,7 @@ snapshots:
     dependencies:
       js-tokens: 4.0.0
 
-  lru-cache@10.0.2:
-    dependencies:
-      semver: 7.6.0
+  lru-cache@10.2.2: {}
 
   lru-cache@6.0.0:
     dependencies:
@@ -3522,7 +3520,7 @@ snapshots:
 
   path-scurry@1.10.1:
     dependencies:
-      lru-cache: 10.0.2
+      lru-cache: 10.2.2
       minipass: 7.0.4
 
   path-type@4.0.0: {}
