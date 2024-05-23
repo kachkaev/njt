@@ -30,8 +30,8 @@ importers:
         specifier: 6.1.8
         version: 6.1.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       styled-normalize:
-        specifier: 8.1.0
-        version: 8.1.0(styled-components@6.1.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
+        specifier: 8.1.1
+        version: 8.1.1(styled-components@6.1.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       url:
         specifier: 0.11.3
         version: 0.11.3
@@ -1818,8 +1818,8 @@ packages:
       babel-plugin-macros:
         optional: true
 
-  styled-normalize@8.1.0:
-    resolution: {integrity: sha512-GzcJvU/mHI2FXjdnTysDpRZSG+5NPid/bNIR/QZ/vOwc8HuqvOlOMDVr457sTKN+M3Hd3s5fdv9tC1v0BhT1nA==}
+  styled-normalize@8.1.1:
+    resolution: {integrity: sha512-Nd6iLDjKuxotRHSewe+qFqvw33WxIotbjZ3YkC8802manACBchUIb7vJt/C8ylDrO5850HmlnQTApwJLuN9sug==}
     peerDependencies:
       styled-components: ^4.0.0 || ^5.0.0 || ^6.0.0
 
@@ -3885,7 +3885,7 @@ snapshots:
       client-only: 0.0.1
       react: 18.2.0
 
-  styled-normalize@8.1.0(styled-components@6.1.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)):
+  styled-normalize@8.1.1(styled-components@6.1.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)):
     dependencies:
       styled-components: 6.1.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
 
