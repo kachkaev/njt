@@ -56,5 +56,5 @@
     "prettier-plugin-sh": "0.14.0",
     "typescript": "5.4.5"
   },
-  "packageManager": "pnpm@9.0.5"
+  "packageManager": "pnpm@9.1.2"
 }
