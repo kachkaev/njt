@@ -15,8 +15,8 @@ importers:
         specifier: 8.0.0
         version: 8.0.0
       lru-cache:
-        specifier: 10.2.2
-        version: 10.2.2
+        specifier: 10.4.3
+        version: 10.4.3
       next:
         specifier: 15.0.2
         version: 15.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1413,9 +1413,8 @@ packages:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
 
-  lru-cache@10.2.2:
-    resolution: {integrity: sha512-9hp3Vp2/hFQUiIwKo8XCeFVnrg8Pk3TYNPIR7tJADKi5YfcF7vEaK7avFHTlSy3kOKYaJQaalfEo6YuXdceBOQ==}
-    engines: {node: 14 || >=16.14}
+  lru-cache@10.4.3:
+    resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
   lru-cache@11.0.1:
     resolution: {integrity: sha512-CgeuL5uom6j/ZVrg7G/+1IXqRY8JXX4Hghfy5YE0EhoYQWvndP1kufu58cmZLNIDKnRhZrXfdS9urVWx98AipQ==}
@@ -3338,7 +3337,7 @@ snapshots:
 
   hosted-git-info@8.0.0:
     dependencies:
-      lru-cache: 10.2.2
+      lru-cache: 10.4.3
 
   human-signals@5.0.0: {}
 
@@ -3613,7 +3612,7 @@ snapshots:
     dependencies:
       js-tokens: 4.0.0
 
-  lru-cache@10.2.2: {}
+  lru-cache@10.4.3: {}
 
   lru-cache@11.0.1: {}
 
