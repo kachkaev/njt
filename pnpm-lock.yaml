@@ -15,8 +15,8 @@ importers:
         specifier: 8.0.2
         version: 8.0.2
       lru-cache:
-        specifier: 10.4.3
-        version: 10.4.3
+        specifier: 11.0.2
+        version: 11.0.2
       next:
         specifier: 15.1.1
         version: 15.1.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
