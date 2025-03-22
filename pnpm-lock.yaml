@@ -15,8 +15,8 @@ importers:
         specifier: 8.0.2
         version: 8.0.2
       lru-cache:
-        specifier: 10.4.3
-        version: 10.4.3
+        specifier: 11.0.2
+        version: 11.0.2
       next:
         specifier: 15.2.3
         version: 15.2.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -1491,6 +1491,10 @@ packages:
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
+
+  lru-cache@11.0.2:
+    resolution: {integrity: sha512-123qHRfJBmo2jXDbo/a5YOQrJoHF/GNQTLzQ5+IdK5pWpceK17yRc6ozlWd25FxvGKQbIUs91fDFkXmDHTKcyA==}
+    engines: {node: 20 || >=22}
 
   markdown-it@14.1.0:
     resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==}
@@ -3849,6 +3853,8 @@ snapshots:
       js-tokens: 4.0.0
 
   lru-cache@10.4.3: {}
+
+  lru-cache@11.0.2: {}
 
   markdown-it@14.1.0:
     dependencies:
