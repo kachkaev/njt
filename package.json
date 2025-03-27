@@ -44,7 +44,7 @@
     "@tsconfig/next": "2.0.3",
     "@tsconfig/strictest": "2.0.5",
     "@types/hosted-git-info": "3.0.5",
-    "@types/node": "22.13.13",
+    "@types/node": "22.13.14",
     "@types/react": "19.0.12",
     "eslint": "8.57.1",
     "husky": "9.1.7",
