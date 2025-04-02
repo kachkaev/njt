@@ -40,7 +40,7 @@
   "devDependencies": {
     "@kachkaev/eslint-config-react": "0.6.0",
     "@kachkaev/markdownlint-config": "0.5.0",
-    "@next/eslint-plugin-next": "15.2.3",
+    "@next/eslint-plugin-next": "15.2.4",
     "@tsconfig/next": "2.0.3",
     "@tsconfig/strictest": "2.0.5",
     "@types/hosted-git-info": "3.0.5",
