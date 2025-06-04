@@ -10,13 +10,13 @@
     "fix:markdownlint": "markdownlint --dot --fix .",
     "fix:pnpm-dedupe": "pnpm dedupe",
     "fix:prettier": "prettier --write .",
+    "postinstall": "husky install",
     "lint": "npm-run-all --continue-on-error \"lint:*\"",
     "lint:eslint": "eslint .",
     "lint:markdownlint": "markdownlint --dot .",
     "lint:pnpm-dedupe": "pnpm dedupe --check",
     "lint:prettier": "prettier --check .",
     "lint:tsc": "tsc --project .",
-    "postinstall": "husky install",
     "start": "next start"
   },
   "lint-staged": {
@@ -52,7 +52,7 @@
     "markdownlint-cli": "0.45.0",
     "npm-run-all2": "8.0.2",
     "prettier": "3.5.3",
-    "prettier-plugin-packagejson": "2.5.10",
+    "prettier-plugin-packagejson": "2.5.15",
     "prettier-plugin-sh": "0.17.4",
     "typescript": "5.8.3"
   },
