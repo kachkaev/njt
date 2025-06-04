@@ -10,13 +10,13 @@
     "fix:markdownlint": "markdownlint --dot --fix .",
     "fix:pnpm-dedupe": "pnpm dedupe",
     "fix:prettier": "prettier --write .",
+    "postinstall": "husky install",
     "lint": "npm-run-all --continue-on-error \"lint:*\"",
     "lint:eslint": "eslint .",
     "lint:markdownlint": "markdownlint --dot .",
     "lint:pnpm-dedupe": "pnpm dedupe --check",
     "lint:prettier": "prettier --check .",
     "lint:tsc": "tsc --project .",
-    "postinstall": "husky install",
     "start": "next start"
   },
   "lint-staged": {
