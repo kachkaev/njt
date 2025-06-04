@@ -10,7 +10,7 @@
     "fix:markdownlint": "markdownlint --dot --fix .",
     "fix:pnpm-dedupe": "pnpm dedupe",
     "fix:prettier": "prettier --write .",
-    "postinstall": "husky install",
+    "postinstall": "husky",
     "lint": "npm-run-all --continue-on-error \"lint:*\"",
     "lint:eslint": "eslint .",
     "lint:markdownlint": "markdownlint --dot .",
