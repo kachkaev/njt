@@ -82,8 +82,8 @@ importers:
         specifier: 2.5.16
         version: 2.5.16(prettier@3.6.1)
       prettier-plugin-sh:
-        specifier: 0.17.4
-        version: 0.17.4(prettier@3.6.1)
+        specifier: 0.18.0
+        version: 0.18.0(prettier@3.6.1)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -1837,11 +1837,11 @@ packages:
       prettier:
         optional: true
 
-  prettier-plugin-sh@0.17.4:
-    resolution: {integrity: sha512-aAVKXZ7GTEMZdZsIPSwMwddwPvt2ibMbRGd4OJAP0G7QoeYZV+mPNg2Oln3R53sZ4PVjeAA7Xzi/PuI0QlHHfQ==}
+  prettier-plugin-sh@0.18.0:
+    resolution: {integrity: sha512-cW1XL27FOJQ/qGHOW6IHwdCiNWQsAgK+feA8V6+xUTaH0cD3Mh+tFAtBvEEWvuY6hTDzRV943Fzeii+qMOh7nQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
-      prettier: ^3.0.3
+      prettier: ^3.6.0
 
   prettier@3.6.1:
     resolution: {integrity: sha512-5xGWRa90Sp2+x1dQtNpIpeOQpTDBs9cZDmA/qs2vDNN2i18PdapqY7CmBeyLlMuGqXJRIOPaCaVZTLNQRWUH/A==}
@@ -4292,7 +4292,7 @@ snapshots:
     optionalDependencies:
       prettier: 3.6.1
 
-  prettier-plugin-sh@0.17.4(prettier@3.6.1):
+  prettier-plugin-sh@0.18.0(prettier@3.6.1):
     dependencies:
       '@reteps/dockerfmt': 0.3.6
       prettier: 3.6.1
