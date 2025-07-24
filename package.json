@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "1.5.0",
-    "hosted-git-info": "8.1.0",
+    "hosted-git-info": "9.0.0",
     "lru-cache": "10.4.3",
     "next": "15.4.2",
     "react": "19.1.0",
