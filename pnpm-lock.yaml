@@ -12,8 +12,8 @@ importers:
         specifier: 1.5.0
         version: 1.5.0(next@15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
       hosted-git-info:
-        specifier: 8.1.0
-        version: 8.1.0
+        specifier: 9.0.0
+        version: 9.0.0
       lru-cache:
         specifier: 10.4.3
         version: 10.4.3
@@ -1178,9 +1178,9 @@ packages:
   hosted-git-info@2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
 
-  hosted-git-info@8.1.0:
-    resolution: {integrity: sha512-Rw/B2DNQaPBICNXEm8balFz9a6WpZrkCGpcWFpy7nCj+NyhSdqXipmfvtmWt9xGfp0wZnBxB+iVpLmQMYt47Tw==}
-    engines: {node: ^18.17.0 || >=20.5.0}
+  hosted-git-info@9.0.0:
+    resolution: {integrity: sha512-gEf705MZLrDPkbbhi8PnoO4ZwYgKoNL+ISZ3AjZMht2r3N5tuTwncyDi6Fv2/qDnMmZxgs0yI8WDOyR8q3G+SQ==}
+    engines: {node: ^20.17.0 || >=22.9.0}
 
   husky@9.1.7:
     resolution: {integrity: sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA==}
@@ -3529,9 +3529,9 @@ snapshots:
 
   hosted-git-info@2.8.9: {}
 
-  hosted-git-info@8.1.0:
+  hosted-git-info@9.0.0:
     dependencies:
-      lru-cache: 10.4.3
+      lru-cache: 11.1.0
 
   husky@9.1.7: {}
 
