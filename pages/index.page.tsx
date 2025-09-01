@@ -82,7 +82,7 @@ const Page = () => {
   );
   const handleExamplePackageClick = React.useCallback<React.MouseEventHandler>(
     (event) => {
-      setExamplePackage(event.currentTarget.textContent!);
+      setExamplePackage(event.currentTarget.textContent);
     },
     [setExamplePackage],
   );
