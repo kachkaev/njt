@@ -42,6 +42,9 @@ importers:
       '@kachkaev/markdownlint-config':
         specifier: 0.5.0
         version: 0.5.0(markdownlint-cli@0.45.0)
+      '@kachkaev/prettier-config':
+        specifier: 2.1.3
+        version: 2.1.3(prettier@3.6.2)
       '@next/eslint-plugin-next':
         specifier: 15.5.2
         version: 15.5.2
@@ -78,12 +81,6 @@ importers:
       prettier:
         specifier: 3.6.2
         version: 3.6.2
-      prettier-plugin-packagejson:
-        specifier: 2.5.19
-        version: 2.5.19(prettier@3.6.2)
-      prettier-plugin-sh:
-        specifier: 0.18.0
-        version: 0.18.0(prettier@3.6.2)
       typescript:
         specifier: 5.9.2
         version: 5.9.2
@@ -314,6 +311,11 @@ packages:
     resolution: {integrity: sha512-b1wPLTSQ2OtjEp9loN8g3qeEsN94JhIX+36sqWlxBsSv3PgZDObht8bmMnZcPYR7x5RAQudrEklh46S7vMTTkg==}
     peerDependencies:
       markdownlint-cli: '>=0.30.0'
+
+  '@kachkaev/prettier-config@2.1.3':
+    resolution: {integrity: sha512-OTd2dvMJN6stroYPg3qh0XNDB+JlAGWlNmCSer7v+iVhvrPaWnDmdEt65lTyUPadT8dYnkYp/CQKEcBoaaOD3A==}
+    peerDependencies:
+      prettier: ^3.0.0
 
   '@next/env@15.5.2':
     resolution: {integrity: sha512-Qe06ew4zt12LeO6N7j8/nULSOe3fMXE4dM6xgpBQNvdzyK1sv5y4oAP3bq4LamrvGCZtmRYnW8URFCeX5nFgGg==}
@@ -2541,6 +2543,12 @@ snapshots:
   '@kachkaev/markdownlint-config@0.5.0(markdownlint-cli@0.45.0)':
     dependencies:
       markdownlint-cli: 0.45.0
+
+  '@kachkaev/prettier-config@2.1.3(prettier@3.6.2)':
+    dependencies:
+      prettier: 3.6.2
+      prettier-plugin-packagejson: 2.5.19(prettier@3.6.2)
+      prettier-plugin-sh: 0.18.0(prettier@3.6.2)
 
   '@next/env@15.5.2': {}
 
