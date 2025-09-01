@@ -1,2 +1,5 @@
 packages:
   - cli
+
+ignoredBuiltDependencies:
+  - sharp ## Install script is only required when compiling sharp from source - https://sharp.pixelplumbing.com/install
