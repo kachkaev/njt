@@ -5,4 +5,12 @@ module.exports = {
     "plugin:@next/next/recommended",
   ],
   parserOptions: { tsconfigRootDir: __dirname },
+  overrides: [
+    {
+      files: ["next-env.d.ts"],
+      rules: {
+        "@typescript-eslint/triple-slash-reference": "off",
+      },
+    },
+  ],
 };
