@@ -50,7 +50,7 @@ const AvailableDestinations: React.FunctionComponent<{
 }> = ({ selectedDestination, onSelectedDestinationChange }) => {
   const handleKeywordClick = React.useCallback<React.MouseEventHandler>(
     ({ currentTarget }) => {
-      onSelectedDestinationChange(currentTarget.textContent!);
+      onSelectedDestinationChange(currentTarget.textContent);
     },
     [onSelectedDestinationChange],
   );
