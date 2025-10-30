@@ -3,8 +3,8 @@
   "license": "BSD-3-Clause",
   "type": "module",
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
+    "build": "next build --webpack",
+    "dev": "next dev --webpack",
     "fix": "npm-run-all --continue-on-error \"fix:*\"",
     "fix:eslint": "next typegen && eslint --fix .",
     "fix:markdownlint": "markdownlint --dot --fix .",

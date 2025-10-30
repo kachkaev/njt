@@ -2,8 +2,8 @@
 node_modules
 
 ## next.js
-.next-env.d.ts
 .next/
+next-env.d.ts
 out/
 tsconfig.tsbuildinfo
 
