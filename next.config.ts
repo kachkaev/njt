@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
   typescript: { ignoreBuildErrors: true },
 
   webpack: (
-    config: Record<string, unknown> & { resolve: Record<string, unknown> }
+    config: Record<string, unknown> & { resolve: Record<string, unknown> },
   ) => {
     return {
       ...config,
