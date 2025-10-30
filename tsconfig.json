@@ -4,8 +4,9 @@
     "@tsconfig/strictest/tsconfig.json"
   ],
   "compilerOptions": {
-    "module": "ESNext",
-    "target": "ESNext"
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2017"
   },
   "exclude": [],
   "include": ["next-env.d.ts", "**/*.cjs", "**/*.ts", "**/*.tsx"]

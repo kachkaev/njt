@@ -1,7 +1,7 @@
 import hostedGitInfo from "hosted-git-info";
 import { LRUCache } from "lru-cache";
 
-import type { JsonObject } from "./json-types";
+import type { JsonObject } from "./json-types.js";
 
 export interface SuccessfullyResolvedDestination {
   outcome: "success";

@@ -1,3 +1,6 @@
+require("@rushstack/eslint-patch/modern-module-resolution.js");
+
+/** @type {import("eslint").Linter.Config} */
 module.exports = {
   extends: [
     "@kachkaev/eslint-config-react",
@@ -5,6 +8,16 @@ module.exports = {
     "plugin:@next/next/recommended-legacy",
   ],
   parserOptions: { tsconfigRootDir: __dirname },
+
+  settings: {
+    "import/resolver": {
+      typescript: {
+        alwaysTryTypes: true,
+        project: `${__dirname}/tsconfig.json`,
+      },
+    },
+  },
+
   overrides: [
     {
       files: ["next-env.d.ts"],

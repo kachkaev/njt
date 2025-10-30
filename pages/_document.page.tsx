@@ -1,7 +1,9 @@
-import type { DocumentContext } from "next/document";
-import Document, { Head, Html, Main, NextScript } from "next/document";
+import type { DocumentContext } from "next/document.js";
+import _Document, { Head, Html, Main, NextScript } from "next/document.js";
 import * as React from "react";
 import { ServerStyleSheet } from "styled-components";
+
+const Document = _Document as unknown as typeof _Document.default;
 
 export default class MyDocument extends Document {
   static override async getInitialProps(ctx: DocumentContext) {
