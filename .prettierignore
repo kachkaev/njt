@@ -16,24 +16,9 @@
 !*.tsx
 !*.yml
 
-########################
-## Same as in .gitignore
-########################
-
-## dependencies
-node_modules
-
-## next.js
-/.next/
-/out/
-tsconfig.tsbuildinfo
-
-## misc
-.DS_Store
-.env*
-
-## custom
-cli/README.md
+## Allow certain files without extensions
+!.husky/*
+!Dockerfile
 
 #########################
 ## Shared between linters
