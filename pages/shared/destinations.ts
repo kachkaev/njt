@@ -302,6 +302,7 @@ export async function resolveDestination(
   const packageName = rawPackageName
     .toLowerCase()
     .replace("https://www.npmjs.com/package/", "") // https://www.npmjs.com/package/@types/react-dom
+    .replaceAll(/[–—−]/g, "-") // package names with misc dashes (not hyphens)
     .replace(/\?activeTab=\w+$/, "") // https://www.npmjs.com/package/@types/react-dom?activeTab=versions
     .replace(/\/v\/[\w.-]+/, "") // https://www.npmjs.com/package/@types/react-dom/v/18.0.9
     .replace("https://yarnpkg.com/package/", "") // https://yarnpkg.com/package/@types/react-dom
