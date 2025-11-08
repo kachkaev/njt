@@ -50,7 +50,10 @@ const base = css`
 `;
 
 const GlobalStyle = createGlobalStyle`
-  ${normalize}
+  ${
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument -- TODO: Remove together with styled components
+    normalize
+  }
   ${base}
 `;
 
