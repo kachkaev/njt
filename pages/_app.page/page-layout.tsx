@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled, { createGlobalStyle, css } from "styled-components";
+import { createGlobalStyle, css, styled } from "styled-components";
 import normalize from "styled-normalize";
 
 import { ExternalLink } from "../shared/external-link";

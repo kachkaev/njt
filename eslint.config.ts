@@ -14,6 +14,14 @@ export default defineConfig([
     },
   },
 
+  // TODO: Remove after migrating to app router
+  {
+    files: ["pages/**/*.page.tsx", "pages/**/*.handler.ts"],
+    rules: {
+      "import/no-default-export": "off",
+    },
+  },
+
   // TODO: Triage
   {
     rules: {
@@ -30,9 +38,6 @@ export default defineConfig([
       "@typescript-eslint/prefer-nullish-coalescing": "off",
       "@typescript-eslint/prefer-regexp-exec": "off",
       "func-style": "off",
-      "import/no-default-export": "off",
-      "import/no-duplicates": "off",
-      "import/no-named-as-default": "off",
       "react/function-component-definition": "off",
       "regexp/no-unused-capturing-group": "off",
       "testing-library/render-result-naming-convention": "off",

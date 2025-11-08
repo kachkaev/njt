@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 import { ExternalLink } from "../shared/external-link";
 import { ClickableCode } from "./clickable-code";

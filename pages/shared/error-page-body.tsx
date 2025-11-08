@@ -1,6 +1,6 @@
 import Link from "next/link";
 import * as React from "react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 const Container = styled.div`
   text-align: center;

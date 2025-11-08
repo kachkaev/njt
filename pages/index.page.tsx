@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 import { AvailableDestinations } from "./index.page/available-destinations";
 import { Example } from "./index.page/example";
