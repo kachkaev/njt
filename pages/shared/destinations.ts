@@ -3,26 +3,26 @@ import { LRUCache } from "lru-cache";
 
 import type { JsonObject } from "./json-types";
 
-export interface SuccessfullyResolvedDestination {
+export type SuccessfullyResolvedDestination = {
   outcome: "success";
   url: string;
-}
+};
 
-export interface UnresolvedDestination {
+export type UnresolvedDestination = {
   outcome: "error";
   error: string;
-}
+};
 
 export type ResolvedDestination =
   | SuccessfullyResolvedDestination
   | UnresolvedDestination;
 
-export interface DestinationConfig {
+export type DestinationConfig = {
   keywords: string[];
   generateUrl: (
     packageName: string,
   ) => Promise<string | undefined> | string | undefined;
-}
+};
 
 const packageMetadataCache = new LRUCache<string, JsonObject | Error>({
   max: 10_000,

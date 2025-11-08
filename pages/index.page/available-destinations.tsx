@@ -39,10 +39,10 @@ const Info = styled.span`
   margin-right: 2.5em;
 `;
 
-interface KeywordInfo {
+type KeywordInfo = {
   keywords: string[];
   info: React.ReactNode;
-}
+};
 
 const AvailableDestinations: React.FunctionComponent<{
   selectedDestination: string | undefined;
