@@ -21,7 +21,6 @@ function Example({
   to,
   url,
 }: {
-  children?: never;
   onToClick?: (text: string) => void;
   remark: string;
   to: string;
