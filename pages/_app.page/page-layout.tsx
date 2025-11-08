@@ -1,4 +1,4 @@
-import * as React from "react";
+import type * as React from "react";
 import { createGlobalStyle, css, styled } from "styled-components";
 import normalize from "styled-normalize";
 

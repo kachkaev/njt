@@ -30,7 +30,6 @@ export default defineConfig([
       "@eslint-react/no-unused-props": "off",
       "@typescript-eslint/consistent-type-assertions": "off",
       "@typescript-eslint/consistent-type-definitions": "off",
-      "@typescript-eslint/consistent-type-imports": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/no-unsafe-argument": "off",
@@ -41,7 +40,6 @@ export default defineConfig([
       "react/function-component-definition": "off",
       "regexp/no-unused-capturing-group": "off",
       "testing-library/render-result-naming-convention": "off",
-      "unicorn/import-style": "off",
     },
   },
 ]);
