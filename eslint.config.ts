@@ -25,7 +25,6 @@ export default defineConfig([
   // TODO: Triage
   {
     rules: {
-      "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/prefer-nullish-coalescing": "off",
       "@typescript-eslint/prefer-regexp-exec": "off",
     },

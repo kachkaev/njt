@@ -78,6 +78,7 @@ const exampleUrlByPackageAndDestination: Record<
 
 function Page() {
   const [examplePackage, setExamplePackage] = React.useState(
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- exampleUrlByPackageAndDestination is static and non-empty
     () => Object.keys(exampleUrlByPackageAndDestination)[0]!,
   );
 

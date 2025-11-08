@@ -113,14 +113,12 @@ const destinationConfigs: DestinationConfig[] = [
         return;
       }
 
-      const gitHubMatch = repoUrl.match(
-        /^https:\/\/github\.com\/([^/]+)\/([^/]+).*/i,
-      );
+      const [, githubOwner, githubRepo] =
+        repoUrl.match(/^https:\/\/github\.com\/([^/]+)\/([^/]+).*/i) ?? [];
 
       // Covers GitHub repos
-      if (gitHubMatch) {
-        const [, owner, repo] = gitHubMatch;
-        const apiUrl = `https://api.github.com/repos/${owner!}/${repo!}/contents`;
+      if (githubOwner && githubRepo) {
+        const apiUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents`;
 
         let contents: JsonObject[] = [];
         try {
@@ -329,7 +327,9 @@ export async function resolveDestination(
   } catch {
     return {
       outcome: "success",
-      url: (await destinationConfigByKeyword[""]!.generateUrl(rawPackageName))!,
+      url:
+        (await destinationConfigByKeyword[""]?.generateUrl(rawPackageName)) ??
+        "",
     };
   }
 }
