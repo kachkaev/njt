@@ -80,7 +80,7 @@ async function getRepoUrl(
   // Some packages (e.g. babel and babel-cli) mistakenly specify repository URL with directory. It needs to be trimmed
   if (!skipDirectoryTrimming && result) {
     result = result.replace(
-      /^https:\/\/github\.com\/([^/]+)\/([^/]+)(.*)/i,
+      /^https:\/\/github\.com\/([^/]+)\/([^/]+).*/i,
       "https://github.com/$1/$2",
     );
   }
@@ -112,7 +112,7 @@ const destinationConfigs: DestinationConfig[] = [
       }
 
       const gitHubMatch = repoUrl.match(
-        /^https:\/\/github\.com\/([^/]+)\/([^/]+)(.*)/i,
+        /^https:\/\/github\.com\/([^/]+)\/([^/]+).*/i,
       );
 
       // Covers GitHub repos
@@ -304,6 +304,7 @@ export async function resolveDestination(
     .replace(/\/v\/[\w.-]+/, "") // https://www.npmjs.com/package/@types/react-dom/v/18.0.9
     .replace("https://yarnpkg.com/package/", "") // https://yarnpkg.com/package/@types/react-dom
     .replace(
+      // eslint-disable-next-line regexp/no-unused-capturing-group -- TODO: investigate
       /^https:\/\/unpkg.com\/browse\/(@?[\w.-]+(\/[\w.-]+)?)@([\w.-]+)\/$/, // https://unpkg.com/browse/@types/react-dom@18.0.9/
       "$1",
     );
