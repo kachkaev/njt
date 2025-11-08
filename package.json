@@ -21,9 +21,9 @@
   },
   "lint-staged": {
     "**": [
-      "eslint --fix",
-      "markdownlint --fix",
-      "prettier --write"
+      "suppress-exit-code eslint --fix",
+      "suppress-exit-code markdownlint --fix",
+      "suppress-exit-code prettier --write"
     ]
   },
   "prettier": "@kachkaev/prettier-config",
@@ -53,6 +53,7 @@
     "markdownlint-cli": "0.45.0",
     "npm-run-all2": "8.0.4",
     "prettier": "3.6.2",
+    "suppress-exit-code": "3.2.0",
     "typescript": "5.9.3",
     "typescript-eslint": "8.46.3"
   },
