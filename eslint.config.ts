@@ -35,7 +35,6 @@ export default defineConfig([
       "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/prefer-nullish-coalescing": "off",
       "@typescript-eslint/prefer-regexp-exec": "off",
-      "testing-library/render-result-naming-convention": "off",
     },
   },
 ]);
