@@ -75,35 +75,27 @@ function Page() {
   const [examplePackage, setExamplePackage] = React.useState(
     () => Object.keys(exampleUrlByPackageAndDestination)[0]!,
   );
-  const handleExamplePackageClick = React.useCallback<React.MouseEventHandler>(
-    (event) => {
-      setExamplePackage(event.currentTarget.textContent);
-    },
-    [setExamplePackage],
-  );
+
+  function handleExamplePackageClick(event: React.MouseEvent<HTMLDivElement>) {
+    setExamplePackage(event.currentTarget.textContent);
+  }
 
   const [inputText, setInputText] = React.useState("");
 
-  const handleExampleClick = React.useCallback(
-    (text: string): void => {
-      setInputText(" ");
-      setTimeout(() => {
-        setInputText(text);
-      }, 0);
-    },
-    [setInputText],
-  );
+  function handleExampleClick(text: string): void {
+    setInputText(" ");
+    setTimeout(() => {
+      setInputText(text);
+    }, 0);
+  }
 
-  const handleSelectedDestinationChange = React.useCallback(
-    (destination: string): void => {
-      setInputText((currentInputText) => {
-        const currentPackage = currentInputText.trim().split(" ", 1)[0];
+  function handleSelectedDestinationChange(destination: string): void {
+    setInputText((currentInputText) => {
+      const currentPackage = currentInputText.trim().split(" ", 1)[0];
 
-        return `${currentPackage || examplePackage} ${destination}`;
-      });
-    },
-    [setInputText, examplePackage],
-  );
+      return `${currentPackage || examplePackage} ${destination}`;
+    });
+  }
 
   return (
     <>

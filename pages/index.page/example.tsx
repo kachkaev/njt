@@ -15,7 +15,7 @@ const LinkRow = styled.span`
   text-overflow: ellipsis;
 `;
 
-function Example({
+export function Example({
   onToClick,
   remark,
   to,
@@ -42,6 +42,3 @@ function Example({
     </p>
   );
 }
-
-const WrappedExample = React.memo(Example);
-export { WrappedExample as Example };

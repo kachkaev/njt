@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
 
   productionBrowserSourceMaps: true,
 
+  reactCompiler: true,
   reactStrictMode: true,
 
   rewrites: () => [

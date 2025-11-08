@@ -114,6 +114,12 @@ export function InputForm({
   const previousToValue = React.useRef<string>(undefined);
   const toInputRef = React.useRef<HTMLInputElement>(null);
 
+  function handleInputChange({
+    currentTarget: { value },
+  }: React.ChangeEvent<HTMLInputElement>): void {
+    previousToValue.current = value;
+    onTextChange?.(value);
+  }
   const focusAndSelectAll = React.useCallback(() => {
     const input = toInputRef.current;
     if (input) {
@@ -121,16 +127,6 @@ export function InputForm({
       input.setSelectionRange(0, input.value.length);
     }
   }, [toInputRef]);
-
-  const handleInputChange = React.useCallback<
-    React.ChangeEventHandler<HTMLInputElement>
-  >(
-    ({ currentTarget: { value } }) => {
-      previousToValue.current = value;
-      onTextChange?.(value);
-    },
-    [onTextChange],
-  );
 
   React.useEffect(() => {
     if (previousToValue.current !== text) {
@@ -152,6 +148,7 @@ export function InputForm({
   React.useEffect(() => {
     setFrom("bookmark");
   }, []);
+
   function handleFormSubmit() {
     if (fromInputRef.current) {
       fromInputRef.current.value = "web";
