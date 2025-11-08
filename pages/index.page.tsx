@@ -35,6 +35,11 @@ const remarkByDestination = {
   y: "yarn",
 };
 
+// eslint-disable-next-line @typescript-eslint/consistent-type-assertions -- keys don't get correct typings automatically
+const remarkByDestinationEntries = Object.entries(remarkByDestination) as Array<
+  [DestinationKey, string]
+>;
+
 type DestinationKey = keyof typeof remarkByDestination;
 
 const exampleUrlByPackageAndDestination: Record<
@@ -122,9 +127,7 @@ function Page() {
           ),
         )}
       </ExamplePackages>
-      {(
-        Object.entries(remarkByDestination) as Array<[DestinationKey, string]>
-      ).map(([destination, remark]) => {
+      {remarkByDestinationEntries.map(([destination, remark]) => {
         const destinationLookup =
           exampleUrlByPackageAndDestination[examplePackage];
 

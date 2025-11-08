@@ -34,6 +34,7 @@ async function getPackageMetadata(packageName: string): Promise<JsonObject> {
     const response = await fetch(`https://registry.npmjs.com/${packageName}`);
     packageMetadataCache.set(
       packageName,
+      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions -- TODO: replace with zod
       (await response.json()) as JsonObject,
     );
   }
@@ -70,6 +71,7 @@ async function getRepoUrl(
 ): Promise<string | undefined> {
   // Reference implementation: https://github.com/npm/cli/blob/latest/lib/repo.js
   const packageMetadata = await getPackageMetadata(packageName);
+  // eslint-disable-next-line @typescript-eslint/consistent-type-assertions -- TODO: replace with zod
   const rawUrl = (packageMetadata["repository"] as JsonObject)["url"];
   if (typeof rawUrl !== "string") {
     return undefined;
@@ -123,6 +125,7 @@ const destinationConfigs: DestinationConfig[] = [
         let contents: JsonObject[] = [];
         try {
           const response = await fetch(apiUrl);
+          // eslint-disable-next-line @typescript-eslint/consistent-type-assertions -- TODO: replace with zod
           contents = (await response.json()) as JsonObject[];
         } catch {
           // noop
@@ -226,6 +229,7 @@ const destinationConfigs: DestinationConfig[] = [
         skipDirectoryTrimming: true,
       });
       const packageMetadata = await getPackageMetadata(packageName);
+      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions -- TODO: replace with zod
       const sourceDirectory = (packageMetadata["repository"] as JsonObject)[
         "directory"
       ];

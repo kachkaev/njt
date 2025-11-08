@@ -25,7 +25,6 @@ export default defineConfig([
   // TODO: Triage
   {
     rules: {
-      "@typescript-eslint/consistent-type-assertions": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/no-unsafe-argument": "off",
