@@ -20,10 +20,13 @@ const Message = styled.div`
   opacity: 0.3;
 `;
 
-export const ErrorPageBody: React.FunctionComponent<{
+export function ErrorPageBody({
+  statusCode,
+  message,
+}: {
   statusCode: number;
   message: string;
-}> = ({ statusCode, message }) => {
+}) {
   return (
     <Container>
       <StatusCode>{statusCode}</StatusCode>
@@ -32,4 +35,4 @@ export const ErrorPageBody: React.FunctionComponent<{
       <Link href="/">🐸 → home page</Link>
     </Container>
   );
-};
+}

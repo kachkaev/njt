@@ -102,10 +102,13 @@ const SubmitButton = styled.button`
   }
 `;
 
-export const InputForm: React.FunctionComponent<{
+export function InputForm({
+  text,
+  onTextChange,
+}: {
   text?: string;
   onTextChange?: (value: string) => void;
-}> = ({ text, onTextChange }) => {
+}) {
   const formRef = React.useRef<HTMLFormElement>(null);
 
   const previousToValue = React.useRef<string>(undefined);
@@ -149,13 +152,13 @@ export const InputForm: React.FunctionComponent<{
   React.useEffect(() => {
     setFrom("bookmark");
   }, []);
-  const handleFormSubmit = () => {
+  function handleFormSubmit() {
     if (fromInputRef.current) {
       fromInputRef.current.value = "web";
     }
 
     return true;
-  };
+  }
 
   return (
     <Form ref={formRef} action="/jump" onSubmitCapture={handleFormSubmit}>
@@ -173,4 +176,4 @@ export const InputForm: React.FunctionComponent<{
       <SubmitButton tabIndex={-1}>🐸 →</SubmitButton>
     </Form>
   );
-};
+}

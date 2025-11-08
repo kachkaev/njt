@@ -93,9 +93,7 @@ const ExternalLinks = styled.div`
   }
 `;
 
-export const PageLayout: React.FunctionComponent<{
-  children: React.ReactNode;
-}> = ({ children }) => {
+export function PageLayout({ children }: { children: React.ReactNode }) {
   return (
     <Container>
       <GlobalStyle />
@@ -114,4 +112,4 @@ export const PageLayout: React.FunctionComponent<{
       </TopSection>
     </Container>
   );
-};
+}

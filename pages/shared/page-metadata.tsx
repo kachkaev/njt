@@ -1,20 +1,20 @@
 import Head from "next/head";
 import type * as React from "react";
 
-const getBaseUrl = () => {
+function getBaseUrl() {
   const hostname = process.env["NEXT_PUBLIC_VERCEL_URL"] ?? "njt.vercel.app";
   const protocol = hostname.split(":")[0] === "localhost" ? "http" : "https";
 
   return `${protocol}://${hostname}`;
-};
+}
 
-export const PageMetadata: React.FunctionComponent<{
-  title?: string;
-  description?: string;
-}> = ({
+export function PageMetadata({
   title = "njt (npm jump to)",
   description = "a quick navigation tool for npm packages",
-}) => {
+}: {
+  title?: string;
+  description?: string;
+}) {
   const baseUrl = getBaseUrl();
 
   return (
@@ -31,4 +31,4 @@ export const PageMetadata: React.FunctionComponent<{
       <meta property="vk:image" content={`${baseUrl}/og-image.png`} />
     </Head>
   );
-};
+}

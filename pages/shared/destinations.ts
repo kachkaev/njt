@@ -29,7 +29,7 @@ const packageMetadataCache = new LRUCache<string, JsonObject | Error>({
   ttl: 1000 * 60,
 });
 
-const getPackageMetadata = async (packageName: string): Promise<JsonObject> => {
+async function getPackageMetadata(packageName: string): Promise<JsonObject> {
   if (!packageMetadataCache.has(packageName)) {
     const response = await fetch(`https://registry.npmjs.com/${packageName}`);
     packageMetadataCache.set(
@@ -45,10 +45,10 @@ const getPackageMetadata = async (packageName: string): Promise<JsonObject> => {
   }
 
   return result;
-};
+}
 
 // Inspired by https://github.com/npm/cli/blob/0a0fdff3edca1ea2f0a2d87a0568751f369fd0c4/lib/repo.js#L37-L50
-const handleUnknownHostedUrl = (url: string): string | undefined => {
+function handleUnknownHostedUrl(url: string): string | undefined {
   try {
     const idx = url.indexOf("@");
     const fixedUrl =
@@ -62,12 +62,12 @@ const handleUnknownHostedUrl = (url: string): string | undefined => {
   } catch {
     return undefined;
   }
-};
+}
 
-const getRepoUrl = async (
+async function getRepoUrl(
   packageName: string,
   { skipDirectoryTrimming }: { skipDirectoryTrimming?: boolean } = {},
-): Promise<string | undefined> => {
+): Promise<string | undefined> {
   // Reference implementation: https://github.com/npm/cli/blob/latest/lib/repo.js
   const packageMetadata = await getPackageMetadata(packageName);
   const rawUrl = (packageMetadata["repository"] as JsonObject)["url"];
@@ -86,10 +86,15 @@ const getRepoUrl = async (
   }
 
   return result;
-};
+}
 
-const isGitHub = (url: string) => url.includes("://github.com");
-const isGitLab = (url: string) => url.includes("://gitlab.com");
+function isGitHub(url: string) {
+  return url.includes("://github.com");
+}
+
+function isGitLab(url: string) {
+  return url.includes("://gitlab.com");
+}
 
 const destinationConfigs: DestinationConfig[] = [
   {
@@ -288,10 +293,10 @@ for (const destinationConfig of destinationConfigs) {
   }
 }
 
-export const resolveDestination = async (
+export async function resolveDestination(
   rawPackageName: string,
   rawDestination = "",
-): Promise<ResolvedDestination> => {
+): Promise<ResolvedDestination> {
   const packageName = rawPackageName
     .toLowerCase()
     .replace("https://www.npmjs.com/package/", "") // https://www.npmjs.com/package/@types/react-dom
@@ -322,4 +327,4 @@ export const resolveDestination = async (
       url: (await destinationConfigByKeyword[""]!.generateUrl(rawPackageName))!,
     };
   }
-};
+}

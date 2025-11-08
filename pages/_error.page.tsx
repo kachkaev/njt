@@ -4,6 +4,7 @@ import * as React from "react";
 import { ErrorPageBody } from "./shared/error-page-body";
 import { PageMetadata } from "./shared/page-metadata";
 
+// eslint-disable-next-line react/function-component-definition -- needed for getInitialProps
 const Page: NextPage<{ statusCode: number }> = ({ statusCode }) => {
   const message = "unknown error";
 

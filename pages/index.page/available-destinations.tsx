@@ -44,10 +44,13 @@ type KeywordInfo = {
   info: React.ReactNode;
 };
 
-const AvailableDestinations: React.FunctionComponent<{
+function AvailableDestinations({
+  selectedDestination,
+  onSelectedDestinationChange,
+}: {
   selectedDestination: string | undefined;
   onSelectedDestinationChange: (selectedDestination: string) => void;
-}> = ({ selectedDestination, onSelectedDestinationChange }) => {
+}) {
   const handleKeywordClick = React.useCallback<React.MouseEventHandler>(
     ({ currentTarget }) => {
       onSelectedDestinationChange(currentTarget.textContent);
@@ -183,7 +186,7 @@ const AvailableDestinations: React.FunctionComponent<{
       </p>
     </>
   );
-};
+}
 
 const WrappedAvailableDestinations = React.memo(AvailableDestinations);
 export { WrappedAvailableDestinations as AvailableDestinations };

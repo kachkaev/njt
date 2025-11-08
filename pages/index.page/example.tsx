@@ -15,16 +15,21 @@ const LinkRow = styled.span`
   text-overflow: ellipsis;
 `;
 
-const Example: React.FunctionComponent<{
+function Example({
+  onToClick,
+  remark,
+  to,
+  url,
+}: {
   children?: never;
   onToClick?: (text: string) => void;
   remark: string;
   to: string;
   url: string;
-}> = ({ onToClick, remark, to, url }) => {
-  const handleCodeClick = () => {
+}) {
+  function handleCodeClick() {
     onToClick?.(to);
-  };
+  }
 
   return (
     <p>
@@ -37,7 +42,7 @@ const Example: React.FunctionComponent<{
       </LinkRow>
     </p>
   );
-};
+}
 
 const WrappedExample = React.memo(Example);
 export { WrappedExample as Example };

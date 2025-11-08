@@ -71,7 +71,7 @@ const exampleUrlByPackageAndDestination: Record<
   },
 };
 
-const Page = () => {
+function Page() {
   const [examplePackage, setExamplePackage] = React.useState(
     () => Object.keys(exampleUrlByPackageAndDestination)[0]!,
   );
@@ -172,6 +172,6 @@ const Page = () => {
       </p>
     </>
   );
-};
+}
 
 export default Page;

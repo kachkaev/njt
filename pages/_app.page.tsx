@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { PageLayout } from "./_app.page/page-layout";
 
-const App: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
+export default function App({ Component, pageProps }: AppProps) {
   React.useEffect(() => {
     document.body.className = document.body.className.replace("no-js", "js");
   }, []);
@@ -15,6 +15,4 @@ const App: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
       <Component {...pageProps} />
     </PageLayout>
   );
-};
-
-export default App;
+}

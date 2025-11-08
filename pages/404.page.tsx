@@ -1,10 +1,7 @@
-import type { NextPage } from "next";
-import * as React from "react";
-
 import { ErrorPageBody } from "./shared/error-page-body";
 import { PageMetadata } from "./shared/page-metadata";
 
-const Page: NextPage = () => {
+export default function Page() {
   const message = "page not found";
 
   return (
@@ -13,6 +10,4 @@ const Page: NextPage = () => {
       <ErrorPageBody statusCode={404} message={message} />
     </>
   );
-};
-
-export default Page;
+}

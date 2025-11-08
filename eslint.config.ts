@@ -35,8 +35,6 @@ export default defineConfig([
       "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/prefer-nullish-coalescing": "off",
       "@typescript-eslint/prefer-regexp-exec": "off",
-      "func-style": "off",
-      "react/function-component-definition": "off",
       "regexp/no-unused-capturing-group": "off",
       "testing-library/render-result-naming-convention": "off",
     },
