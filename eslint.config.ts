@@ -21,11 +21,4 @@ export default defineConfig([
       "import/no-default-export": "off",
     },
   },
-
-  // TODO: Triage
-  {
-    rules: {
-      "@typescript-eslint/prefer-regexp-exec": "off",
-    },
-  },
 ]);

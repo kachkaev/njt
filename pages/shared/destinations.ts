@@ -114,7 +114,7 @@ const destinationConfigs: DestinationConfig[] = [
       }
 
       const [, githubOwner, githubRepo] =
-        repoUrl.match(/^https:\/\/github\.com\/([^/]+)\/([^/]+).*/i) ?? [];
+        /^https:\/\/github\.com\/([^/]+)\/([^/]+).*/i.exec(repoUrl) ?? [];
 
       // Covers GitHub repos
       if (githubOwner && githubRepo) {
