@@ -99,7 +99,7 @@ function Page() {
     setInputText((currentInputText) => {
       const currentPackage = currentInputText.trim().split(" ", 1)[0];
 
-      return `${currentPackage || examplePackage} ${destination}`;
+      return `${(currentPackage ?? "") || examplePackage} ${destination}`;
     });
   }
 

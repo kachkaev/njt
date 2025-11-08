@@ -16,7 +16,7 @@ const Page: NextPage<{ statusCode: number }> = ({ statusCode }) => {
 };
 
 Page.getInitialProps = ({ res, err }) => {
-  const statusCode = res ? res.statusCode : err?.statusCode || 500;
+  const statusCode = res ? res.statusCode : (err?.statusCode ?? 500);
 
   return { statusCode };
 };
