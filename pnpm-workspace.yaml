@@ -1,5 +1,11 @@
+ignoredBuiltDependencies:
+  - sharp ## Install script is only required when compiling sharp from source - https://sharp.pixelplumbing.com/install
+
+nodeLinker: isolated
+
 packages:
   - cli
 
-ignoredBuiltDependencies:
-  - sharp ## Install script is only required when compiling sharp from source - https://sharp.pixelplumbing.com/install
+overrides:
+  "@kachkaev/eslint-config-base": "kachkaev/routine-npm-packages#pull/51/head&path:/packages/eslint-config-base"
+

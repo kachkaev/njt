@@ -1,6 +1,6 @@
 {
   "recommendations": [
-    "arcanis.vscode-zipfs",
+    "DavidAnson.vscode-markdownlint",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode"
   ]
