@@ -6,11 +6,9 @@ import { ServerStyleSheet } from "styled-components";
 export default class MyDocument extends Document {
   static override async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
-    // eslint-disable-next-line testing-library/render-result-naming-convention -- FIXME: investigate
     const originalRenderPage = ctx.renderPage;
 
     try {
-      // eslint-disable-next-line no-param-reassign -- required by styled-components
       ctx.renderPage = () =>
         originalRenderPage({
           enhanceApp: (App) => (props) =>

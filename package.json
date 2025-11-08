@@ -6,13 +6,13 @@
     "build": "next build",
     "dev": "next dev",
     "fix": "npm-run-all --continue-on-error \"fix:*\"",
-    "fix:eslint": "next typegen && eslint --fix .",
+    "fix:eslint": "next typegen && eslint --fix --max-warnings=0",
     "fix:markdownlint": "markdownlint --dot --fix .",
     "fix:pnpm-dedupe": "pnpm dedupe",
     "fix:prettier": "prettier --write .",
     "postinstall": "husky",
     "lint": "npm-run-all --continue-on-error \"lint:*\"",
-    "lint:eslint": "next typegen && eslint .",
+    "lint:eslint": "next typegen && eslint --max-warnings=0",
     "lint:markdownlint": "markdownlint --dot .",
     "lint:pnpm-dedupe": "pnpm dedupe --check",
     "lint:prettier": "prettier --check .",
@@ -39,22 +39,22 @@
     "url": "0.11.4"
   },
   "devDependencies": {
-    "@kachkaev/eslint-config-react": "0.6.0",
+    "@kachkaev/eslint-config-next": "kachkaev/routine-npm-packages#pull/51/head&path:/packages/eslint-config-next",
     "@kachkaev/markdownlint-config": "0.5.0",
     "@kachkaev/prettier-config": "2.1.3",
-    "@next/eslint-plugin-next": "16.0.1",
     "@tsconfig/next": "2.0.3",
     "@tsconfig/strictest": "2.0.7",
     "@types/hosted-git-info": "3.0.5",
     "@types/node": "24.10.0",
     "@types/react": "19.2.2",
-    "eslint": "8.57.1",
+    "eslint": "9.39.1",
     "husky": "9.1.7",
     "lint-staged": "16.2.6",
     "markdownlint-cli": "0.45.0",
     "npm-run-all2": "8.0.4",
     "prettier": "3.6.2",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.46.3"
   },
   "packageManager": "pnpm@10.20.0"
 }

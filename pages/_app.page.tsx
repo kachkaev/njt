@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved -- https://github.com/import-js/eslint-plugin-import/issues/1810
 import { Analytics } from "@vercel/analytics/react";
 import type { AppProps } from "next/app";
 import * as React from "react";

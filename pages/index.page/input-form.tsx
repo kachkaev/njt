@@ -108,7 +108,6 @@ export const InputForm: React.FunctionComponent<{
 }> = ({ text, onTextChange }) => {
   const formRef = React.useRef<HTMLFormElement>(null);
 
-  // eslint-disable-next-line unicorn/no-useless-undefined -- false positive
   const previousToValue = React.useRef<string>(undefined);
   const toInputRef = React.useRef<HTMLInputElement>(null);
 
