@@ -1,5 +1,4 @@
 import Head from "next/head";
-import type * as React from "react";
 
 function getBaseUrl() {
   const hostname = process.env["NEXT_PUBLIC_VERCEL_URL"] ?? "njt.vercel.app";
