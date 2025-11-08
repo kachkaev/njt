@@ -26,7 +26,6 @@ export default defineConfig([
   {
     rules: {
       "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": "off",
-      "@eslint-react/no-array-index-key": "off",
       "@typescript-eslint/consistent-type-assertions": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "@typescript-eslint/no-non-null-assertion": "off",

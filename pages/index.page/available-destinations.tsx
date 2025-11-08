@@ -165,9 +165,9 @@ function AvailableDestinations({
   return (
     <>
       <Ul>
-        {keywordInfos.map(({ keywords, info }, index) => (
+        {keywordInfos.map(({ keywords, info }) => (
           <Item
-            key={index}
+            key={keywords.join(",")}
             highlighted={
               selectedDestination
                 ? keywords.includes(selectedDestination)
