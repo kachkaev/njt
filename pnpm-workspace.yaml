@@ -5,7 +5,3 @@ nodeLinker: isolated
 
 packages:
   - cli
-
-overrides:
-  "@kachkaev/eslint-config-base": "kachkaev/routine-npm-packages#pull/51/head&path:/packages/eslint-config-base"
-

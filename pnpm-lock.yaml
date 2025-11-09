@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@kachkaev/eslint-config-base': kachkaev/routine-npm-packages#pull/51/head&path:/packages/eslint-config-base
-
 importers:
 
   .:
@@ -40,14 +37,17 @@ importers:
         version: 0.11.4
     devDependencies:
       '@kachkaev/eslint-config-next':
-        specifier: kachkaev/routine-npm-packages#pull/51/head&path:/packages/eslint-config-next
-        version: https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/c4ba7516e9cbb0bf94403cf221765d40a7af97dc#path:/packages/eslint-config-next(@typescript-eslint/parser@8.46.3(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(tailwindcss@4.1.17)(typescript@5.9.3)
+        specifier: 1.0.1
+        version: 1.0.1(@typescript-eslint/parser@8.46.3(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(tailwindcss@4.1.17)(typescript@5.9.3)
       '@kachkaev/markdownlint-config':
-        specifier: 0.5.0
-        version: 0.5.0(markdownlint-cli@0.45.0)
+        specifier: 1.0.0
+        version: 1.0.0(markdownlint-cli@0.45.0)
       '@kachkaev/prettier-config':
         specifier: 2.1.4
         version: 2.1.4(prettier@3.6.2)
+      '@next/eslint-plugin-next':
+        specifier: 16.0.1
+        version: 16.0.1
       '@tsconfig/next':
         specifier: 2.0.3
         version: 2.0.3
@@ -439,20 +439,18 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@kachkaev/eslint-config-base@https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/c4ba7516e9cbb0bf94403cf221765d40a7af97dc#path:/packages/eslint-config-base':
-    resolution: {path: /packages/eslint-config-base, tarball: https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/c4ba7516e9cbb0bf94403cf221765d40a7af97dc}
-    version: 0.7.0-alpha.0
+  '@kachkaev/eslint-config-base@1.0.1':
+    resolution: {integrity: sha512-0IntSEZZgzAjbB+oSuP46/Fuam1blqca7wxBRpPJ/Gw3LqJjj/u+F5WU50q58H92Gg0fAOSl3pvwoROZemUSRA==}
     peerDependencies:
       eslint: '>=9.39.1'
 
-  '@kachkaev/eslint-config-next@https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/c4ba7516e9cbb0bf94403cf221765d40a7af97dc#path:/packages/eslint-config-next':
-    resolution: {path: /packages/eslint-config-next, tarball: https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/c4ba7516e9cbb0bf94403cf221765d40a7af97dc}
-    version: 0.0.0
+  '@kachkaev/eslint-config-next@1.0.1':
+    resolution: {integrity: sha512-VlBHnXeOs/sZbTDMnea05O0FlQEkGyAVGJKFv5fDilszxASlbeFmiL6AgppV4cIFAyLX5mx5SUrS8ciRZdzegw==}
     peerDependencies:
       eslint: '>=9.39.1'
 
-  '@kachkaev/markdownlint-config@0.5.0':
-    resolution: {integrity: sha512-b1wPLTSQ2OtjEp9loN8g3qeEsN94JhIX+36sqWlxBsSv3PgZDObht8bmMnZcPYR7x5RAQudrEklh46S7vMTTkg==}
+  '@kachkaev/markdownlint-config@1.0.0':
+    resolution: {integrity: sha512-ZyWIwL2NFmQ9NI3Nh6NRRDsHvkXoliimoL6JI4vWUx+SxasrUA8zWC7OzidMHHYD/hQjoX/NSjEqcyxZ5U7MKg==}
     peerDependencies:
       markdownlint-cli: '>=0.30.0'
 
@@ -2924,7 +2922,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@kachkaev/eslint-config-base@https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/c4ba7516e9cbb0bf94403cf221765d40a7af97dc#path:/packages/eslint-config-base(@typescript-eslint/parser@8.46.3(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)':
+  '@kachkaev/eslint-config-base@1.0.1(@typescript-eslint/parser@8.46.3(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)':
     dependencies:
       '@eslint-community/eslint-plugin-eslint-comments': 4.5.0(eslint@9.39.1(jiti@2.6.1))
       '@eslint/js': 9.39.1
@@ -2943,10 +2941,10 @@ snapshots:
       - supports-color
       - typescript
 
-  '@kachkaev/eslint-config-next@https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/c4ba7516e9cbb0bf94403cf221765d40a7af97dc#path:/packages/eslint-config-next(@typescript-eslint/parser@8.46.3(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(tailwindcss@4.1.17)(typescript@5.9.3)':
+  '@kachkaev/eslint-config-next@1.0.1(@typescript-eslint/parser@8.46.3(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(tailwindcss@4.1.17)(typescript@5.9.3)':
     dependencies:
       '@eslint-react/eslint-plugin': 2.3.1(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
-      '@kachkaev/eslint-config-base': https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/c4ba7516e9cbb0bf94403cf221765d40a7af97dc#path:/packages/eslint-config-base(@typescript-eslint/parser@8.46.3(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
+      '@kachkaev/eslint-config-base': 1.0.1(@typescript-eslint/parser@8.46.3(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
       '@next/eslint-plugin-next': 16.0.1
       eslint: 9.39.1(jiti@2.6.1)
       eslint-plugin-better-tailwindcss: 4.0.0-beta.3(eslint@9.39.1(jiti@2.6.1))(tailwindcss@4.1.17)(typescript@5.9.3)
@@ -2960,7 +2958,7 @@ snapshots:
       - tailwindcss
       - typescript
 
-  '@kachkaev/markdownlint-config@0.5.0(markdownlint-cli@0.45.0)':
+  '@kachkaev/markdownlint-config@1.0.0(markdownlint-cli@0.45.0)':
     dependencies:
       markdownlint-cli: 0.45.0
 

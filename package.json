@@ -39,9 +39,10 @@
     "url": "0.11.4"
   },
   "devDependencies": {
-    "@kachkaev/eslint-config-next": "kachkaev/routine-npm-packages#pull/51/head&path:/packages/eslint-config-next",
-    "@kachkaev/markdownlint-config": "0.5.0",
+    "@kachkaev/eslint-config-next": "1.0.1",
+    "@kachkaev/markdownlint-config": "1.0.0",
     "@kachkaev/prettier-config": "2.1.4",
+    "@next/eslint-plugin-next": "16.0.1",
     "@tsconfig/next": "2.0.3",
     "@tsconfig/strictest": "2.0.7",
     "@types/hosted-git-info": "3.0.5",
