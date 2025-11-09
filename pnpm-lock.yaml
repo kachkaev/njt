@@ -41,13 +41,13 @@ importers:
     devDependencies:
       '@kachkaev/eslint-config-next':
         specifier: kachkaev/routine-npm-packages#pull/51/head&path:/packages/eslint-config-next
-        version: https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/940ee699eb1fcb89f5cc09af70a6de5822e063fb#path:/packages/eslint-config-next(@typescript-eslint/parser@8.46.3(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(tailwindcss@4.1.17)(typescript@5.9.3)
+        version: https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/c4ba7516e9cbb0bf94403cf221765d40a7af97dc#path:/packages/eslint-config-next(@typescript-eslint/parser@8.46.3(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(tailwindcss@4.1.17)(typescript@5.9.3)
       '@kachkaev/markdownlint-config':
         specifier: 0.5.0
         version: 0.5.0(markdownlint-cli@0.45.0)
       '@kachkaev/prettier-config':
-        specifier: 2.1.3
-        version: 2.1.3(prettier@3.6.2)
+        specifier: 2.1.4
+        version: 2.1.4(prettier@3.6.2)
       '@tsconfig/next':
         specifier: 2.0.3
         version: 2.0.3
@@ -439,14 +439,14 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@kachkaev/eslint-config-base@https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/940ee699eb1fcb89f5cc09af70a6de5822e063fb#path:/packages/eslint-config-base':
-    resolution: {path: /packages/eslint-config-base, tarball: https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/940ee699eb1fcb89f5cc09af70a6de5822e063fb}
+  '@kachkaev/eslint-config-base@https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/c4ba7516e9cbb0bf94403cf221765d40a7af97dc#path:/packages/eslint-config-base':
+    resolution: {path: /packages/eslint-config-base, tarball: https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/c4ba7516e9cbb0bf94403cf221765d40a7af97dc}
     version: 0.7.0-alpha.0
     peerDependencies:
       eslint: '>=9.39.1'
 
-  '@kachkaev/eslint-config-next@https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/940ee699eb1fcb89f5cc09af70a6de5822e063fb#path:/packages/eslint-config-next':
-    resolution: {path: /packages/eslint-config-next, tarball: https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/940ee699eb1fcb89f5cc09af70a6de5822e063fb}
+  '@kachkaev/eslint-config-next@https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/c4ba7516e9cbb0bf94403cf221765d40a7af97dc#path:/packages/eslint-config-next':
+    resolution: {path: /packages/eslint-config-next, tarball: https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/c4ba7516e9cbb0bf94403cf221765d40a7af97dc}
     version: 0.0.0
     peerDependencies:
       eslint: '>=9.39.1'
@@ -456,8 +456,8 @@ packages:
     peerDependencies:
       markdownlint-cli: '>=0.30.0'
 
-  '@kachkaev/prettier-config@2.1.3':
-    resolution: {integrity: sha512-OTd2dvMJN6stroYPg3qh0XNDB+JlAGWlNmCSer7v+iVhvrPaWnDmdEt65lTyUPadT8dYnkYp/CQKEcBoaaOD3A==}
+  '@kachkaev/prettier-config@2.1.4':
+    resolution: {integrity: sha512-81n4icQ0RBlJ/xtf123OT5B0nKHhrq0P+tYJTs4QQJ8S3rezNUb0Hd6vvAX9/Hfd+72ABB5wLACK7iY0FcnGYw==}
     peerDependencies:
       prettier: ^3.0.0
 
@@ -2924,7 +2924,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@kachkaev/eslint-config-base@https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/940ee699eb1fcb89f5cc09af70a6de5822e063fb#path:/packages/eslint-config-base(@typescript-eslint/parser@8.46.3(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)':
+  '@kachkaev/eslint-config-base@https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/c4ba7516e9cbb0bf94403cf221765d40a7af97dc#path:/packages/eslint-config-base(@typescript-eslint/parser@8.46.3(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)':
     dependencies:
       '@eslint-community/eslint-plugin-eslint-comments': 4.5.0(eslint@9.39.1(jiti@2.6.1))
       '@eslint/js': 9.39.1
@@ -2943,10 +2943,10 @@ snapshots:
       - supports-color
       - typescript
 
-  '@kachkaev/eslint-config-next@https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/940ee699eb1fcb89f5cc09af70a6de5822e063fb#path:/packages/eslint-config-next(@typescript-eslint/parser@8.46.3(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(tailwindcss@4.1.17)(typescript@5.9.3)':
+  '@kachkaev/eslint-config-next@https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/c4ba7516e9cbb0bf94403cf221765d40a7af97dc#path:/packages/eslint-config-next(@typescript-eslint/parser@8.46.3(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(tailwindcss@4.1.17)(typescript@5.9.3)':
     dependencies:
       '@eslint-react/eslint-plugin': 2.3.1(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
-      '@kachkaev/eslint-config-base': https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/940ee699eb1fcb89f5cc09af70a6de5822e063fb#path:/packages/eslint-config-base(@typescript-eslint/parser@8.46.3(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
+      '@kachkaev/eslint-config-base': https://codeload.github.com/kachkaev/routine-npm-packages/tar.gz/c4ba7516e9cbb0bf94403cf221765d40a7af97dc#path:/packages/eslint-config-base(@typescript-eslint/parser@8.46.3(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
       '@next/eslint-plugin-next': 16.0.1
       eslint: 9.39.1(jiti@2.6.1)
       eslint-plugin-better-tailwindcss: 4.0.0-beta.3(eslint@9.39.1(jiti@2.6.1))(tailwindcss@4.1.17)(typescript@5.9.3)
@@ -2964,7 +2964,7 @@ snapshots:
     dependencies:
       markdownlint-cli: 0.45.0
 
-  '@kachkaev/prettier-config@2.1.3(prettier@3.6.2)':
+  '@kachkaev/prettier-config@2.1.4(prettier@3.6.2)':
     dependencies:
       prettier: 3.6.2
       prettier-plugin-packagejson: 2.5.19(prettier@3.6.2)
