@@ -44,7 +44,7 @@
     "@kachkaev/prettier-config": "2.1.4",
     "@next/eslint-plugin-next": "16.0.1",
     "@tsconfig/next": "2.0.4",
-    "@tsconfig/strictest": "2.0.7",
+    "@tsconfig/strictest": "2.0.8",
     "@types/hosted-git-info": "3.0.5",
     "@types/node": "24.10.0",
     "@types/react": "19.2.4",
