@@ -2,14 +2,52 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
+    ":dependencyDashboardApproval",
+    ":disableDigestUpdates",
     ":maintainLockFilesWeekly",
     ":semanticCommitsDisabled"
   ],
-  "postUpdateOptions": ["pnpmDedupe"],
   "packageRules": [
     {
+      "autoApprove": true,
+      "automerge": true,
+      "dependencyDashboardApproval": false,
+      "enabled": true,
+      "minimumReleaseAge": "2 days",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["/^pnpm$/"],
+      "schedule": ["every weekend"]
+    },
+    {
+      "autoApprove": true,
+      "automerge": true,
+      "dependencyDashboardApproval": false,
+      "enabled": true,
+      "matchUpdateTypes": ["patch"],
+      "matchCurrentValue": "!/^0\\./",
+      "matchManagers": ["npm"],
+      "minimumReleaseAge": "2 days",
+      "schedule": ["every weekend"]
+    },
+    {
+      "autoApprove": true,
+      "automerge": true,
+      "dependencyDashboardApproval": false,
+      "enabled": true,
       "matchDepTypes": ["devDependencies"],
-      "automerge": true
+      "matchManagers": ["npm"],
+      "minimumReleaseAge": "2 days",
+      "schedule": ["every weekend"]
+    },
+    {
+      "enabled": true,
+      "matchManagers": ["github-actions"],
+      "pinDigests": true
     }
-  ]
+  ],
+  "postUpdateOptions": ["pnpmDedupe"],
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 1,
+  "rangeStrategy": "pin",
+  "timezone": "Etc/UTC"
 }
