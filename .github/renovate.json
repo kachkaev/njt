@@ -5,7 +5,8 @@
     ":dependencyDashboardApproval",
     ":disableDigestUpdates",
     ":maintainLockFilesWeekly",
-    ":semanticCommitsDisabled"
+    ":semanticCommitsDisabled",
+    "helpers:pinGitHubActionDigestsToSemver"
   ],
   "packageRules": [
     {
@@ -38,11 +39,6 @@
       "matchManagers": ["npm"],
       "minimumReleaseAge": "2 days",
       "schedule": ["every weekend"]
-    },
-    {
-      "enabled": true,
-      "matchManagers": ["github-actions"],
-      "pinDigests": true
     }
   ],
   "postUpdateOptions": ["pnpmDedupe"],
