@@ -31,7 +31,7 @@
     "@vercel/analytics": "1.5.0",
     "hosted-git-info": "8.1.0",
     "lru-cache": "10.4.3",
-    "next": "16.0.5",
+    "next": "16.0.7",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "styled-components": "6.1.19",
