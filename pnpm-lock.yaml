@@ -46,8 +46,8 @@ importers:
         specifier: 2.1.4
         version: 2.1.4(prettier@3.7.2)
       '@next/eslint-plugin-next':
-        specifier: 16.0.5
-        version: 16.0.5
+        specifier: 16.0.7
+        version: 16.0.7
       '@tsconfig/next':
         specifier: 2.0.4
         version: 2.0.4
@@ -458,8 +458,8 @@ packages:
   '@next/env@16.0.7':
     resolution: {integrity: sha512-gpaNgUh5nftFKRkRQGnVi5dpcYSKGcZZkQffZ172OrG/XkrnS7UBTQ648YY+8ME92cC4IojpI2LqTC8sTDhAaw==}
 
-  '@next/eslint-plugin-next@16.0.5':
-    resolution: {integrity: sha512-m1zPz6hsBvQt1CMRz7rTga8OXpRE9rVW4JHCSjW+tswTxiEU+6ev+GTlgm7ZzcCiMEVQAHTNhpEGFzDtVha9qg==}
+  '@next/eslint-plugin-next@16.0.7':
+    resolution: {integrity: sha512-hFrTNZcMEG+k7qxVxZJq3F32Kms130FAhG8lvw2zkKBgAcNOJIxlljNiCjGygvBshvaGBdf88q2CqWtnqezDHA==}
 
   '@next/swc-darwin-arm64@16.0.7':
     resolution: {integrity: sha512-LlDtCYOEj/rfSnEn/Idi+j1QKHxY9BJFmxx7108A6D8K0SB+bNgfYQATPk/4LqOl4C0Wo3LACg2ie6s7xqMpJg==}
@@ -2862,7 +2862,7 @@ snapshots:
     dependencies:
       '@eslint-react/eslint-plugin': 2.3.1(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
       '@kachkaev/eslint-config-base': 1.0.1(@typescript-eslint/parser@8.48.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
-      '@next/eslint-plugin-next': 16.0.5
+      '@next/eslint-plugin-next': 16.0.7
       eslint: 9.39.1(jiti@2.6.1)
       eslint-plugin-better-tailwindcss: 4.0.0-beta.3(eslint@9.39.1(jiti@2.6.1))(tailwindcss@4.1.17)(typescript@5.9.3)
       eslint-plugin-react: 7.37.5(eslint@9.39.1(jiti@2.6.1))
@@ -2887,7 +2887,7 @@ snapshots:
 
   '@next/env@16.0.7': {}
 
-  '@next/eslint-plugin-next@16.0.5':
+  '@next/eslint-plugin-next@16.0.7':
     dependencies:
       fast-glob: 3.3.1
 
