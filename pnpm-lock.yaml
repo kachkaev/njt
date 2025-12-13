@@ -49,8 +49,8 @@ importers:
         specifier: 16.0.8
         version: 16.0.8
       '@tsconfig/next':
-        specifier: 2.0.4
-        version: 2.0.4
+        specifier: 2.0.5
+        version: 2.0.5
       '@tsconfig/strictest':
         specifier: 2.0.8
         version: 2.0.8
@@ -541,8 +541,8 @@ packages:
   '@swc/helpers@0.5.15':
     resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
 
-  '@tsconfig/next@2.0.4':
-    resolution: {integrity: sha512-2myr9SPuy7iSauxOtnqehvnCyidgW8WlZQZ2MSohMvT39AglIbHtZP32lSMBC1Xs1T7hpBO5crATB+5m5mPs5w==}
+  '@tsconfig/next@2.0.5':
+    resolution: {integrity: sha512-Cnzzme52Hk+YWQX/BKbjxAyBmLJXQaXjhVBBLkCpUQK8j+aGBk4csWAt5XpbU64NHG5XxT2d/Yr9M0e1fxRN5A==}
 
   '@tsconfig/strictest@2.0.8':
     resolution: {integrity: sha512-XnQ7vNz5HRN0r88GYf1J9JJjqtZPiHt2woGJOo2dYqyHGGcd6OLGqSlBB6p1j9mpzja6Oe5BoPqWmeDx6X9rLw==}
@@ -2947,7 +2947,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@tsconfig/next@2.0.4': {}
+  '@tsconfig/next@2.0.5': {}
 
   '@tsconfig/strictest@2.0.8': {}
 
