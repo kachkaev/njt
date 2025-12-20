@@ -49,7 +49,7 @@
     "@types/node": "24.10.1",
     "@types/react": "19.2.7",
     "babel-plugin-react-compiler": "1.0.0",
-    "eslint": "9.39.1",
+    "eslint": "9.39.2",
     "husky": "9.1.7",
     "lint-staged": "16.2.7",
     "markdownlint-cli": "0.47.0",
