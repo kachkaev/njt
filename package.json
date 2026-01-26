@@ -39,7 +39,7 @@
     "url": "0.11.4"
   },
   "devDependencies": {
-    "@kachkaev/eslint-config-next": "1.0.1",
+    "@kachkaev/eslint-config-next": "1.1.0",
     "@kachkaev/markdownlint-config": "1.0.0",
     "@kachkaev/prettier-config": "2.2.0",
     "@next/eslint-plugin-next": "16.1.5",
