@@ -111,13 +111,13 @@ export function InputForm({
 }) {
   const formRef = React.useRef<HTMLFormElement>(null);
 
-  const previousToValue = React.useRef<string>(undefined);
+  const previousToValueRef = React.useRef<string>(undefined);
   const toInputRef = React.useRef<HTMLInputElement>(null);
 
   function handleInputChange({
     currentTarget: { value },
   }: React.ChangeEvent<HTMLInputElement>): void {
-    previousToValue.current = value;
+    previousToValueRef.current = value;
     onTextChange?.(value);
   }
   const focusAndSelectAll = React.useCallback(() => {
@@ -129,18 +129,18 @@ export function InputForm({
   }, [toInputRef]);
 
   React.useEffect(() => {
-    if (previousToValue.current !== text) {
+    if (previousToValueRef.current !== text) {
       focusAndSelectAll();
     }
-    if (typeof previousToValue.current === "string" && formRef.current) {
+    if (typeof previousToValueRef.current === "string" && formRef.current) {
       formRef.current.scrollIntoView({
         block: "nearest",
         inline: "nearest",
         behavior: "smooth",
       });
     }
-    previousToValue.current = text;
-  }, [focusAndSelectAll, text, previousToValue, formRef]);
+    previousToValueRef.current = text;
+  }, [focusAndSelectAll, text, previousToValueRef, formRef]);
 
   const [from, setFrom] = React.useState("noscript");
   const fromInputRef = React.useRef<HTMLInputElement>(null);
