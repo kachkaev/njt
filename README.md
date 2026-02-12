@@ -31,8 +31,8 @@ njt <package> [destination]
 - `t` → list of git tags
 - `u` → package contents preview on [unpkg.com](https://unpkg.com)
 - `v` → list of package versions with dates on [npmjs.com](https://www.npmjs.com)
-- `x` → package page on [npmx.dev](https://npmx.dev) (mirror registry for [npmjs.com](https://www.npmjs.com))
-- `y` → package page on [yarnpkg.com](https://yarnpkg.com) (mirror registry for [npmjs.com](https://www.npmjs.com))
+- `x` → package page on [npmx.dev](https://npmx.dev)
+- `y` → package page on [yarnpkg.com](https://yarnpkg.com)
 - `.` → browse GitHub / GitLab code
 
 Omitting the destination or entering an non-existing one takes you to the package page on [npmjs.com](https://www.npmjs.com) as if you used `n`.

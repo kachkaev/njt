@@ -38,8 +38,8 @@ ${green('s')} → source (often same as repository root, but can be its subdirec
 ${green('t')} → list of git tags
 ${green('u')} → package contents preview on https://unpkg.com
 ${green('v')} → list of package versions with dates on https://www.npmjs.com
-${green('x')} → package page on https://npmx.dev (mirror registry for https://www.npmjs.com)
-${green('y')} → package page on https://yarnpkg.com (mirror registry for https://www.npmjs.com)
+${green('x')} → package page on https://npmx.dev
+${green('y')} → package page on https://yarnpkg.com
 ${green('.')} → browse GitHub / GitLab code
 
 Omitting the destination or entering an non-existing one takes you to the package page on https://www.npmjs.com as if you used ${green('n')}.
