@@ -32,6 +32,7 @@ const remarkByDestination = {
   h: "homepage",
   s: "source",
   r: "releases",
+  x: "npmx",
   y: "yarn",
 };
 
@@ -51,6 +52,7 @@ const exampleUrlByPackageAndDestination: Record<
     h: "https://prettier.io",
     s: "https://github.com/prettier/prettier",
     r: "https://github.com/prettier/prettier/releases",
+    x: "https://npmx.dev/package/prettier",
     y: "https://yarnpkg.com/package/prettier",
   },
   react: {
@@ -58,6 +60,7 @@ const exampleUrlByPackageAndDestination: Record<
     h: "https://reactjs.org",
     s: "https://github.com/facebook/react/tree/main/packages/react",
     r: "https://github.com/facebook/react/releases",
+    x: "https://npmx.dev/package/react",
     y: "https://yarnpkg.com/package/react",
   },
   lodash: {
@@ -65,6 +68,7 @@ const exampleUrlByPackageAndDestination: Record<
     h: "https://lodash.com",
     s: "https://github.com/lodash/lodash",
     r: "https://github.com/lodash/lodash/releases",
+    x: "https://npmx.dev/package/lodash",
     y: "https://yarnpkg.com/package/lodash",
   },
   typescript: {
@@ -72,6 +76,7 @@ const exampleUrlByPackageAndDestination: Record<
     h: "https://www.typescriptlang.org",
     s: "https://github.com/Microsoft/TypeScript",
     r: "https://github.com/Microsoft/TypeScript/releases",
+    x: "https://npmx.dev/package/typescript",
     y: "https://yarnpkg.com/package/typescript",
   },
 };
