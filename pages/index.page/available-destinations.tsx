@@ -146,8 +146,7 @@ export function AvailableDestinations({
       keywords: ["x"],
       info: (
         <>
-          package page on <ExternalLink href="https://npmx.dev" /> (mirror
-          registry for <ExternalLink href="https://www.npmjs.com" />)
+          package page on <ExternalLink href="https://npmx.dev" />
         </>
       ),
     },
@@ -155,8 +154,7 @@ export function AvailableDestinations({
       keywords: ["y"],
       info: (
         <>
-          package page on <ExternalLink href="https://yarnpkg.com" /> (mirror
-          registry for <ExternalLink href="https://www.npmjs.com" />)
+          package page on <ExternalLink href="https://yarnpkg.com" />
         </>
       ),
     },
