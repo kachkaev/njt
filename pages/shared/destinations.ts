@@ -310,7 +310,7 @@ export async function resolveDestination(
     .replace(/\?activeTab=\w+$/, "") // https://www.npmjs.com/package/@types/react-dom?activeTab=versions
     .replace(/\/v\/[\w.-]+/, "") // https://www.npmjs.com/package/@types/react-dom/v/18.0.9
     .replace("https://yarnpkg.com/package/", "") // https://yarnpkg.com/package/@types/react-dom
-    .replace("https://npmx.dev/package/", "") // https://npmx.dev/package/react or /package/@radix-ui/react-slot
+    .replace("https://npmx.dev/package/", "") // https://npmx.dev/package/react or /package/@types/react-dom
     .replace(
       // eslint-disable-next-line regexp/no-unused-capturing-group -- TODO: investigate
       /^https:\/\/unpkg.com\/browse\/(@?[\w.-]+(\/[\w.-]+)?)@([\w.-]+)\/$/, // https://unpkg.com/browse/@types/react-dom@18.0.9/
