@@ -14,7 +14,7 @@ const log = console.log;
 program
   .version(getPackageVersion())
   .name("njt")
-  .arguments("<package> [destination]")
+  .arguments("[package] [destination]")
   .usage("<package> [destination]")
   .description(
     // prettier-ignore
@@ -70,7 +70,7 @@ When you specify . instead of a package name, njt takes the name from the neares
   )
   .parse(process.argv);
 
-if (program.rawArgs.length < 3) {
+if (!program.args[0]) {
   log(program.help());
   process.exit(1);
 }
