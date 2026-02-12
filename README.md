@@ -31,6 +31,7 @@ njt <package> [destination]
 - `t` → list of git tags
 - `u` → package contents preview on [unpkg.com](https://unpkg.com)
 - `v` → list of package versions with dates on [npmjs.com](https://www.npmjs.com)
+- `x` → package page on [npmx.dev](https://npmx.dev)
 - `y` → package page on [yarnpkg.com](https://yarnpkg.com) (mirror registry for [npmjs.com](https://www.npmjs.com))
 - `.` → browse GitHub / GitLab code
 
@@ -52,6 +53,9 @@ Omitting the destination or entering an non-existing one takes you to the packag
 
 `njt prettier y` (yarn)  
 🐸 → <https://yarnpkg.com/package/prettier>
+
+`njt prettier x` (npmx)  
+🐸 → <https://npmx.dev/package/prettier>
 
 ## Getting `njt`
 

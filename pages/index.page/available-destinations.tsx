@@ -143,6 +143,14 @@ export function AvailableDestinations({
       ),
     },
     {
+      keywords: ["x"],
+      info: (
+        <>
+          package page on <ExternalLink href="https://npmx.dev" />
+        </>
+      ),
+    },
+    {
       keywords: ["y"],
       info: (
         <>
