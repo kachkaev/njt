@@ -14,6 +14,7 @@ const log = console.log;
 program
   .version(getPackageVersion())
   .name("njt")
+  .arguments("<package> [destination]")
   .usage("<package> [destination]")
   .description(
     // prettier-ignore
