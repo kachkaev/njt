@@ -38,7 +38,12 @@
     margin: 0.67em 0;
   }
 
-  h2,
+  h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0.83em 0;
+  }
+
   h3,
   h4,
   h5,
@@ -457,7 +462,7 @@
   padding: 0 20px 50px;
   position: relative;
   max-width: 35em;
-  min-width: 260px;
+  min-width: 270px;
 }
 
 .page-top-section {
