@@ -140,7 +140,7 @@ function Page() {
         <code>njt</code> gives you an even bigger productivity boost when
         integrated into browser or&nbsp;terminal. See instructions in{" "}
         <ExternalLink href="https://github.com/kachkaev/njt/blob/main/README.md#getting-njt">
-          GitHub&nbsp;repo's&nbsp;README
+          GitHub&nbsp;repo&apos;s&nbsp;README
         </ExternalLink>
         .
       </p>

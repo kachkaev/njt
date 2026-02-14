@@ -77,7 +77,7 @@ export function InputForm({
         onFocus={focusAndSelectAll}
         onChange={handleInputChange}
       />
-      <button className="input-form-submit" tabIndex={-1}>
+      <button type="submit" className="input-form-submit" tabIndex={-1}>
         🐸 →
       </button>
     </form>
