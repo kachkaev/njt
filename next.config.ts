@@ -1,8 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  compiler: { styledComponents: true },
-
   pageExtensions: ["page.tsx", "handler.ts"],
 
   productionBrowserSourceMaps: true,

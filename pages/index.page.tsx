@@ -1,31 +1,10 @@
 import * as React from "react";
-import { styled } from "styled-components";
 
 import { AvailableDestinations } from "./index.page/available-destinations";
 import { Example } from "./index.page/example";
 import { InputForm } from "./index.page/input-form";
 import { ExternalLink } from "./shared/external-link";
 import { PageMetadata } from "./shared/page-metadata";
-
-const H2 = styled.h2`
-  margin-top: 3em;
-  font-size: 1em;
-`;
-
-const ExamplePackages = styled.div``;
-
-const ExamplePackage = styled.div<{ clickable: boolean }>`
-  display: inline-block;
-  margin-right: 0.5em;
-  cursor: default;
-  ${(props) =>
-    props.clickable
-      ? `
-    border-bottom: 1px dotted #24292e66;
-    cursor: pointer;
-  `
-      : ""};
-`;
 
 const remarkByDestination = {
   "": "no specified destination",
@@ -113,26 +92,30 @@ function Page() {
       <PageMetadata />
       <InputForm text={inputText} onTextChange={setInputText} />
 
-      <H2>Available destinations</H2>
+      <h2 className="mt-[3em] text-[1em]">Available destinations</h2>
       <AvailableDestinations
         selectedDestination={inputText.trim().split(" ", 2)[1]}
         onSelectedDestinationChange={handleSelectedDestinationChange}
       />
 
-      <H2>Examples</H2>
-      <ExamplePackages>
+      <h2 className="mt-[3em] text-[1em]">Examples</h2>
+      <div>
         {Object.keys(exampleUrlByPackageAndDestination).map(
           (currentExamplePackage) => (
-            <ExamplePackage
+            <div
               key={currentExamplePackage}
-              clickable={currentExamplePackage !== examplePackage}
+              className={`example-package${
+                currentExamplePackage === examplePackage
+                  ? ""
+                  : " example-package-clickable"
+              }`}
               onClick={handleExamplePackageClick}
             >
               {currentExamplePackage}
-            </ExamplePackage>
+            </div>
           ),
         )}
-      </ExamplePackages>
+      </div>
       {remarkByDestinationEntries.map(([destination, remark]) => {
         const destinationLookup =
           exampleUrlByPackageAndDestination[examplePackage];
@@ -152,12 +135,12 @@ function Page() {
         );
       })}
 
-      <H2>More!</H2>
+      <h2 className="mt-[3em] text-[1em]">More!</h2>
       <p>
         <code>njt</code> gives you an even bigger productivity boost when
         integrated into browser or&nbsp;terminal. See instructions in{" "}
         <ExternalLink href="https://github.com/kachkaev/njt/blob/main/README.md#getting-njt">
-          GitHub&nbsp;repo’s&nbsp;README
+          GitHub&nbsp;repo&apos;s&nbsp;README
         </ExternalLink>
         .
       </p>

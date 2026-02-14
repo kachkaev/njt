@@ -1,18 +1,5 @@
-import { styled } from "styled-components";
-
 import { ExternalLink } from "../shared/external-link";
 import { ClickableCode } from "./clickable-code";
-
-const Remark = styled.span`
-  white-space: nowrap;
-`;
-
-const LinkRow = styled.span`
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-`;
 
 export function Example({
   onToClick,
@@ -33,11 +20,11 @@ export function Example({
     <p>
       <span>
         <ClickableCode onClick={handleCodeClick}>njt {to}</ClickableCode>{" "}
-        <Remark>({remark})</Remark>
+        <span className="example-remark">({remark})</span>
       </span>
-      <LinkRow>
+      <span className="example-link-row">
         🐸 → <ExternalLink href={url} />
-      </LinkRow>
+      </span>
     </p>
   );
 }

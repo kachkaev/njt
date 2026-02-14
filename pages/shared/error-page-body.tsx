@@ -1,23 +1,4 @@
 import Link from "next/link";
-import { styled } from "styled-components";
-
-const Container = styled.div`
-  text-align: center;
-  padding-top: 1.5em;
-`;
-const StatusCode = styled.h2`
-  font-size: 8em;
-  margin: 0;
-  font-weight: normal;
-  line-height: 1em;
-  opacity: 0.2;
-`;
-
-const Message = styled.div`
-  font-size: 2em;
-  margin-bottom: 1.5em;
-  opacity: 0.3;
-`;
 
 export function ErrorPageBody({
   statusCode,
@@ -27,11 +8,11 @@ export function ErrorPageBody({
   message: string;
 }) {
   return (
-    <Container>
-      <StatusCode>{statusCode}</StatusCode>
-      <Message>{message}</Message>
+    <div className="pt-6 text-center">
+      <h2 className="error-status-code">{statusCode}</h2>
+      <div className="error-message">{message}</div>
 
       <Link href="/">🐸 → home page</Link>
-    </Container>
+    </div>
   );
 }

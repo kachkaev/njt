@@ -1,43 +1,7 @@
 import type * as React from "react";
-import { styled } from "styled-components";
 
 import { ExternalLink } from "../shared/external-link";
 import { ClickableCode } from "./clickable-code";
-
-const Ul = styled.ul`
-  padding-left: 0;
-  overflow: hidden;
-`;
-
-const Item = styled.li<{ highlighted?: boolean }>`
-  list-style: none;
-  /* transition: color 0.2s ease-in-out; */
-  white-space: nowrap;
-
-  ${(props) => (props.highlighted ? "color: #42a73f" : "")};
-`;
-
-const Keyword = styled(ClickableCode)<{
-  onClick: React.MouseEventHandler;
-  children: string;
-}>`
-  display: inline-block;
-`;
-
-const Arrow = styled.span`
-  display: inline-block;
-  :after {
-    display: inline-block;
-    content: "→";
-  }
-`;
-
-const Info = styled.span`
-  display: inline-block;
-  white-space: normal;
-  vertical-align: top;
-  margin-right: 2.5em;
-`;
 
 type KeywordInfo = {
   keywords: string[];
@@ -53,7 +17,7 @@ export function AvailableDestinations({
 }) {
   function handleKeywordClick({
     currentTarget,
-  }: React.MouseEvent<HTMLDivElement>): void {
+  }: React.MouseEvent<HTMLElement>): void {
     onSelectedDestinationChange(currentTarget.textContent);
   }
 
@@ -80,8 +44,14 @@ export function AvailableDestinations({
       keywords: ["h", "w", "d"],
       info: (
         <>
-          homepage (aliased as <Keyword onClick={handleKeywordClick}>w</Keyword>{" "}
-          for&nbsp;website or <Keyword onClick={handleKeywordClick}>d</Keyword>{" "}
+          homepage (aliased as{" "}
+          <ClickableCode className="inline-block" onClick={handleKeywordClick}>
+            w
+          </ClickableCode>{" "}
+          for&nbsp;website or{" "}
+          <ClickableCode className="inline-block" onClick={handleKeywordClick}>
+            d
+          </ClickableCode>{" "}
           for&nbsp;docs)
         </>
       ),
@@ -103,8 +73,10 @@ export function AvailableDestinations({
       info: (
         <>
           pull requests (aliased as{" "}
-          <Keyword onClick={handleKeywordClick}>m</Keyword> for&nbsp;merge
-          requests)
+          <ClickableCode className="inline-block" onClick={handleKeywordClick}>
+            m
+          </ClickableCode>{" "}
+          for&nbsp;merge requests)
         </>
       ),
     },
@@ -166,25 +138,35 @@ export function AvailableDestinations({
 
   return (
     <>
-      <Ul>
+      <ul className="destinations-list">
         {keywordInfos.map(({ keywords, info }) => (
-          <Item
+          <li
             key={keywords.join(",")}
-            highlighted={
-              selectedDestination
-                ? keywords.includes(selectedDestination)
-                : false
-            }
+            className={`destination-item${
+              selectedDestination && keywords.includes(selectedDestination)
+                ? " destination-item-highlighted"
+                : ""
+            }`}
           >
-            <Keyword onClick={handleKeywordClick}>{keywords[0] ?? ""}</Keyword>{" "}
-            <Arrow /> <Info>{info}</Info>
-          </Item>
+            <ClickableCode
+              className="inline-block"
+              onClick={handleKeywordClick}
+            >
+              {keywords[0] ?? ""}
+            </ClickableCode>{" "}
+            <span className="destination-arrow" />{" "}
+            <span className="destination-info">{info}</span>
+          </li>
         ))}
-      </Ul>
+      </ul>
       <p>
         Omitting the destination or entering an non-existing one takes you to
         the package page on <ExternalLink href="https://www.npmjs.com" /> as if
-        you used&nbsp;<Keyword onClick={handleKeywordClick}>n</Keyword>.
+        you used&nbsp;
+        <ClickableCode className="inline-block" onClick={handleKeywordClick}>
+          n
+        </ClickableCode>
+        .
       </p>
     </>
   );
