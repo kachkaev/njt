@@ -34,7 +34,20 @@
 
   h1 {
     font-size: 2em;
+    font-weight: bold;
     margin: 0.67em 0;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+
+  p {
+    margin: 1em 0;
   }
 
   hr {
@@ -444,7 +457,7 @@
   padding: 0 20px 50px;
   position: relative;
   max-width: 35em;
-  min-width: 270px;
+  min-width: 260px;
 }
 
 .page-top-section {
