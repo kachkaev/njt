@@ -138,13 +138,13 @@ export function AvailableDestinations({
 
   return (
     <>
-      <ul className="destinations-list">
+      <ul className="overflow-hidden pl-0">
         {keywordInfos.map(({ keywords, info }) => (
           <li
             key={keywords.join(",")}
-            className={`destination-item${
+            className={`list-none whitespace-nowrap${
               selectedDestination && keywords.includes(selectedDestination)
-                ? " destination-item-highlighted"
+                ? " text-primary"
                 : ""
             }`}
           >
@@ -154,8 +154,10 @@ export function AvailableDestinations({
             >
               {keywords[0] ?? ""}
             </ClickableCode>{" "}
-            <span className="destination-arrow" />{" "}
-            <span className="destination-info">{info}</span>
+            <span className="inline-block after:content-['→']" />{" "}
+            <span className="mr-10 inline-block whitespace-normal align-top">
+              {info}
+            </span>
           </li>
         ))}
       </ul>

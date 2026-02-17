@@ -9,6 +9,7 @@ export default defineConfig([
     files: ["cli/**/*.js"],
     extends: [typescriptEslint.configs.disableTypeChecked],
     rules: {
+      "@eslint-react/no-implicit-key": "off",
       "@eslint-react/no-unused-props": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
     },

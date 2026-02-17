@@ -104,10 +104,10 @@ function Page() {
           (currentExamplePackage) => (
             <div
               key={currentExamplePackage}
-              className={`example-package${
+              className={`mr-2 inline-block${
                 currentExamplePackage === examplePackage
-                  ? ""
-                  : " example-package-clickable"
+                  ? " cursor-default"
+                  : " cursor-pointer border-b border-dotted border-example-border"
               }`}
               onClick={handleExamplePackageClick}
             >

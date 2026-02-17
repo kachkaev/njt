@@ -59,17 +59,20 @@ export function InputForm({
   return (
     <form
       ref={formRef}
-      className="input-form"
+      className="input-form relative block w-full max-w-full whitespace-nowrap pt-5 leading-[1em]"
       action="/jump"
       onSubmitCapture={handleFormSubmit}
     >
       <input ref={fromInputRef} type="hidden" name="from" value={from} />
-      <label className="input-form-label" htmlFor="to">
+      <label
+        className="pointer-events-none absolute top-[21px] left-0 inline-block p-[0.3em_0_0_0.7em] font-mono"
+        htmlFor="to"
+      >
         njt
       </label>
       <input
         ref={toInputRef}
-        className="input-form-input"
+        className="m-0 box-border inline-block w-full max-w-full appearance-none rounded-[5px] border border-solid border-input-border bg-input-bg p-[0.3em_4em_0.3em_3em] font-mono leading-inherit text-inherit placeholder:text-muted focus:border-primary focus:shadow-[0_0_10px_var(--color-primary-glow)] focus:outline-none!"
         id="to"
         name="to"
         placeholder="<package> [destination]"
@@ -77,7 +80,11 @@ export function InputForm({
         onFocus={focusAndSelectAll}
         onChange={handleInputChange}
       />
-      <button type="submit" className="input-form-submit" tabIndex={-1}>
+      <button
+        type="submit"
+        className="absolute top-[21px] right-0 cursor-pointer border-none bg-transparent p-[0.25em_0.4em_0.3em_0] leading-inherit text-inherit active:top-[22px] focus:outline-none!"
+        tabIndex={-1}
+      >
         🐸 →
       </button>
     </form>

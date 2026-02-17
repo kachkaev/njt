@@ -20,9 +20,9 @@ export function Example({
     <p>
       <span>
         <ClickableCode onClick={handleCodeClick}>njt {to}</ClickableCode>{" "}
-        <span className="example-remark">({remark})</span>
+        <span className="whitespace-nowrap">({remark})</span>
       </span>
-      <span className="example-link-row">
+      <span className="block overflow-hidden text-ellipsis whitespace-nowrap">
         🐸 → <ExternalLink href={url} />
       </span>
     </p>
