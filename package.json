@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@kachkaev/eslint-config-next": "1.1.1",
-    "@kachkaev/markdownlint-config": "1.0.0",
+    "@kachkaev/markdownlint-config": "1.0.1",
     "@kachkaev/prettier-config": "2.2.0",
     "@next/eslint-plugin-next": "16.1.6",
     "@tsconfig/next": "2.0.5",
