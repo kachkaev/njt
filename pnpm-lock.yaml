@@ -37,8 +37,8 @@ importers:
         version: 0.11.4
     devDependencies:
       '@kachkaev/eslint-config-next':
-        specifier: 1.1.0
-        version: 1.1.0(@typescript-eslint/parser@8.55.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(tailwindcss@4.1.18)(typescript@5.9.3)
+        specifier: 1.1.1
+        version: 1.1.1(@typescript-eslint/parser@8.55.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(tailwindcss@4.1.18)(typescript@5.9.3)
       '@kachkaev/markdownlint-config':
         specifier: 1.0.0
         version: 1.0.0(markdownlint-cli@0.47.0)
@@ -474,13 +474,13 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@kachkaev/eslint-config-base@1.1.0':
-    resolution: {integrity: sha512-APPbrDtwvRA2ofHu87QX23AybHCAPfS7WcsCBn1EMNQsEWzEhl3pN1Z3tJue2XzIVm72F9ItKUx9xJ5Cfq5Vdw==}
+  '@kachkaev/eslint-config-base@1.1.1':
+    resolution: {integrity: sha512-HLr5vN5uMe31TDAR/PFnxVegM6OOM8m4rCbTc3fyaAT3rjVSlspwNHL93+u+EdZt74CewpZp/RjjsNvpf/DUoA==}
     peerDependencies:
       eslint: '>=9.39.1'
 
-  '@kachkaev/eslint-config-next@1.1.0':
-    resolution: {integrity: sha512-hGFrzhqSij02XUL5Ew7ykxSRkvp6cujPj94XtmE2ZXxxyFxjzHIDjqTCdO2w96nucAMWReipiO0wiuABmfTFEw==}
+  '@kachkaev/eslint-config-next@1.1.1':
+    resolution: {integrity: sha512-U1P6wKR53C4dlKfkyuDBTSUncf9KiFVZUGIgRL6nVsvlHWegP99Gk/nkJRnQeE1lur+5N+97MQlbY2GcfEYU2Q==}
     peerDependencies:
       eslint: '>=9.39.1'
 
@@ -2907,7 +2907,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@kachkaev/eslint-config-base@1.1.0(@typescript-eslint/parser@8.55.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)':
+  '@kachkaev/eslint-config-base@1.1.1(@typescript-eslint/parser@8.55.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)':
     dependencies:
       '@eslint-community/eslint-plugin-eslint-comments': 4.6.0(eslint@9.39.2(jiti@2.6.1))
       '@eslint/js': 9.39.2
@@ -2926,10 +2926,10 @@ snapshots:
       - supports-color
       - typescript
 
-  '@kachkaev/eslint-config-next@1.1.0(@typescript-eslint/parser@8.55.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(tailwindcss@4.1.18)(typescript@5.9.3)':
+  '@kachkaev/eslint-config-next@1.1.1(@typescript-eslint/parser@8.55.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(tailwindcss@4.1.18)(typescript@5.9.3)':
     dependencies:
       '@eslint-react/eslint-plugin': 2.12.4(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
-      '@kachkaev/eslint-config-base': 1.1.0(@typescript-eslint/parser@8.55.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
+      '@kachkaev/eslint-config-base': 1.1.1(@typescript-eslint/parser@8.55.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       '@next/eslint-plugin-next': 16.1.6
       eslint: 9.39.2(jiti@2.6.1)
       eslint-plugin-better-tailwindcss: 4.2.0(eslint@9.39.2(jiti@2.6.1))(tailwindcss@4.1.18)(typescript@5.9.3)
