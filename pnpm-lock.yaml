@@ -27,11 +27,11 @@ importers:
         specifier: 19.2.4
         version: 19.2.4(react@19.2.4)
       styled-components:
-        specifier: 6.3.10
-        version: 6.3.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 6.3.11
+        version: 6.3.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       styled-normalize:
         specifier: 8.1.1
-        version: 8.1.1(styled-components@6.3.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
+        version: 8.1.1(styled-components@6.3.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
       url:
         specifier: 0.11.4
         version: 0.11.4
@@ -2315,8 +2315,8 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  styled-components@6.3.10:
-    resolution: {integrity: sha512-vX2InL9LGFjpsWEBDbRQdhjl7PxZXzLqKeCxgGFl0x7tC6CYrcWdYgD0GUCU/m2MhhymJDbBTpdF0gwwG98phg==}
+  styled-components@6.3.11:
+    resolution: {integrity: sha512-opzgceGlQ5rdZdGwf9ddLW7EM2F4L7tgsgLn6fFzQ2JgE5EVQ4HZwNkcgB1p8WfOBx1GEZP3fa66ajJmtXhSrA==}
     engines: {node: '>= 16'}
     peerDependencies:
       react: '>= 16.8.0'
@@ -5133,7 +5133,7 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  styled-components@6.3.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+  styled-components@6.3.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
       '@emotion/is-prop-valid': 1.4.0
       '@emotion/unitless': 0.10.0
@@ -5155,9 +5155,9 @@ snapshots:
     optionalDependencies:
       '@babel/core': 7.29.0
 
-  styled-normalize@8.1.1(styled-components@6.3.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4)):
+  styled-normalize@8.1.1(styled-components@6.3.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4)):
     dependencies:
-      styled-components: 6.3.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      styled-components: 6.3.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
 
   stylis@4.3.6: {}
 
