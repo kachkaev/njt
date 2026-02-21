@@ -40,8 +40,8 @@ importers:
         specifier: 1.1.1
         version: 1.1.1(@typescript-eslint/parser@8.55.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(tailwindcss@4.1.18)(typescript@5.9.3)
       '@kachkaev/markdownlint-config':
-        specifier: 1.0.0
-        version: 1.0.0(markdownlint-cli@0.47.0)
+        specifier: 1.0.1
+        version: 1.0.1(markdownlint-cli@0.47.0)
       '@kachkaev/prettier-config':
         specifier: 2.2.0
         version: 2.2.0(prettier@3.8.1)
@@ -484,8 +484,8 @@ packages:
     peerDependencies:
       eslint: '>=9.39.1'
 
-  '@kachkaev/markdownlint-config@1.0.0':
-    resolution: {integrity: sha512-ZyWIwL2NFmQ9NI3Nh6NRRDsHvkXoliimoL6JI4vWUx+SxasrUA8zWC7OzidMHHYD/hQjoX/NSjEqcyxZ5U7MKg==}
+  '@kachkaev/markdownlint-config@1.0.1':
+    resolution: {integrity: sha512-t3v30z2X3jRLTDf6SqQkfg0FGd+IYs+Dp+O9Ofn/nG6fO5Q81VhsjEtE1oWJDg9Z8Xnh940xH9ifzgekoqwKGQ==}
     peerDependencies:
       markdownlint-cli: '>=0.30.0'
 
@@ -2944,7 +2944,7 @@ snapshots:
       - tailwindcss
       - typescript
 
-  '@kachkaev/markdownlint-config@1.0.0(markdownlint-cli@0.47.0)':
+  '@kachkaev/markdownlint-config@1.0.1(markdownlint-cli@0.47.0)':
     dependencies:
       markdownlint-cli: 0.47.0
 
