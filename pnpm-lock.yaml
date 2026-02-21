@@ -43,8 +43,8 @@ importers:
         specifier: 1.0.1
         version: 1.0.1(markdownlint-cli@0.47.0)
       '@kachkaev/prettier-config':
-        specifier: 2.2.0
-        version: 2.2.0(prettier@3.8.1)
+        specifier: 2.2.1
+        version: 2.2.1(prettier@3.8.1)
       '@next/eslint-plugin-next':
         specifier: 16.1.6
         version: 16.1.6
@@ -489,8 +489,8 @@ packages:
     peerDependencies:
       markdownlint-cli: '>=0.30.0'
 
-  '@kachkaev/prettier-config@2.2.0':
-    resolution: {integrity: sha512-oBhaTG+jwtzHVC8+Ys2YAzKWNmESbixvVxHo8LXRkKFAJ+mYnqCcyRxbGlNDIDnPlf+36mpmOnPKrWHz73/Hmg==}
+  '@kachkaev/prettier-config@2.2.1':
+    resolution: {integrity: sha512-JGoJcccSvI8k2HNZHlEfWhXTonE1EvxUAVZ3bJFhW4xo/al0l7FHKq8owEsuKAZMfQeyBJokn4xxymDesxixOA==}
     peerDependencies:
       prettier: ^3.0.0
 
@@ -2948,7 +2948,7 @@ snapshots:
     dependencies:
       markdownlint-cli: 0.47.0
 
-  '@kachkaev/prettier-config@2.2.0(prettier@3.8.1)':
+  '@kachkaev/prettier-config@2.2.1(prettier@3.8.1)':
     dependencies:
       prettier: 3.8.1
       prettier-plugin-packagejson: 3.0.0(prettier@3.8.1)
