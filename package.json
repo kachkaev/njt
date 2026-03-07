@@ -52,7 +52,7 @@
     "eslint": "9.39.3",
     "husky": "9.1.7",
     "lint-staged": "16.3.2",
-    "markdownlint-cli": "0.47.0",
+    "markdownlint-cli": "0.48.0",
     "npm-run-all2": "8.0.4",
     "prettier": "3.8.1",
     "suppress-exit-code": "3.2.0",
