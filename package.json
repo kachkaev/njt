@@ -54,7 +54,7 @@
     "lint-staged": "16.4.0",
     "markdownlint-cli": "0.48.0",
     "npm-run-all2": "8.0.4",
-    "prettier": "3.8.1",
+    "prettier": "3.8.2",
     "suppress-exit-code": "3.2.0",
     "typescript": "6.0.2",
     "typescript-eslint": "8.58.1"
