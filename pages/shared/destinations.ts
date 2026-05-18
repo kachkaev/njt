@@ -304,7 +304,7 @@ export async function resolveDestination(
   rawDestination = "",
 ): Promise<ResolvedDestination> {
   const packageName = rawPackageName
-    .replaceAll(/\p{Cf}/gu, "")
+    .replaceAll(/\p{Cf}/gu, "") // remove invisible Unicode format chars that can be pasted into package names
     .toLowerCase()
     .replace("https://www.npmjs.com/package/", "") // https://www.npmjs.com/package/@types/react-dom
     .replaceAll(/[–—−]/g, "-") // package names with misc dashes (not hyphens)
