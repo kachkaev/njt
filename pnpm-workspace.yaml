@@ -1,5 +1,5 @@
-ignoredBuiltDependencies:
-  - sharp ## Install script is only required when compiling sharp from source - https://sharp.pixelplumbing.com/install
+allowBuilds:
+  sharp: false ## Install script is only required when compiling sharp from source - https://sharp.pixelplumbing.com/install
 
 nodeLinker: isolated
 
