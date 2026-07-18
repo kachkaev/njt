@@ -57,7 +57,7 @@
     "prettier": "3.8.5",
     "suppress-exit-code": "3.2.0",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.63.0"
+    "typescript-eslint": "8.64.0"
   },
   "packageManager": "pnpm@11.11.0"
 }
