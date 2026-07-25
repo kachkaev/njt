@@ -32,8 +32,8 @@
     "hosted-git-info": "9.0.3",
     "lru-cache": "11.2.7",
     "next": "16.2.11",
-    "react": "19.2.7",
-    "react-dom": "19.2.7",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
     "styled-components": "6.3.12",
     "styled-normalize": "8.1.1",
     "url": "0.11.4"
