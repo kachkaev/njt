@@ -44,7 +44,7 @@ export function InputForm({
   const fromInputRef = React.useRef<HTMLInputElement>(null);
 
   React.useEffect(() => {
-    // eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect -- expected use (state change on mount)
+    // eslint-disable-next-line react-hooks/set-state-in-effect, @eslint-react/hooks-extra/no-direct-set-state-in-use-effect -- expected use (state change on mount)
     setFrom("bookmark");
   }, []);
 
