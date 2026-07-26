@@ -1,11 +1,9 @@
-import type { NextApiHandler } from "next";
-
 import { resolveDestination } from "../shared/destinations";
 
-const handler: NextApiHandler = async (req, res) => {
+export async function GET(request: Request): Promise<Response> {
   let destinationUrl = "/";
 
-  const to = typeof req.query["to"] === "string" ? req.query["to"] : "";
+  const to = new URL(request.url).searchParams.get("to") ?? "";
 
   const [rawPackageName, rawDestination] = to
     .split(" ")
@@ -22,11 +20,10 @@ const handler: NextApiHandler = async (req, res) => {
     }
   }
 
-  res.writeHead(302, {
-    Location: destinationUrl,
+  // `NextResponse.redirect()` is avoided because it only accepts absolute URLs,
+  // whereas the fallback destination is the relative `/`
+  return new Response(undefined, {
+    status: 302,
+    headers: { location: destinationUrl },
   });
-
-  res.end();
-};
-
-export default handler;
+}
