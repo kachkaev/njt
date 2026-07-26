@@ -8,6 +8,7 @@
 
 ## allow certain file types
 !*.cjs
+!*.css
 !*.js
 !*.json
 !*.md
