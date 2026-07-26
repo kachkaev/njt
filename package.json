@@ -60,5 +60,10 @@
     "typescript": "6.0.3",
     "typescript-eslint": "8.65.0"
   },
-  "packageManager": "pnpm@11.17.0"
+  "packageManager": "pnpm@11.17.0",
+  "postcss": {
+    "plugins": {
+      "@tailwindcss/postcss": {}
+    }
+  }
 }

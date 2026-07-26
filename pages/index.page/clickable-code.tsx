@@ -10,7 +10,7 @@ export function ClickableCode({
 }: React.ComponentProps<"code">) {
   return (
     <code
-      className={`border-b border-dotted border-transparent js:cursor-pointer js:border-hint js:active:bg-hint dark:js:border-hint-dark dark:js:active:bg-hint-dark ${className ?? ""}`}
+      className={`border-b border-dotted border-transparent js:cursor-pointer js:border-border js:active:bg-border ${className ?? ""}`}
       {...rest}
     />
   );

@@ -150,7 +150,7 @@ export function AvailableDestinations({
             key={keywords.join(",")}
             className={`whitespace-nowrap ${
               selectedDestination && keywords.includes(selectedDestination)
-                ? "text-frog"
+                ? "text-primary"
                 : ""
             }`}
           >

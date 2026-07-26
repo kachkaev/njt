@@ -10,6 +10,11 @@ function H2({ children }: { children: React.ReactNode }) {
   return <h2 className="mt-12 text-[1em] font-bold">{children}</h2>;
 }
 
+// Unlike the dotted underline in clickable-code.tsx, this one does not follow
+// the colour scheme – same as before the Tailwind conversion
+const clickableExamplePackageClassName =
+  "cursor-pointer border-b border-dotted border-[#24292e]/40";
+
 const remarkByDestination = {
   "": "no specified destination",
   h: "homepage",
@@ -111,7 +116,7 @@ function Page() {
               className={`mr-2 inline-block ${
                 currentExamplePackage === examplePackage
                   ? "cursor-default"
-                  : "cursor-pointer border-b border-dotted border-ink/40"
+                  : clickableExamplePackageClassName
               }`}
               onClick={handleExamplePackageClick}
             >

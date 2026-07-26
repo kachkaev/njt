@@ -80,7 +80,7 @@ export function InputForm({
         value={text}
         onFocus={focusAndSelectAll}
         onChange={handleInputChange}
-        className="inline-block w-full max-w-full appearance-none rounded-[5px] border border-hint-dark bg-tint py-[0.3em] pr-[4em] pl-[3em] font-field placeholder:text-muted focus:border-frog focus:shadow-[0_0_10px_var(--color-frog-glow)] focus:outline-none dark:bg-tint-dark"
+        className="inline-block w-full max-w-full appearance-none rounded-[5px] border border-input bg-muted py-[0.3em] pr-[4em] pl-[3em] font-field placeholder:text-muted-foreground focus:border-primary focus:shadow-[0_0_10px_var(--color-ring)] focus:outline-none"
       />
       <button
         type="submit"

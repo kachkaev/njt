@@ -15,11 +15,10 @@
     sans-serif;
 
   /*
-   * Keeps `code` and the search field on the browser’s own fixed-width font
-   * rather than the Tailwind default stack. `monospace` is repeated on purpose:
-   * a lone generic makes Chrome and Safari fall back to their 13px “default
-   * fixed font size”, which even `font-size: 1em` inherits. This is the same
-   * workaround normalize.css used to apply.
+   * Keeps `code` on the browser’s own fixed-width font rather than the Tailwind
+   * default stack. `monospace` is repeated on purpose: a lone generic makes
+   * Chrome and Safari fall back to their 13px “default fixed font size”, which
+   * even `font-size: 1em` inherits. normalize.css applied the same workaround.
    */
   --font-mono: monospace, monospace;
 
@@ -30,43 +29,44 @@
    */
   --font-field: monospace;
 
-  /* Body text on the light scheme, page background on the dark one */
-  --color-ink: #24292e;
+  /* Left to the browser on the light scheme, hence `transparent` */
+  --color-background: transparent;
+  --color-foreground: #24292e;
   --color-link: #0366d6;
-  --color-link-dark: #59a7ff;
-  --color-frog: #42a73f;
-  --color-frog-glow: #7cd679;
 
   /* Faint fill behind `code` and the search field */
-  --color-tint: rgb(27 31 35 / 5%);
-  --color-tint-dark: rgb(127 127 127 / 30%);
-
-  /* Dotted underlines and pressed-state fills. The dark variant doubles as the
-   * search field border, which stays the same in both schemes */
-  --color-hint: rgb(27 31 35 / 30%);
-  --color-hint-dark: rgb(127 127 127 / 50%);
-
+  --color-muted: rgb(27 31 35 / 5%);
   /* Placeholder text */
-  --color-muted: rgb(127 127 127 / 70%);
+  --color-muted-foreground: rgb(127 127 127 / 70%);
+
+  /* Dotted underlines under clickable text, and their pressed-state fill */
+  --color-border: rgb(27 31 35 / 30%);
+  /* Search field border, which stays the same in both schemes */
+  --color-input: rgb(127 127 127 / 50%);
+
+  --color-primary: #42a73f;
+  --color-ring: #7cd679;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #24292e;
+    --color-foreground: #fff;
+    --color-link: #59a7ff;
+    --color-muted: rgb(127 127 127 / 30%);
+    --color-border: rgb(127 127 127 / 50%);
+  }
 }
 
 @layer base {
   body {
-    color: var(--color-ink);
+    background: var(--color-background);
+    color: var(--color-foreground);
     line-height: 1.4em;
-
-    @variant dark {
-      background: var(--color-ink);
-      color: #fff;
-    }
   }
 
   a {
     color: var(--color-link);
-
-    @variant dark {
-      color: var(--color-link-dark);
-    }
 
     &:hover {
       text-decoration: underline;
@@ -76,11 +76,7 @@
   code {
     padding: 0.1em 0.2em;
     border-radius: 3px;
-    background: var(--color-tint);
-
-    @variant dark {
-      background: var(--color-tint-dark);
-    }
+    background: var(--color-muted);
   }
 
   /*

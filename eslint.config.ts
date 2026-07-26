@@ -18,13 +18,6 @@ export default defineConfig([
   },
 
   {
-    files: ["*.config.mjs"],
-    rules: {
-      "import/no-default-export": "off",
-    },
-  },
-
-  {
     files: ["pages/_document.page.tsx"],
     rules: {
       // `no-js` is swapped for `js` on <body> in pages/_app.page.tsx. Neither is
