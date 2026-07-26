@@ -7,6 +7,7 @@ import { Example } from "./page/example";
 import { InputForm } from "./page/input-form";
 import { cn } from "./shared/cn";
 import { ExternalLink } from "./shared/external-link";
+import { nbsp } from "./shared/nbsp";
 
 function H2({ children }: { children: React.ReactNode }) {
   return <h2 className="mt-12 text-[1em] font-bold">{children}</h2>;
@@ -143,9 +144,9 @@ export default function Page() {
       <H2>More!</H2>
       <p>
         <code>njt</code> gives you an even bigger productivity boost when
-        integrated into browser or&nbsp;terminal. See instructions in{" "}
+        integrated into browser or{nbsp}terminal. See instructions in{" "}
         <ExternalLink href="https://github.com/kachkaev/njt/blob/main/README.md#getting-njt">
-          GitHub&nbsp;repo’s&nbsp;README
+          GitHub{nbsp}repo’s{nbsp}README
         </ExternalLink>
         .
       </p>
@@ -155,9 +156,9 @@ export default function Page() {
           Alexander Kachkaev
         </ExternalLink>{" "}
         using <ExternalLink href="https://nextjs.org">Next.js</ExternalLink>,
-        hosted&nbsp;by&nbsp;
+        hosted{nbsp}by{nbsp}
         <ExternalLink href="https://vercel.com">Vercel</ExternalLink>
-        &nbsp;💚
+        {nbsp}💚
       </p>
     </>
   );
