@@ -157,9 +157,7 @@ export function AvailableDestinations({
             )}
           >
             <Keyword onClick={handleKeywordClick}>{keywords[0] ?? ""}</Keyword>{" "}
-            <span aria-hidden={true} className="ml-1">
-              →
-            </span>{" "}
+            <span className="ml-1">→</span>{" "}
             <span className="mr-10 inline-block align-top whitespace-normal">
               {info}
             </span>
