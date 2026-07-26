@@ -59,6 +59,16 @@
 }
 
 @layer base {
+  /*
+   * Keeps the vertical scrollbar present even on pages short enough not to need
+   * one (e.g. /404), so that navigating between pages does not shift the layout
+   * sideways. Only affects platforms with classic scrollbars – Windows, and
+   * macOS when “Show scroll bars: Always” is on.
+   */
+  html {
+    overflow-y: scroll;
+  }
+
   body {
     background: var(--color-background);
     color: var(--color-foreground);
