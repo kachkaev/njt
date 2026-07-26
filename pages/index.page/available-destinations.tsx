@@ -1,5 +1,6 @@
 import type * as React from "react";
 
+import { cn } from "../shared/cn";
 import { ExternalLink } from "../shared/external-link";
 import { ClickableCode } from "./clickable-code";
 
@@ -148,11 +149,12 @@ export function AvailableDestinations({
         {keywordInfos.map(({ keywords, info }) => (
           <li
             key={keywords.join(",")}
-            className={`whitespace-nowrap ${
-              selectedDestination && keywords.includes(selectedDestination)
-                ? "text-primary"
-                : ""
-            }`}
+            className={cn(
+              "whitespace-nowrap",
+              selectedDestination &&
+                keywords.includes(selectedDestination) &&
+                "text-primary",
+            )}
           >
             <Keyword onClick={handleKeywordClick}>{keywords[0] ?? ""}</Keyword>{" "}
             <span className="mr-10 ml-1 inline-block align-top whitespace-normal">

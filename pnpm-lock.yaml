@@ -26,6 +26,9 @@ importers:
       react-dom:
         specifier: 19.2.8
         version: 19.2.8(react@19.2.8)
+      tailwind-merge:
+        specifier: 3.6.0
+        version: 3.6.0
       url:
         specifier: 0.11.4
         version: 0.11.4
@@ -2563,6 +2566,9 @@ packages:
     peerDependenciesMeta:
       '@eslint/css':
         optional: true
+
+  tailwind-merge@3.6.0:
+    resolution: {integrity: sha512-uxL7qAVQriqRQPAyK3pj66VqskWqoZ37PW94jwOTwNfq/z9oyu1V+eqrZqtR2+fCiXdYOZe/Modt8GtvqNzu+w==}
 
   tailwindcss@4.3.3:
     resolution: {integrity: sha512-gOhV3P7ufE62QDGg1zVaTgCR+EtPv92k2nIhVcVKcLmxT1sUBsQGhnZj175j+MqRt4zLF7ic+sCYjfhxMxj7YQ==}
@@ -5458,6 +5464,8 @@ snapshots:
       '@pkgr/core': 0.2.9
 
   tailwind-csstree@0.1.5: {}
+
+  tailwind-merge@3.6.0: {}
 
   tailwindcss@4.3.3: {}
 

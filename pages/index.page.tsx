@@ -3,17 +3,13 @@ import * as React from "react";
 import { AvailableDestinations } from "./index.page/available-destinations";
 import { Example } from "./index.page/example";
 import { InputForm } from "./index.page/input-form";
+import { cn } from "./shared/cn";
 import { ExternalLink } from "./shared/external-link";
 import { PageMetadata } from "./shared/page-metadata";
 
 function H2({ children }: { children: React.ReactNode }) {
   return <h2 className="mt-12 text-[1em] font-bold">{children}</h2>;
 }
-
-// Unlike the dotted underline in clickable-code.tsx, this one does not follow
-// the colour scheme – same as before the Tailwind conversion
-const clickableExamplePackageClassName =
-  "cursor-pointer border-b border-dotted border-[#24292e]/40";
 
 const remarkByDestination = {
   "": "no specified destination",
@@ -113,11 +109,11 @@ function Page() {
           (currentExamplePackage) => (
             <div
               key={currentExamplePackage}
-              className={`mr-2 inline-block ${
-                currentExamplePackage === examplePackage
-                  ? "cursor-default"
-                  : clickableExamplePackageClassName
-              }`}
+              className={cn(
+                "mr-2 inline-block cursor-default",
+                currentExamplePackage !== examplePackage &&
+                  "cursor-pointer border-b border-dotted border-foreground/40",
+              )}
               onClick={handleExamplePackageClick}
             >
               {currentExamplePackage}
