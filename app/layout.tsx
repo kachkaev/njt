@@ -51,7 +51,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* `no-js` is swapped for `js` by <JsClassSwitcher /> */}
+      {/* eslint-disable-next-line better-tailwindcss/no-unknown-classes -- `no-js` is not a utility: <JsClassSwitcher /> swaps it for `js`, which global.css declares as a custom variant */}
       <body className="no-js">
         {/*
          * These two are plain tags because the metadata API cannot express

@@ -16,13 +16,4 @@ export default defineConfig([
       "@typescript-eslint/explicit-module-boundary-types": "off",
     },
   },
-
-  {
-    files: ["app/layout.tsx"],
-    rules: {
-      // `no-js` is swapped for `js` on <body> in app/layout/js-class-switcher.tsx.
-      // Neither is a utility – `js` only exists as a custom variant in global.css.
-      "better-tailwindcss/no-unknown-classes": ["error", { ignore: ["no-js"] }],
-    },
-  },
 ]);
