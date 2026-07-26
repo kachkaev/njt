@@ -197,7 +197,7 @@ Feel free [to suggest](https://github.com/kachkaev/njt/issues/new?title=New+entr
 
 ### Query resolution
 
-The logic of `njt` is centralized and located within the `njt.vercel.app/jump` endpoint ([source](pages/api/jump.handler.ts)).
+The logic of `njt` is centralized and located within the `njt.vercel.app/jump` endpoint ([source](app/jump/route.ts)).
 
 All `njt` interfaces submit user queries to `https://njt.vercel.app/jump?from=UI_ID&to=USER_QUERY`, from which you are redirected to the destination.
 
