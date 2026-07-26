@@ -2,6 +2,7 @@ import type * as React from "react";
 
 import { cn } from "../shared/cn";
 import { ExternalLink } from "../shared/external-link";
+import { nbsp } from "../shared/nbsp";
 import { ClickableCode } from "./clickable-code";
 
 function Keyword({
@@ -60,8 +61,8 @@ export function AvailableDestinations({
       info: (
         <>
           homepage (aliased as <Keyword onClick={handleKeywordClick}>w</Keyword>{" "}
-          for&nbsp;website or <Keyword onClick={handleKeywordClick}>d</Keyword>{" "}
-          for&nbsp;docs)
+          for{nbsp}website or <Keyword onClick={handleKeywordClick}>d</Keyword>{" "}
+          for{nbsp}docs)
         </>
       ),
     },
@@ -82,7 +83,7 @@ export function AvailableDestinations({
       info: (
         <>
           pull requests (aliased as{" "}
-          <Keyword onClick={handleKeywordClick}>m</Keyword> for&nbsp;merge
+          <Keyword onClick={handleKeywordClick}>m</Keyword> for{nbsp}merge
           requests)
         </>
       ),
@@ -95,8 +96,8 @@ export function AvailableDestinations({
       keywords: ["s"],
       info: (
         <>
-          source (often same as repository root, but can be
-          its&nbsp;subdirectory in&nbsp;case of a&nbsp;monorepo)
+          source (often same as repository root, but can be its{nbsp}
+          subdirectory in{nbsp}case of a{nbsp}monorepo)
         </>
       ),
     },
@@ -166,7 +167,8 @@ export function AvailableDestinations({
       <p>
         Omitting the destination or entering an non-existing one takes you to
         the package page on <ExternalLink href="https://www.npmjs.com" /> as if
-        you used&nbsp;<Keyword onClick={handleKeywordClick}>n</Keyword>.
+        you used{nbsp}
+        <Keyword onClick={handleKeywordClick}>n</Keyword>.
       </p>
     </>
   );
