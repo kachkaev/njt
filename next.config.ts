@@ -1,11 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /*
-   * The whole site is a single ~11 kB stylesheet, so putting it into the
-   * document removes the only render-blocking request on the critical path.
-   */
-  experimental: { inlineCss: true },
+  experimental: {
+    // One network request fewer, which is worth it for as little CSS as we have
+    inlineCss: true,
+  },
 
   productionBrowserSourceMaps: true,
 
