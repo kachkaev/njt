@@ -1,106 +1,4 @@
 import * as React from "react";
-import { styled } from "styled-components";
-
-const verticalFormPadding = 20;
-
-const Form = styled.form`
-  display: block;
-  white-space: nowrap;
-  font-size: 2em;
-  padding: ${verticalFormPadding}px 0 0;
-  width: 100%;
-  max-width: 100%;
-  position: relative;
-  line-height: 1em;
-
-  @media (max-width: 600px) {
-    font-size: 1.8em;
-  }
-  @media (max-width: 550px) {
-    font-size: 1.6em;
-  }
-  @media (max-width: 510px) {
-    font-size: 1.5em;
-  }
-  @media (max-width: 450px) {
-    font-size: 1.4em;
-  }
-  @media (max-width: 420px) {
-    font-size: 1.3em;
-  }
-  @media (max-width: 400px) {
-    font-size: 1.25em;
-  }
-  @media (max-width: 370px) {
-    font-size: 1.1em;
-  }
-  @media (max-width: 350px) {
-    font-size: 1em;
-  }
-`;
-
-const Label = styled.label`
-  padding: 0.3em 0 0 0.7em;
-  font-family: monospace;
-  display: inline-block;
-  position: absolute;
-  top: ${verticalFormPadding + 1}px;
-  left: 0;
-  pointer-events: none;
-`;
-
-const Input = styled.input`
-  display: inline-block;
-  padding: 0.3em 4em 0.3em 3em;
-  color: inherit;
-  line-height: inherit;
-  font-family: monospace;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  margin: 0;
-  border: 1px solid rgba(127, 127, 127, 0.5);
-  border-radius: 5px;
-  -webkit-appearance: none;
-  /* transition: all 0.2s ease-in-out; */
-
-  background: rgba(27, 31, 35, 0.05);
-
-  @media (prefers-color-scheme: dark) {
-    background: rgba(127, 127, 127, 0.3);
-  }
-
-  ::placeholder {
-    color: rgba(127, 127, 127, 0.7);
-  }
-
-  :focus {
-    outline: none !important;
-    border: 1px solid #42a73f;
-    box-shadow: 0 0 10px #7cd679;
-  }
-`;
-
-const SubmitButton = styled.button`
-  border: none;
-  background: transparent;
-  line-height: inherit;
-  padding: 0.25em 0.4em 0.3em 0;
-  cursor: pointer;
-  color: inherit;
-
-  position: absolute;
-  top: ${verticalFormPadding + 1}px;
-  right: 0;
-
-  :active {
-    top: ${verticalFormPadding + 2}px;
-  }
-
-  :focus {
-    outline: none !important;
-  }
-`;
 
 export function InputForm({
   text,
@@ -159,10 +57,22 @@ export function InputForm({
   }
 
   return (
-    <Form ref={formRef} action="/jump" onSubmitCapture={handleFormSubmit}>
+    // The form is 20px away from the top; the label and the submit button are
+    // overlaid 1px below that, and the button drops 1px more while pressed.
+    <form
+      ref={formRef}
+      action="/jump"
+      onSubmitCapture={handleFormSubmit}
+      className="relative block w-full max-w-full pt-5 text-[2em] leading-[1em] whitespace-nowrap max-[600px]:text-[1.8em] max-[550px]:text-[1.6em] max-[510px]:text-[1.5em] max-[450px]:text-[1.4em] max-[420px]:text-[1.3em] max-[400px]:text-[1.25em] max-[370px]:text-[1.1em] max-[350px]:text-[1em]"
+    >
       <input ref={fromInputRef} type="hidden" name="from" value={from} />
-      <Label htmlFor="to">njt</Label>
-      <Input
+      <label
+        htmlFor="to"
+        className="pointer-events-none absolute top-[21px] left-0 inline-block pt-[0.3em] pl-[0.7em] font-field"
+      >
+        njt
+      </label>
+      <input
         ref={toInputRef}
         id="to"
         name="to"
@@ -170,8 +80,15 @@ export function InputForm({
         value={text}
         onFocus={focusAndSelectAll}
         onChange={handleInputChange}
+        className="inline-block w-full max-w-full appearance-none rounded-[5px] border border-hint-dark bg-tint py-[0.3em] pr-[4em] pl-[3em] font-field placeholder:text-muted focus:border-frog focus:shadow-[0_0_10px_var(--color-frog-glow)] focus:outline-none dark:bg-tint-dark"
       />
-      <SubmitButton tabIndex={-1}>🐸 →</SubmitButton>
-    </Form>
+      <button
+        type="submit"
+        tabIndex={-1}
+        className="absolute top-[21px] right-0 cursor-pointer pt-[0.25em] pr-[0.4em] pb-[0.3em] pl-0 focus:outline-none active:top-[22px]"
+      >
+        🐸 →
+      </button>
+    </form>
   );
 }

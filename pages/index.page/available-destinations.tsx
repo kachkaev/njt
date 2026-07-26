@@ -1,43 +1,21 @@
 import type * as React from "react";
-import { styled } from "styled-components";
 
 import { ExternalLink } from "../shared/external-link";
 import { ClickableCode } from "./clickable-code";
 
-const Ul = styled.ul`
-  padding-left: 0;
-  overflow: hidden;
-`;
-
-const Item = styled.li<{ highlighted?: boolean }>`
-  list-style: none;
-  /* transition: color 0.2s ease-in-out; */
-  white-space: nowrap;
-
-  ${(props) => (props.highlighted ? "color: #42a73f" : "")};
-`;
-
-const Keyword = styled(ClickableCode)<{
-  onClick: React.MouseEventHandler;
+function Keyword({
+  children,
+  onClick,
+}: {
   children: string;
-}>`
-  display: inline-block;
-`;
-
-const Arrow = styled.span`
-  display: inline-block;
-  :after {
-    display: inline-block;
-    content: "→";
-  }
-`;
-
-const Info = styled.span`
-  display: inline-block;
-  white-space: normal;
-  vertical-align: top;
-  margin-right: 2.5em;
-`;
+  onClick: React.MouseEventHandler;
+}) {
+  return (
+    <ClickableCode className="inline-block" onClick={onClick}>
+      {children}
+    </ClickableCode>
+  );
+}
 
 type KeywordInfo = {
   keywords: string[];
@@ -166,21 +144,24 @@ export function AvailableDestinations({
 
   return (
     <>
-      <Ul>
+      <ul className="overflow-hidden">
         {keywordInfos.map(({ keywords, info }) => (
-          <Item
+          <li
             key={keywords.join(",")}
-            highlighted={
-              selectedDestination
-                ? keywords.includes(selectedDestination)
-                : false
-            }
+            className={`whitespace-nowrap ${
+              selectedDestination && keywords.includes(selectedDestination)
+                ? "text-frog"
+                : ""
+            }`}
           >
             <Keyword onClick={handleKeywordClick}>{keywords[0] ?? ""}</Keyword>{" "}
-            <Arrow /> <Info>{info}</Info>
-          </Item>
+            <span className="inline-block after:inline-block after:content-['→']" />{" "}
+            <span className="mr-10 inline-block align-top whitespace-normal">
+              {info}
+            </span>
+          </li>
         ))}
-      </Ul>
+      </ul>
       <p>
         Omitting the destination or entering an non-existing one takes you to
         the package page on <ExternalLink href="https://www.npmjs.com" /> as if
