@@ -1,12 +1,15 @@
 /*
  * Automatic source detection is switched off because it walks every non-ignored
  * directory next to the CSS file, which can pick up unrelated checkouts (e.g.
- * git worktrees). The only place that contains class names is `pages`.
+ * git worktrees). The only place that contains class names is `app`.
  */
 @import "tailwindcss" source(none);
-@source "../../pages";
+@source "../../app";
 
-/* `<body>` ships as `no-js` and is switched to `js` in pages/_app.page.tsx */
+/*
+ * `<body>` ships as `no-js` and is switched to `js` in
+ * app/layout/js-class-switcher.tsx
+ */
 @custom-variant js (.js &);
 
 @theme {

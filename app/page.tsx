@@ -1,11 +1,12 @@
+"use client";
+
 import * as React from "react";
 
-import { AvailableDestinations } from "./index.page/available-destinations";
-import { Example } from "./index.page/example";
-import { InputForm } from "./index.page/input-form";
+import { AvailableDestinations } from "./page/available-destinations";
+import { Example } from "./page/example";
+import { InputForm } from "./page/input-form";
 import { cn } from "./shared/cn";
 import { ExternalLink } from "./shared/external-link";
-import { PageMetadata } from "./shared/page-metadata";
 
 function H2({ children }: { children: React.ReactNode }) {
   return <h2 className="mt-12 text-[1em] font-bold">{children}</h2>;
@@ -65,7 +66,7 @@ const exampleUrlByPackageAndDestination: Record<
   },
 };
 
-function Page() {
+export default function Page() {
   const [examplePackage, setExamplePackage] = React.useState(
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- exampleUrlByPackageAndDestination is static and non-empty
     () => Object.keys(exampleUrlByPackageAndDestination)[0]!,
@@ -94,7 +95,6 @@ function Page() {
 
   return (
     <>
-      <PageMetadata />
       <InputForm text={inputText} onTextChange={setInputText} />
 
       <H2>Available destinations</H2>
@@ -162,5 +162,3 @@ function Page() {
     </>
   );
 }
-
-export default Page;
