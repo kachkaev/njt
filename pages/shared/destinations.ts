@@ -14,8 +14,7 @@ export type UnresolvedDestination = {
 };
 
 export type ResolvedDestination =
-  | SuccessfullyResolvedDestination
-  | UnresolvedDestination;
+  SuccessfullyResolvedDestination | UnresolvedDestination;
 
 export type DestinationConfig = {
   keywords: string[];
