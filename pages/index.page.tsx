@@ -1,31 +1,15 @@
 import * as React from "react";
-import { styled } from "styled-components";
 
 import { AvailableDestinations } from "./index.page/available-destinations";
 import { Example } from "./index.page/example";
 import { InputForm } from "./index.page/input-form";
+import { cn } from "./shared/cn";
 import { ExternalLink } from "./shared/external-link";
 import { PageMetadata } from "./shared/page-metadata";
 
-const H2 = styled.h2`
-  margin-top: 3em;
-  font-size: 1em;
-`;
-
-const ExamplePackages = styled.div``;
-
-const ExamplePackage = styled.div<{ clickable: boolean }>`
-  display: inline-block;
-  margin-right: 0.5em;
-  cursor: default;
-  ${(props) =>
-    props.clickable
-      ? `
-    border-bottom: 1px dotted #24292e66;
-    cursor: pointer;
-  `
-      : ""};
-`;
+function H2({ children }: { children: React.ReactNode }) {
+  return <h2 className="mt-12 text-[1em] font-bold">{children}</h2>;
+}
 
 const remarkByDestination = {
   "": "no specified destination",
@@ -120,19 +104,23 @@ function Page() {
       />
 
       <H2>Examples</H2>
-      <ExamplePackages>
+      <div>
         {Object.keys(exampleUrlByPackageAndDestination).map(
           (currentExamplePackage) => (
-            <ExamplePackage
+            <div
               key={currentExamplePackage}
-              clickable={currentExamplePackage !== examplePackage}
+              className={cn(
+                "mr-2 inline-block cursor-default",
+                currentExamplePackage !== examplePackage &&
+                  "cursor-pointer border-b border-dotted border-foreground/40",
+              )}
               onClick={handleExamplePackageClick}
             >
               {currentExamplePackage}
-            </ExamplePackage>
+            </div>
           ),
         )}
-      </ExamplePackages>
+      </div>
       {remarkByDestinationEntries.map(([destination, remark]) => {
         const destinationLookup =
           exampleUrlByPackageAndDestination[examplePackage];

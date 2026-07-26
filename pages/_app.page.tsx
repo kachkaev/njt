@@ -1,3 +1,5 @@
+import "./_app.page/global.css";
+
 import { Analytics } from "@vercel/analytics/react";
 import type { AppProps } from "next/app";
 import * as React from "react";

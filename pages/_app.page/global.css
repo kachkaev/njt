@@ -1,0 +1,105 @@
+/*
+ * Automatic source detection is switched off because it walks every non-ignored
+ * directory next to the CSS file, which can pick up unrelated checkouts (e.g.
+ * git worktrees). The only place that contains class names is `pages`.
+ */
+@import "tailwindcss" source(none);
+@source "../../pages";
+
+/* `<body>` ships as `no-js` and is switched to `js` in pages/_app.page.tsx */
+@custom-variant js (.js &);
+
+@theme {
+  --font-sans:
+    "-apple-system", BlinkMacSystemFont, "Avenir Next", Avenir, Helvetica,
+    sans-serif;
+
+  /*
+   * Keeps `code` on the browser’s own fixed-width font rather than the Tailwind
+   * default stack. `monospace` is repeated on purpose: a lone generic makes
+   * Chrome and Safari fall back to their 13px “default fixed font size”, which
+   * even `font-size: 1em` inherits. normalize.css applied the same workaround.
+   */
+  --font-mono: monospace, monospace;
+
+  /*
+   * The search field deliberately keeps a lone generic, so that it stays on the
+   * compact 13px-based size described above. Its font sizes and the breakpoints
+   * in input-form.tsx are tuned around that.
+   */
+  --font-field: monospace;
+
+  /* Left to the browser on the light scheme, hence `transparent` */
+  --color-background: transparent;
+  --color-foreground: #24292e;
+  --color-link: #0366d6;
+
+  /* Faint fill behind `code` and the search field */
+  --color-muted: rgb(27 31 35 / 5%);
+  /* Placeholder text */
+  --color-muted-foreground: rgb(127 127 127 / 70%);
+
+  /* Dotted underlines under clickable text, and their pressed-state fill */
+  --color-border: rgb(27 31 35 / 30%);
+  /* Search field border, which stays the same in both schemes */
+  --color-input: rgb(127 127 127 / 50%);
+
+  --color-primary: #42a73f;
+  --color-ring: #7cd679;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #24292e;
+    --color-foreground: #fff;
+    --color-link: #59a7ff;
+    --color-muted: rgb(127 127 127 / 30%);
+    --color-border: rgb(127 127 127 / 50%);
+  }
+}
+
+@layer base {
+  /*
+   * Keeps the vertical scrollbar present even on pages short enough not to need
+   * one (e.g. /404), so that navigating between pages does not shift the layout
+   * sideways. Only affects platforms with classic scrollbars – Windows, and
+   * macOS when “Show scroll bars: Always” is on.
+   */
+  html {
+    overflow-y: scroll;
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    line-height: 1.4em;
+  }
+
+  a {
+    color: var(--color-link);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  code {
+    padding: 0.1em 0.2em;
+    border-radius: 3px;
+    background: var(--color-muted);
+  }
+
+  /*
+   * Preflight drops every user-agent margin. These elements are used as plain
+   * prose throughout the page, so their default rhythm is restored here rather
+   * than repeated as utilities on each occurrence.
+   */
+  p,
+  ul {
+    margin-block: 1em;
+  }
+
+  h2 {
+    margin-block: 0.83em;
+  }
+}

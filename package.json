@@ -34,8 +34,7 @@
     "next": "16.2.11",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "styled-components": "6.3.12",
-    "styled-normalize": "8.1.1",
+    "tailwind-merge": "3.6.0",
     "url": "0.11.4"
   },
   "devDependencies": {
@@ -43,6 +42,7 @@
     "@kachkaev/markdownlint-config": "1.0.1",
     "@kachkaev/prettier-config": "2.2.1",
     "@next/eslint-plugin-next": "16.2.11",
+    "@tailwindcss/postcss": "4.3.3",
     "@tsconfig/next": "2.0.6",
     "@tsconfig/strictest": "2.0.8",
     "@types/hosted-git-info": "3.0.5",
@@ -55,10 +55,17 @@
     "lint-staged": "17.2.0",
     "markdownlint-cli": "0.49.1",
     "npm-run-all2": "9.0.2",
+    "postcss": "8.5.23",
     "prettier": "3.9.6",
     "suppress-exit-code": "3.2.0",
+    "tailwindcss": "4.3.3",
     "typescript": "npm:@typescript/typescript6@6.0.2",
     "typescript-eslint": "8.65.0"
   },
-  "packageManager": "pnpm@11.17.0"
+  "packageManager": "pnpm@11.17.0",
+  "postcss": {
+    "plugins": {
+      "@tailwindcss/postcss": {}
+    }
+  }
 }
