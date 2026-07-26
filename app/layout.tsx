@@ -6,13 +6,7 @@ import type * as React from "react";
 
 import { JsClassSwitcher } from "./layout/js-class-switcher";
 import { PageLayout } from "./layout/page-layout";
-
-function getBaseUrl() {
-  const hostname = process.env["NEXT_PUBLIC_VERCEL_URL"] ?? "njt.vercel.app";
-  const protocol = hostname.split(":")[0] === "localhost" ? "http" : "https";
-
-  return `${protocol}://${hostname}`;
-}
+import { getBaseUrl } from "./shared/base-url";
 
 const title = "njt (npm jump to)";
 const description = "a quick navigation tool for npm packages";
