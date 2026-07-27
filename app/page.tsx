@@ -41,6 +41,14 @@ const exampleUrlByPackageAndDestination: Record<
     x: "https://npmx.dev/package/prettier",
     y: "https://yarnpkg.com/package/prettier",
   },
+  typescript: {
+    "": "https://www.npmjs.com/package/typescript",
+    h: "https://www.typescriptlang.org",
+    s: "https://github.com/microsoft/TypeScript",
+    r: "https://github.com/microsoft/TypeScript/releases",
+    x: "https://npmx.dev/package/typescript",
+    y: "https://yarnpkg.com/package/typescript",
+  },
   react: {
     "": "https://www.npmjs.com/package/react",
     h: "https://react.dev",
@@ -56,14 +64,6 @@ const exampleUrlByPackageAndDestination: Record<
     r: "https://github.com/tailwindlabs/tailwindcss/releases",
     x: "https://npmx.dev/package/tailwindcss",
     y: "https://yarnpkg.com/package/tailwindcss",
-  },
-  typescript: {
-    "": "https://www.npmjs.com/package/typescript",
-    h: "https://www.typescriptlang.org",
-    s: "https://github.com/microsoft/TypeScript",
-    r: "https://github.com/microsoft/TypeScript/releases",
-    x: "https://npmx.dev/package/typescript",
-    y: "https://yarnpkg.com/package/typescript",
   },
 };
 
