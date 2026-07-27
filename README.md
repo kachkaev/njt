@@ -17,7 +17,7 @@ njt <package> [destination]
 
 ## Available destinations
 
-<!-- When updating, remember to reflect changes in cli/cli.js and src/ui/PageContentsForIndex/AvailableDestinations.tsx -->
+<!-- When updating, remember to reflect changes in cli/cli.js and app/page/available-destinations.tsx -->
 
 - `b` → package cost estimation on [bundlephobia.com](https://bundlephobia.com)
 - `c` → changelog
@@ -69,11 +69,11 @@ npm install --global njt
 
 You are all set.
 Now try executing `njt <package> [destination]` with some real arguments.
-For example, these two commands will take you to the Lodash **g**ithub repo and **h**omepage, respectively:
+For example, these two commands will take you to the Tailwind CSS **g**ithub repo and **h**omepage, respectively:
 
 ```bash
-njt lodash g
-njt lodash h
+njt tailwindcss g
+njt tailwindcss h
 ```
 
 A list of supported destinations will be shown if you launch `njt` without arguments.
