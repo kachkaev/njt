@@ -62,7 +62,7 @@
     "typescript": "npm:@typescript/typescript6@6.0.2",
     "typescript-eslint": "8.65.0"
   },
-  "packageManager": "pnpm@11.17.0",
+  "packageManager": "pnpm@11.18.0",
   "postcss": {
     "plugins": {
       "@tailwindcss/postcss": {}
