@@ -1,7 +1,6 @@
 import type * as React from "react";
 
 import { ExternalLink } from "../shared/external-link";
-import { nbsp } from "../shared/nbsp";
 
 export function PageLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -13,7 +12,7 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
         <h1 className="text-center text-[48px] leading-[1.4em] font-bold">
           🐸 njt 🐸
         </h1>
-        <div className="text-center font-bold">🐸 npm jump to{nbsp} 🐸</div>
+        <div className="text-center font-bold">🐸 npm jump to&nbsp; 🐸</div>
         <div className="mx-auto mt-2.5 text-center *:mx-2">
           <ExternalLink href="https://github.com/kachkaev/njt">
             github
