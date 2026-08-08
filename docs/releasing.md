@@ -19,6 +19,7 @@ The package already exists on npm, so no initial publish is needed — only the 
 
 1.  **Allow Actions to open PRs** — repo Settings → Actions → General → Workflow permissions → tick "Allow GitHub Actions to create and approve pull requests".
     Without it the changesets action cannot open the "Version packages" PR.
+    Note that PRs opened with the default `GITHUB_TOKEN` do not trigger `pull_request` workflows, so the "Version packages" PR shows no CI checks — `release.yaml` re-verifies the CLI build before publishing, but don't make CI checks required for merging that PR.
 
 1.  **Test the pipeline**: once the steps above are done, the next changeset to land should produce a "Version packages" PR whose merge publishes via the trusted publisher, with no npm token anywhere.
 

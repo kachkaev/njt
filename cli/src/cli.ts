@@ -73,7 +73,7 @@ class PackageNameResolutionError extends Data.TaggedError(
   override get message(): string {
     return `
 ${styleText("red", this.reason)}
-Change directly or replace . with a package name.
+Change directory or replace . with a package name.
 
 🐸 https://njt.vercel.app
     `;
@@ -87,14 +87,22 @@ function findNearestPackageJson(
   for (;;) {
     const filename = path.join(dir, "package.json");
     if (existsSync(filename)) {
-      const parsed: unknown = JSON.parse(readFileSync(filename, "utf8"));
-      return {
-        filename,
-        name:
-          typeof parsed === "object" && parsed !== null && "name" in parsed
-            ? parsed.name
-            : undefined,
-      };
+      // An unreadable or malformed package.json must not abort the walk —
+      // the pre-Effect CLI (via find-package-json) skipped such files too
+      let parsed: unknown;
+      try {
+        parsed = JSON.parse(
+          readFileSync(filename, "utf8").replace(/^\uFEFF/, ""),
+        );
+      } catch {
+        parsed = undefined;
+      }
+      if (typeof parsed === "object" && parsed !== null) {
+        return {
+          filename,
+          name: "name" in parsed ? parsed.name : undefined,
+        };
+      }
     }
     const parentDir = path.dirname(dir);
     if (parentDir === dir) {
