@@ -106,20 +106,20 @@ importers:
   cli:
     dependencies:
       chalk:
-        specifier: ^6.0.0
+        specifier: 6.0.0
         version: 6.0.0
       commander:
-        specifier: ^15.0.0
+        specifier: 15.0.0
         version: 15.0.0
       find-package-json:
-        specifier: ^1.2.0
+        specifier: 1.2.0
         version: 1.2.0
       open:
-        specifier: ^11.0.0
+        specifier: 11.0.0
         version: 11.0.0
     devDependencies:
       ncp:
-        specifier: ^2.0.0
+        specifier: 2.0.0
         version: 2.0.0
 
 packages:

@@ -27,4 +27,4 @@ jobs:
           fetch-depth: 0 # the whole history is the whole point
 
       - name: Run repo-dive
-        uses: kachkaev/repo-dive@main
+        uses: kachkaev/repo-dive@150edb3e35a8ffee41eb1567b522e388e28c6be2 # main
