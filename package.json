@@ -60,7 +60,7 @@
     "suppress-exit-code": "3.2.0",
     "tailwindcss": "4.3.3",
     "typescript": "npm:@typescript/typescript6@6.0.2",
-    "typescript-eslint": "8.65.0"
+    "typescript-eslint": "8.66.0"
   },
   "packageManager": "pnpm@11.18.0",
   "postcss": {
