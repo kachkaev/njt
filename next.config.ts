@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   reactStrictMode: true,
 
-  typescript: { ignoreBuildErrors: true },
+  typescript: { ignoreBuildErrors: true, useTypeScriptCli: false },
 };
 
 export default nextConfig;
