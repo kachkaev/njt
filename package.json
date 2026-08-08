@@ -28,7 +28,7 @@
   },
   "prettier": "@kachkaev/prettier-config",
   "dependencies": {
-    "@vercel/analytics": "1.6.1",
+    "@vercel/analytics": "2.0.1",
     "hosted-git-info": "9.0.3",
     "lru-cache": "11.2.7",
     "next": "16.2.12",
