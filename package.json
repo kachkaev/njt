@@ -30,7 +30,7 @@
   "dependencies": {
     "@vercel/analytics": "1.6.1",
     "hosted-git-info": "9.0.3",
-    "lru-cache": "11.2.7",
+    "lru-cache": "11.5.2",
     "next": "16.2.12",
     "react": "19.2.8",
     "react-dom": "19.2.8",
