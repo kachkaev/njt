@@ -7,6 +7,11 @@ on:
   schedule:
     - cron: "27 5 * * 1" # weekly, Monday morning
   workflow_dispatch:
+  # Temporary, to test-drive the workflow right in the PR that adds it:
+  # schedule and workflow_dispatch only fire from the default branch
+  pull_request:
+    paths:
+      - .github/workflows/repo-dive.yaml
 
 permissions:
   contents: read
