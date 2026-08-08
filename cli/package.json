@@ -47,7 +47,6 @@
     "@effect/platform-node": "4.0.0-beta.105",
     "@tsconfig/node-ts": "23.6.4",
     "@tsconfig/strictest": "2.0.8",
-    "chalk": "6.0.0",
     "effect": "4.0.0-beta.105",
     "ncp": "^2.0.0",
     "vite": "8.2.0"

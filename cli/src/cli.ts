@@ -1,16 +1,20 @@
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
+import { styleText } from "node:util";
 
 import { NodeRuntime, NodeServices } from "@effect/platform-node";
-import chalk from "chalk";
 import { Console, Data, Effect, Runtime } from "effect";
 import { Argument, CliError, Command } from "effect/unstable/cli";
 import open from "open";
 
 import packageJson from "../package.json" with { type: "json" };
 
-const green = chalk.green;
-const code = chalk.dim;
+function green(text: string): string {
+  return styleText("green", text);
+}
+function code(text: string): string {
+  return styleText("dim", text);
+}
 
 // When updating, remember to reflect changes in README.md and app/page/available-destinations.tsx
 const description = `🐸 ✨ 🐸 ✨ 🐸
@@ -68,7 +72,7 @@ class PackageNameResolutionError extends Data.TaggedError(
 }> {
   override get message(): string {
     return `
-${chalk.red(this.reason)}
+${styleText("red", this.reason)}
 Change directly or replace . with a package name.
 
 🐸 https://njt.vercel.app
