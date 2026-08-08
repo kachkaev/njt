@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   experimental: {
     // One network request fewer, which is worth it for as little CSS as we have
     inlineCss: true,
+    useTypeScriptCli: false,
   },
 
   productionBrowserSourceMaps: true,
