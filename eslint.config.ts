@@ -1,8 +1,9 @@
 import { generateNextConfigs } from "@kachkaev/eslint-config-next";
 import { defineConfig } from "eslint/config";
-import typescriptEslint from "typescript-eslint";
 
 export default defineConfig([
+  { ignores: ["cli/dist"] },
+
   ...generateNextConfigs({
     tailwindcssEntryPoint: "app/layout/global.css",
   }),
@@ -17,12 +18,10 @@ export default defineConfig([
   },
 
   {
-    files: ["cli/**/*.js"],
-    extends: [typescriptEslint.configs.disableTypeChecked],
+    // Vite requires a default export from its config file
+    files: ["cli/vite.config.ts"],
     rules: {
-      "@eslint-react/no-implicit-key": "off",
-      "@eslint-react/no-unused-props": "off",
-      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "import/no-default-export": "off",
     },
   },
 ]);

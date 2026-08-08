@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "@tsconfig/node-ts/tsconfig.json",
+    "@tsconfig/strictest/tsconfig.json"
+  ],
+  "compilerOptions": {
+    "module": "node20",
+    "target": "esnext",
+    "noEmit": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

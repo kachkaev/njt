@@ -28,21 +28,34 @@
     "email": "alexander@kachkaev.ru"
   },
   "type": "module",
-  "main": "main.js",
-  "bin": "cli.js",
+  "bin": {
+    "njt": "./dist/cli.js"
+  },
+  "files": [
+    "LICENSE.md",
+    "README.md",
+    "dist/"
+  ],
   "scripts": {
-    "prepack": "pnpm ncp ../README.md README.md"
+    "build": "vite build",
+    "prepack": "pnpm build && pnpm ncp ../README.md README.md && pnpm ncp ../LICENSE.md LICENSE.md"
   },
   "dependencies": {
-    "chalk": "^6.0.0",
-    "commander": "^15.0.0",
-    "find-package-json": "^1.2.0",
     "open": "^11.0.0"
   },
   "devDependencies": {
-    "ncp": "^2.0.0"
+    "@effect/platform-node": "4.0.0-beta.105",
+    "@tsconfig/node-ts": "23.6.4",
+    "@tsconfig/strictest": "2.0.8",
+    "effect": "4.0.0-beta.105",
+    "ncp": "^2.0.0",
+    "vite": "8.2.0"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22.13.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   }
 }
