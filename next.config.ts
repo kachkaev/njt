@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   experimental: {
     // One network request fewer, which is worth it for as little CSS as we have
     inlineCss: true,
+    useTypeScriptCli: false,
   },
 
   productionBrowserSourceMaps: true,
@@ -11,7 +12,7 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   reactStrictMode: true,
 
-  typescript: { ignoreBuildErrors: true, useTypeScriptCli: false },
+  typescript: { ignoreBuildErrors: true },
 };
 
 export default nextConfig;
