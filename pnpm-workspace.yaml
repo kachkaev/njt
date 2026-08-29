@@ -1,6 +1,12 @@
 allowBuilds:
   sharp: false ## Install script is only required when compiling sharp from source - https://sharp.pixelplumbing.com/install
 
+## Install packages only after they have been out for at least 8 hours, to reduce exposure to
+## malicious releases that get unpublished quickly. Must stay in sync with the `minimumReleaseAge`
+## floor in the shared Renovate preset (github>kachkaev/reusable-stuff:renovate-preset), so that
+## Renovate never proposes a version pnpm would then refuse to lock.
+minimumReleaseAge: 480
+
 nodeLinker: isolated
 
 packages:
