@@ -18,6 +18,7 @@ program
   .usage("<package> [destination]")
   .description(
     // prettier-ignore
+    // eslint-disable-next-line unicorn/no-useless-template-literals -- A template literal keeps the multi-line banner readable
     `🐸 ✨ 🐸 ✨ 🐸
 npm jump to: a quick navigation tool for npm packages
 

@@ -38,7 +38,7 @@
     "url": "0.11.4"
   },
   "devDependencies": {
-    "@kachkaev/eslint-config-next": "1.2.0",
+    "@kachkaev/eslint-config-next": "2.0.0",
     "@kachkaev/markdownlint-config": "1.0.1",
     "@kachkaev/prettier-config": "2.2.1",
     "@next/eslint-plugin-next": "16.3.4",
@@ -50,7 +50,7 @@
     "@types/react": "19.2.18",
     "@typescript/native": "npm:typescript@7.0.2",
     "babel-plugin-react-compiler": "1.0.0",
-    "eslint": "9.39.5",
+    "eslint": "10.10.0",
     "husky": "9.1.7",
     "lint-staged": "17.4.1",
     "markdownlint-cli": "0.49.1",
