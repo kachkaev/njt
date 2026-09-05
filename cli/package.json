@@ -34,15 +34,15 @@
     "prepack": "pnpm ncp ../README.md README.md"
   },
   "dependencies": {
-    "chalk": "^6.0.0",
-    "commander": "^15.0.0",
-    "find-package-json": "^1.2.0",
-    "open": "^11.0.0"
+    "chalk": "6.0.0",
+    "commander": "15.0.0",
+    "find-package-json": "1.2.0",
+    "open": "11.0.0"
   },
   "devDependencies": {
-    "ncp": "^2.0.0"
+    "ncp": "2.0.0"
   },
   "engines": {
-    "node": ">=20"
+    "node": "v26.8.1"
   }
 }
