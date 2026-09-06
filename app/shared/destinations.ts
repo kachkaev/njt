@@ -3,52 +3,53 @@ import { LRUCache } from "lru-cache";
 
 import type { JsonObject } from "./json-types.js";
 
-export interface SuccessfullyResolvedDestination {
+export type SuccessfullyResolvedDestination = {
   outcome: "success";
   url: string;
-}
+};
 
-export interface UnresolvedDestination {
+export type UnresolvedDestination = {
   outcome: "error";
   error: string;
-}
+};
 
 export type ResolvedDestination =
-  | SuccessfullyResolvedDestination
-  | UnresolvedDestination;
+  SuccessfullyResolvedDestination | UnresolvedDestination;
 
-export interface DestinationConfig {
+export type DestinationConfig = {
   keywords: string[];
   generateUrl: (
     packageName: string,
   ) => Promise<string | undefined> | string | undefined;
-}
+};
 
 const packageMetadataCache = new LRUCache<string, JsonObject | Error>({
   max: 10_000,
   ttl: 1000 * 60,
 });
 
-const getPackageMetadata = async (packageName: string): Promise<JsonObject> => {
+async function getPackageMetadata(packageName: string): Promise<JsonObject> {
   if (!packageMetadataCache.has(packageName)) {
     const response = await fetch(`https://registry.npmjs.com/${packageName}`);
     packageMetadataCache.set(
       packageName,
+      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions -- TODO: replace with zod
       (await response.json()) as JsonObject,
     );
   }
   const result = packageMetadataCache.get(packageName);
   if (result instanceof Error) {
     throw result;
-  } else if (!result) {
+  }
+  if (!result) {
     throw new Error(`Unexpected empty cache for ${packageName}`);
   }
 
   return result;
-};
+}
 
 // Inspired by https://github.com/npm/cli/blob/0a0fdff3edca1ea2f0a2d87a0568751f369fd0c4/lib/repo.js#L37-L50
-const handleUnknownHostedUrl = (url: string): string | undefined => {
+function handleUnknownHostedUrl(url: string): string | undefined {
   try {
     const idx = url.indexOf("@");
     const fixedUrl =
@@ -62,14 +63,15 @@ const handleUnknownHostedUrl = (url: string): string | undefined => {
   } catch {
     return undefined;
   }
-};
+}
 
-const getRepoUrl = async (
+async function getRepoUrl(
   packageName: string,
   { skipDirectoryTrimming }: { skipDirectoryTrimming?: boolean } = {},
-): Promise<string | undefined> => {
+): Promise<string | undefined> {
   // Reference implementation: https://github.com/npm/cli/blob/latest/lib/repo.js
   const packageMetadata = await getPackageMetadata(packageName);
+  // eslint-disable-next-line @typescript-eslint/consistent-type-assertions -- TODO: replace with zod
   const rawUrl = (packageMetadata["repository"] as JsonObject)["url"];
   if (typeof rawUrl !== "string") {
     return undefined;
@@ -80,16 +82,21 @@ const getRepoUrl = async (
   // Some packages (e.g. babel and babel-cli) mistakenly specify repository URL with directory. It needs to be trimmed
   if (!skipDirectoryTrimming && result) {
     result = result.replace(
-      /^https:\/\/github\.com\/([^/]+)\/([^/]+)(.*)/i,
+      /^https:\/\/github\.com\/([^/]+)\/([^/]+).*/i,
       "https://github.com/$1/$2",
     );
   }
 
   return result;
-};
+}
 
-const isGitHub = (url: string) => url.includes("://github.com");
-const isGitLab = (url: string) => url.includes("://gitlab.com");
+function isGitHub(url: string) {
+  return url.includes("://github.com");
+}
+
+function isGitLab(url: string) {
+  return url.includes("://gitlab.com");
+}
 
 const destinationConfigs: DestinationConfig[] = [
   {
@@ -106,18 +113,17 @@ const destinationConfigs: DestinationConfig[] = [
         return;
       }
 
-      const gitHubMatch = repoUrl.match(
-        /^https:\/\/github\.com\/([^/]+)\/([^/]+)(.*)/i,
-      );
+      const [, githubOwner, githubRepo] =
+        /^https:\/\/github\.com\/([^/]+)\/([^/]+).*/i.exec(repoUrl) ?? [];
 
       // Covers GitHub repos
-      if (gitHubMatch) {
-        const [, owner, repo] = gitHubMatch;
-        const apiUrl = `https://api.github.com/repos/${owner!}/${repo!}/contents`;
+      if (githubOwner && githubRepo) {
+        const apiUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents`;
 
         let contents: JsonObject[] = [];
         try {
           const response = await fetch(apiUrl);
+          // eslint-disable-next-line @typescript-eslint/consistent-type-assertions -- TODO: replace with zod
           contents = (await response.json()) as JsonObject[];
         } catch {
           // noop
@@ -194,7 +200,8 @@ const destinationConfigs: DestinationConfig[] = [
       const repoUrl = await getRepoUrl(packageName);
       if (repoUrl && isGitHub(repoUrl)) {
         return `${repoUrl}/pulls`;
-      } else if (repoUrl && isGitLab(repoUrl)) {
+      }
+      if (repoUrl && isGitLab(repoUrl)) {
         return `${repoUrl}/merge_requests`;
       }
 
@@ -207,7 +214,8 @@ const destinationConfigs: DestinationConfig[] = [
       const repoUrl = await getRepoUrl(packageName);
       if (repoUrl && isGitHub(repoUrl)) {
         return `${repoUrl}/releases`;
-      } else if (repoUrl && isGitLab(repoUrl)) {
+      }
+      if (repoUrl && isGitLab(repoUrl)) {
         return `${repoUrl}/-/tags`;
       }
 
@@ -221,6 +229,7 @@ const destinationConfigs: DestinationConfig[] = [
         skipDirectoryTrimming: true,
       });
       const packageMetadata = await getPackageMetadata(packageName);
+      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions -- TODO: replace with zod
       const sourceDirectory = (packageMetadata["repository"] as JsonObject)[
         "directory"
       ];
@@ -237,7 +246,8 @@ const destinationConfigs: DestinationConfig[] = [
       const repoUrl = await getRepoUrl(packageName);
       if (repoUrl && isGitHub(repoUrl)) {
         return `${repoUrl}/tags`;
-      } else if (repoUrl && isGitLab(repoUrl)) {
+      }
+      if (repoUrl && isGitLab(repoUrl)) {
         return `${repoUrl}/-/tags`;
       }
 
@@ -252,6 +262,10 @@ const destinationConfigs: DestinationConfig[] = [
   {
     keywords: ["u"],
     generateUrl: (packageName) => `https://unpkg.com/browse/${packageName}/`,
+  },
+  {
+    keywords: ["x"],
+    generateUrl: (packageName) => `https://npmx.dev/package/${packageName}`,
   },
   {
     keywords: ["y"],
@@ -279,7 +293,7 @@ const destinationConfigByKeyword: Record<string, DestinationConfig> = {};
 
 for (const destinationConfig of destinationConfigs) {
   for (const keyword of destinationConfig.keywords) {
-    if (destinationConfigByKeyword[keyword]) {
+    if (Object.hasOwn(destinationConfigByKeyword, keyword)) {
       throw new Error(
         `Keyword ${keyword} is used in more than one destination`,
       );
@@ -288,17 +302,21 @@ for (const destinationConfig of destinationConfigs) {
   }
 }
 
-export const resolveDestination = async (
+export async function resolveDestination(
   rawPackageName: string,
   rawDestination = "",
-): Promise<ResolvedDestination> => {
+): Promise<ResolvedDestination> {
   const packageName = rawPackageName
+    .replaceAll(/\p{Cf}/gu, "") // remove invisible Unicode format chars that can be pasted into package names
     .toLowerCase()
     .replace("https://www.npmjs.com/package/", "") // https://www.npmjs.com/package/@types/react-dom
+    .replaceAll(/[–—−]/g, "-") // package names with misc dashes (not hyphens)
     .replace(/\?activeTab=\w+$/, "") // https://www.npmjs.com/package/@types/react-dom?activeTab=versions
     .replace(/\/v\/[\w.-]+/, "") // https://www.npmjs.com/package/@types/react-dom/v/18.0.9
     .replace("https://yarnpkg.com/package/", "") // https://yarnpkg.com/package/@types/react-dom
+    .replace("https://npmx.dev/package/", "") // https://npmx.dev/package/react or /package/@types/react-dom
     .replace(
+      // eslint-disable-next-line regexp/no-unused-capturing-group -- TODO: investigate
       /^https:\/\/unpkg.com\/browse\/(@?[\w.-]+(\/[\w.-]+)?)@([\w.-]+)\/$/, // https://unpkg.com/browse/@types/react-dom@18.0.9/
       "$1",
     );
@@ -319,7 +337,8 @@ export const resolveDestination = async (
   } catch {
     return {
       outcome: "success",
-      url: (await destinationConfigByKeyword[""]!.generateUrl(rawPackageName))!,
+      url:
+        (await destinationConfigByKeyword[""]?.generateUrl(packageName)) ?? "",
     };
   }
-};
+}

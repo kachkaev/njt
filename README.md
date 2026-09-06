@@ -17,7 +17,7 @@ njt <package> [destination]
 
 ## Available destinations
 
-<!-- When updating, remember to reflect changes in cli/cli.js and src/ui/PageContentsForIndex/AvailableDestinations.tsx -->
+<!-- When updating, remember to reflect changes in cli/cli.js and app/page/available-destinations.tsx -->
 
 - `b` → package cost estimation on [bundlephobia.com](https://bundlephobia.com)
 - `c` → changelog
@@ -31,7 +31,8 @@ njt <package> [destination]
 - `t` → list of git tags
 - `u` → package contents preview on [unpkg.com](https://unpkg.com)
 - `v` → list of package versions with dates on [npmjs.com](https://www.npmjs.com)
-- `y` → package page on [yarnpkg.com](https://yarnpkg.com) (mirror registry for [npmjs.com](https://www.npmjs.com))
+- `x` → package page on [npmx.dev](https://npmx.dev)
+- `y` → package page on [yarnpkg.com](https://yarnpkg.com)
 - `.` → browse GitHub / GitLab code
 
 Omitting the destination or entering an non-existing one takes you to the package page on [npmjs.com](https://www.npmjs.com) as if you used `n`.
@@ -68,11 +69,11 @@ npm install --global njt
 
 You are all set.
 Now try executing `njt <package> [destination]` with some real arguments.
-For example, these two commands will take you to the Lodash **g**ithub repo and **h**omepage, respectively:
+For example, these two commands will take you to the Tailwind CSS **g**ithub repo and **h**omepage, respectively:
 
 ```bash
-njt lodash g
-njt lodash h
+njt tailwindcss g
+njt tailwindcss h
 ```
 
 A list of supported destinations will be shown if you launch `njt` without arguments.
@@ -196,7 +197,7 @@ Feel free [to suggest](https://github.com/kachkaev/njt/issues/new?title=New+entr
 
 ### Query resolution
 
-The logic of `njt` is centralized and located within the `njt.vercel.app/jump` endpoint ([source](pages/api/jump.handler.ts)).
+The logic of `njt` is centralized and located within the `njt.vercel.app/jump` endpoint ([source](app/jump/route.ts)).
 
 All `njt` interfaces submit user queries to `https://njt.vercel.app/jump?from=UI_ID&to=USER_QUERY`, from which you are redirected to the destination.
 

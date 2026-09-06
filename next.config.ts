@@ -1,20 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  compiler: { styledComponents: true },
-
-  pageExtensions: ["page.tsx", "handler.ts"],
+  experimental: {
+    // One network request fewer, which is worth it for as little CSS as we have
+    inlineCss: true,
+    useTypeScriptCli: false,
+  },
 
   productionBrowserSourceMaps: true,
 
+  reactCompiler: true,
   reactStrictMode: true,
-
-  rewrites: () => [
-    {
-      source: "/jump",
-      destination: "/api/jump",
-    },
-  ],
 
   typescript: { ignoreBuildErrors: true },
 
@@ -36,5 +32,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-// eslint-disable-next-line import/no-default-export -- third-party API
 export default nextConfig;

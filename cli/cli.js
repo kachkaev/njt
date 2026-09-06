@@ -14,9 +14,11 @@ const log = console.log;
 program
   .version(getPackageVersion())
   .name("njt")
+  .arguments("[package] [destination]")
   .usage("<package> [destination]")
   .description(
     // prettier-ignore
+    // eslint-disable-next-line unicorn/no-useless-template-literals -- A template literal keeps the multi-line banner readable
     `🐸 ✨ 🐸 ✨ 🐸
 npm jump to: a quick navigation tool for npm packages
 
@@ -37,7 +39,8 @@ ${green('s')} → source (often same as repository root, but can be its subdirec
 ${green('t')} → list of git tags
 ${green('u')} → package contents preview on https://unpkg.com
 ${green('v')} → list of package versions with dates on https://www.npmjs.com
-${green('y')} → package page on https://yarnpkg.com (mirror registry for https://www.npmjs.com)
+${green('x')} → package page on https://npmx.dev
+${green('y')} → package page on https://yarnpkg.com
 ${green('.')} → browse GitHub / GitLab code
 
 Omitting the destination or entering an non-existing one takes you to the package page on https://www.npmjs.com as if you used ${green('n')}.
@@ -68,7 +71,7 @@ When you specify . instead of a package name, njt takes the name from the neares
   )
   .parse(process.argv);
 
-if (program.rawArgs.length < 3) {
+if (!program.args[0]) {
   log(program.help());
   process.exit(1);
 }

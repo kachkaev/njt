@@ -1,5 +1,25 @@
+allowBuilds:
+  sharp: false ## Install script is only required when compiling sharp from source - https://sharp.pixelplumbing.com/install
+
+## Install packages only after they have been out for at least 8 hours, to reduce exposure to
+## malicious releases that get unpublished quickly. Must stay in sync with the `minimumReleaseAge`
+## floor in the shared Renovate preset (github>kachkaev/reusable-stuff:renovate-preset), so that
+## Renovate never proposes a version pnpm would then refuse to lock.
+minimumReleaseAge: 480
+
+## Packages published from kachkaev/reusable-stuff are our own, so there is no reason to wait for
+## pnpm’s minimum release age before adopting a release.
+minimumReleaseAgeExclude:
+  - "@kachkaev/*"
+
+nodeLinker: isolated
+
+## TEMPORARY, see https://github.com/kachkaev/reusable-stuff/issues/347: @kachkaev/eslint-config-next v2
+## installs eslint-plugin-import and eslint-plugin-react from git snapshots because neither plugin has an
+## ESLint 10-compatible release on npm yet, and pnpm blocks git-hosted transitive dependencies by default.
+## While this is off, review lockfile diffs in dependency PRs for unexpected codeload.github.com tarballs.
+## Remove once the config is back on npm releases (tracked in the issue above).
+blockExoticSubdeps: false
+
 packages:
   - cli
-
-ignoredBuiltDependencies:
-  - sharp ## Install script is only required when compiling sharp from source - https://sharp.pixelplumbing.com/install
