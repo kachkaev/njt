@@ -13,23 +13,6 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
 
   typescript: { ignoreBuildErrors: true },
-
-  webpack: (
-    config: Record<string, unknown> & { resolve: Record<string, unknown> },
-  ) => {
-    return {
-      ...config,
-      resolve: {
-        ...config.resolve,
-        extensionAlias: {
-          /* eslint-disable @typescript-eslint/naming-convention -- external API */
-          ".js": [".js", ".ts"],
-          ".jsx": [".jsx", ".tsx"],
-          /* eslint-enable @typescript-eslint/naming-convention -- external API */
-        },
-      },
-    };
-  },
 };
 
 export default nextConfig;

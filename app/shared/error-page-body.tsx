@@ -1,4 +1,9 @@
-import Link from "next/link";
+import _Link from "next/link.js";
+
+// `next/link` is CommonJS, so under `moduleResolution: NodeNext` TypeScript types its default
+// import as the module namespace. Bundlers unwrap `__esModule` at runtime, so the cast is safe.
+// eslint-disable-next-line @typescript-eslint/consistent-type-assertions -- https://github.com/microsoft/TypeScript/issues/50058
+const Link = _Link as unknown as typeof _Link.default;
 
 export function ErrorPageBody({
   statusCode,
