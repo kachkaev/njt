@@ -40,7 +40,7 @@
     "open": "^11.0.0"
   },
   "devDependencies": {
-    "ncp": "^2.0.0"
+    "ncp": "2.0.0"
   },
   "engines": {
     "node": ">=20"
