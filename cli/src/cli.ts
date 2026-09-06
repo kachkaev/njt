@@ -1,10 +1,10 @@
-import { existsSync, readFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import { styleText } from "node:util";
 
 import { NodeRuntime, NodeServices } from "@effect/platform-node";
-import { Console, Data, Effect, Runtime } from "effect";
-import { Argument, CliError, Command } from "effect/unstable/cli";
+import { Console, Data, Effect, Option, Runtime } from "effect";
+import { Argument, Command } from "effect/unstable/cli";
 import open from "open";
 
 import packageJson from "../package.json" with { type: "json" };
@@ -70,6 +70,10 @@ class PackageNameResolutionError extends Data.TaggedError(
 )<{
   readonly reason: string;
 }> {
+  // Printed as a friendly message via `tapErrorTag` below, so `runMain` must
+  // not log it again. The process still exits non-zero.
+  override readonly [Runtime.errorReported] = false;
+
   override get message(): string {
     return `
 ${styleText("red", this.reason)}
@@ -82,27 +86,28 @@ Change directory or replace . with a package name.
 
 function findNearestPackageJson(
   startDir: string,
-): { filename: string; name: unknown } | undefined {
+): { filename: string; name: string | undefined } | undefined {
   let dir = startDir;
   for (;;) {
     const filename = path.join(dir, "package.json");
-    if (existsSync(filename)) {
-      // An unreadable or malformed package.json must not abort the walk —
-      // the pre-Effect CLI (via find-package-json) skipped such files too
-      let parsed: unknown;
-      try {
-        parsed = JSON.parse(
-          readFileSync(filename, "utf8").replace(/^\uFEFF/, ""),
-        );
-      } catch {
-        parsed = undefined;
-      }
-      if (typeof parsed === "object" && parsed !== null) {
-        return {
-          filename,
-          name: "name" in parsed ? parsed.name : undefined,
-        };
-      }
+    // A missing, unreadable or malformed package.json must not abort the walk —
+    // the pre-Effect CLI (via find-package-json) skipped such files too
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(
+        readFileSync(filename, "utf8").replace(/^\u{FEFF}/u, ""),
+      );
+    } catch {
+      parsed = undefined;
+    }
+    if (typeof parsed === "object" && parsed !== null) {
+      return {
+        filename,
+        name:
+          "name" in parsed && typeof parsed.name === "string"
+            ? parsed.name
+            : undefined,
+      };
     }
     const parentDir = path.dirname(dir);
     if (parentDir === dir) {
@@ -113,23 +118,22 @@ function findNearestPackageJson(
 }
 
 const resolveDotAsPackageName = Effect.gen(function* () {
-  const packageJsonSearchResult = findNearestPackageJson(process.cwd());
-  if (!packageJsonSearchResult) {
+  const nearestPackageJson = findNearestPackageJson(process.cwd());
+  if (!nearestPackageJson) {
     return yield* new PackageNameResolutionError({
       reason:
         "You specified package name as . but package.json was not found in the current folder or in parent folders.",
     });
   }
   yield* Console.log(`
-Resolved . as ${packageJsonSearchResult.filename}`);
-  const packageName = packageJsonSearchResult.name;
-  if (typeof packageName !== "string" || !packageName) {
+Resolved . as ${nearestPackageJson.filename}`);
+  if (!nearestPackageJson.name) {
     return yield* new PackageNameResolutionError({
       reason:
         'You specified package name as . but "name" field was not found in the resolved package.json file.',
     });
   }
-  return packageName;
+  return nearestPackageJson.name;
 });
 
 function generateUrl(query: string): string {
@@ -145,27 +149,23 @@ function openUrl(url: string, browser: string | undefined) {
 }
 
 const cli = Command.make("njt", {
-  query: Argument.string("package [destination]").pipe(
-    Argument.variadic({ min: 0 }),
-    Argument.withDescription(
-      "Package name (or . for the nearest package.json) followed by an optional destination",
-    ),
+  packageName: Argument.string("package").pipe(
+    Argument.withDescription("Package name, or . for the nearest package.json"),
+  ),
+  destination: Argument.string("destination").pipe(
+    Argument.optional,
+    Argument.withDescription("One of the letters listed above"),
   ),
 }).pipe(
   Command.withDescription(description),
-  Command.withHandler(({ query }) =>
+  Command.withHandler(({ packageName, destination }) =>
     Effect.gen(function* () {
-      if (query.length === 0) {
-        return yield* new CliError.ShowHelp({
-          commandPath: ["njt"],
-          errors: [],
-        });
-      }
-      const [packageName = "", ...rest] = query;
       const resolvedPackageName =
         packageName === "." ? yield* resolveDotAsPackageName : packageName;
       yield* openUrl(
-        generateUrl([resolvedPackageName, ...rest].join(" ")),
+        generateUrl(
+          [resolvedPackageName, ...Option.toArray(destination)].join(" "),
+        ),
         // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- an empty NJT_BROWSER must fall back to BROWSER
         process.env["NJT_BROWSER"] || process.env["BROWSER"],
       );
@@ -173,25 +173,9 @@ const cli = Command.make("njt", {
   ),
 );
 
-/**
- * Failure that {@link NodeRuntime.runMain} must not log again: the message has
- * already been printed to stderr (see `Runtime.errorReported`). The process
- * still exits non-zero.
- */
-class ReportedCliFailure extends Data.TaggedError("ReportedCliFailure") {
-  override readonly [Runtime.errorReported] = false;
-}
-
 Command.run(cli, { version: packageJson.version }).pipe(
-  // Domain failures print as one friendly message on stderr. CLI-internal
-  // errors (--help rendering, Ctrl-C quits) keep the framework's own handling
-  // and exit codes.
-  Effect.catchIf(
-    (error) => !CliError.isCliError(error),
-    (error) =>
-      Console.error(
-        error instanceof Error ? error.message : String(error),
-      ).pipe(Effect.andThen(Effect.fail(new ReportedCliFailure()))),
+  Effect.tapErrorTag("PackageNameResolutionError", (error) =>
+    Console.error(error.message),
   ),
   Effect.provide(NodeServices.layer),
   NodeRuntime.runMain,
