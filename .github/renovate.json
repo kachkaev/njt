@@ -1,49 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    ":dependencyDashboardApproval",
-    ":disableDigestUpdates",
-    ":maintainLockFilesWeekly",
-    ":semanticCommitsDisabled",
-    "helpers:pinGitHubActionDigestsToSemver"
-  ],
+  "extends": ["github>kachkaev/reusable-stuff:renovate-preset"],
   "packageRules": [
     {
-      "autoApprove": true,
-      "automerge": true,
-      "dependencyDashboardApproval": false,
-      "enabled": true,
-      "minimumReleaseAge": "2 days",
-      "matchManagers": ["npm"],
-      "matchPackageNames": ["/^pnpm$/"],
-      "schedule": ["every weekend"]
-    },
-    {
-      "autoApprove": true,
-      "automerge": true,
-      "dependencyDashboardApproval": false,
-      "enabled": true,
-      "matchUpdateTypes": ["patch"],
-      "matchCurrentValue": "!/^0\\./",
-      "matchManagers": ["npm"],
-      "minimumReleaseAge": "2 days",
-      "schedule": ["every weekend"]
-    },
-    {
-      "autoApprove": true,
-      "automerge": true,
-      "dependencyDashboardApproval": false,
-      "enabled": true,
-      "matchDepTypes": ["devDependencies"],
-      "matchManagers": ["npm"],
-      "minimumReleaseAge": "2 days",
-      "schedule": ["every weekend"]
+      "description": "`cli` is published to npm, so its runtime `dependencies` are what consumers resolve against. The shared preset pins every range, which would lock dependents to one exact version and clash with anything else in their tree that needs a different one. `replace` keeps the caret ranges and only opens a PR when a release falls outside them. Everything else stays pinned: the root app is private, and `cli`’s `devDependencies` never reach consumers.",
+      "matchFileNames": ["cli/package.json"],
+      "matchDepTypes": ["dependencies"],
+      "rangeStrategy": "replace"
     }
-  ],
-  "postUpdateOptions": ["pnpmDedupe"],
-  "prConcurrentLimit": 5,
-  "prHourlyLimit": 1,
-  "rangeStrategy": "pin",
-  "timezone": "Etc/UTC"
+  ]
 }

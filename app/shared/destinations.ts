@@ -40,7 +40,8 @@ async function getPackageMetadata(packageName: string): Promise<JsonObject> {
   const result = packageMetadataCache.get(packageName);
   if (result instanceof Error) {
     throw result;
-  } else if (!result) {
+  }
+  if (!result) {
     throw new Error(`Unexpected empty cache for ${packageName}`);
   }
 
@@ -199,7 +200,8 @@ const destinationConfigs: DestinationConfig[] = [
       const repoUrl = await getRepoUrl(packageName);
       if (repoUrl && isGitHub(repoUrl)) {
         return `${repoUrl}/pulls`;
-      } else if (repoUrl && isGitLab(repoUrl)) {
+      }
+      if (repoUrl && isGitLab(repoUrl)) {
         return `${repoUrl}/merge_requests`;
       }
 
@@ -212,7 +214,8 @@ const destinationConfigs: DestinationConfig[] = [
       const repoUrl = await getRepoUrl(packageName);
       if (repoUrl && isGitHub(repoUrl)) {
         return `${repoUrl}/releases`;
-      } else if (repoUrl && isGitLab(repoUrl)) {
+      }
+      if (repoUrl && isGitLab(repoUrl)) {
         return `${repoUrl}/-/tags`;
       }
 
@@ -243,7 +246,8 @@ const destinationConfigs: DestinationConfig[] = [
       const repoUrl = await getRepoUrl(packageName);
       if (repoUrl && isGitHub(repoUrl)) {
         return `${repoUrl}/tags`;
-      } else if (repoUrl && isGitLab(repoUrl)) {
+      }
+      if (repoUrl && isGitLab(repoUrl)) {
         return `${repoUrl}/-/tags`;
       }
 
@@ -289,7 +293,7 @@ const destinationConfigByKeyword: Record<string, DestinationConfig> = {};
 
 for (const destinationConfig of destinationConfigs) {
   for (const keyword of destinationConfig.keywords) {
-    if (destinationConfigByKeyword[keyword]) {
+    if (Object.hasOwn(destinationConfigByKeyword, keyword)) {
       throw new Error(
         `Keyword ${keyword} is used in more than one destination`,
       );

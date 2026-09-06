@@ -8,7 +8,7 @@
  */
 export function getBaseUrl(): string {
   const hostname = process.env["NEXT_PUBLIC_VERCEL_URL"] ?? "njt.vercel.app";
-  const protocol = hostname.split(":")[0] === "localhost" ? "http" : "https";
+  const protocol = hostname.split(":", 1)[0] === "localhost" ? "http" : "https";
 
   return `${protocol}://${hostname}`;
 }
