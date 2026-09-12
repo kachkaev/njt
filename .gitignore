@@ -12,4 +12,6 @@ tsconfig.tsbuildinfo
 .env*
 
 ## custom
+cli/dist/
+cli/LICENSE.md
 cli/README.md

@@ -1,4 +1,6 @@
 allowBuilds:
+  esbuild: true ## Required by Vite to install the platform-specific esbuild binary used during bundling
+  msgpackr-extract: true ## Required by effect -> msgpackr on pnpm 11+, including CI installs
   sharp: false ## Install script is only required when compiling sharp from source - https://sharp.pixelplumbing.com/install
 
 ## Install packages only after they have been out for at least 8 hours, to reduce exposure to

@@ -83,3 +83,21 @@ jobs:
             echo 'ℹ️ ℹ️ ℹ️'
             exit 1
           fi
+
+  build-cli:
+    name: Build CLI
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up pnpm and Node.js, install dependencies
+        uses: pnpm/setup@703c52620218391530e48b9e8870d5c0082e1b9b # v2.1.0
+        with:
+          cache: true
+
+      - name: Build CLI
+        run: pnpm --filter njt build
+
+      - name: Verify bundled CLI
+        run: node cli/dist/cli.js --help
