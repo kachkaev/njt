@@ -1,6 +1,6 @@
 import type * as React from "react";
 
-import { ExternalLink } from "../shared/external-link";
+import { ExternalLink } from "../shared/external-link.js";
 
 export function PageLayout({ children }: { children: React.ReactNode }) {
   return (
