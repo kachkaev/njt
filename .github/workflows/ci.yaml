@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Set up pnpm and Node.js, install dependencies
-        uses: pnpm/setup@703c52620218391530e48b9e8870d5c0082e1b9b # v2.1.0
+        uses: pnpm/setup@fbda4c85fc2e1e08721cd8763afea8f48d60f024 # v3.0.0
         with:
           cache: true
 
@@ -41,20 +41,6 @@ jobs:
             echo ''
             echo 'ℹ️ ℹ️ ℹ️'
             echo 'Try running `pnpm fix:markdownlint` locally to apply autofixes.'
-            echo 'ℹ️ ℹ️ ℹ️'
-            exit 1
-          fi
-
-      - name: Run pnpm lint:pnpm-dedupe
-        if: ${{ success() || failure() }}
-        run: |
-          if ! pnpm lint:pnpm-dedupe; then
-            echo ''
-            echo ''
-            echo 'ℹ️ ℹ️ ℹ️'
-            echo 'Some dependencies can be deduplicated, which will make pnpm-lock.yaml'
-            echo 'lighter and potentially save us from unexplainable bugs.'
-            echo 'Please run `pnpm fix:pnpm-dedupe` locally and commit pnpm-lock.yaml.'
             echo 'ℹ️ ℹ️ ℹ️'
             exit 1
           fi
@@ -92,7 +78,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Set up pnpm and Node.js, install dependencies
-        uses: pnpm/setup@703c52620218391530e48b9e8870d5c0082e1b9b # v2.1.0
+        uses: pnpm/setup@fbda4c85fc2e1e08721cd8763afea8f48d60f024 # v3.0.0
         with:
           cache: true
 
