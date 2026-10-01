@@ -1,4 +1,5 @@
 allowBuilds:
+  esbuild: true ## Required by Vite to install the platform-specific esbuild binary used during bundling
   sharp: false ## Install script is only required when compiling sharp from source - https://sharp.pixelplumbing.com/install
 
 ## Collapse compatible duplicate versions whenever pnpm writes the lockfile, so every install keeps it as
@@ -23,6 +24,11 @@ minimumReleaseAge: 480
 ## pnpm’s minimum release age before adopting a release.
 minimumReleaseAgeExclude:
   - "@kachkaev/*"
+  ## Effect 4.0.0 stable was adopted on release day. Safe to remove once the release is older than
+  ## `minimumReleaseAge`.
+  - "@effect/platform-node-shared@4.0.0"
+  - "@effect/platform-node@4.0.0"
+  - "effect@4.0.0"
 
 nodeLinker: isolated
 

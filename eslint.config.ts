@@ -1,35 +1,27 @@
 import { generateNextConfigs } from "@kachkaev/eslint-config-next";
-import type { Linter } from "eslint";
 import { defineConfig } from "eslint/config";
-import typescriptEslint from "typescript-eslint";
-
-const sharedFileScope = "**/*.{ts,tsx}";
-const cliFileScope = "cli/**/*.js";
-
-/**
- * The shared configs are scoped to TS and TSX. The CLI is plain JavaScript, so widen that scope to
- * cover it as well (https://github.com/kachkaev/reusable-stuff/issues/348).
- */
-function includeCli(config: Linter.Config): Linter.Config {
-  return Array.isArray(config.files) &&
-    config.files.length === 1 &&
-    config.files[0] === sharedFileScope
-    ? { ...config, files: [sharedFileScope, cliFileScope] }
-    : config;
-}
 
 export default defineConfig([
+  { ignores: ["cli/dist"] },
+
   generateNextConfigs({
     tailwindcssEntryPoint: "app/layout/global.css",
-  }).map((config) => includeCli(config)),
+  }),
 
   {
-    files: [cliFileScope],
-    extends: [typescriptEslint.configs.disableTypeChecked],
+    // Vite requires a default export from its config file
+    files: ["cli/vite.config.ts"],
     rules: {
-      "@eslint-react/no-implicit-key": "off",
-      "@eslint-react/no-unused-props": "off",
-      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "import/no-default-export": "off",
+    },
+  },
+
+  {
+    // The CLI is bundled into a single file, so everything it imports except
+    // `open` (kept external, see vite.config.ts) is a devDependency by design
+    files: ["cli/src/**/*.ts"],
+    rules: {
+      "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
     },
   },
 ]);
