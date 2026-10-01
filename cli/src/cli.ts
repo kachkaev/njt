@@ -4,7 +4,7 @@ import { styleText } from "node:util";
 
 import { NodeRuntime, NodeServices } from "@effect/platform-node";
 import { Console, Data, Effect, Option, Runtime } from "effect";
-import { Argument, Command } from "effect/unstable/cli";
+import { Argument, Command } from "effect/cli";
 import open from "open";
 
 import packageJson from "../package.json" with { type: "json" };
@@ -149,10 +149,10 @@ function openUrl(url: string, browser: string | undefined) {
 }
 
 const cli = Command.make("njt", {
-  packageName: Argument.string("package").pipe(
+  packageName: Argument.String("package").pipe(
     Argument.withDescription("Package name, or . for the nearest package.json"),
   ),
-  destination: Argument.string("destination").pipe(
+  destination: Argument.String("destination").pipe(
     Argument.optional,
     Argument.withDescription("One of the letters listed above"),
   ),

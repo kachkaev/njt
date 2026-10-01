@@ -24,6 +24,11 @@ minimumReleaseAge: 480
 ## pnpm’s minimum release age before adopting a release.
 minimumReleaseAgeExclude:
   - "@kachkaev/*"
+  ## Effect 4.0.0 stable was adopted on release day. Safe to remove once the release is older than
+  ## `minimumReleaseAge`.
+  - "@effect/platform-node-shared@4.0.0"
+  - "@effect/platform-node@4.0.0"
+  - "effect@4.0.0"
 
 nodeLinker: isolated
 
