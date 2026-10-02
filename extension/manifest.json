@@ -11,6 +11,7 @@
     "48": "icons/icon-48.png",
     "128": "icons/icon-128.png"
   },
+  "minimum_chrome_version": "121",
   "omnibox": {
     "keyword": "njt"
   },
@@ -25,9 +26,6 @@
       "data_collection_permissions": {
         "required": ["searchTerms"]
       }
-    },
-    "gecko_android": {
-      "strict_min_version": "142.0"
     }
   }
 }
