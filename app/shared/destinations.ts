@@ -316,17 +316,32 @@ export function listDestinations(): Array<
   }));
 }
 
-const destinationConfigByKeyword: Record<string, DestinationConfig> = {};
+const destinationConfigByKeyword = new Map<string, DestinationConfig>();
 
 for (const destinationConfig of destinationConfigs) {
   for (const keyword of destinationConfig.keywords) {
-    if (Object.hasOwn(destinationConfigByKeyword, keyword)) {
+    if (destinationConfigByKeyword.has(keyword)) {
       throw new Error(
         `Keyword ${keyword} is used in more than one destination`,
       );
     }
-    destinationConfigByKeyword[keyword] = destinationConfig;
+    destinationConfigByKeyword.set(keyword, destinationConfig);
   }
+}
+
+/**
+ * Exact keyword matches win (e.g. a two-letter keyword). Otherwise, the first
+ * character decides, so that `prettier releases` keeps working as `prettier r`.
+ */
+function findDestinationConfig(
+  rawDestination: string,
+): DestinationConfig | undefined {
+  const destination = rawDestination.toLowerCase();
+
+  return (
+    destinationConfigByKeyword.get(destination) ??
+    destinationConfigByKeyword.get(destination[0] ?? "")
+  );
 }
 
 export async function resolveDestination(
@@ -350,9 +365,7 @@ export async function resolveDestination(
 
   try {
     const url =
-      await destinationConfigByKeyword[
-        rawDestination[0]?.toLowerCase() ?? ""
-      ]?.generateUrl(packageName);
+      await findDestinationConfig(rawDestination)?.generateUrl(packageName);
     if (!url) {
       throw new Error("Unexpected empty URL");
     }
@@ -365,7 +378,8 @@ export async function resolveDestination(
     return {
       outcome: "success",
       url:
-        (await destinationConfigByKeyword[""]?.generateUrl(packageName)) ?? "",
+        (await destinationConfigByKeyword.get("")?.generateUrl(packageName)) ??
+        "",
     };
   }
 }
