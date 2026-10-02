@@ -43,6 +43,9 @@ export function GET(request: Request): Response {
       "content-type": "application/x-suggestions+json; charset=utf-8",
       // The response only depends on the query and the deployed destination list
       "cache-control": "public, max-age=3600",
+      // Lets the browser extension (and other clients) fetch suggestions
+      // without host permissions; the data is public anyway
+      "access-control-allow-origin": "*",
     },
   });
 }

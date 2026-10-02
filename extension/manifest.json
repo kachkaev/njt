@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "njt (npm jump to)",
+  "short_name": "njt",
+  "version": "0.1.0",
+  "description": "Type njt, a package name and a destination in the address bar to jump to npm package pages, repos, changelogs and more.",
+  "homepage_url": "https://njt.vercel.app",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "omnibox": {
+    "keyword": "njt"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "scripts": ["background.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "njt@njt.vercel.app",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["searchTerms"]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
+    }
+  }
+}
