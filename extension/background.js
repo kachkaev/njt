@@ -3,9 +3,9 @@ const baseUrl = "https://njt.vercel.app";
 
 const { version } = chrome.runtime.getManifest();
 
-// Firefox defines `browser` and differs from Chrome in a few omnibox details,
-// see comments below
-const isFirefox = typeof browser !== "undefined";
+// Firefox differs from Chrome in a few omnibox details, see comments below.
+// Checking for the `browser` global is not enough: recent Chrome defines it too.
+const isFirefox = chrome.runtime.getURL("").startsWith("moz-extension:");
 
 // Both browsers show 10 rows: the default one (describing Enter) + 9 suggestions
 const maxSuggestionCount = 9;
@@ -34,7 +34,8 @@ chrome.omnibox.onInputChanged.addListener(async (text, suggest) => {
   try {
     const response = await fetch(
       `${baseUrl}/suggest?q=${encodeURIComponent(text)}`,
-      { signal: request.signal },
+      // Always revalidate, so a response cached before a deploy is not reused
+      { signal: request.signal, cache: "no-cache" },
     );
     // The first completion is what entering the text does
     const [

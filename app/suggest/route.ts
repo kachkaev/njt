@@ -52,8 +52,10 @@ export function GET(request: Request): Response {
   return Response.json([query, completions, descriptions, urls], {
     headers: {
       "content-type": "application/x-suggestions+json; charset=utf-8",
-      // The response only depends on the query and the deployed destination list
-      "cache-control": "public, max-age=3600",
+      // The response only depends on the query and the deployed destination
+      // list, so the CDN can cache it until the next deploy. Browsers should
+      // not, otherwise they keep showing outdated destinations
+      "cache-control": "public, max-age=0, s-maxage=3600",
       // Lets the browser extension (and other clients) fetch suggestions
       // without host permissions; the data is public anyway
       "access-control-allow-origin": "*",
