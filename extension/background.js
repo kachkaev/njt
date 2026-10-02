@@ -3,10 +3,6 @@ const baseUrl = "https://njt.vercel.app";
 
 const { version } = chrome.runtime.getManifest();
 
-chrome.omnibox.setDefaultSuggestion({
-  description: "npm jump to: <package> [destination]",
-});
-
 // Chrome parses suggestion descriptions as XML
 function escapeXml(text) {
   return text
@@ -14,6 +10,10 @@ function escapeXml(text) {
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;");
 }
+
+const hint = "npm jump to: type a package name, then optionally a destination";
+
+chrome.omnibox.setDefaultSuggestion({ description: hint });
 
 let pendingRequest;
 
@@ -28,6 +28,18 @@ chrome.omnibox.onInputChanged.addListener(async (text, suggest) => {
       { signal: request.signal },
     );
     const [, completions, descriptions] = await response.json();
+
+    // Browsers only show the first few suggestions, so the top row (what
+    // Enter does) lists every matching keyword to keep them all discoverable
+    const keywords = completions.map((completion) =>
+      completion.slice(completion.lastIndexOf(" ") + 1),
+    );
+    chrome.omnibox.setDefaultSuggestion({
+      description:
+        keywords.length > 0
+          ? escapeXml(`Destinations: ${keywords.join(" ")}`)
+          : hint,
+    });
 
     suggest(
       completions.map((completion, index) => ({
