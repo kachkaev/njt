@@ -18,6 +18,8 @@ export type ResolvedDestination =
 
 export type DestinationConfig = {
   keywords: string[];
+  // Plain-text summary shown in search suggestions
+  description: string;
   generateUrl: (
     packageName: string,
   ) => Promise<string | undefined> | string | undefined;
@@ -98,14 +100,17 @@ function isGitLab(url: string) {
   return url.includes("://gitlab.com");
 }
 
+// When updating, remember to reflect changes in README.md, cli/cli.js and app/page/available-destinations.tsx
 const destinationConfigs: DestinationConfig[] = [
   {
     keywords: ["b"],
+    description: "package cost estimation on bundlephobia.com",
     generateUrl: (packageName) =>
       `https://bundlephobia.com/result?p=${packageName}`,
   },
   {
     keywords: ["c"],
+    description: "changelog",
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
 
@@ -146,6 +151,7 @@ const destinationConfigs: DestinationConfig[] = [
   },
   {
     keywords: ["g"],
+    description: "github (gitlab, etc.) repository root",
     generateUrl: async (packageName) => {
       return await getRepoUrl(packageName, {
         skipDirectoryTrimming: true,
@@ -154,6 +160,7 @@ const destinationConfigs: DestinationConfig[] = [
   },
   {
     keywords: ["h", "w", "d"],
+    description: "homepage",
     generateUrl: async (packageName) => {
       // Reference implementation: https://github.com/npm/cli/blob/latest/lib/docs.js
       const packageMetadata = await getPackageMetadata(packageName);
@@ -165,6 +172,7 @@ const destinationConfigs: DestinationConfig[] = [
   },
   {
     keywords: ["i"],
+    description: "issues",
     generateUrl: async (packageName) => {
       // Reference implementation: https://github.com/npm/cli/blob/latest/lib/bugs.js
       const packageMetadata = await getPackageMetadata(packageName);
@@ -192,10 +200,12 @@ const destinationConfigs: DestinationConfig[] = [
   },
   {
     keywords: ["n", ""],
+    description: "package info on npmjs.com",
     generateUrl: (packageName) => `https://npmjs.com/package/${packageName}`,
   },
   {
     keywords: ["p", "m"],
+    description: "pull requests",
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
       if (repoUrl && isGitHub(repoUrl)) {
@@ -210,6 +220,7 @@ const destinationConfigs: DestinationConfig[] = [
   },
   {
     keywords: ["r"],
+    description: "list of github releases",
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
       if (repoUrl && isGitHub(repoUrl)) {
@@ -224,6 +235,7 @@ const destinationConfigs: DestinationConfig[] = [
   },
   {
     keywords: ["s"],
+    description: "source (repository root or monorepo subdirectory)",
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName, {
         skipDirectoryTrimming: true,
@@ -242,6 +254,7 @@ const destinationConfigs: DestinationConfig[] = [
   },
   {
     keywords: ["t"],
+    description: "list of git tags",
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
       if (repoUrl && isGitHub(repoUrl)) {
@@ -256,23 +269,28 @@ const destinationConfigs: DestinationConfig[] = [
   },
   {
     keywords: ["v"],
+    description: "list of package versions with dates on npmjs.com",
     generateUrl: (packageName) =>
       `https://npmjs.com/package/${packageName}?activeTab=versions`,
   },
   {
     keywords: ["u"],
+    description: "package contents preview on unpkg.com",
     generateUrl: (packageName) => `https://unpkg.com/browse/${packageName}/`,
   },
   {
     keywords: ["x"],
+    description: "package page on npmx.dev",
     generateUrl: (packageName) => `https://npmx.dev/package/${packageName}`,
   },
   {
     keywords: ["y"],
+    description: "package page on yarnpkg.com",
     generateUrl: (packageName) => `https://yarnpkg.com/package/${packageName}`,
   },
   {
     keywords: ["."],
+    description: "browse GitHub / GitLab code",
     generateUrl: async (packageName) => {
       const repoUrl = await getRepoUrl(packageName);
 
@@ -288,6 +306,15 @@ const destinationConfigs: DestinationConfig[] = [
     },
   },
 ];
+
+export function listDestinations(): Array<
+  Pick<DestinationConfig, "keywords" | "description">
+> {
+  return destinationConfigs.map(({ keywords, description }) => ({
+    keywords,
+    description,
+  }));
+}
 
 const destinationConfigByKeyword: Record<string, DestinationConfig> = {};
 
