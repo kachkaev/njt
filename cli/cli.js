@@ -34,6 +34,7 @@ ${green('h')} → homepage (aliased as ${green('w')} for website or ${green('d')
 ${green('i')} → issues
 ${green('n')} → package info on https://www.npmjs.com
 ${green('p')} → pull requests (aliased as ${green('m')} for merge requests)
+${green('pp')} → package install size on https://packagephobia.com
 ${green('r')} → list of github releases
 ${green('s')} → source (often same as repository root, but can be its subdirectory in case of a monorepo)
 ${green('t')} → list of git tags

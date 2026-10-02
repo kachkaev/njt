@@ -219,6 +219,12 @@ const destinationConfigs: DestinationConfig[] = [
     },
   },
   {
+    keywords: ["pp"],
+    description: "package install size on packagephobia.com",
+    generateUrl: (packageName) =>
+      `https://packagephobia.com/result?p=${packageName}`,
+  },
+  {
     keywords: ["r"],
     description: "list of github releases",
     generateUrl: async (packageName) => {

@@ -26,6 +26,7 @@ njt <package> [destination]
 - `i` → issues
 - `n` → package info on [npmjs.com](https://www.npmjs.com)
 - `p` → pull requests (aliased as `m` for merge requests)
+- `pp` → package install size on [packagephobia.com](https://packagephobia.com)
 - `r` → list of github releases
 - `s` → source (often same as repository root, but can be its subdirectory in case of a monorepo)
 - `t` → list of git tags

@@ -88,6 +88,15 @@ export function AvailableDestinations({
       ),
     },
     {
+      keywords: ["pp"],
+      info: (
+        <>
+          package install size on{" "}
+          <ExternalLink href="https://packagephobia.com" />
+        </>
+      ),
+    },
+    {
       keywords: ["r"],
       info: "list of github releases",
     },
