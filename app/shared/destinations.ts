@@ -360,10 +360,7 @@ export function describeDestination(rawDestination: string): string {
     return destinationConfig.description;
   }
 
-  const defaultConfig = destinationConfigByKeyword.get("");
-  const defaultKeyword = defaultConfig?.keywords.find(Boolean);
-
-  return `${defaultConfig?.description ?? ""} (default, same as ${defaultKeyword ?? ""})`;
+  return destinationConfigByKeyword.get("")?.description ?? "";
 }
 
 export async function resolveDestination(

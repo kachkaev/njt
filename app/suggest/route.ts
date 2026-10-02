@@ -34,6 +34,11 @@ export function GET(request: Request): Response {
     addSuggestion(enteredCompletion, describeDestination(rawDestination));
 
     for (const { keywords, description } of listDestinations()) {
+      // Without a destination, the first suggestion already is the default one
+      if (!destinationPrefix && keywords.includes("")) {
+        continue;
+      }
+
       const keyword = keywords.find(
         (candidate) =>
           candidate.length > 0 && candidate.startsWith(destinationPrefix),
