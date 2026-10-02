@@ -350,6 +350,22 @@ function findDestinationConfig(
   );
 }
 
+/**
+ * Describes where `/jump` takes a destination keyword (ignoring fallbacks that
+ * depend on package metadata, like a missing repository URL)
+ */
+export function describeDestination(rawDestination: string): string {
+  const destinationConfig = findDestinationConfig(rawDestination);
+  if (destinationConfig && rawDestination) {
+    return destinationConfig.description;
+  }
+
+  const defaultConfig = destinationConfigByKeyword.get("");
+  const defaultKeyword = defaultConfig?.keywords.find(Boolean);
+
+  return `${defaultConfig?.description ?? ""} (default, same as ${defaultKeyword ?? ""})`;
+}
+
 export async function resolveDestination(
   rawPackageName: string,
   rawDestination = "",

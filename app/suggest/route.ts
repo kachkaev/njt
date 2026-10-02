@@ -1,12 +1,13 @@
 import { getBaseUrl } from "../shared/base-url";
-import { listDestinations } from "../shared/destinations";
+import { describeDestination, listDestinations } from "../shared/destinations";
 
 /**
  * Search suggestions in the OpenSearch format, advertised by public/opensearch.xml:
  * https://github.com/dewitt/opensearch/blob/master/mozilla/Search%20Suggestions%20Specification.md
  *
- * `prettier` or `prettier ` lists all destinations; `prettier r` narrows them
- * down to the destinations with a matching keyword.
+ * The first suggestion is always what entering the query does (e.g. `prettier`
+ * goes to npmjs.com). Then, `prettier` or `prettier ` lists all destinations,
+ * and `prettier r` narrows them down to the ones with a matching keyword.
  */
 export function GET(request: Request): Response {
   const query = new URL(request.url).searchParams.get("q") ?? "";
@@ -19,8 +20,18 @@ export function GET(request: Request): Response {
   const descriptions: string[] = [];
   const urls: string[] = [];
 
+  function addSuggestion(completion: string, description: string): void {
+    completions.push(completion);
+    descriptions.push(description);
+    urls.push(`${getBaseUrl()}/jump?to=${encodeURIComponent(completion)}`);
+  }
+
   if (packageName) {
     const destinationPrefix = rawDestination.toLowerCase();
+    const enteredCompletion = [packageName, rawDestination]
+      .filter(Boolean)
+      .join(" ");
+    addSuggestion(enteredCompletion, describeDestination(rawDestination));
 
     for (const { keywords, description } of listDestinations()) {
       const keyword = keywords.find(
@@ -31,10 +42,10 @@ export function GET(request: Request): Response {
         continue;
       }
 
-      const completion = `${packageName} ${keyword}`;
-      completions.push(completion);
-      descriptions.push(description);
-      urls.push(`${getBaseUrl()}/jump?to=${encodeURIComponent(completion)}`);
+      // Already covered by the first suggestion
+      if (keyword !== destinationPrefix) {
+        addSuggestion(`${packageName} ${keyword}`, description);
+      }
     }
   }
 
