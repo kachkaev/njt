@@ -24,6 +24,11 @@ const hint = "npm jump to: type a package name, then optionally a destination";
 
 chrome.omnibox.setDefaultSuggestion({ description: hint });
 
+// Stands out when skimming. Non-breaking spaces widen the gap around the frog,
+// because Firefox may collapse regular ones
+const gap = "\u00A0".repeat(4);
+const moreSeparator = `${gap}🐸${gap}`;
+
 let pendingRequest;
 
 chrome.omnibox.onInputChanged.addListener(async (text, suggest) => {
@@ -42,6 +47,8 @@ chrome.omnibox.onInputChanged.addListener(async (text, suggest) => {
       ,
       [enteredCompletion, ...completions],
       [enteredDescription, ...descriptions],
+      ,
+      { "njt:labels": [, ...labels] = [] } = {},
     ] = await response.json();
     if (enteredCompletion === undefined) {
       await chrome.omnibox.setDefaultSuggestion({ description: hint });
@@ -54,13 +61,19 @@ chrome.omnibox.onInputChanged.addListener(async (text, suggest) => {
     const hiddenKeywords = completions
       .slice(shownCount)
       .map((completion) => completion.slice(completion.lastIndexOf(" ") + 1));
+    // Labels go last: if the row gets cut off, the keywords are still visible
+    const hiddenLabels = labels.slice(shownCount).filter(Boolean);
     const enteredRowDescription = escapeDescription(
       [
         `${enteredCompletion} → ${enteredDescription}`,
         ...(hiddenKeywords.length > 0
-          ? [`more: ${hiddenKeywords.join(" ")}`]
+          ? [
+              `More: ${hiddenKeywords.join(" ")}${
+                hiddenLabels.length > 0 ? ` (${hiddenLabels.join(", ")})` : ""
+              }`,
+            ]
           : []),
-      ].join(" · "),
+      ].join(moreSeparator),
     );
 
     const rows = completions.slice(0, shownCount).map((completion, index) => ({
