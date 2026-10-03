@@ -100,8 +100,15 @@ chrome.omnibox.onInputChanged.addListener(async (text, suggest) => {
       });
       suggest(rows);
     }
-  } catch {
-    // Aborted by a newer keystroke or offline: entering the text still works
+  } catch (error) {
+    // A newer keystroke aborted this request and takes over from here
+    if (error?.name === "AbortError") {
+      return;
+    }
+    // Offline or a server error: stop describing the previous input.
+    // Entering the text still works
+    await chrome.omnibox.setDefaultSuggestion({ description: hint });
+    suggest([]);
   }
 });
 
