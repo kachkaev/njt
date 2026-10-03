@@ -1,8 +1,8 @@
 import type * as React from "react";
 
-import { cn } from "../shared/cn";
-import { ExternalLink } from "../shared/external-link";
-import { ClickableCode } from "./clickable-code";
+import { cn } from "../shared/cn.js";
+import { ExternalLink } from "../shared/external-link.js";
+import { ClickableCode } from "./clickable-code.js";
 
 function Keyword({
   children,

@@ -1,6 +1,6 @@
 "use client";
 
-import { ErrorPageBody } from "./shared/error-page-body";
+import { ErrorPageBody } from "./shared/error-page-body.js";
 
 /**
  * Unlike 404.page.tsx before it, this file cannot set a document title: error
