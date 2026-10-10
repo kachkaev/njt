@@ -2,11 +2,11 @@
 
 import * as React from "react";
 
-import { AvailableDestinations } from "./page/available-destinations";
-import { Example } from "./page/example";
-import { InputForm } from "./page/input-form";
-import { cn } from "./shared/cn";
-import { ExternalLink } from "./shared/external-link";
+import { AvailableDestinations } from "./page/available-destinations.js";
+import { Example } from "./page/example.js";
+import { InputForm } from "./page/input-form.js";
+import { cn } from "./shared/cn.js";
+import { ExternalLink } from "./shared/external-link.js";
 
 function H2({ children }: { children: React.ReactNode }) {
   return <h2 className="mt-12 text-[1em] font-bold">{children}</h2>;
