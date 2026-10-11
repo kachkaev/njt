@@ -54,7 +54,7 @@
     "markdownlint-cli": "0.49.1",
     "npm-run-all2": "9.0.3",
     "postcss": "8.5.29",
-    "prettier": "3.9.9",
+    "prettier": "3.9.10",
     "suppress-exit-code": "4.0.0",
     "tailwindcss": "4.3.3",
     "typescript": "npm:@typescript/typescript6@6.0.2",
