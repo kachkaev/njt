@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { getBaseUrl } from "./shared/base-url";
+import { getBaseUrl } from "./shared/base-url.js";
 
 /**
  * The home page is the only thing worth indexing, so this exists mostly to give

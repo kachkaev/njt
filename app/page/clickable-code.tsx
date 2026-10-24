@@ -1,6 +1,6 @@
 import type * as React from "react";
 
-import { cn } from "../shared/cn";
+import { cn } from "../shared/cn.js";
 
 /**
  * A `code` element that only looks interactive once the page is hydrated, i.e.

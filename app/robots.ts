@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { getBaseUrl } from "./shared/base-url";
+import { getBaseUrl } from "./shared/base-url.js";
 
 export default function robots(): MetadataRoute.Robots {
   return {
