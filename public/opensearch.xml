@@ -5,6 +5,7 @@
     <Image width="32" height="32" type="image/png">https://njt.vercel.app/favicon-32x32.png</Image>
     <Tags>njt</Tags>
     <Url type="text/html" template="https://njt.vercel.app/jump?to={searchTerms}"/>
+    <Url type="application/x-suggestions+json" template="https://njt.vercel.app/suggest?q={searchTerms}"/>
     <Url type="application/opensearchdescription+xml" rel="self" template="https://njt.vercel.app/opensearch.xml" />
     <moz:SearchForm>https://njt.vercel.app</moz:SearchForm>
 </OpenSearchDescription>
