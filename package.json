@@ -40,7 +40,7 @@
     "@kachkaev/markdownlint-config": "1.0.1",
     "@kachkaev/prettier-config": "2.2.1",
     "@next/eslint-plugin-next": "16.4.5",
-    "@tailwindcss/postcss": "4.3.3",
+    "@tailwindcss/postcss": "4.3.5",
     "@tsconfig/next": "2.0.6",
     "@tsconfig/strictest": "2.0.8",
     "@types/hosted-git-info": "3.0.5",
@@ -56,7 +56,7 @@
     "postcss": "8.5.32",
     "prettier": "3.9.10",
     "suppress-exit-code": "4.0.0",
-    "tailwindcss": "4.3.3",
+    "tailwindcss": "4.3.5",
     "typescript": "npm:@typescript/typescript6@6.0.2",
     "typescript-eslint": "8.72.1"
   },
