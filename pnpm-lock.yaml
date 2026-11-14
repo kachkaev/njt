@@ -210,8 +210,8 @@ importers:
         specifier: 2.0.7
         version: 2.0.7
       '@tsconfig/strictest':
-        specifier: 2.0.8
-        version: 2.0.8
+        specifier: 2.0.9
+        version: 2.0.9
       '@types/hosted-git-info':
         specifier: 3.0.5
         version: 3.0.5
@@ -929,8 +929,8 @@ packages:
   '@tsconfig/next@2.0.7':
     resolution: {integrity: sha512-psWzmDIrqPirnNhZnOAG21yEdzaVF6v30xTVeDUR7VKg88taKsG9QXAyFFUUE3Xd79ySQ3Q37ps7ggz6hxc+3Q==}
 
-  '@tsconfig/strictest@2.0.8':
-    resolution: {integrity: sha512-XnQ7vNz5HRN0r88GYf1J9JJjqtZPiHt2woGJOo2dYqyHGGcd6OLGqSlBB6p1j9mpzja6Oe5BoPqWmeDx6X9rLw==}
+  '@tsconfig/strictest@2.0.9':
+    resolution: {integrity: sha512-CbwIySRXoGapLZYXqQHF15cg0wQImJa25Ynmubb7816vnHqTdQrmQlSbZxkJrrBusHLbF1kFbNVn8XtxmQ3EpQ==}
 
   '@types/debug@4.1.13':
     resolution: {integrity: sha512-KSVgmQmzMwPlmtljOomayoR89W4FynCAi3E8PPs7vmDVPe84hT+vGPKkJfThkmXs0x0jAaa9U8uW8bbfyS2fWw==}
@@ -3773,7 +3773,7 @@ snapshots:
 
   '@tsconfig/next@2.0.7': {}
 
-  '@tsconfig/strictest@2.0.8': {}
+  '@tsconfig/strictest@2.0.9': {}
 
   '@types/debug@4.1.13':
     dependencies:
