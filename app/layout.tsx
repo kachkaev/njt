@@ -4,9 +4,9 @@ import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import type * as React from "react";
 
-import { JsClassSwitcher } from "./layout/js-class-switcher";
-import { PageLayout } from "./layout/page-layout";
-import { getBaseUrl } from "./shared/base-url";
+import { JsClassSwitcher } from "./layout/js-class-switcher.js";
+import { PageLayout } from "./layout/page-layout.js";
+import { getBaseUrl } from "./shared/base-url.js";
 
 const title = "njt (npm jump to)";
 const description = "a quick navigation tool for npm packages";

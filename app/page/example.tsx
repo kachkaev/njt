@@ -1,5 +1,5 @@
-import { ExternalLink } from "../shared/external-link";
-import { ClickableCode } from "./clickable-code";
+import { ExternalLink } from "../shared/external-link.js";
+import { ClickableCode } from "./clickable-code.js";
 
 export function Example({
   onToClick,
