@@ -51,7 +51,7 @@
     "eslint": "10.15.0",
     "husky": "9.1.7",
     "lint-staged": "17.6.1",
-    "markdownlint-cli": "0.50.0",
+    "markdownlint-cli": "0.50.1",
     "npm-run-all2": "9.1.0",
     "postcss": "8.5.33",
     "prettier": "3.10.1",
