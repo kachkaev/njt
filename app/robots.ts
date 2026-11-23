@@ -8,8 +8,9 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
       // A redirect endpoint rather than a page: following it just bounces the
-      // crawler off-site, and every `to` spells a separate URL to crawl
-      disallow: "/jump",
+      // crawler off-site, and every `to` spells a separate URL to crawl.
+      // `/suggest` is a machine-readable API with the same unbounded query space
+      disallow: ["/jump", "/suggest"],
     },
     sitemap: `${getBaseUrl()}/sitemap.xml`,
   };
