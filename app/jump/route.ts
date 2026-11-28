@@ -1,4 +1,4 @@
-import { resolveDestination } from "../shared/destinations";
+import { resolveDestination } from "../shared/destinations.js";
 
 export async function GET(request: Request): Promise<Response> {
   let destinationUrl = "/";

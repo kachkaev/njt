@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { ErrorPageBody } from "./shared/error-page-body";
+import { ErrorPageBody } from "./shared/error-page-body.js";
 
 const message = "page not found";
 

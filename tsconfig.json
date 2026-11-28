@@ -4,7 +4,8 @@
     "@tsconfig/strictest/tsconfig.json"
   ],
   "compilerOptions": {
-    "module": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "target": "ESNext"
   },
   "exclude": [],
